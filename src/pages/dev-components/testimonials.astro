@@ -1,0 +1,430 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import SimpleCentered from '~/components/ui/page-sections/testimonials/SimpleCentered';
+import WithLargeAvatar from '~/components/ui/page-sections/testimonials/WithLargeAvatar';
+import WithOverlappingImage from '~/components/ui/page-sections/testimonials/WithOverlappingImage';
+import WithBackgroundImage from '~/components/ui/page-sections/testimonials/WithBackgroundImage';
+import SideBySide from '~/components/ui/page-sections/testimonials/SideBySide';
+import WithStarRating from '~/components/ui/page-sections/testimonials/WithStarRating';
+import Grid from '~/components/ui/page-sections/testimonials/Grid';
+import SubtleGrid from '~/components/ui/page-sections/testimonials/SubtleGrid';
+import { getComponentsBySubcategory } from '~/lib/component-registry';
+
+const metadata = {
+  title: 'Testimonials — Component Library',
+  description: 'Collection of testimonial and social proof components for development reference.',
+  robots: { index: false, follow: false },
+};
+
+// Get components for this subcategory
+const components = getComponentsBySubcategory('testimonials');
+---
+
+<Layout metadata={metadata}>
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+    <!-- Developer Warning Banner -->
+    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="ml-3">
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
+            Development Component Library
+          </h3>
+          <div class="mt-2 text-sm text-red-700 dark:text-red-300">
+            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 text-sm text-muted mb-2">
+        <a href="/dev-components" class="hover:text-primary">Component Library</a>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span>Testimonials</span>
+      </div>
+      <h1 class="text-4xl font-bold mb-4">Testimonials</h1>
+      <p class="text-lg text-muted max-w-3xl">
+        Customer testimonial and social proof components for building trust and showcasing customer satisfaction.
+      </p>
+    </div>
+
+    <!-- Component Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
+        <div class="text-2xl font-bold text-primary mb-1">{components.length}</div>
+        <div class="text-sm text-muted">Components</div>
+      </div>
+      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
+        <div class="text-2xl font-bold text-primary mb-1">100%</div>
+        <div class="text-sm text-muted">Responsive</div>
+      </div>
+      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
+        <div class="text-2xl font-bold text-primary mb-1">100%</div>
+        <div class="text-sm text-muted">Dark Mode</div>
+      </div>
+      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
+        <div class="text-2xl font-bold text-primary mb-1">AI Ready</div>
+        <div class="text-sm text-muted">Optimized</div>
+      </div>
+    </div>
+
+    <!-- Component Library -->
+    <div class="space-y-16">
+
+      <!-- Simple Centered Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <SimpleCentered client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">Simple Centered</h3>
+              <p class="text-muted mb-4">Clean, centered testimonial layout with company logo, testimonial quote, and author information</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-centered-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleCentered</code></div>
+                <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">centered</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">simple</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<SimpleCentered />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- With Large Avatar Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <WithLargeAvatar client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">With Large Avatar</h3>
+              <p class="text-muted mb-4">A testimonial section featuring a large avatar image and detailed customer review</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-large-avatar-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithLargeAvatar</code></div>
+                <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">avatar</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">large</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<WithLargeAvatar />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- With Overlapping Image Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <WithOverlappingImage client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">With Overlapping Image</h3>
+              <p class="text-muted mb-4">A testimonial layout with an overlapping profile image and quote marks design element</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-overlapping-image-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithOverlappingImage</code></div>
+                <div><strong>Complexity:</strong> <span class="text-orange-600">Medium</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">overlapping</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">quote-marks</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<WithOverlappingImage />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- With Background Image Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <WithBackgroundImage client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">With Background Image</h3>
+              <p class="text-muted mb-4">A testimonial with a full background image, gradient overlays, and company logo</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-background-image-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithBackgroundImage</code></div>
+                <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">background-image</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">gradient</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<WithBackgroundImage />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Side-by-side Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <SideBySide client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">Side-by-side</h3>
+              <p class="text-muted mb-4">Two testimonials displayed side-by-side with company logos and customer details</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">side-by-side-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SideBySide</code></div>
+                <div><strong>Complexity:</strong> <span class="text-orange-600">Medium</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">side-by-side</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">logos</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<SideBySide />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- With Star Rating Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <WithStarRating client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">With Star Rating</h3>
+              <p class="text-muted mb-4">A testimonial featuring a 5-star rating display using Heroicons star components</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-star-rating-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithStarRating</code></div>
+                <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">star-rating</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">rating</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<WithStarRating />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grid Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <Grid client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">Grid</h3>
+              <p class="text-muted mb-4">A complex masonry-style grid layout with a featured testimonial and multiple testimonial columns</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">grid-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">Grid</code></div>
+                <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">grid</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">masonry</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<Grid />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subtle Grid Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <SubtleGrid client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1">
+              <h3 class="text-xl font-semibold text-primary mb-2">Subtle Grid</h3>
+              <p class="text-muted mb-4">A subtle column-based testimonials layout using CSS columns for natural flow</p>
+
+              <div class="text-sm space-y-2">
+                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">subtle-grid-testimonial</code></div>
+                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SubtleGrid</code></div>
+                <div><strong>Complexity:</strong> <span class="text-orange-600">Medium</span></div>
+              </div>
+
+              <div class="mt-4">
+                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">testimonials</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">subtle</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">columns</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">social-proof</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{`<SubtleGrid />`}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="mt-12 flex justify-between items-center">
+      <a
+        href="/dev-components"
+        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
+      >
+        ← Back to Component Library
+      </a>
+      <a
+        href="/styles-guide"
+        class="inline-flex items-center text-muted hover:text-primary font-medium"
+      >
+        Styles Guide →
+      </a>
+    </div>
+
+  </div>
+</Layout>

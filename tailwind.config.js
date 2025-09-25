@@ -33,6 +33,7 @@ export default {
   },
   plugins: [
     typographyPlugin,
+    require('@headlessui/tailwindcss'),
     plugin(({ addVariant }) => {
       addVariant('intersect', '&:not([no-intersect])');
     }),

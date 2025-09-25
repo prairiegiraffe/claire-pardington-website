@@ -1,0 +1,145 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import SimpleHero from '~/components/ui/heroes/SimpleHero';
+import SplitHero from '~/components/ui/heroes/SplitHero';
+
+const metadata = {
+  title: 'Hero Components Library — AstroWind Dev',
+  description: 'Collection of hero section components for development reference.',
+  robots: { index: false, follow: false }, // Hide from search engines
+};
+
+const heroComponents = [
+  {
+    id: 'simple-hero',
+    name: 'Simple Hero',
+    description: 'Centered hero with gradient background and dual CTAs',
+    code: `<SimpleHero
+  title="Build something amazing"
+  subtitle="Start building your next project with our professionally designed components."
+  ctaText="Get started"
+  ctaHref="#"
+  secondaryCtaText="Learn more"
+  secondaryCtaHref="#"
+/>`
+  },
+  {
+    id: 'split-hero',
+    name: 'Split Hero',
+    description: 'Two-column layout with text on left, image on right',
+    code: `<SplitHero
+  title="Scale your business with our platform"
+  subtitle="Everything you need to grow your business, all in one place."
+  ctaText="Start free trial"
+  ctaHref="#"
+  imageUrl="your-image-url"
+/>`
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+    <!-- Developer Warning Banner -->
+    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="ml-3">
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
+            Development Component Library
+          </h3>
+          <div class="mt-2 text-sm text-red-700 dark:text-red-300">
+            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold text-center mb-4">Hero Components</h1>
+      <p class="text-lg text-center text-muted max-w-3xl mx-auto">
+        AI-friendly hero section components with clear naming and usage examples.
+      </p>
+    </div>
+
+    <!-- Component Library -->
+    <div class="space-y-16">
+
+      <!-- Simple Hero Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <SimpleHero client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-xl font-semibold text-primary mb-2">Simple Hero</h3>
+              <p class="text-muted mb-4">Centered hero with gradient background and dual CTAs</p>
+
+              <div class="text-sm text-muted">
+                <p><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono">simple-hero</code></p>
+                <p><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono">SimpleHero</code></p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{heroComponents[0].code}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Split Hero Component -->
+      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+        <!-- Component Preview -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <SplitHero client:load />
+        </div>
+
+        <!-- Component Info -->
+        <div class="p-6 bg-gray-50 dark:bg-gray-800">
+          <div class="grid lg:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-xl font-semibold text-primary mb-2">Split Hero</h3>
+              <p class="text-muted mb-4">Two-column layout with text on left, image on right</p>
+
+              <div class="text-sm text-muted">
+                <p><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono">split-hero</code></p>
+                <p><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono">SplitHero</code></p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
+              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+                <code>{heroComponents[1].code}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="mt-12 text-center">
+      <a
+        href="/styles-guide"
+        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
+      >
+        ← Back to Styles Guide
+      </a>
+    </div>
+  </div>
+</Layout>
