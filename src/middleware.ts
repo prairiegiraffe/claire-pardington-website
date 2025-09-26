@@ -1,7 +1,7 @@
-import type { MiddlewareResponseHandler } from 'astro';
+import type { MiddlewareHandler } from 'astro';
 
-export const onRequest: MiddlewareResponseHandler = async (context, next) => {
-  const { request, url } = context;
+export const onRequest: MiddlewareHandler = async (context, next) => {
+  const { url } = context;
 
   // Block dev-components routes in production
   if (url.pathname.startsWith('/dev-components/')) {

@@ -16,6 +16,7 @@ const pricing = {
     {
       name: 'Hobby',
       id: 'hobby',
+      href: '#',
       price: { monthly: '$19', annually: '$199' },
       description: 'The essentials to provide your best work for clients.',
       features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics'],
@@ -24,6 +25,7 @@ const pricing = {
     {
       name: 'Freelancer',
       id: 'freelancer',
+      href: '#',
       price: { monthly: '$29', annually: '$299' },
       description: 'The essentials to provide your best work for clients.',
       features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
@@ -32,6 +34,7 @@ const pricing = {
     {
       name: 'Startup',
       id: 'startup',
+      href: '#',
       price: { monthly: '$59', annually: '$599' },
       description: 'A plan that scales with your rapidly growing business.',
       features: [
@@ -46,6 +49,7 @@ const pricing = {
     {
       name: 'Enterprise',
       id: 'enterprise',
+      href: '#',
       price: { monthly: '$99', annually: '$999' },
       description: 'Dedicated support and infrastructure for your company.',
       features: [
@@ -286,13 +290,13 @@ export default function CompleteWithFAQsPricingPage() {
                     </span>
                     <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">/month</span>
                   </p>
-                  <button
+                  <a
                     href={tier.href}
                     aria-describedby={tier.id}
                     className="mt-6 block w-full rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-indigo-600 inset-ring-1 inset-ring-indigo-200 group-data-featured/tier:bg-indigo-600 group-data-featured/tier:text-white group-data-featured/tier:shadow-xs group-data-featured/tier:inset-ring-0 hover:inset-ring-indigo-300 group-data-featured/tier:hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-white/10 dark:text-white dark:inset-ring dark:inset-ring-white/5 dark:group-data-featured/tier:bg-indigo-500 dark:group-data-featured/tier:shadow-none dark:hover:bg-white/20 dark:hover:inset-ring-white/5 dark:group-data-featured/tier:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500 dark:group-not-data-featured/tier:focus-visible:outline-white/75"
                   >
                     Buy plan
-                  </button>
+                  </a>
                   <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 dark:text-gray-300">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex gap-x-3">
