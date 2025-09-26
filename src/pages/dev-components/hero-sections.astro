@@ -1,5 +1,6 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/Layout.astro';
+import DevComponentsSidebar from '~/components/ui/DevComponentsSidebar.astro';
 import SimpleHero from '~/components/ui/heroes/SimpleHero';
 import SplitHero from '~/components/ui/heroes/SplitHero';
 import NavigationHero from '~/components/ui/page-sections/hero-sections/NavigationHero';
@@ -27,30 +28,8 @@ const components = getComponentsBySubcategory('hero-sections');
 ---
 
 <Layout metadata={metadata}>
+<DevComponentsSidebar>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-    <!-- Developer Warning Banner -->
-    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
-      <div class="flex">
-        <div class="flex-shrink-0">
-          <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path
-              fill-rule="evenodd"
-              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Development Component Library</h3>
-          <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>
-              This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to
-              public.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Header -->
     <div class="mb-8">
       <div class="flex items-center gap-2 text-sm text-muted mb-2">
@@ -66,32 +45,12 @@ const components = getComponentsBySubcategory('hero-sections');
       </p>
     </div>
 
-    <!-- Component Stats -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
-        <div class="text-2xl font-bold text-primary mb-1">14</div>
-        <div class="text-sm text-muted">Components</div>
-      </div>
-      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
-        <div class="text-2xl font-bold text-primary mb-1">100%</div>
-        <div class="text-sm text-muted">Responsive</div>
-      </div>
-      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
-        <div class="text-2xl font-bold text-primary mb-1">100%</div>
-        <div class="text-sm text-muted">Dark Mode</div>
-      </div>
-      <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
-        <div class="text-2xl font-bold text-primary mb-1">AI Ready</div>
-        <div class="text-sm text-muted">Optimized</div>
-      </div>
-    </div>
-
     <!-- Component Library -->
     <div class="space-y-16">
       <!-- Simple Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="simple-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <SimpleHero client:load />
         </div>
 
@@ -147,9 +106,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Split Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="split-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <SplitHero client:load />
         </div>
 
@@ -204,9 +163,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Navigation Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="navigation-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <NavigationHero client:load />
         </div>
 
@@ -262,9 +221,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Product Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="product-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <ProductHero client:load />
         </div>
 
@@ -317,9 +276,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- App Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="app-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <AppHero client:load />
         </div>
 
@@ -371,9 +330,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Split Code Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="split-code-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <SplitCodeHero client:load />
         </div>
 
@@ -426,9 +385,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Background Image Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="background-image-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <BackgroundImageHero client:load />
         </div>
 
@@ -487,9 +446,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Bordered Screenshot Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="bordered-screenshot-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <BorderedScreenshotHero client:load />
         </div>
 
@@ -549,9 +508,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- App Screenshot Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="app-screenshot-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <AppScreenshotHero client:load />
         </div>
 
@@ -610,9 +569,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Phone Mockup Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="phone-mockup-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <PhoneMockupHero client:load />
         </div>
 
@@ -667,9 +626,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Split Image Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="split-image-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <SplitImageHero client:load />
         </div>
 
@@ -722,9 +681,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Angled Image Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="angled-image-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <AngledImageHero client:load />
         </div>
 
@@ -782,9 +741,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Image Tiles Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="image-tiles-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <ImageTilesHero client:load />
         </div>
 
@@ -839,9 +798,9 @@ const components = getComponentsBySubcategory('hero-sections');
       </section>
 
       <!-- Offset Image Hero Component -->
-      <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+      <section id="offset-image-hero" class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
-        <div class="border-b border-gray-200 dark:border-gray-700">
+        <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
           <OffsetImageHero client:load />
         </div>
 
@@ -908,4 +867,5 @@ const components = getComponentsBySubcategory('hero-sections');
       </a>
     </div>
   </div>
+</DevComponentsSidebar>
 </Layout>

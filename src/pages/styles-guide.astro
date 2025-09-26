@@ -1,5 +1,6 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/Layout.astro';
+import DevComponentsSidebar from '~/components/ui/DevComponentsSidebar.astro';
 
 const metadata = {
   title: 'Global Styles Guide — AstroWind',
@@ -215,6 +216,7 @@ const cardExamples = [
 ---
 
 <Layout metadata={metadata}>
+<DevComponentsSidebar currentPage="styles-guide">
   <div class="container mx-auto px-4 py-8 max-w-7xl">
     <div class="mb-12">
       <h1 class="text-4xl font-bold text-center mb-4">Global Styles Guide</h1>
@@ -224,132 +226,8 @@ const cardExamples = [
       </p>
     </div>
 
-    <!-- Component Library Navigation -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Component Library</h2>
-      <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 mb-6">
-        <p class="text-sm text-muted mb-4">
-          <strong>AI-Friendly Components:</strong> Pre-built React components ready for your projects. Perfect for AI-assisted
-          development.
-        </p>
-
-        <!-- Main Component Library Link -->
-        <div class="mb-6">
-          <a
-            href="/dev-components"
-            class="block bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all group"
-          >
-            <div class="flex items-center justify-between">
-              <div>
-                <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-primary/80">
-                  Complete Component Library
-                </h3>
-                <p class="text-muted">Browse all 500+ Tailwind UI Plus components organized by category</p>
-                <div class="flex items-center gap-4 mt-3 text-sm text-muted">
-                  <span>📄 4 Page Section categories</span>
-                  <span>🧩 5 Element categories</span>
-                  <span>📱 3 Page Examples</span>
-                  <span>💻 8 Application UI categories</span>
-                </div>
-              </div>
-              <div class="flex-shrink-0">
-                <svg
-                  class="w-8 h-8 text-primary group-hover:text-primary/80"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a
-            href="/dev-components/hero-sections"
-            class="group bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm hover:shadow-md transition-all hover:border-primary/30"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v2a1 1 0 01-1 1h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 01-1-1V5a1 1 0 011-1h4z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-primary group-hover:text-primary/80">Hero Sections</h3>
-            </div>
-            <p class="text-sm text-muted">Landing page hero sections with CTAs and backgrounds</p>
-            <div class="mt-2 text-xs text-muted">2 components ready</div>
-          </a>
-
-          <a
-            href="/dev-components/pricing-sections"
-            class="group bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm hover:shadow-md transition-all hover:border-primary/30"
-          >
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-primary group-hover:text-primary/80">Pricing Sections</h3>
-            </div>
-            <p class="text-sm text-muted">Pricing tables and subscription plans</p>
-            <div class="mt-2 text-xs text-muted">1 component ready</div>
-          </a>
-
-          <div
-            class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-dashed border-gray-300 dark:border-gray-600 p-4 flex flex-col items-center justify-center text-center"
-          >
-            <div class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-2">
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-600 dark:text-gray-400">500+ More Coming</h3>
-            <p class="text-xs text-muted mt-1">Forms, CTAs, features, and more...</p>
-          </div>
-        </div>
-
-        <div
-          class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg"
-        >
-          <div class="flex">
-            <svg class="h-5 w-5 text-yellow-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fill-rule="evenodd"
-                d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <div class="ml-3">
-              <h4 class="text-sm font-medium text-yellow-800 dark:text-yellow-200">Development Only</h4>
-              <div class="mt-1 text-sm text-yellow-700 dark:text-yellow-300">
-                <p>
-                  These components are for development reference only. They use Tailwind UI Plus licensing and should
-                  not be exposed to the public.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CSS Custom Properties Section -->
-    <section class="mb-16">
+    <section id="css-custom-properties" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">CSS Custom Properties</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -431,7 +309,7 @@ const cardExamples = [
     </section>
 
     <!-- Tailwind Utilities Section -->
-    <section class="mb-16">
+    <section id="tailwind-utilities" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Custom Tailwind Utilities</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -462,7 +340,7 @@ const cardExamples = [
     </section>
 
     <!-- Button Components Section -->
-    <section class="mb-16">
+    <section id="button-components" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Button Components</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -495,7 +373,7 @@ const cardExamples = [
     </section>
 
     <!-- Configuration Section -->
-    <section class="mb-16">
+    <section id="configuration" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Site Configuration</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -572,7 +450,7 @@ const cardExamples = [
     </section>
 
     <!-- Typography Section -->
-    <section class="mb-16">
+    <section id="typography" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Typography Scale</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -609,7 +487,7 @@ const cardExamples = [
     </section>
 
     <!-- Font Families Section -->
-    <section class="mb-16">
+    <section id="font-families" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Font Families</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -636,7 +514,7 @@ const cardExamples = [
     </section>
 
     <!-- Text Formats Section -->
-    <section class="mb-16">
+    <section id="text-formats" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Text Formats & Weights</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -667,7 +545,7 @@ const cardExamples = [
     </section>
 
     <!-- Shadows Section -->
-    <section class="mb-16">
+    <section id="shadows" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Box Shadows</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -695,7 +573,7 @@ const cardExamples = [
     </section>
 
     <!-- Border Radius Section -->
-    <section class="mb-16">
+    <section id="border-radius" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Border Radius</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -722,7 +600,7 @@ const cardExamples = [
     </section>
 
     <!-- Card Components Section -->
-    <section class="mb-16">
+    <section id="card-components" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Card Components</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
@@ -754,7 +632,7 @@ const cardExamples = [
     </section>
 
     <!-- Additional Styles Section -->
-    <section class="mb-16">
+    <section id="additional-styles" class="mb-16">
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Additional Global Styles</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
         <p class="text-sm text-muted mb-4">
@@ -789,4 +667,5 @@ const cardExamples = [
       </div>
     </section>
   </div>
+</DevComponentsSidebar>
 </Layout>

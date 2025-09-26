@@ -1,5 +1,6 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/Layout.astro';
+import DevComponentsSidebar from '~/components/ui/DevComponentsSidebar.astro';
 import { updateCategoryCounts } from '~/lib/component-registry';
 
 const metadata = {
@@ -12,30 +13,8 @@ const categoriesWithCounts = updateCategoryCounts();
 ---
 
 <Layout metadata={metadata}>
+<DevComponentsSidebar>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-    <!-- Developer Warning Banner -->
-    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
-      <div class="flex">
-        <div class="flex-shrink-0">
-          <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path
-              fill-rule="evenodd"
-              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Tailwind UI Plus Component Library</h3>
-          <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>
-              This component library uses Tailwind UI Plus licensing. For development and AI reference only. Do not
-              expose to public.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Header -->
     <div class="mb-12">
       <h1 class="text-4xl font-bold text-center mb-4">Complete Component Library</h1>
@@ -48,7 +27,7 @@ const categoriesWithCounts = updateCategoryCounts();
     <!-- Quick Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
       <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 text-center">
-        <div class="text-2xl font-bold text-primary mb-1">196</div>
+        <div class="text-2xl font-bold text-primary mb-1">199</div>
         <div class="text-sm text-muted">Components</div>
       </div>
       <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 text-center">
@@ -194,4 +173,5 @@ const categoriesWithCounts = updateCategoryCounts();
       </a>
     </div>
   </div>
+</DevComponentsSidebar>
 </Layout>
