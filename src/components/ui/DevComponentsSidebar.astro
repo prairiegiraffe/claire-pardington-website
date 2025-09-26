@@ -180,9 +180,9 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
     }
 
     const openIcon =
-      '<svg class=\"h-4 w-4 text-gray-600 dark:text-gray-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>';
+      `<svg class="h-4 w-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>`;
     const closedIcon =
-      '<svg class=\"h-4 w-4 text-gray-600 dark:text-gray-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5l7 7-7 7\"></path></svg>';
+      `<svg class="h-4 w-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
 
     if (!(toggleBtn as HTMLElement).dataset.sidebarBound) {
       (toggleBtn as HTMLElement).dataset.sidebarBound = 'true';
@@ -224,7 +224,7 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
         const pageId = button.getAttribute('data-submenu-toggle');
         if (!pageId) return;
 
-        const submenu = document.querySelector(`[data-submenu=\"${pageId}\"]`);
+        const submenu = document.querySelector(`[data-submenu="${pageId}"]`);
         if (!submenu) return;
 
         const isOpen = submenu.classList.contains('max-h-96');
@@ -301,7 +301,7 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
       const pageId = submenu.getAttribute('data-submenu');
       if (!pageId) return;
 
-      const button = document.querySelector(`[data-submenu-toggle=\"${pageId}\"]`);
+      const button = document.querySelector(`[data-submenu-toggle="${pageId}"]`);
       if (!button) return;
 
       const icon = button.querySelector('svg');
