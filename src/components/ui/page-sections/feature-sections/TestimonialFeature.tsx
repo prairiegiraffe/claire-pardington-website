@@ -16,20 +16,20 @@ interface TestimonialFeatureProps {
 }
 
 export default function TestimonialFeature({
-  eyebrow = "Deploy faster",
-  title = "A better workflow",
-  subtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "Product screenshot",
+  eyebrow = 'Deploy faster',
+  title = 'A better workflow',
+  subtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'Product screenshot',
   imageWidth = 2432,
   imageHeight = 1442,
-  testimonialQuote = "Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh ullamcorper ac dictum justo in euismod. Risus aenean ut elit massa. In amet aliquet eget cras. Sem volutpat enim tristique.",
-  testimonialAuthorName = "Maria Hill",
-  testimonialAuthorRole = "Marketing Manager",
-  testimonialAuthorAvatar = "https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-  className = ""
+  testimonialQuote = 'Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh ullamcorper ac dictum justo in euismod. Risus aenean ut elit massa. In amet aliquet eget cras. Sem volutpat enim tristique.',
+  testimonialAuthorName = 'Maria Hill',
+  testimonialAuthorRole = 'Marketing Manager',
+  testimonialAuthorAvatar = 'https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+  className = '',
 }: TestimonialFeatureProps) {
   return (
     <div className={`overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -41,9 +41,7 @@ export default function TestimonialFeature({
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                 {title}
               </p>
-              <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">
-                {subtitle}
-              </p>
+              <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">{subtitle}</p>
               <div className="mt-8">
                 <a
                   href={ctaHref}
@@ -54,16 +52,10 @@ export default function TestimonialFeature({
               </div>
               <figure className="mt-16 border-l border-gray-200 pl-8 text-gray-700 dark:border-gray-700 dark:text-gray-300">
                 <blockquote className="text-base/7">
-                  <p>
-                    "{testimonialQuote}"
-                  </p>
+                  <p>"{testimonialQuote}"</p>
                 </blockquote>
                 <figcaption className="mt-6 flex gap-x-4 text-sm/6">
-                  <img
-                    alt=""
-                    src={testimonialAuthorAvatar}
-                    className="size-6 flex-none rounded-full"
-                  />
+                  <img alt="" src={testimonialAuthorAvatar} className="size-6 flex-none rounded-full" />
                   <div>
                     <span className="font-semibold text-gray-900 dark:text-white">{testimonialAuthorName}</span> –{' '}
                     <span className="text-gray-600 dark:text-gray-400">{testimonialAuthorRole}</span>
@@ -82,5 +74,5 @@ export default function TestimonialFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

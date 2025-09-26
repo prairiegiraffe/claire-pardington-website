@@ -35,7 +35,7 @@ const people = [
     xUrl: '#',
     linkedinUrl: '#',
   },
-]
+];
 
 export default function WithImageAndParagraph() {
   return (
@@ -97,5 +97,5 @@ export default function WithImageAndParagraph() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

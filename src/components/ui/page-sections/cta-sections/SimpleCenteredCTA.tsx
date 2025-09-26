@@ -9,13 +9,13 @@ interface SimpleCenteredCTAProps {
 }
 
 export default function SimpleCenteredCTA({
-  title = "Boost your productivity. Start using our app today.",
-  subtitle = "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.",
-  primaryCTAText = "Get started",
-  primaryCTAHref = "#",
-  secondaryCTAText = "Learn more",
-  secondaryCTAHref = "#",
-  className = ""
+  title = 'Boost your productivity. Start using our app today.',
+  subtitle = 'Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.',
+  primaryCTAText = 'Get started',
+  primaryCTAHref = '#',
+  secondaryCTAText = 'Learn more',
+  secondaryCTAHref = '#',
+  className = '',
 }: SimpleCenteredCTAProps) {
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -24,9 +24,7 @@ export default function SimpleCenteredCTA({
           <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white">
             {title}
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-600 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-600 dark:text-gray-300">{subtitle}</p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href={primaryCTAHref}
@@ -41,5 +39,5 @@ export default function SimpleCenteredCTA({
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -11,5 +11,5 @@ export default function CenteredHeader() {
         </p>
       </div>
     </div>
-  )
+  );
 }

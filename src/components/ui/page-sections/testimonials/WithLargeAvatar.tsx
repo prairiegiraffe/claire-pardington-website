@@ -39,5 +39,5 @@ export default function WithLargeAvatar() {
         </figure>
       </div>
     </section>
-  )
+  );
 }

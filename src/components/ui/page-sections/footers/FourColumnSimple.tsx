@@ -22,7 +22,7 @@ const navigation = {
     { name: 'Privacy policy', href: '#' },
     { name: 'License', href: '#' },
   ],
-}
+};
 
 export default function FourColumnSimple() {
   return (
@@ -108,5 +108,5 @@ export default function FourColumnSimple() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

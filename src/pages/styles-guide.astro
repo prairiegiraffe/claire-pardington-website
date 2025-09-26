@@ -3,7 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Global Styles Guide — AstroWind',
-  description: 'Complete documentation of all global styles, colors, and configuration settings in the AstroWind template.',
+  description:
+    'Complete documentation of all global styles, colors, and configuration settings in the AstroWind template.',
 };
 
 // CSS Custom Properties from CustomStyles.astro
@@ -32,7 +33,7 @@ const cssCustomProperties = {
     '--aw-color-text-default': 'rgb(229 236 246)',
     '--aw-color-text-muted': 'rgb(229 236 246 / 66%)',
     '--aw-color-bg-page': 'rgb(3 6 32)',
-  }
+  },
 };
 
 // Tailwind Utilities from tailwind.css
@@ -49,23 +50,23 @@ const buttonComponents = [
   {
     class: '.btn',
     description: 'Base button component with rounded, border, and hover styles',
-    css: 'inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent...'
+    css: 'inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent...',
   },
   {
     class: '.btn-primary',
     description: 'Primary button with brand colors',
-    css: 'btn + font-semibold bg-primary text-white border-primary hover:bg-secondary...'
+    css: 'btn + font-semibold bg-primary text-white border-primary hover:bg-secondary...',
   },
   {
     class: '.btn-secondary',
     description: 'Secondary button style',
-    css: 'btn (inherits base button styles)'
+    css: 'btn (inherits base button styles)',
   },
   {
     class: '.btn-tertiary',
     description: 'Tertiary button without borders',
-    css: 'btn + border-none shadow-none text-muted hover:text-gray-900...'
-  }
+    css: 'btn + border-none shadow-none text-muted hover:text-gray-900...',
+  },
 ];
 
 // Config data from config.yaml
@@ -75,41 +76,42 @@ const configData = {
     site: 'https://astrowind.vercel.app',
     base: '/',
     trailingSlash: false,
-    googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M'
+    googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
   },
   metadata: {
     title: {
       default: 'AstroWind',
-      template: '%s — AstroWind'
+      template: '%s — AstroWind',
     },
-    description: '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    description:
+      '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
     robots: {
       index: true,
-      follow: true
+      follow: true,
     },
     openGraph: {
       site_name: 'AstroWind',
-      type: 'website'
+      type: 'website',
     },
     twitter: {
       handle: '@arthelokyo',
       site: '@arthelokyo',
-      cardType: 'summary_large_image'
-    }
+      cardType: 'summary_large_image',
+    },
   },
   i18n: {
     language: 'en',
-    textDirection: 'ltr'
+    textDirection: 'ltr',
   },
   apps: {
     blog: {
       isEnabled: true,
-      postsPerPage: 6
-    }
+      postsPerPage: 6,
+    },
   },
   ui: {
-    theme: 'system'
-  }
+    theme: 'system',
+  },
 };
 
 // Extract color values for color chips
@@ -121,10 +123,26 @@ const extractColorValue = (cssValue) => {
 // Tailwind Shadow Examples
 const shadowExamples = [
   { class: 'shadow-sm', description: 'Small shadow', value: '0 1px 2px 0 rgb(0 0 0 / 0.05)' },
-  { class: 'shadow', description: 'Default shadow', value: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)' },
-  { class: 'shadow-md', description: 'Medium shadow', value: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' },
-  { class: 'shadow-lg', description: 'Large shadow', value: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)' },
-  { class: 'shadow-xl', description: 'Extra large shadow', value: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)' },
+  {
+    class: 'shadow',
+    description: 'Default shadow',
+    value: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+  },
+  {
+    class: 'shadow-md',
+    description: 'Medium shadow',
+    value: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+  },
+  {
+    class: 'shadow-lg',
+    description: 'Large shadow',
+    value: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+  },
+  {
+    class: 'shadow-xl',
+    description: 'Extra large shadow',
+    value: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+  },
   { class: 'shadow-2xl', description: '2X large shadow', value: '0 25px 50px -12px rgb(0 0 0 / 0.25)' },
 ];
 
@@ -181,18 +199,18 @@ const cardExamples = [
   {
     title: 'Simple Card',
     class: 'bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm',
-    description: 'Basic card with border and subtle shadow'
+    description: 'Basic card with border and subtle shadow',
   },
   {
     title: 'Elevated Card',
     class: 'bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg',
-    description: 'Card with larger shadow for more elevation'
+    description: 'Card with larger shadow for more elevation',
   },
   {
     title: 'Interactive Card',
     class: 'bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer',
-    description: 'Card with hover effects and transitions'
-  }
+    description: 'Card with hover effects and transitions',
+  },
 ];
 ---
 
@@ -201,7 +219,8 @@ const cardExamples = [
     <div class="mb-12">
       <h1 class="text-4xl font-bold text-center mb-4">Global Styles Guide</h1>
       <p class="text-lg text-center text-muted max-w-3xl mx-auto">
-        Complete documentation of all global styles, colors, Tailwind utilities, and configuration settings in the AstroWind template.
+        Complete documentation of all global styles, colors, Tailwind utilities, and configuration settings in the
+        AstroWind template.
       </p>
     </div>
 
@@ -210,15 +229,21 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Component Library</h2>
       <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>AI-Friendly Components:</strong> Pre-built React components ready for your projects. Perfect for AI-assisted development.
+          <strong>AI-Friendly Components:</strong> Pre-built React components ready for your projects. Perfect for AI-assisted
+          development.
         </p>
 
         <!-- Main Component Library Link -->
         <div class="mb-6">
-          <a href="/dev-components" class="block bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all group">
+          <a
+            href="/dev-components"
+            class="block bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all group"
+          >
             <div class="flex items-center justify-between">
               <div>
-                <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-primary/80">Complete Component Library</h3>
+                <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-primary/80">
+                  Complete Component Library
+                </h3>
                 <p class="text-muted">Browse all 500+ Tailwind UI Plus components organized by category</p>
                 <div class="flex items-center gap-4 mt-3 text-sm text-muted">
                   <span>📄 4 Page Section categories</span>
@@ -228,8 +253,13 @@ const cardExamples = [
                 </div>
               </div>
               <div class="flex-shrink-0">
-                <svg class="w-8 h-8 text-primary group-hover:text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                <svg
+                  class="w-8 h-8 text-primary group-hover:text-primary/80"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </div>
             </div>
@@ -238,11 +268,19 @@ const cardExamples = [
 
         <!-- Quick Links -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="/dev-components/hero-sections" class="group bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm hover:shadow-md transition-all hover:border-primary/30">
+          <a
+            href="/dev-components/hero-sections"
+            class="group bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm hover:shadow-md transition-all hover:border-primary/30"
+          >
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                 <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v2a1 1 0 01-1 1h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 01-1-1V5a1 1 0 011-1h4z"/>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v2a1 1 0 01-1 1h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 01-1-1V5a1 1 0 011-1h4z"
+                  ></path>
                 </svg>
               </div>
               <h3 class="font-semibold text-primary group-hover:text-primary/80">Hero Sections</h3>
@@ -251,11 +289,19 @@ const cardExamples = [
             <div class="mt-2 text-xs text-muted">2 components ready</div>
           </a>
 
-          <a href="/dev-components/pricing-sections" class="group bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm hover:shadow-md transition-all hover:border-primary/30">
+          <a
+            href="/dev-components/pricing-sections"
+            class="group bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm hover:shadow-md transition-all hover:border-primary/30"
+          >
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                 <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  ></path>
                 </svg>
               </div>
               <h3 class="font-semibold text-primary group-hover:text-primary/80">Pricing Sections</h3>
@@ -264,10 +310,13 @@ const cardExamples = [
             <div class="mt-2 text-xs text-muted">1 component ready</div>
           </a>
 
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-dashed border-gray-300 dark:border-gray-600 p-4 flex flex-col items-center justify-center text-center">
+          <div
+            class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-dashed border-gray-300 dark:border-gray-600 p-4 flex flex-col items-center justify-center text-center"
+          >
             <div class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-2">
               <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                ></path>
               </svg>
             </div>
             <h3 class="font-semibold text-gray-600 dark:text-gray-400">500+ More Coming</h3>
@@ -275,15 +324,23 @@ const cardExamples = [
           </div>
         </div>
 
-        <div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+        <div
+          class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg"
+        >
           <div class="flex">
             <svg class="h-5 w-5 text-yellow-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+              <path
+                fill-rule="evenodd"
+                d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                clip-rule="evenodd"></path>
             </svg>
             <div class="ml-3">
               <h4 class="text-sm font-medium text-yellow-800 dark:text-yellow-200">Development Only</h4>
               <div class="mt-1 text-sm text-yellow-700 dark:text-yellow-300">
-                <p>These components are for development reference only. They use Tailwind UI Plus licensing and should not be exposed to the public.</p>
+                <p>
+                  These components are for development reference only. They use Tailwind UI Plus licensing and should
+                  not be exposed to the public.
+                </p>
               </div>
             </div>
           </div>
@@ -296,7 +353,8 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">CSS Custom Properties</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>File:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/components/CustomStyles.astro</code>
+          <strong>File:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/components/CustomStyles.astro</code>
         </p>
 
         <!-- Light Theme -->
@@ -306,39 +364,41 @@ const cardExamples = [
           <!-- Color Variables -->
           <h4 class="text-xl font-medium mb-3">Colors</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
-            {Object.entries(cssCustomProperties.light)
-              .filter(([key]) => key.includes('color'))
-              .map(([property, value]) => (
-                <div class="bg-white dark:bg-gray-900 rounded-lg border p-3 shadow-sm">
-                  <div
-                    class="w-full h-12 rounded-md mb-2 border"
-                    style={`background: ${value}; ${value.includes('/') ? 'background: rgba(' + extractColorValue(value) + ')' : ''}`}
-                  ></div>
-                  <div class="text-xs">
-                    <div class="font-mono text-xs text-primary truncate">{property.replace('--aw-color-', '')}</div>
-                    <div class="font-mono text-xs text-muted truncate">{value}</div>
+            {
+              Object.entries(cssCustomProperties.light)
+                .filter(([key]) => key.includes('color'))
+                .map(([property, value]) => (
+                  <div class="bg-white dark:bg-gray-900 rounded-lg border p-3 shadow-sm">
+                    <div
+                      class="w-full h-12 rounded-md mb-2 border"
+                      style={`background: ${value}; ${value.includes('/') ? 'background: rgba(' + extractColorValue(value) + ')' : ''}`}
+                    />
+                    <div class="text-xs">
+                      <div class="font-mono text-xs text-primary truncate">{property.replace('--aw-color-', '')}</div>
+                      <div class="font-mono text-xs text-muted truncate">{value}</div>
+                    </div>
                   </div>
-                </div>
-              ))
+                ))
             }
           </div>
 
           <!-- Font Variables -->
           <h4 class="text-xl font-medium mb-3">Typography</h4>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            {Object.entries(cssCustomProperties.light)
-              .filter(([key]) => key.includes('font'))
-              .map(([property, value]) => (
-                <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
-                  <div class="mb-2" style={`font-family: ${value}`}>
-                    <span class="text-lg">Aa Bb Cc</span>
+            {
+              Object.entries(cssCustomProperties.light)
+                .filter(([key]) => key.includes('font'))
+                .map(([property, value]) => (
+                  <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
+                    <div class="mb-2" style={`font-family: ${value}`}>
+                      <span class="text-lg">Aa Bb Cc</span>
+                    </div>
+                    <div class="text-sm">
+                      <div class="font-mono text-xs text-primary">{property}</div>
+                      <div class="font-mono text-xs text-muted">{value}</div>
+                    </div>
                   </div>
-                  <div class="text-sm">
-                    <div class="font-mono text-xs text-primary">{property}</div>
-                    <div class="font-mono text-xs text-muted">{value}</div>
-                  </div>
-                </div>
-              ))
+                ))
             }
           </div>
         </div>
@@ -349,20 +409,21 @@ const cardExamples = [
 
           <h4 class="text-xl font-medium mb-3">Colors</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
-            {Object.entries(cssCustomProperties.dark)
-              .filter(([key]) => key.includes('color'))
-              .map(([property, value]) => (
-                <div class="bg-white dark:bg-gray-900 rounded-lg border p-3 shadow-sm">
-                  <div
-                    class="w-full h-12 rounded-md mb-2 border"
-                    style={`background: ${value}; ${value.includes('/') ? 'background: rgba(' + extractColorValue(value) + ')' : ''}`}
-                  ></div>
-                  <div class="text-xs">
-                    <div class="font-mono text-xs text-primary truncate">{property.replace('--aw-color-', '')}</div>
-                    <div class="font-mono text-xs text-muted truncate">{value}</div>
+            {
+              Object.entries(cssCustomProperties.dark)
+                .filter(([key]) => key.includes('color'))
+                .map(([property, value]) => (
+                  <div class="bg-white dark:bg-gray-900 rounded-lg border p-3 shadow-sm">
+                    <div
+                      class="w-full h-12 rounded-md mb-2 border"
+                      style={`background: ${value}; ${value.includes('/') ? 'background: rgba(' + extractColorValue(value) + ')' : ''}`}
+                    />
+                    <div class="text-xs">
+                      <div class="font-mono text-xs text-primary truncate">{property.replace('--aw-color-', '')}</div>
+                      <div class="font-mono text-xs text-muted truncate">{value}</div>
+                    </div>
                   </div>
-                </div>
-              ))
+                ))
             }
           </div>
         </div>
@@ -374,26 +435,28 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Custom Tailwind Utilities</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>File:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/assets/styles/tailwind.css</code> (Utilities Layer)
+          <strong>File:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/assets/styles/tailwind.css</code> (Utilities Layer)
         </p>
 
         <div class="grid gap-4">
-          {tailwindUtilities.map(util => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
-              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div class="flex-1">
-                  <h4 class="font-mono text-lg text-primary font-medium">{util.class}</h4>
-                  <p class="text-sm text-muted mb-2">{util.description}</p>
-                  <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono">
-                    {util.css}
-                  </code>
-                </div>
-                <div class="w-24 h-16 rounded border"
-                     style={`${util.css.includes('background') ? util.css.replace('background-color: ', 'background: ') : 'border: 2px solid ' + (util.css.includes('color: ') ? util.css.replace('color: ', '') : '#ccc')}`}>
+          {
+            tailwindUtilities.map((util) => (
+              <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div class="flex-1">
+                    <h4 class="font-mono text-lg text-primary font-medium">{util.class}</h4>
+                    <p class="text-sm text-muted mb-2">{util.description}</p>
+                    <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono">{util.css}</code>
+                  </div>
+                  <div
+                    class="w-24 h-16 rounded border"
+                    style={`${util.css.includes('background') ? util.css.replace('background-color: ', 'background: ') : 'border: 2px solid ' + (util.css.includes('color: ') ? util.css.replace('color: ', '') : '#ccc')}`}
+                  />
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -403,28 +466,30 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Button Components</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>File:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/assets/styles/tailwind.css</code> (Components Layer)
+          <strong>File:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/assets/styles/tailwind.css</code> (Components
+          Layer)
         </p>
 
         <div class="grid gap-6">
-          {buttonComponents.map(component => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm">
-              <div class="flex flex-col md:flex-row md:items-center gap-4">
-                <div class="flex-1">
-                  <h4 class="font-mono text-lg text-primary font-medium mb-2">{component.class}</h4>
-                  <p class="text-sm text-muted mb-3">{component.description}</p>
-                  <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono block">
-                    {component.css}
-                  </code>
-                </div>
-                <div class="flex gap-2">
-                  <button class={component.class.replace('.', '') + ' text-sm'}>
-                    Sample Button
-                  </button>
+          {
+            buttonComponents.map((component) => (
+              <div class="bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="flex-1">
+                    <h4 class="font-mono text-lg text-primary font-medium mb-2">{component.class}</h4>
+                    <p class="text-sm text-muted mb-3">{component.description}</p>
+                    <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono block">
+                      {component.css}
+                    </code>
+                  </div>
+                  <div class="flex gap-2">
+                    <button class={component.class.replace('.', '') + ' text-sm'}>Sample Button</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -434,7 +499,8 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Site Configuration</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>File:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/config.yaml</code>
+          <strong>File:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">src/config.yaml</code>
         </p>
 
         <div class="grid md:grid-cols-2 gap-6">
@@ -442,12 +508,14 @@ const cardExamples = [
           <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
             <h4 class="text-lg font-semibold mb-3 text-primary">Site Settings</h4>
             <div class="space-y-2">
-              {Object.entries(configData.site).map(([key, value]) => (
-                <div class="flex justify-between items-center py-1 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
-                  <span class="font-mono text-sm text-muted">{key}:</span>
-                  <span class="font-mono text-sm text-right max-w-xs truncate">{String(value)}</span>
-                </div>
-              ))}
+              {
+                Object.entries(configData.site).map(([key, value]) => (
+                  <div class="flex justify-between items-center py-1 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
+                    <span class="font-mono text-sm text-muted">{key}:</span>
+                    <span class="font-mono text-sm text-right max-w-xs truncate">{String(value)}</span>
+                  </div>
+                ))
+              }
             </div>
           </div>
 
@@ -474,12 +542,14 @@ const cardExamples = [
           <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
             <h4 class="text-lg font-semibold mb-3 text-primary">Internationalization</h4>
             <div class="space-y-2">
-              {Object.entries(configData.i18n).map(([key, value]) => (
-                <div class="flex justify-between items-center py-1 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
-                  <span class="font-mono text-sm text-muted">{key}:</span>
-                  <span class="font-mono text-sm">{String(value)}</span>
-                </div>
-              ))}
+              {
+                Object.entries(configData.i18n).map(([key, value]) => (
+                  <div class="flex justify-between items-center py-1 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
+                    <span class="font-mono text-sm text-muted">{key}:</span>
+                    <span class="font-mono text-sm">{String(value)}</span>
+                  </div>
+                ))
+              }
             </div>
           </div>
 
@@ -487,12 +557,14 @@ const cardExamples = [
           <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
             <h4 class="text-lg font-semibold mb-3 text-primary">UI Configuration</h4>
             <div class="space-y-2">
-              {Object.entries(configData.ui).map(([key, value]) => (
-                <div class="flex justify-between items-center py-1 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
-                  <span class="font-mono text-sm text-muted">{key}:</span>
-                  <span class="font-mono text-sm">{String(value)}</span>
-                </div>
-              ))}
+              {
+                Object.entries(configData.ui).map(([key, value]) => (
+                  <div class="flex justify-between items-center py-1 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
+                    <span class="font-mono text-sm text-muted">{key}:</span>
+                    <span class="font-mono text-sm">{String(value)}</span>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
@@ -504,26 +576,34 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Typography Scale</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>File:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS defaults + Custom configuration</code>
+          <strong>File:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+            >Tailwind CSS defaults + Custom configuration</code
+          >
         </p>
 
         <div class="space-y-6">
-          {typographyExamples.map(example => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm">
-              <div class="flex flex-col lg:flex-row lg:items-center gap-4">
-                <div class="flex-1">
-                  <div class={example.class} set:html={`<${example.tag}>Sample ${example.tag.toUpperCase()} Heading</${example.tag}>`}></div>
-                </div>
-                <div class="lg:w-80">
-                  <div class="text-sm">
-                    <div class="font-mono text-xs text-primary">{example.tag}</div>
-                    <div class="font-mono text-xs text-muted">{example.class}</div>
-                    <div class="text-xs text-muted mt-1">{example.description}</div>
+          {
+            typographyExamples.map((example) => (
+              <div class="bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                  <div class="flex-1">
+                    <div
+                      class={example.class}
+                      set:html={`<${example.tag}>Sample ${example.tag.toUpperCase()} Heading</${example.tag}>`}
+                    />
+                  </div>
+                  <div class="lg:w-80">
+                    <div class="text-sm">
+                      <div class="font-mono text-xs text-primary">{example.tag}</div>
+                      <div class="font-mono text-xs text-muted">{example.class}</div>
+                      <div class="text-xs text-muted mt-1">{example.description}</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -539,18 +619,18 @@ const cardExamples = [
         </p>
 
         <div class="grid md:grid-cols-2 gap-4">
-          {fontExamples.map(font => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm">
-              <div class={font.class + " text-2xl mb-3"}>
-                The quick brown fox jumps over the lazy dog
+          {
+            fontExamples.map((font) => (
+              <div class="bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm">
+                <div class={font.class + ' text-2xl mb-3'}>The quick brown fox jumps over the lazy dog</div>
+                <div class="text-sm">
+                  <div class="font-mono text-xs text-primary">{font.class}</div>
+                  <div class="font-mono text-xs text-muted">{font.family}</div>
+                  <div class="text-xs text-muted mt-1">{font.description}</div>
+                </div>
               </div>
-              <div class="text-sm">
-                <div class="font-mono text-xs text-primary">{font.class}</div>
-                <div class="font-mono text-xs text-muted">{font.family}</div>
-                <div class="text-xs text-muted mt-1">{font.description}</div>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -560,23 +640,28 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Text Formats & Weights</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>Framework:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS Typography Utilities</code>
+          <strong>Framework:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS Typography Utilities</code>
         </p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {textFormatExamples.map(format => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
-              <div class={format.class + " mb-2"}>
-                Sample Text Content
+          {
+            textFormatExamples.map((format) => (
+              <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
+                <div class={format.class + ' mb-2'}>Sample Text Content</div>
+                <div class="text-sm">
+                  <div class="font-mono text-xs text-primary">{format.class}</div>
+                  <div class="text-xs text-muted">{format.description}</div>
+                  {format.size && (
+                    <div class="font-mono text-xs text-muted">
+                      {format.size} ({format.rem})
+                    </div>
+                  )}
+                  {format.weight && <div class="font-mono text-xs text-muted">Weight: {format.weight}</div>}
+                </div>
               </div>
-              <div class="text-sm">
-                <div class="font-mono text-xs text-primary">{format.class}</div>
-                <div class="text-xs text-muted">{format.description}</div>
-                {format.size && <div class="font-mono text-xs text-muted">{format.size} ({format.rem})</div>}
-                {format.weight && <div class="font-mono text-xs text-muted">Weight: {format.weight}</div>}
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -586,22 +671,25 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Box Shadows</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>Framework:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS Shadow Utilities</code>
+          <strong>Framework:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS Shadow Utilities</code>
         </p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {shadowExamples.map(shadow => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
-              <div class={`w-full h-20 bg-gradient-to-r from-primary to-secondary rounded-lg mb-4 ${shadow.class}`}></div>
-              <div class="text-sm">
-                <div class="font-mono text-xs text-primary">{shadow.class}</div>
-                <div class="text-xs text-muted mb-2">{shadow.description}</div>
-                <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono block break-all">
-                  {shadow.value}
-                </code>
+          {
+            shadowExamples.map((shadow) => (
+              <div class="bg-white dark:bg-gray-900 rounded-lg border p-4">
+                <div class={`w-full h-20 bg-gradient-to-r from-primary to-secondary rounded-lg mb-4 ${shadow.class}`} />
+                <div class="text-sm">
+                  <div class="font-mono text-xs text-primary">{shadow.class}</div>
+                  <div class="text-xs text-muted mb-2">{shadow.description}</div>
+                  <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono block break-all">
+                    {shadow.value}
+                  </code>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -611,19 +699,24 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Border Radius</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>Framework:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS Border Radius Utilities</code>
+          <strong>Framework:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Tailwind CSS Border Radius Utilities</code>
         </p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {radiusExamples.map(radius => (
-            <div class={`bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/30 p-6 shadow-sm ${radius.class}`}>
-              <div class="text-sm text-center">
-                <div class="font-mono text-xs text-primary font-semibold">{radius.class}</div>
-                <div class="text-xs text-muted mt-1">{radius.description}</div>
-                <div class="font-mono text-xs text-muted">Value: {radius.value}</div>
+          {
+            radiusExamples.map((radius) => (
+              <div
+                class={`bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/30 p-6 shadow-sm ${radius.class}`}
+              >
+                <div class="text-sm text-center">
+                  <div class="font-mono text-xs text-primary font-semibold">{radius.class}</div>
+                  <div class="text-xs text-muted mt-1">{radius.description}</div>
+                  <div class="font-mono text-xs text-muted">Value: {radius.value}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -633,28 +726,29 @@ const cardExamples = [
       <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Card Components</h2>
       <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6">
         <p class="text-sm text-muted mb-4">
-          <strong>Implementation:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Custom combinations of Tailwind utilities</code>
+          <strong>Implementation:</strong>
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Custom combinations of Tailwind utilities</code>
         </p>
 
         <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
-          {cardExamples.map(card => (
-            <div class="space-y-4">
-              <div class={card.class}>
-                <h4 class="text-lg font-semibold mb-2 text-primary">{card.title}</h4>
-                <p class="text-muted text-sm mb-4">{card.description}</p>
-                <div class="flex justify-between items-center">
-                  <span class="text-xs text-muted">Sample card content</span>
-                  <button class="btn-primary px-4 py-2 text-sm">Action</button>
+          {
+            cardExamples.map((card) => (
+              <div class="space-y-4">
+                <div class={card.class}>
+                  <h4 class="text-lg font-semibold mb-2 text-primary">{card.title}</h4>
+                  <p class="text-muted text-sm mb-4">{card.description}</p>
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs text-muted">Sample card content</span>
+                    <button class="btn-primary px-4 py-2 text-sm">Action</button>
+                  </div>
+                </div>
+                <div class="text-xs">
+                  <div class="font-mono text-primary mb-1">Classes used:</div>
+                  <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs break-all">{card.class}</code>
                 </div>
               </div>
-              <div class="text-xs">
-                <div class="font-mono text-primary mb-1">Classes used:</div>
-                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs break-all">
-                  {card.class}
-                </code>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -673,7 +767,7 @@ const cardExamples = [
           <div class="bg-white dark:bg-gray-900 rounded-lg border p-4 shadow-sm">
             <h4 class="text-lg font-semibold mb-3 text-primary">Header Scroll Effects</h4>
             <code class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono block">
-              #header.scroll > div:first-child<br/>
+              #header.scroll &gt; div:first-child<br />
               @apply bg-page md:bg-white/90 md:backdrop-blur-md
             </code>
           </div>

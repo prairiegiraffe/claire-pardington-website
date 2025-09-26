@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import { ChevronDownIcon } from '@heroicons/react/16/solid';
 
 export default function ContactFormWithGradient() {
   return (
@@ -160,5 +160,5 @@ export default function ContactFormWithGradient() {
         </div>
       </form>
     </div>
-  )
+  );
 }

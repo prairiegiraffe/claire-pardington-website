@@ -23,7 +23,7 @@ const testimonials = [
     },
     // More testimonials...
   ],
-]
+];
 
 export default function SubtleGrid() {
   return (
@@ -40,24 +40,15 @@ export default function SubtleGrid() {
             {testimonials.map((column, columnIndex) => (
               <div key={columnIndex}>
                 {column.map((testimonial) => (
-                  <div
-                    key={testimonial.author.handle}
-                    className="pt-8 sm:inline-block sm:w-full sm:px-4"
-                  >
+                  <div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
                     <figure className="rounded-2xl bg-gray-50 p-8 text-sm/6 dark:bg-gray-800/50">
                       <blockquote className="text-gray-900 dark:text-gray-300">
                         <p>{`"${testimonial.body}"`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img
-                          alt=""
-                          src={testimonial.author.imageUrl}
-                          className="size-10 rounded-full bg-gray-50"
-                        />
+                        <img alt="" src={testimonial.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
                         <div>
-                          <div className="font-semibold text-gray-900 dark:text-white">
-                            {testimonial.author.name}
-                          </div>
+                          <div className="font-semibold text-gray-900 dark:text-white">{testimonial.author.name}</div>
                           <div className="text-gray-600 dark:text-gray-400">{`@${testimonial.author.handle}`}</div>
                         </div>
                       </figcaption>
@@ -70,5 +61,5 @@ export default function SubtleGrid() {
         </div>
       </div>
     </div>
-  )
+  );
 }

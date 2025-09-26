@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 interface SplitCodeHeroProps {
   title?: string;
@@ -17,19 +17,19 @@ interface SplitCodeHeroProps {
 }
 
 export default function SplitCodeHero({
-  title = "Supercharge your web app",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-  ctaText = "Documentation",
-  ctaHref = "#",
-  secondaryCtaText = "View on GitHub",
-  secondaryCtaHref = "#",
+  title = 'Supercharge your web app',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+  ctaText = 'Documentation',
+  ctaHref = '#',
+  secondaryCtaText = 'View on GitHub',
+  secondaryCtaHref = '#',
   announcementBadge = "What's new",
-  announcementText = "Just shipped v1.0",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
+  announcementText = 'Just shipped v1.0',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
   codeExample,
-  className = ""
+  className = '',
 }: SplitCodeHeroProps) {
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -38,16 +38,8 @@ export default function SplitCodeHero({
           <div className="px-6 lg:px-0 lg:pt-4">
             <div className="mx-auto max-w-2xl">
               <div className="max-w-lg">
-                <img
-                  alt={logoAlt}
-                  src={logoSrc}
-                  className="h-11 dark:hidden"
-                />
-                <img
-                  alt={logoAlt}
-                  src={logoSrcDark}
-                  className="h-11 not-dark:hidden"
-                />
+                <img alt={logoAlt} src={logoSrc} className="h-11 dark:hidden" />
+                <img alt={logoAlt} src={logoSrcDark} className="h-11 not-dark:hidden" />
                 <div className="mt-24 sm:mt-32 lg:mt-16">
                   <a href="#" className="inline-flex space-x-6">
                     <span className="rounded-full bg-indigo-50 px-3 py-1 text-sm/6 font-semibold text-indigo-600 ring-1 ring-indigo-600/20 ring-inset dark:bg-indigo-500/10 dark:text-indigo-400 dark:ring-indigo-500/25">
@@ -129,5 +121,5 @@ export default function NotificationSetting() {
         <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-linear-to-t from-white sm:h-32 dark:from-gray-900" />
       </div>
     </div>
-  )
+  );
 }

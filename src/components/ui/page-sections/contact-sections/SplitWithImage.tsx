@@ -177,5 +177,5 @@ export default function SplitWithImage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

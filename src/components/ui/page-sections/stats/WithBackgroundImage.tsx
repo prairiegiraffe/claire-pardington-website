@@ -3,7 +3,7 @@ const stats = [
   { id: 2, name: 'Flat platform fee', value: '3%' },
   { id: 3, name: 'Uptime guarantee', value: '99.9%' },
   { id: 4, name: 'Paid out to creators', value: '$70M' },
-]
+];
 
 export default function WithBackgroundImage() {
   return (
@@ -51,5 +51,5 @@ export default function WithBackgroundImage() {
         </dl>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -23,7 +23,7 @@ const tiers = [
       'Marketing automations',
     ],
   },
-]
+];
 
 export default function TwoTiersWithExtraTier() {
   return (
@@ -114,5 +114,5 @@ export default function TwoTiersWithExtraTier() {
         </div>
       </div>
     </div>
-  )
+  );
 }

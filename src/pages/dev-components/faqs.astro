@@ -21,21 +21,24 @@ const components = getComponentsBySubcategory('faqs');
 
 <Layout metadata={metadata}>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-
     <!-- Developer Warning Banner -->
     <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
       <div class="flex">
         <div class="flex-shrink-0">
           <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+              clip-rule="evenodd"></path>
           </svg>
         </div>
         <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
-            Development Component Library
-          </h3>
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Development Component Library</h3>
           <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+            <p>
+              This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to
+              public.
+            </p>
           </div>
         </div>
       </div>
@@ -46,13 +49,14 @@ const components = getComponentsBySubcategory('faqs');
       <div class="flex items-center gap-2 text-sm text-muted mb-2">
         <a href="/dev-components" class="hover:text-primary">Component Library</a>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
         <span>FAQ Sections</span>
       </div>
       <h1 class="text-4xl font-bold mb-4">FAQ Sections</h1>
       <p class="text-lg text-muted max-w-3xl">
-        Frequently asked questions components with clear AI naming conventions. Perfect for addressing customer questions and improving support.
+        Frequently asked questions components with clear AI naming conventions. Perfect for addressing customer
+        questions and improving support.
       </p>
     </div>
 
@@ -78,7 +82,6 @@ const components = getComponentsBySubcategory('faqs');
 
     <!-- Component Library -->
     <div class="space-y-16">
-
       <!-- Offset With Supporting Text Component -->
       <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
@@ -94,24 +97,39 @@ const components = getComponentsBySubcategory('faqs');
               <p class="text-muted mb-4">FAQ section with offset layout and supporting text column</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">offset-with-supporting-text-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">OffsetWithSupportingText</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >offset-with-supporting-text-faq</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >OffsetWithSupportingText</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'offset-with-supporting-text-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'offset-with-supporting-text-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<OffsetWithSupportingText
   faqs={[
     {
@@ -140,27 +158,43 @@ const components = getComponentsBySubcategory('faqs');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Centered Accordion</h3>
-              <p class="text-muted mb-4">FAQ section with accordion functionality using Headless UI disclosure components</p>
+              <p class="text-muted mb-4">
+                FAQ section with accordion functionality using Headless UI disclosure components
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">centered-accordion-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">CenteredAccordion</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >centered-accordion-faq</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">CenteredAccordion</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'centered-accordion-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'centered-accordion-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<CenteredAccordion
   title="Frequently asked questions"
   faqs={[
@@ -191,24 +225,35 @@ const components = getComponentsBySubcategory('faqs');
               <p class="text-muted mb-4">FAQ section with side-by-side layout on large screens, stacked on mobile</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">side-by-side-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SideBySide</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">side-by-side-faq</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SideBySide</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'side-by-side-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'side-by-side-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SideBySide
   title="Frequently asked questions"
   faqs={[
@@ -240,24 +285,36 @@ const components = getComponentsBySubcategory('faqs');
               <p class="text-muted mb-4">FAQ section with three-column grid layout and supporting text</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-columns-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeColumns</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-columns-faq</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeColumns</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'three-columns-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'three-columns-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeColumns
   title="Frequently asked questions"
   supportText="Have a different question and can't find the answer you're looking for?"
@@ -292,24 +349,39 @@ const components = getComponentsBySubcategory('faqs');
               <p class="text-muted mb-4">FAQ section with centered introduction and three-column grid layout</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-columns-centered-intro-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeColumnsWithCenteredIntroduction</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-columns-centered-intro-faq</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >ThreeColumnsWithCenteredIntroduction</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'three-columns-centered-intro-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'three-columns-centered-intro-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeColumnsWithCenteredIntroduction
   title="Frequently asked questions"
   supportText="Have a different question and can't find the answer you're looking for?"
@@ -344,24 +416,35 @@ const components = getComponentsBySubcategory('faqs');
               <p class="text-muted mb-4">FAQ section with two-column grid layout and supporting text</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-columns-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoColumns</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-columns-faq</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoColumns</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'two-columns-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'two-columns-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<TwoColumns
   title="Frequently asked questions"
   supportText="Have a different question and can't find the answer you're looking for?"
@@ -396,24 +479,39 @@ const components = getComponentsBySubcategory('faqs');
               <p class="text-muted mb-4">FAQ section with centered introduction and two-column grid layout</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-columns-centered-intro-faq</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoColumnsWithCenteredIntroduction</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >two-columns-centered-intro-faq</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >TwoColumnsWithCenteredIntroduction</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'two-columns-centered-intro-faq')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'two-columns-centered-intro-faq')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<TwoColumnsWithCenteredIntroduction
   title="Frequently asked questions"
   supportText="Have a different question and can't find the answer you're looking for?"
@@ -432,24 +530,16 @@ const components = getComponentsBySubcategory('faqs');
           </div>
         </div>
       </section>
-
     </div>
 
     <!-- Navigation -->
     <div class="mt-12 flex justify-between items-center">
-      <a
-        href="/dev-components"
-        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
-      >
+      <a href="/dev-components" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
         ← Back to Component Library
       </a>
-      <a
-        href="/styles-guide"
-        class="inline-flex items-center text-muted hover:text-primary font-medium"
-      >
+      <a href="/styles-guide" class="inline-flex items-center text-muted hover:text-primary font-medium">
         Styles Guide →
       </a>
     </div>
-
   </div>
 </Layout>

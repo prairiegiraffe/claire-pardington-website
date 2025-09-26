@@ -28,5 +28,5 @@ export default function PrivacyFullWidthBanner() {
         </button>
       </div>
     </div>
-  )
+  );
 }

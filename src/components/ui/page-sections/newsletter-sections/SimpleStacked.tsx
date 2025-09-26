@@ -39,5 +39,5 @@ export default function SimpleStacked() {
         </form>
       </div>
     </div>
-  )
+  );
 }

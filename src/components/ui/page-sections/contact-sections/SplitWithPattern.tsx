@@ -1,4 +1,4 @@
-import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 export default function SplitWithPattern() {
   return (
@@ -172,5 +172,5 @@ export default function SplitWithPattern() {
         </form>
       </div>
     </div>
-  )
+  );
 }

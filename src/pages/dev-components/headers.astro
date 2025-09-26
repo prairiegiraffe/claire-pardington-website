@@ -25,21 +25,24 @@ const components = getComponentsBySubcategory('headers');
 
 <Layout metadata={metadata}>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-
     <!-- Developer Warning Banner -->
     <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
       <div class="flex">
         <div class="flex-shrink-0">
           <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+              clip-rule="evenodd"></path>
           </svg>
         </div>
         <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
-            Development Component Library
-          </h3>
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Development Component Library</h3>
           <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+            <p>
+              This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to
+              public.
+            </p>
           </div>
         </div>
       </div>
@@ -50,13 +53,14 @@ const components = getComponentsBySubcategory('headers');
       <div class="flex items-center gap-2 text-sm text-muted mb-2">
         <a href="/dev-components" class="hover:text-primary">Component Library</a>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
         <span>Headers</span>
       </div>
       <h1 class="text-4xl font-bold mb-4">Headers</h1>
       <p class="text-lg text-muted max-w-3xl">
-        Navigation header components with clear AI naming conventions. Perfect for creating professional site headers with mobile support.
+        Navigation header components with clear AI naming conventions. Perfect for creating professional site headers
+        with mobile support.
       </p>
     </div>
 
@@ -82,7 +86,6 @@ const components = getComponentsBySubcategory('headers');
 
     <!-- Component Library -->
     <div class="space-y-16">
-
       <!-- With Stacked Flyout Menu Component -->
       <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
@@ -98,24 +101,39 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Navigation header with stacked flyout menu and mobile support</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-stacked-flyout-menu</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithStackedFlyoutMenu</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-stacked-flyout-menu</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithStackedFlyoutMenu</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-stacked-flyout-menu')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-stacked-flyout-menu')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithStackedFlyoutMenu
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -149,24 +167,37 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Simple constrained header with basic navigation and mobile menu</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">constrained-header</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">Constrained</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >constrained-header</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">Constrained</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'constrained-header')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'constrained-header')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<Constrained
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -198,24 +229,38 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Header with brand-colored background and white text elements</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">on-brand-background-header</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">OnBrandBackground</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >on-brand-background-header</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">OnBrandBackground</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'on-brand-background-header')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'on-brand-background-header')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<OnBrandBackground
   companyName="Your Company"
   logoSrc="/your-white-logo.svg"
@@ -248,24 +293,39 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Navigation header with full-width flyout menu spanning the viewport</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-full-width-flyout-menu</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithFullWidthFlyoutMenu</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-full-width-flyout-menu</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithFullWidthFlyoutMenu</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-full-width-flyout-menu')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-full-width-flyout-menu')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithFullWidthFlyoutMenu
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -299,24 +359,36 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Full-width header without max-width container constraints</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">full-width-header</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">FullWidth</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">full-width-header</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">FullWidth</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'full-width-header')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'full-width-header')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<FullWidth
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -348,24 +420,37 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Header with prominent call-to-action button alongside navigation</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-call-to-action-header</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithCallToAction</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-call-to-action-header</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithCallToAction</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-call-to-action-header')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-call-to-action-header')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithCallToAction
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -396,27 +481,44 @@ const components = getComponentsBySubcategory('headers');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">With Multiple Flyout Menus</h3>
-              <p class="text-muted mb-4">Header with multiple separate flyout menus for different navigation sections</p>
+              <p class="text-muted mb-4">
+                Header with multiple separate flyout menus for different navigation sections
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-multiple-flyout-menus</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithMultipleFlyoutMenus</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-multiple-flyout-menus</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithMultipleFlyoutMenus</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-multiple-flyout-menus')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-multiple-flyout-menus')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithMultipleFlyoutMenus
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -450,24 +552,39 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Header with icons displayed in mobile menu alongside text navigation</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-icons-in-mobile-menu</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithIconsInMobileMenu</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-icons-in-mobile-menu</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithIconsInMobileMenu</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-icons-in-mobile-menu')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-icons-in-mobile-menu')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithIconsInMobileMenu
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -501,24 +618,39 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Header with navigation items aligned to the left alongside the logo</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-left-aligned-nav</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithLeftAlignedNav</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-left-aligned-nav</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithLeftAlignedNav</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-left-aligned-nav')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-left-aligned-nav')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithLeftAlignedNav
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -550,24 +682,39 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Header with navigation items and login aligned to the right side</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-right-aligned-nav</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithRightAlignedNav</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-right-aligned-nav</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithRightAlignedNav</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-right-aligned-nav')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-right-aligned-nav')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithRightAlignedNav
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -599,24 +746,37 @@ const components = getComponentsBySubcategory('headers');
               <p class="text-muted mb-4">Header with centered logo and navigation split on both sides</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-centered-logo</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithCenteredLogo</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-centered-logo</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithCenteredLogo</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'with-centered-logo')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'with-centered-logo')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithCenteredLogo
   companyName="Your Company"
   logoSrc="/your-logo.svg"
@@ -632,24 +792,16 @@ const components = getComponentsBySubcategory('headers');
           </div>
         </div>
       </section>
-
     </div>
 
     <!-- Navigation -->
     <div class="mt-12 flex justify-between items-center">
-      <a
-        href="/dev-components"
-        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
-      >
+      <a href="/dev-components" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
         ← Back to Component Library
       </a>
-      <a
-        href="/styles-guide"
-        class="inline-flex items-center text-muted hover:text-primary font-medium"
-      >
+      <a href="/styles-guide" class="inline-flex items-center text-muted hover:text-primary font-medium">
         Styles Guide →
       </a>
     </div>
-
   </div>
 </Layout>

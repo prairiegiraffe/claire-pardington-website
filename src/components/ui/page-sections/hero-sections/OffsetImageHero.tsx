@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface NavigationItem {
   name: string;
@@ -32,26 +32,26 @@ const defaultNavigation: NavigationItem[] = [
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 export default function OffsetImageHero({
   title = "We're changing the way people connect",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
-  imageSrc = "https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80",
-  imageAlt = "Hero image",
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
+  imageSrc = 'https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80',
+  imageAlt = 'Hero image',
   navigation = defaultNavigation,
-  loginText = "Log in",
-  loginHref = "#",
-  className = ""
+  loginText = 'Log in',
+  loginHref = '#',
+  className = '',
 }: OffsetImageHeroProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -60,16 +60,8 @@ export default function OffsetImageHero({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{logoAlt}</span>
-              <img
-                alt=""
-                src={logoSrc}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt=""
-                src={logoSrcDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+              <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -101,16 +93,8 @@ export default function OffsetImageHero({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{logoAlt}</span>
-                <img
-                  alt=""
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -183,5 +167,5 @@ export default function OffsetImageHero({
         <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-linear-to-t from-white sm:h-32 dark:from-gray-900" />
       </div>
     </div>
-  )
+  );
 }

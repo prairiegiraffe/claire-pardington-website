@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 
 export default function SideBySideWithDetails() {
   return (
@@ -66,5 +66,5 @@ export default function SideBySideWithDetails() {
         />
       </div>
     </div>
-  )
+  );
 }

@@ -28,21 +28,24 @@ const components = getComponentsBySubcategory('hero-sections');
 
 <Layout metadata={metadata}>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-
     <!-- Developer Warning Banner -->
     <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
       <div class="flex">
         <div class="flex-shrink-0">
           <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+              clip-rule="evenodd"></path>
           </svg>
         </div>
         <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
-            Development Component Library
-          </h3>
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Development Component Library</h3>
           <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+            <p>
+              This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to
+              public.
+            </p>
           </div>
         </div>
       </div>
@@ -53,7 +56,7 @@ const components = getComponentsBySubcategory('hero-sections');
       <div class="flex items-center gap-2 text-sm text-muted mb-2">
         <a href="/dev-components" class="hover:text-primary">Component Library</a>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
         <span>Hero Sections</span>
       </div>
@@ -85,7 +88,6 @@ const components = getComponentsBySubcategory('hero-sections');
 
     <!-- Component Library -->
     <div class="space-y-16">
-
       <!-- Simple Hero Component -->
       <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
@@ -101,24 +103,35 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Centered hero with gradient background and dual CTAs</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'simple-hero')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'simple-hero')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleHero
   title="Build something amazing"
   subtitle="Start building your next project with our professionally designed components."
@@ -148,24 +161,35 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Two-column layout with text on left, image on right</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'split-hero')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'split-hero')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SplitHero
   title="Scale your business with our platform"
   subtitle="Everything you need to grow your business, all in one place."
@@ -194,8 +218,14 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Hero with full navigation header and mobile menu</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">navigation-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">NavigationHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">navigation-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">NavigationHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -213,7 +243,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<NavigationHero
   title="Data to enrich your online business"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -245,8 +276,14 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Split layout hero with product screenshot and logo</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">product-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ProductHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">product-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ProductHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -264,7 +301,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ProductHero
   title="Deploy to the cloud with confidence"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -293,8 +331,14 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Application focused hero with bordered screenshot</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">app-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">AppHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">app-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">AppHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -312,7 +356,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<AppHero
   title="Deploy to the cloud with confidence"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -340,8 +385,14 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Two-column hero with text and code example showcase</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-code-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitCodeHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-code-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitCodeHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -359,7 +410,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SplitCodeHero
   title="Supercharge your web app"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -388,8 +440,18 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Centered hero with full-screen background image and navigation</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">background-image-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">BackgroundImageHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >background-image-hero</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >BackgroundImageHero</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -407,7 +469,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<BackgroundImageHero
   title="Data to enrich your online business"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -438,8 +501,18 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Centered hero with bordered app screenshot and navigation</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">bordered-screenshot-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">BorderedScreenshotHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >bordered-screenshot-hero</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >BorderedScreenshotHero</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -458,7 +531,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<BorderedScreenshotHero
   title="Data to enrich your online business"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -489,8 +563,17 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Centered hero with navigation and clean app screenshot display</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">app-screenshot-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">AppScreenshotHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >app-screenshot-hero</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">AppScreenshotHero</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -509,7 +592,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<AppScreenshotHero
   title="Data to enrich your online business"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -540,8 +624,15 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Split layout hero with realistic phone mockup display</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">phone-mockup-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">PhoneMockupHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">phone-mockup-hero</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">PhoneMockupHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -560,7 +651,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<PhoneMockupHero
   title="A better way to ship your projects"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -589,8 +681,14 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Two-column layout with text content and full-height image</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-image-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitImageHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-image-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitImageHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -608,7 +706,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SplitImageHero
   title="Data to enrich your business"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -637,8 +736,15 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Split layout with angled SVG transition and full-height image</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">angled-image-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">AngledImageHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">angled-image-hero</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">AngledImageHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -657,7 +763,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<AngledImageHero
   title="Data to enrich your business"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -689,8 +796,14 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Hero with staggered image tiles gallery display</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">image-tiles-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ImageTilesHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">image-tiles-hero</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ImageTilesHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -709,7 +822,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ImageTilesHero
   title="We're changing the way people connect"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -739,8 +853,15 @@ const components = getComponentsBySubcategory('hero-sections');
               <p class="text-muted mb-4">Hero with offset positioned image and skewed background</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">offset-image-hero</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">OffsetImageHero</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">offset-image-hero</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">OffsetImageHero</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -759,7 +880,8 @@ const components = getComponentsBySubcategory('hero-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<OffsetImageHero
   title="We're changing the way people connect"
   subtitle="Anim aute id magna aliqua ad ad non deserunt sunt..."
@@ -774,24 +896,16 @@ const components = getComponentsBySubcategory('hero-sections');
           </div>
         </div>
       </section>
-
     </div>
 
     <!-- Navigation -->
     <div class="mt-12 flex justify-between items-center">
-      <a
-        href="/dev-components"
-        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
-      >
+      <a href="/dev-components" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
         ← Back to Component Library
       </a>
-      <a
-        href="/styles-guide"
-        class="inline-flex items-center text-muted hover:text-primary font-medium"
-      >
+      <a href="/styles-guide" class="inline-flex items-center text-muted hover:text-primary font-medium">
         Styles Guide →
       </a>
     </div>
-
   </div>
 </Layout>

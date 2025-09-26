@@ -1,6 +1,6 @@
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
-import { ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid';
+import { ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from '@heroicons/react/24/outline';
 
 const solutions = [
   {
@@ -22,12 +22,12 @@ const solutions = [
     href: '#',
     icon: SquaresPlusIcon,
   },
-]
+];
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
-]
+];
 
 export default function FullWidth() {
   return (
@@ -90,5 +90,5 @@ export default function FullWidth() {
         </div>
       </PopoverPanel>
     </Popover>
-  )
+  );
 }

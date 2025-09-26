@@ -3,7 +3,7 @@ const stats = [
   { label: 'Employees', value: '37' },
   { label: 'Countries', value: '12' },
   { label: 'Raised', value: '$25M' },
-]
+];
 
 export default function WithTwoColumnDescription() {
   return (
@@ -55,5 +55,5 @@ export default function WithTwoColumnDescription() {
         </div>
       </div>
     </div>
-  )
+  );
 }

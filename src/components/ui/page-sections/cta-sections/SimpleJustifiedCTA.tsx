@@ -8,12 +8,12 @@ interface SimpleJustifiedCTAProps {
 }
 
 export default function SimpleJustifiedCTA({
-  title = "Ready to dive in?\nStart your free trial today.",
-  primaryCTAText = "Get started",
-  primaryCTAHref = "#",
-  secondaryCTAText = "Learn more",
-  secondaryCTAHref = "#",
-  className = ""
+  title = 'Ready to dive in?\nStart your free trial today.',
+  primaryCTAText = 'Get started',
+  primaryCTAHref = '#',
+  secondaryCTAText = 'Learn more',
+  secondaryCTAHref = '#',
+  className = '',
 }: SimpleJustifiedCTAProps) {
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -33,12 +33,15 @@ export default function SimpleJustifiedCTA({
           >
             {primaryCTAText}
           </a>
-          <a href={secondaryCTAHref} className="text-sm/6 font-semibold text-gray-900 hover:opacity-80 dark:text-gray-100">
+          <a
+            href={secondaryCTAHref}
+            className="text-sm/6 font-semibold text-gray-900 hover:opacity-80 dark:text-gray-100"
+          >
             {secondaryCTAText}
             <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

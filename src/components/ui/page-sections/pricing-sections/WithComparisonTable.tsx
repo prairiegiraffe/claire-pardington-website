@@ -1,11 +1,11 @@
-import { Fragment } from 'react'
-import { CheckIcon, MinusIcon } from '@heroicons/react/20/solid'
+import { Fragment } from 'react';
+import { CheckIcon, MinusIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   { name: 'Starter', id: 'tier-starter', href: '#', priceMonthly: '$19', mostPopular: false },
   { name: 'Growth', id: 'tier-growth', href: '#', priceMonthly: '$49', mostPopular: true },
   { name: 'Scale', id: 'tier-scale', href: '#', priceMonthly: '$99', mostPopular: false },
-]
+];
 const sections = [
   {
     name: 'Features',
@@ -34,10 +34,10 @@ const sections = [
       { name: '1:1 onboarding tour', tiers: { Starter: false, Growth: false, Scale: true } },
     ],
   },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function WithComparisonTable() {
@@ -64,7 +64,7 @@ export default function WithComparisonTable() {
                 tier.mostPopular
                   ? 'rounded-xl bg-gray-400/5 inset-ring inset-ring-gray-200 dark:bg-white/5 dark:inset-ring-white/10'
                   : '',
-                'p-8',
+                'p-8'
               )}
             >
               <h3 id={tier.id} className="text-sm/6 font-semibold text-gray-900 dark:text-white">
@@ -81,7 +81,7 @@ export default function WithComparisonTable() {
                   tier.mostPopular
                     ? 'bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400'
                     : 'text-indigo-600 inset-ring inset-ring-indigo-200 hover:inset-ring-indigo-300 dark:bg-white/10 dark:text-white dark:inset-ring-white/5 dark:hover:bg-white/20 dark:hover:inset-ring-white/5 dark:focus-visible:outline-white/75',
-                  'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500',
+                  'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500'
                 )}
               >
                 Buy plan
@@ -106,7 +106,7 @@ export default function WithComparisonTable() {
                               ) : null}
                             </span>
                           </li>
-                        ) : null,
+                        ) : null
                       )}
                     </ul>
                   </li>
@@ -165,7 +165,7 @@ export default function WithComparisonTable() {
                           tier.mostPopular
                             ? 'bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400'
                             : 'text-indigo-600 inset-ring inset-ring-indigo-200 hover:inset-ring-indigo-300 dark:bg-white/10 dark:text-white dark:inset-ring-white/5 dark:hover:bg-white/20 dark:hover:inset-ring-white/5 dark:focus-visible:outline-white/75',
-                          'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500',
+                          'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500'
                         )}
                       >
                         Buy plan
@@ -181,7 +181,7 @@ export default function WithComparisonTable() {
                         colSpan={4}
                         className={classNames(
                           sectionIdx === 0 ? 'pt-8' : 'pt-16',
-                          'pb-4 text-sm/6 font-semibold text-gray-900 dark:text-white',
+                          'pb-4 text-sm/6 font-semibold text-gray-900 dark:text-white'
                         )}
                       >
                         {section.name}
@@ -231,5 +231,5 @@ export default function WithComparisonTable() {
         </div>
       </div>
     </div>
-  )
+  );
 }

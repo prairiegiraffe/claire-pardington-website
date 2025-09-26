@@ -1,4 +1,4 @@
-import { XMarkIcon } from '@heroicons/react/20/solid'
+import { XMarkIcon } from '@heroicons/react/20/solid';
 
 export default function LeftAlignedBanner() {
   return (
@@ -17,5 +17,5 @@ export default function LeftAlignedBanner() {
         <XMarkIcon aria-hidden="true" className="size-5 text-white" />
       </button>
     </div>
-  )
+  );
 }

@@ -10,8 +10,8 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
       return new Response('Not Found', {
         status: 404,
         headers: {
-          'Content-Type': 'text/plain'
-        }
+          'Content-Type': 'text/plain',
+        },
       });
     }
 

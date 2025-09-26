@@ -14,5 +14,5 @@ export default function SimpleWithEyebrowHeader() {
         </div>
       </div>
     </div>
-  )
+  );
 }

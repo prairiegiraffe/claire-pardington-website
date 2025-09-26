@@ -7,7 +7,7 @@ const featuredTestimonial = {
       'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
     logoUrl: 'https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg',
   },
-}
+};
 const testimonials = [
   [
     [
@@ -111,10 +111,10 @@ const testimonials = [
       },
     ],
   ],
-]
+];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+function classNames(...classes: Array<string | false | null | undefined>): string {
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Grid() {
@@ -184,7 +184,7 @@ export default function Grid() {
                       (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
                       ? 'xl:row-span-2'
                       : 'xl:row-start-1',
-                    'space-y-8',
+                    'space-y-8'
                   )}
                 >
                   {column.map((testimonial) => (
@@ -215,5 +215,5 @@ export default function Grid() {
         </div>
       </div>
     </div>
-  )
+  );
 }

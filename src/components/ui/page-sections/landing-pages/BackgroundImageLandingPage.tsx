@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import {
   ArrowPathIcon,
   CheckIcon,
@@ -9,14 +9,14 @@ import {
   FingerPrintIcon,
   LockClosedIcon,
   ServerIcon,
-} from '@heroicons/react/20/solid'
+} from '@heroicons/react/20/solid';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 const features = [
   {
@@ -49,7 +49,7 @@ const features = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
     icon: ServerIcon,
   },
-]
+];
 
 const tiers = [
   {
@@ -77,7 +77,7 @@ const tiers = [
     ],
     featured: true,
   },
-]
+];
 
 const faqs = [
   {
@@ -110,7 +110,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
   },
-]
+];
 
 const footerNavigation = {
   solutions: [
@@ -136,10 +136,10 @@ const footerNavigation = {
     { name: 'Privacy policy', href: '#' },
     { name: 'License', href: '#' },
   ],
-}
+};
 
 function classNames(...classes: (string | boolean | undefined)[]): string {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 interface BackgroundImageLandingPageProps {
@@ -168,30 +168,30 @@ interface BackgroundImageLandingPageProps {
 }
 
 export default function BackgroundImageLandingPage({
-  title = "Data to enrich your online business",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoAlt = "Your Company",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  screenshotSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  screenshotSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  screenshotAlt = "App screenshot",
-  companyName = "Your Company",
+  title = 'Data to enrich your online business',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoAlt = 'Your Company',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  screenshotSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  screenshotSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  screenshotAlt = 'App screenshot',
+  companyName = 'Your Company',
   navigationItems = navigation,
-  heroBackgroundImage = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=fff&sat=-100&exp=15&blend-mode=overlay",
-  heroBackgroundImageDark = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply",
-  announcementText = "Announcing our next round of funding.",
-  announcementHref = "#",
-  testimonialImage = "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80",
-  testimonialQuote = "Gravida quam mi erat tortor neque molestie. Auctor aliquet at porttitor a enim nunc suscipit tincidunt nunc. Et non lorem tortor posuere. Nunc eu scelerisque interdum eget tellus non nibh scelerisque bibendum.",
-  testimonialAuthor = "Judith Black",
-  testimonialTitle = "CEO of Tuple",
+  heroBackgroundImage = 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=fff&sat=-100&exp=15&blend-mode=overlay',
+  heroBackgroundImageDark = 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply',
+  announcementText = 'Announcing our next round of funding.',
+  announcementHref = '#',
+  testimonialImage = 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80',
+  testimonialQuote = 'Gravida quam mi erat tortor neque molestie. Auctor aliquet at porttitor a enim nunc suscipit tincidunt nunc. Et non lorem tortor posuere. Nunc eu scelerisque interdum eget tellus non nibh scelerisque bibendum.',
+  testimonialAuthor = 'Judith Black',
+  testimonialTitle = 'CEO of Tuple',
 }: BackgroundImageLandingPageProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -201,16 +201,8 @@ export default function BackgroundImageLandingPage({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{companyName}</span>
-              <img
-                alt={logoAlt}
-                src={logoSrc}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt={logoAlt}
-                src={logoSrcDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt={logoAlt} src={logoSrc} className="h-8 w-auto dark:hidden" />
+              <img alt={logoAlt} src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -242,16 +234,8 @@ export default function BackgroundImageLandingPage({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{companyName}</span>
-                <img
-                  alt={logoAlt}
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt={logoAlt}
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt={logoAlt} src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt={logoAlt} src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -530,9 +514,7 @@ export default function BackgroundImageLandingPage({
                     <use x={86} href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" />
                   </svg>
                   <blockquote className="text-xl/8 font-semibold text-white sm:text-2xl/9 dark:text-gray-100">
-                    <p>
-                      {testimonialQuote}
-                    </p>
+                    <p>{testimonialQuote}</p>
                   </blockquote>
                   <figcaption className="mt-8 text-base">
                     <div className="font-semibold text-white dark:text-gray-100">{testimonialAuthor}</div>
@@ -581,14 +563,14 @@ export default function BackgroundImageLandingPage({
                     : tierIdx === 0
                       ? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
                       : 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
-                  'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10 dark:ring-white/10',
+                  'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10 dark:ring-white/10'
                 )}
               >
                 <h3
                   id={tier.id}
                   className={classNames(
                     tier.featured ? 'text-indigo-400' : 'text-indigo-600 dark:text-indigo-400',
-                    'text-base/7 font-semibold',
+                    'text-base/7 font-semibold'
                   )}
                 >
                   {tier.name}
@@ -597,7 +579,7 @@ export default function BackgroundImageLandingPage({
                   <span
                     className={classNames(
                       tier.featured ? 'text-white' : 'text-gray-900 dark:text-white',
-                      'text-5xl font-semibold tracking-tight',
+                      'text-5xl font-semibold tracking-tight'
                     )}
                   >
                     {tier.priceMonthly}
@@ -605,7 +587,7 @@ export default function BackgroundImageLandingPage({
                   <span
                     className={classNames(
                       tier.featured ? 'text-gray-400' : 'text-gray-500 dark:text-gray-400',
-                      'text-base',
+                      'text-base'
                     )}
                   >
                     /month
@@ -614,7 +596,7 @@ export default function BackgroundImageLandingPage({
                 <p
                   className={classNames(
                     tier.featured ? 'text-gray-300' : 'text-gray-600 dark:text-gray-300',
-                    'mt-6 text-base/7',
+                    'mt-6 text-base/7'
                   )}
                 >
                   {tier.description}
@@ -623,7 +605,7 @@ export default function BackgroundImageLandingPage({
                   role="list"
                   className={classNames(
                     tier.featured ? 'text-gray-300' : 'text-gray-600 dark:text-gray-300',
-                    'mt-8 space-y-3 text-sm/6 sm:mt-10',
+                    'mt-8 space-y-3 text-sm/6 sm:mt-10'
                   )}
                 >
                   {tier.features.map((feature) => (
@@ -632,7 +614,7 @@ export default function BackgroundImageLandingPage({
                         aria-hidden="true"
                         className={classNames(
                           tier.featured ? 'text-indigo-400' : 'text-indigo-600 dark:text-indigo-400',
-                          'h-6 w-5 flex-none',
+                          'h-6 w-5 flex-none'
                         )}
                       />
                       {feature}
@@ -646,7 +628,7 @@ export default function BackgroundImageLandingPage({
                     tier.featured
                       ? 'bg-indigo-500 text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500 dark:shadow-none'
                       : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600 dark:bg-white/10 dark:text-white dark:ring-white/5 dark:hover:bg-white/20 dark:hover:ring-white/5 dark:focus-visible:outline-white/75',
-                    'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
+                    'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10'
                   )}
                 >
                   Get started today
@@ -688,16 +670,8 @@ export default function BackgroundImageLandingPage({
       <footer className="mt-32 sm:mt-56">
         <div className="mx-auto max-w-7xl border-t border-gray-200 px-6 py-16 sm:py-24 lg:px-8 lg:py-32 dark:border-white/10">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
-              alt={companyName}
-              src={logoSrc}
-              className="h-9 dark:hidden"
-            />
-            <img
-              alt={companyName}
-              src={logoSrcDark}
-              className="h-9 not-dark:hidden"
-            />
+            <img alt={companyName} src={logoSrc} className="h-9 dark:hidden" />
+            <img alt={companyName} src={logoSrcDark} className="h-9 not-dark:hidden" />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
@@ -768,5 +742,5 @@ export default function BackgroundImageLandingPage({
         </div>
       </footer>
     </div>
-  )
+  );
 }

@@ -28,5 +28,5 @@ export default function WithBackgroundImage404() {
         </div>
       </main>
     </>
-  )
+  );
 }

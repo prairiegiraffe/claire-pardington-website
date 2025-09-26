@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 interface Tier {
   name: string;
@@ -45,19 +45,19 @@ const defaultTiers: Tier[] = [
     ],
     featured: true,
   },
-]
+];
 
 function classNames(...classes: (string | boolean | undefined)[]): string {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function TwoTiersEmphasizedRightPricing({
-  eyebrow = "Pricing",
-  title = "Choose the right plan for you",
+  eyebrow = 'Pricing',
+  title = 'Choose the right plan for you',
   subtitle = "Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.",
   tiers = defaultTiers,
-  ctaText = "Get started today",
-  className = ""
+  ctaText = 'Get started today',
+  className = '',
 }: TwoTiersEmphasizedRightPricingProps) {
   return (
     <div className={`relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900 ${className}`}>
@@ -92,14 +92,14 @@ export default function TwoTiersEmphasizedRightPricing({
                 : tierIdx === 0
                   ? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
                   : 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
-              'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10 dark:ring-white/10',
+              'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10 dark:ring-white/10'
             )}
           >
             <h3
               id={tier.id}
               className={classNames(
                 tier.featured ? 'text-indigo-400' : 'text-indigo-600 dark:text-indigo-400',
-                'text-base/7 font-semibold',
+                'text-base/7 font-semibold'
               )}
             >
               {tier.name}
@@ -108,7 +108,7 @@ export default function TwoTiersEmphasizedRightPricing({
               <span
                 className={classNames(
                   tier.featured ? 'text-white' : 'text-gray-900 dark:text-white',
-                  'text-5xl font-semibold tracking-tight',
+                  'text-5xl font-semibold tracking-tight'
                 )}
               >
                 {tier.priceMonthly}
@@ -116,7 +116,7 @@ export default function TwoTiersEmphasizedRightPricing({
               <span
                 className={classNames(
                   tier.featured ? 'text-gray-400' : 'text-gray-500 dark:text-gray-400',
-                  'text-base',
+                  'text-base'
                 )}
               >
                 /month
@@ -125,7 +125,7 @@ export default function TwoTiersEmphasizedRightPricing({
             <p
               className={classNames(
                 tier.featured ? 'text-gray-300' : 'text-gray-600 dark:text-gray-300',
-                'mt-6 text-base/7',
+                'mt-6 text-base/7'
               )}
             >
               {tier.description}
@@ -134,7 +134,7 @@ export default function TwoTiersEmphasizedRightPricing({
               role="list"
               className={classNames(
                 tier.featured ? 'text-gray-300' : 'text-gray-600 dark:text-gray-300',
-                'mt-8 space-y-3 text-sm/6 sm:mt-10',
+                'mt-8 space-y-3 text-sm/6 sm:mt-10'
               )}
             >
               {tier.features.map((feature) => (
@@ -143,7 +143,7 @@ export default function TwoTiersEmphasizedRightPricing({
                     aria-hidden="true"
                     className={classNames(
                       tier.featured ? 'text-indigo-400' : 'text-indigo-600 dark:text-indigo-400',
-                      'h-6 w-5 flex-none',
+                      'h-6 w-5 flex-none'
                     )}
                   />
                   {feature}
@@ -157,7 +157,7 @@ export default function TwoTiersEmphasizedRightPricing({
                 tier.featured
                   ? 'bg-indigo-500 text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500 dark:shadow-none'
                   : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600 dark:bg-white/10 dark:text-white dark:ring-white/5 dark:hover:bg-white/20 dark:hover:ring-white/5 dark:focus-visible:outline-white/75',
-                'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
+                'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10'
               )}
             >
               {ctaText}
@@ -166,5 +166,5 @@ export default function TwoTiersEmphasizedRightPricing({
         ))}
       </div>
     </div>
-  )
+  );
 }

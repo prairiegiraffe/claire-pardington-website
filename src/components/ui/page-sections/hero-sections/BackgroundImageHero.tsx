@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface NavigationItem {
   name: string;
@@ -34,28 +34,28 @@ const defaultNavigation: NavigationItem[] = [
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 export default function BackgroundImageHero({
-  title = "Data to enrich your online business",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  announcementText = "Announcing our next round of funding. Read more",
-  announcementHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
-  backgroundImage = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=fff&sat=-100&exp=15&blend-mode=overlay",
-  backgroundImageDark = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply",
+  title = 'Data to enrich your online business',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  announcementText = 'Announcing our next round of funding. Read more',
+  announcementHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
+  backgroundImage = 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=fff&sat=-100&exp=15&blend-mode=overlay',
+  backgroundImageDark = 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply',
   navigation = defaultNavigation,
-  loginText = "Log in",
-  loginHref = "#",
-  className = ""
+  loginText = 'Log in',
+  loginHref = '#',
+  className = '',
 }: BackgroundImageHeroProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -64,16 +64,8 @@ export default function BackgroundImageHero({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{logoAlt}</span>
-              <img
-                alt=""
-                src={logoSrc}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt=""
-                src={logoSrcDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+              <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -105,16 +97,8 @@ export default function BackgroundImageHero({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{logoAlt}</span>
-                <img
-                  alt=""
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -221,5 +205,5 @@ export default function BackgroundImageHero({
         </div>
       </div>
     </div>
-  )
+  );
 }

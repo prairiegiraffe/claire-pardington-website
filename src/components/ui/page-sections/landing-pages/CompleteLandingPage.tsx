@@ -6,8 +6,9 @@ import {
   FingerPrintIcon,
   LockClosedIcon,
   ServerIcon,
-} from '@heroicons/react/20/solid'
-import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
+} from '@heroicons/react/20/solid';
+import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline';
+import type { SVGProps } from 'react';
 
 const primaryFeatures = [
   {
@@ -31,7 +32,7 @@ const primaryFeatures = [
     href: '#',
     icon: CalendarDaysIcon,
   },
-]
+];
 
 const secondaryFeatures = [
   {
@@ -64,14 +65,14 @@ const secondaryFeatures = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
     icon: ServerIcon,
   },
-]
+];
 
 const stats = [
   { id: 1, name: 'Developers on the platform', value: '8,000+' },
   { id: 2, name: 'Daily requests', value: '900m+' },
   { id: 3, name: 'Uptime guarantee', value: '99.9%' },
   { id: 4, name: 'Projects deployed', value: '12m' },
-]
+];
 
 const footerNavigation = {
   solutions: [
@@ -102,7 +103,7 @@ const footerNavigation = {
     {
       name: 'Facebook',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -115,7 +116,7 @@ const footerNavigation = {
     {
       name: 'Instagram',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -128,7 +129,7 @@ const footerNavigation = {
     {
       name: 'X',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
         </svg>
@@ -137,7 +138,7 @@ const footerNavigation = {
     {
       name: 'GitHub',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -150,7 +151,7 @@ const footerNavigation = {
     {
       name: 'YouTube',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -161,7 +162,7 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 interface CompleteLandingPageProps {
   title?: string;
@@ -184,23 +185,23 @@ interface CompleteLandingPageProps {
 }
 
 export default function CompleteLandingPage({
-  title = "Deploy to the cloud with confidence",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoAlt = "Your Company",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  screenshotSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  screenshotSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  screenshotAlt = "App screenshot",
+  title = 'Deploy to the cloud with confidence',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoAlt = 'Your Company',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  screenshotSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  screenshotSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  screenshotAlt = 'App screenshot',
   announcementBadge = "What's new",
-  announcementText = "Just shipped v1.0",
-  announcementHref = "#",
-  companyName = "Your Company, Inc.",
-  year = "2024",
+  announcementText = 'Just shipped v1.0',
+  announcementHref = '#',
+  companyName = 'Your Company, Inc.',
+  year = '2024',
 }: CompleteLandingPageProps) {
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -245,16 +246,8 @@ export default function CompleteLandingPage({
           </div>
           <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-20">
             <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
-              <img
-                alt={logoAlt}
-                src={logoSrc}
-                className="h-11 dark:hidden"
-              />
-              <img
-                alt={logoAlt}
-                src={logoSrcDark}
-                className="h-11 not-dark:hidden"
-              />
+              <img alt={logoAlt} src={logoSrc} className="h-11 dark:hidden" />
+              <img alt={logoAlt} src={logoSrcDark} className="h-11 not-dark:hidden" />
               <div className="mt-24 sm:mt-32 lg:mt-16">
                 <a href={announcementHref} className="inline-flex space-x-6">
                   <span className="rounded-full bg-indigo-50 px-3 py-1 text-sm/6 font-semibold text-indigo-600 ring-1 ring-indigo-600/20 ring-inset dark:bg-indigo-500/10 dark:text-indigo-400 dark:ring-indigo-500/25">
@@ -587,5 +580,5 @@ export default function CompleteLandingPage({
         </div>
       </footer>
     </div>
-  )
+  );
 }

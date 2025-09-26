@@ -8,12 +8,12 @@ interface SimpleStackedCTAProps {
 }
 
 export default function SimpleStackedCTA({
-  title = "Boost your productivity. Start using our app today.",
-  primaryCTAText = "Get started",
-  primaryCTAHref = "#",
-  secondaryCTAText = "Learn more",
-  secondaryCTAHref = "#",
-  className = ""
+  title = 'Boost your productivity. Start using our app today.',
+  primaryCTAText = 'Get started',
+  primaryCTAHref = '#',
+  secondaryCTAText = 'Learn more',
+  secondaryCTAHref = '#',
+  className = '',
 }: SimpleStackedCTAProps) {
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -28,11 +28,14 @@ export default function SimpleStackedCTA({
           >
             {primaryCTAText}
           </a>
-          <a href={secondaryCTAHref} className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 dark:hover:text-white">
+          <a
+            href={secondaryCTAHref}
+            className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 dark:hover:text-white"
+          >
             {secondaryCTAText} <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -10,23 +10,19 @@ interface SplitWithImageCTAProps {
 }
 
 export default function SplitWithImageCTA({
-  eyebrow = "Award winning support",
+  eyebrow = 'Award winning support',
   title = "We're here to help",
-  subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.",
-  primaryCTAText = "Visit the help center",
-  primaryCTAHref = "#",
-  imageSrc = "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply",
-  imageAlt = "",
-  className = ""
+  subtitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.',
+  primaryCTAText = 'Visit the help center',
+  primaryCTAHref = '#',
+  imageSrc = 'https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply',
+  imageAlt = '',
+  className = '',
 }: SplitWithImageCTAProps) {
   return (
     <div className={`relative bg-white dark:bg-gray-900 ${className}`}>
       <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
-        <img
-          alt={imageAlt}
-          src={imageSrc}
-          className="size-full object-cover"
-        />
+        <img alt={imageAlt} src={imageSrc} className="size-full object-cover" />
         <svg
           viewBox="0 0 926 676"
           aria-hidden="true"
@@ -58,9 +54,7 @@ export default function SplitWithImageCTA({
           <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
             {title}
           </p>
-          <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">{subtitle}</p>
           <div className="mt-8">
             <a
               href={primaryCTAHref}
@@ -72,5 +66,5 @@ export default function SplitWithImageCTA({
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -89,7 +89,7 @@ const people = [
     imageUrl:
       'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
   },
-]
+];
 
 export default function GridWithRoundImages() {
   return (
@@ -124,5 +124,5 @@ export default function GridWithRoundImages() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

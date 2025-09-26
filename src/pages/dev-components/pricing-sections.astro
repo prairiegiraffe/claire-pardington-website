@@ -27,21 +27,24 @@ const components = getComponentsBySubcategory('pricing-sections');
 
 <Layout metadata={metadata}>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-
     <!-- Developer Warning Banner -->
     <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
       <div class="flex">
         <div class="flex-shrink-0">
           <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+              clip-rule="evenodd"></path>
           </svg>
         </div>
         <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
-            Development Component Library
-          </h3>
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Development Component Library</h3>
           <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+            <p>
+              This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to
+              public.
+            </p>
           </div>
         </div>
       </div>
@@ -52,7 +55,7 @@ const components = getComponentsBySubcategory('pricing-sections');
       <div class="flex items-center gap-2 text-sm text-muted mb-2">
         <a href="/dev-components" class="hover:text-primary">Component Library</a>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
         <span>Pricing Sections</span>
       </div>
@@ -84,7 +87,6 @@ const components = getComponentsBySubcategory('pricing-sections');
 
     <!-- Component Library -->
     <div class="space-y-16">
-
       <!-- Simple Pricing Component -->
       <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
@@ -100,17 +102,27 @@ const components = getComponentsBySubcategory('pricing-sections');
               <p class="text-muted mb-4">Clean three-tier pricing with popular highlight</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-pricing</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimplePricing</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-pricing</code>
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimplePricing</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
               <div class="mt-4">
                 <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags:</h4>
                 <div class="flex flex-wrap gap-1">
-                  {components.find(c => c.id === 'simple-pricing')?.tags.map(tag => (
-                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
-                  ))}
+                  {
+                    components
+                      .find((c) => c.id === 'simple-pricing')
+                      ?.tags.map((tag) => (
+                        <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{tag}</span>
+                      ))
+                  }
                 </div>
               </div>
 
@@ -129,7 +141,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimplePricing
   title="Simple, transparent pricing"
   subtitle="Choose the perfect plan for your needs."
@@ -166,8 +179,18 @@ const components = getComponentsBySubcategory('pricing-sections');
               <p class="text-muted mb-4">Two-tier pricing table with right tier emphasized in dark theme</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-tiers-emphasized-right-pricing</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoTiersEmphasizedRightPricing</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >two-tiers-emphasized-right-pricing</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >TwoTiersEmphasizedRightPricing</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -186,7 +209,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<TwoTiersEmphasizedRightPricing
   eyebrow="Pricing"
   title="Choose the right plan for you"
@@ -214,8 +238,18 @@ const components = getComponentsBySubcategory('pricing-sections');
               <p class="text-muted mb-4">Two-tier pricing table with left tier emphasized in light theme</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-tiers-emphasized-left-pricing</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoTiersEmphasizedLeftPricing</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >two-tiers-emphasized-left-pricing</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >TwoTiersEmphasizedLeftPricing</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -234,7 +268,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<TwoTiersEmphasizedLeftPricing
   eyebrow="Pricing"
   title="Choose the right plan for you"
@@ -259,11 +294,23 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Three Logos Feature Comparison Pricing</h3>
-              <p class="text-muted mb-4">Comprehensive three-tier pricing with logos, feature comparison table, and mobile tabs</p>
+              <p class="text-muted mb-4">
+                Comprehensive three-tier pricing with logos, feature comparison table, and mobile tabs
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-logos-feature-comparison-pricing</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeLogosFeatureComparisonPricing</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-logos-feature-comparison-pricing</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >ThreeLogosFeatureComparisonPricing</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -284,7 +331,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeLogosFeatureComparisonPricing
   title="Pricing that grows with your team size"
   subtitle="Choose an affordable plan..."
@@ -319,8 +367,18 @@ const components = getComponentsBySubcategory('pricing-sections');
               <p class="text-muted mb-4">Two main pricing tiers with additional discounted tier section below</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-tiers-with-extra-tier</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoTiersWithExtraTier</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >two-tiers-with-extra-tier</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >TwoTiersWithExtraTier</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -339,7 +397,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<TwoTiersWithExtraTier />`}</code>
               </pre>
             </div>
@@ -362,8 +421,18 @@ const components = getComponentsBySubcategory('pricing-sections');
               <p class="text-muted mb-4">Single lifetime membership pricing with detailed features list</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">single-price-with-details</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SinglePriceWithDetails</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >single-price-with-details</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >SinglePriceWithDetails</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -382,7 +451,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SinglePriceWithDetails />`}</code>
               </pre>
             </div>
@@ -405,8 +475,17 @@ const components = getComponentsBySubcategory('pricing-sections');
               <p class="text-muted mb-4">Standard three-tier pricing with middle tier highlighted as "Most popular"</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-tiers-pricing</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeTiersPricing</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-tiers-pricing</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeTiersPricing</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -425,7 +504,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeTiersPricing />`}</code>
               </pre>
             </div>
@@ -445,11 +525,23 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Three Tiers With Dividers</h3>
-              <p class="text-muted mb-4">Three-tier pricing with visual dividers between columns and annual pricing display</p>
+              <p class="text-muted mb-4">
+                Three-tier pricing with visual dividers between columns and annual pricing display
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-tiers-with-dividers</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeTiersWithDividers</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-tiers-with-dividers</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >ThreeTiersWithDividers</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -468,7 +560,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeTiersWithDividers />`}</code>
               </pre>
             </div>
@@ -488,11 +581,23 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Three Tiers With Emphasized Tier</h3>
-              <p class="text-muted mb-4">Three-tier pricing with dark emphasized tier, frequency toggle, and form integration</p>
+              <p class="text-muted mb-4">
+                Three-tier pricing with dark emphasized tier, frequency toggle, and form integration
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-tiers-with-emphasized-tier</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeTiersWithEmphasizedTier</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-tiers-with-emphasized-tier</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >ThreeTiersWithEmphasizedTier</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -512,7 +617,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeTiersWithEmphasizedTier />`}</code>
               </pre>
             </div>
@@ -532,11 +638,23 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Three Tiers With Toggle</h3>
-              <p class="text-muted mb-4">Three-tier pricing with frequency toggle, "Most popular" badge, and ring emphasis</p>
+              <p class="text-muted mb-4">
+                Three-tier pricing with frequency toggle, "Most popular" badge, and ring emphasis
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-tiers-with-toggle</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeTiersWithToggle</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-tiers-with-toggle</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >ThreeTiersWithToggle</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -556,7 +674,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeTiersWithToggle />`}</code>
               </pre>
             </div>
@@ -576,11 +695,23 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Four Tiers With Toggle</h3>
-              <p class="text-muted mb-4">Four-tier pricing with frequency toggle, featured tier highlighting, and responsive grid layout</p>
+              <p class="text-muted mb-4">
+                Four-tier pricing with frequency toggle, featured tier highlighting, and responsive grid layout
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">four-tiers-with-toggle</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">FourTiersWithToggle</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >four-tiers-with-toggle</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >FourTiersWithToggle</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -599,7 +730,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<FourTiersWithToggle />`}</code>
               </pre>
             </div>
@@ -619,11 +751,23 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">With Comparison Table</h3>
-              <p class="text-muted mb-4">Three-tier pricing with comprehensive feature comparison table, responsive mobile/desktop views</p>
+              <p class="text-muted mb-4">
+                Three-tier pricing with comprehensive feature comparison table, responsive mobile/desktop views
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-comparison-table</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithComparisonTable</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-comparison-table</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >WithComparisonTable</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -642,7 +786,8 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithComparisonTable />`}</code>
               </pre>
             </div>
@@ -662,11 +807,24 @@ const components = getComponentsBySubcategory('pricing-sections');
           <div class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-1">
               <h3 class="text-xl font-semibold text-primary mb-2">Three Tiers With Feature Comparison</h3>
-              <p class="text-muted mb-4">Advanced three-tier pricing with dark hero section, frequency toggle, and comprehensive feature comparison table</p>
+              <p class="text-muted mb-4">
+                Advanced three-tier pricing with dark hero section, frequency toggle, and comprehensive feature
+                comparison table
+              </p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">three-tiers-with-feature-comparison</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ThreeTiersWithFeatureComparison</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >three-tiers-with-feature-comparison</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >ThreeTiersWithFeatureComparison</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -686,31 +844,24 @@ const components = getComponentsBySubcategory('pricing-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<ThreeTiersWithFeatureComparison />`}</code>
               </pre>
             </div>
           </div>
         </div>
       </section>
-
     </div>
 
     <!-- Navigation -->
     <div class="mt-12 flex justify-between items-center">
-      <a
-        href="/dev-components"
-        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
-      >
+      <a href="/dev-components" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
         ← Back to Component Library
       </a>
-      <a
-        href="/styles-guide"
-        class="inline-flex items-center text-muted hover:text-primary font-medium"
-      >
+      <a href="/styles-guide" class="inline-flex items-center text-muted hover:text-primary font-medium">
         Styles Guide →
       </a>
     </div>
-
   </div>
 </Layout>

@@ -1,4 +1,4 @@
-import { CheckCircleIcon, InformationCircleIcon } from '@heroicons/react/20/solid'
+import { CheckCircleIcon, InformationCircleIcon } from '@heroicons/react/20/solid';
 
 export default function Centered() {
   return (
@@ -122,5 +122,5 @@ export default function Centered() {
         </div>
       </div>
     </div>
-  )
+  );
 }

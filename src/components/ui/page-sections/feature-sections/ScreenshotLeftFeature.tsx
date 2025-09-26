@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 
 interface Feature {
   name: string;
@@ -36,19 +36,19 @@ const defaultFeatures: Feature[] = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: ServerIcon,
   },
-]
+];
 
 export default function ScreenshotLeftFeature({
-  eyebrow = "Deploy faster",
-  title = "A better workflow",
-  subtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  imageSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "Product screenshot",
+  eyebrow = 'Deploy faster',
+  title = 'A better workflow',
+  subtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  imageSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'Product screenshot',
   imageWidth = 2432,
   imageHeight = 1442,
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: ScreenshotLeftFeatureProps) {
   return (
     <div className={`overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -60,9 +60,7 @@ export default function ScreenshotLeftFeature({
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                 {title}
               </p>
-              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-                {subtitle}
-              </p>
+              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">{subtitle}</p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
@@ -98,5 +96,5 @@ export default function ScreenshotLeftFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

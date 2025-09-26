@@ -26,7 +26,7 @@ const people = [
     xUrl: '#',
     linkedinUrl: '#',
   },
-]
+];
 
 export default function WithVerticalImages() {
   return (
@@ -87,5 +87,5 @@ export default function WithVerticalImages() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

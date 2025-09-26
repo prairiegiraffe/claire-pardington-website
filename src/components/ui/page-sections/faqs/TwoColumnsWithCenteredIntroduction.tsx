@@ -34,7 +34,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
-]
+];
 
 export default function TwoColumnsWithCenteredIntroduction() {
   return (
@@ -67,5 +67,5 @@ export default function TwoColumnsWithCenteredIntroduction() {
         </div>
       </div>
     </div>
-  )
+  );
 }

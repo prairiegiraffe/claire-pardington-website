@@ -6,7 +6,7 @@ Here are different ways to batch import components super quickly:
 
 Just paste this prompt with all your components:
 
-```
+````
 BULK IMPORT: Process all these Tailwind UI Plus components automatically.
 
 For each component:
@@ -24,12 +24,13 @@ PURPOSE: [Optional: "hero with video" or let AI analyze]
 CODE:
 ```tsx
 [PASTE COMPONENT CODE HERE]
-```
+````
 
 === COMPONENT 2 ===
 NAME: [Optional hint]
 PURPOSE: [Optional hint]
 CODE:
+
 ```tsx
 [PASTE COMPONENT CODE HERE]
 ```
@@ -38,6 +39,7 @@ CODE:
 [Continue pattern for all components...]
 
 AUTO-PROCESS ALL: Create files, update registry, generate showcase entries.
+
 ```
 
 ## 🔄 Method 2: Category Batches
@@ -45,18 +47,21 @@ AUTO-PROCESS ALL: Create files, update registry, generate showcase entries.
 Import by category for better organization:
 
 ```
+
 IMPORT ALL HERO SECTIONS:
 
 Process these 20 hero components for the hero-sections category:
 
 HERO 1: Modern gradient hero
+
 ```tsx
-[code]
+[code];
 ```
 
 HERO 2: Split layout with video
+
 ```tsx
-[code]
+[code];
 ```
 
 [Continue for all 20...]
@@ -64,6 +69,7 @@ HERO 2: Split layout with video
 Create all files in src/components/ui/page-sections/hero-sections/
 Update registry with hero-sections subcategory
 All should have tags: ['hero', 'landing', plus specific tags]
+
 ```
 
 ## 📄 Method 3: File Format for Script
@@ -71,33 +77,35 @@ All should have tags: ['hero', 'landing', plus specific tags]
 Create a text file like `hero-components.txt`:
 
 ```
+
 --- ModernHero | hero-sections | Modern hero with gradient background ---
 import React from 'react';
 
 interface ModernHeroProps {
-  title?: string;
-  subtitle?: string;
+title?: string;
+subtitle?: string;
 }
 
 export default function ModernHero({ title = "Default" }: ModernHeroProps) {
-  return <div>Hero content</div>;
+return <div>Hero content</div>;
 }
 
 --- SplitVideoHero | hero-sections | Split layout hero with video background ---
 import React from 'react';
 
 export default function SplitVideoHero() {
-  return <div>Video hero content</div>;
+return <div>Video hero content</div>;
 }
 
 --- CenteredHero | hero-sections | Centered hero with call-to-action ---
 [Component code here...]
-```
+
+````
 
 Then run:
 ```bash
 node scripts/import-components.js batch --file hero-components.txt
-```
+````
 
 ## ⚡ Method 4: Super Fast AI Workflow
 
@@ -139,7 +147,7 @@ EXPECTED OUTPUT:
 
 For components where you want AI to figure everything out:
 
-```
+````
 SMART IMPORT: Analyze and import these components.
 
 For each component, AI should:
@@ -155,9 +163,10 @@ COMPONENTS TO ANALYZE:
 COMPONENT A:
 ```tsx
 [Some complex component - let AI figure out what it is]
-```
+````
 
 COMPONENT B:
+
 ```tsx
 [Another component - let AI categorize it]
 ```
@@ -165,6 +174,7 @@ COMPONENT B:
 [Continue for all components...]
 
 OUTPUT: Complete analysis + implementation for each component
+
 ```
 
 ## 📊 Expected Speed Improvements
@@ -187,12 +197,14 @@ OUTPUT: Complete analysis + implementation for each component
 
 ### Example Super-Efficient Workflow:
 ```
+
 Monday: Import all Page Sections (heroes, pricing, features, CTAs) - 100 components
 Tuesday: Import all Elements (headers, menus, banners) - 50 components
 Wednesday: Import all Application UI (forms, tables, navigation) - 200 components
 Thursday: Import all Page Examples (complete pages) - 30 components
 
 Total: 380 components in 4 days with AI automation!
+
 ```
 
 ## 🤖 AI Will Handle:
@@ -208,3 +220,4 @@ Total: 380 components in 4 days with AI automation!
 ## 🚀 Ready to Import 500+ Components?
 
 Choose your preferred method above and let's automate this! AI can process components 10x faster than manual work.
+```

@@ -1,5 +1,5 @@
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const solutions = [
   { name: 'Blog', description: 'Learn about tips, product updates and company culture', href: '#' },
@@ -11,7 +11,7 @@ const solutions = [
   { name: 'Guides', description: 'Learn how to maximize our platform to get the most out of it', href: '#' },
   { name: 'Events', description: 'Check out webinars with experts and learn about our annual conference', href: '#' },
   { name: 'Security', description: 'Understand how we take your privacy seriously', href: '#' },
-]
+];
 
 export default function SimpleWithDescriptions() {
   return (
@@ -38,5 +38,5 @@ export default function SimpleWithDescriptions() {
         </div>
       </PopoverPanel>
     </Popover>
-  )
+  );
 }

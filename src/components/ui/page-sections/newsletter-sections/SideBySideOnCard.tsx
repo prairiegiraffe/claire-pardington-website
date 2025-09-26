@@ -61,5 +61,5 @@ export default function SideBySideOnCard() {
         </div>
       </div>
     </div>
-  )
+  );
 }

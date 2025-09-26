@@ -58,5 +58,5 @@ export default function SplitWith404Image() {
         </div>
       </div>
     </>
-  )
+  );
 }

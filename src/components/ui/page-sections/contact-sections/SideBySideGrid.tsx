@@ -132,5 +132,5 @@ export default function SideBySideGrid() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -120,5 +120,5 @@ export default function SplitWithLogosOnRight() {
         </div>
       </div>
     </div>
-  )
+  );
 }

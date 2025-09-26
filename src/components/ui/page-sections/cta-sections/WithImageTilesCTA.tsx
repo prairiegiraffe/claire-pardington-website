@@ -12,31 +12,25 @@ interface WithImageTilesCTAProps {
 }
 
 export default function WithImageTilesCTA({
-  title = "Our people",
-  subtitle = "Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem minus ut molestiae velit error quod. Excepturi quidem expedita molestias quas.",
-  description = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.",
-  ctaText = "Join our team",
-  ctaHref = "#",
-  image1Src = "https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80",
-  image2Src = "https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80",
-  image3Src = "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80",
-  image4Src = "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80",
-  className = ""
+  title = 'Our people',
+  subtitle = 'Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem minus ut molestiae velit error quod. Excepturi quidem expedita molestias quas.',
+  description = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.',
+  ctaText = 'Join our team',
+  ctaHref = '#',
+  image1Src = 'https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80',
+  image2Src = 'https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80',
+  image3Src = 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80',
+  image4Src = 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80',
+  className = '',
 }: WithImageTilesCTAProps) {
   return (
     <div className={`overflow-hidden bg-white py-32 dark:bg-gray-900 ${className}`}>
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:max-w-none lg:min-w-full lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-            <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-              {title}
-            </h2>
-            <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
-              {subtitle}
-            </p>
-            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-400">
-              {description}
-            </p>
+            <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">{title}</h2>
+            <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">{subtitle}</p>
+            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-400">{description}</p>
             <div className="mt-10 flex">
               <a
                 href={ctaHref}
@@ -82,5 +76,5 @@ export default function WithImageTilesCTA({
         </div>
       </div>
     </div>
-  )
+  );
 }

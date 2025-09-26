@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -44,10 +44,10 @@ const tiers = [
     featured: true,
     cta: 'Contact sales',
   },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function ThreeTiersWithEmphasizedTier() {
@@ -149,7 +149,7 @@ export default function ThreeTiersWithEmphasizedTier() {
                       aria-hidden="true"
                       className={classNames(
                         tier.featured ? 'text-white dark:text-indigo-400' : 'text-indigo-600 dark:text-indigo-400',
-                        'h-6 w-5 flex-none',
+                        'h-6 w-5 flex-none'
                       )}
                     />
                     {feature}
@@ -161,5 +161,5 @@ export default function ThreeTiersWithEmphasizedTier() {
         </div>
       </div>
     </form>
-  )
+  );
 }

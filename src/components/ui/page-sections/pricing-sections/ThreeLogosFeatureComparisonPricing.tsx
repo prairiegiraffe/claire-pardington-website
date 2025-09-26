@@ -1,6 +1,6 @@
-import { Fragment } from 'react'
-import { CheckIcon, MinusIcon, PlusIcon } from '@heroicons/react/16/solid'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { Fragment } from 'react';
+import { CheckIcon, MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 
 interface Tier {
   name: string;
@@ -78,7 +78,7 @@ const defaultTiers: Tier[] = [
       { description: 'Priority phone support' },
     ],
   },
-]
+];
 
 const defaultSections: Section[] = [
   {
@@ -108,7 +108,7 @@ const defaultSections: Section[] = [
       { name: '1:1 onboarding tour', tiers: { Starter: false, Growth: false, Scale: true } },
     ],
   },
-]
+];
 
 const defaultLogos = [
   { name: 'Transistor', src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-white.svg' },
@@ -116,15 +116,15 @@ const defaultLogos = [
   { name: 'Tuple', src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-white.svg' },
   { name: 'SavvyCal', src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg' },
   { name: 'Statamic', src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg' },
-]
+];
 
 export default function ThreeLogosFeatureComparisonPricing({
-  title = "Pricing that grows with your team size",
+  title = 'Pricing that grows with your team size',
   subtitle = "Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.",
   tiers = defaultTiers,
   sections = defaultSections,
   logos = defaultLogos,
-  className = ""
+  className = '',
 }: ThreeLogosFeatureComparisonPricingProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -195,12 +195,7 @@ export default function ThreeLogosFeatureComparisonPricing({
           </div>
           <div className="flex justify-between py-16 opacity-60 max-sm:mx-auto max-sm:max-w-md max-sm:flex-wrap max-sm:justify-evenly max-sm:gap-x-4 max-sm:gap-y-4 sm:py-24">
             {logos.map((logo) => (
-              <img
-                key={logo.name}
-                alt={logo.name}
-                src={logo.src}
-                className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-              />
+              <img key={logo.name} alt={logo.name} src={logo.src} className="h-9 max-sm:mx-auto sm:h-8 lg:h-12" />
             ))}
           </div>
         </div>
@@ -355,5 +350,5 @@ export default function ThreeLogosFeatureComparisonPricing({
         </TabGroup>
       </div>
     </div>
-  )
+  );
 }

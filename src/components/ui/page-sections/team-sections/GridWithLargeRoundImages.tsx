@@ -47,7 +47,7 @@ const people = [
     xUrl: '#',
     linkedinUrl: '#',
   },
-]
+];
 
 export default function GridWithLargeRoundImages() {
   return (
@@ -110,5 +110,5 @@ export default function GridWithLargeRoundImages() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

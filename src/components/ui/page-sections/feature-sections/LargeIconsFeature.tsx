@@ -1,4 +1,4 @@
-import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface Feature {
   name: string;
@@ -36,13 +36,13 @@ const defaultFeatures: Feature[] = [
     href: '#',
     icon: TrashIcon,
   },
-]
+];
 
 export default function LargeIconsFeature({
-  title = "Stay on top of customer support",
-  subtitle = "Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.",
+  title = 'Stay on top of customer support',
+  subtitle = 'Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.',
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: LargeIconsFeatureProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -51,9 +51,7 @@ export default function LargeIconsFeature({
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
             {title}
           </h2>
-          <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">{subtitle}</p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
@@ -82,5 +80,5 @@ export default function LargeIconsFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

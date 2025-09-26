@@ -1,5 +1,5 @@
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 
 const faqs = [
   {
@@ -32,7 +32,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
   },
-]
+];
 
 export default function CenteredAccordion() {
   return (
@@ -70,5 +70,5 @@ export default function CenteredAccordion() {
         </div>
       </div>
     </div>
-  )
+  );
 }

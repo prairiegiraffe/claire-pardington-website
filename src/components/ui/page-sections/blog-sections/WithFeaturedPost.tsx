@@ -1,6 +1,6 @@
 const featuredPost = {
   id: 1,
-  title: 'We\'re incredibly proud to announce we have secured $75m in Series B',
+  title: "We're incredibly proud to announce we have secured $75m in Series B",
   href: '#',
   description:
     'Libero neque aenean tincidunt nec consequat tempor. Viverra odio id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum. Velit viverra posuere vulputate volutpat nunc. Nunc netus sit faucibus.',
@@ -12,7 +12,7 @@ const featuredPost = {
     imageUrl:
       'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
-}
+};
 const posts = [
   {
     id: 2,
@@ -44,7 +44,7 @@ const posts = [
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
   },
-]
+];
 
 export default function WithFeaturedPost() {
   return (
@@ -121,5 +121,5 @@ export default function WithFeaturedPost() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { StarIcon } from '@heroicons/react/20/solid'
+import { StarIcon } from '@heroicons/react/20/solid';
 
 export default function WithStarRating() {
   return (
@@ -32,5 +32,5 @@ export default function WithStarRating() {
         </figcaption>
       </figure>
     </section>
-  )
+  );
 }

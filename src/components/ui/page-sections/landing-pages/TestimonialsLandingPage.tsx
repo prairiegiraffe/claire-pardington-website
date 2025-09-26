@@ -1,64 +1,68 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import {
   ArrowPathIcon,
   ChevronRightIcon,
   CloudArrowUpIcon,
   LockClosedIcon,
   ServerIcon,
-} from '@heroicons/react/20/solid'
+} from '@heroicons/react/20/solid';
 
 interface TestimonialsLandingPageProps {
-  navigationItems?: Array<{ name: string; href: string }>
-  companyName?: string
-  logoUrl?: string
-  logoUrlDark?: string
-  heroTitle?: string
-  heroDescription?: string
-  ctaText?: string
-  ctaSecondaryText?: string
+  navigationItems?: Array<{ name: string; href: string }>;
+  companyName?: string;
+  logoUrl?: string;
+  logoUrlDark?: string;
+  heroTitle?: string;
+  heroDescription?: string;
+  ctaText?: string;
+  ctaSecondaryText?: string;
   primaryFeatures?: Array<{
-    name: string
-    description: string
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  }>
+    name: string;
+    description: string;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  }>;
   secondaryFeatures?: Array<{
-    name: string
-    description: string
-    href: string
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  }>
+    name: string;
+    description: string;
+    href: string;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  }>;
   featuredTestimonial?: {
-    body: string
+    body: string;
     author: {
-      name: string
-      handle: string
-      imageUrl: string
-      logoUrl: string
-    }
-  }
-  testimonials?: Array<Array<Array<{
-    body: string
-    author: {
-      name: string
-      handle: string
-      imageUrl: string
-    }
-  }>>>
+      name: string;
+      handle: string;
+      imageUrl: string;
+      logoUrl: string;
+    };
+  };
+  testimonials?: Array<
+    Array<
+      Array<{
+        body: string;
+        author: {
+          name: string;
+          handle: string;
+          imageUrl: string;
+        };
+      }>
+    >
+  >;
   footerNavigation?: {
-    solutions: Array<{ name: string; href: string }>
-    support: Array<{ name: string; href: string }>
-    company: Array<{ name: string; href: string }>
-    legal: Array<{ name: string; href: string }>
+    solutions: Array<{ name: string; href: string }>;
+    support: Array<{ name: string; href: string }>;
+    company: Array<{ name: string; href: string }>;
+    legal: Array<{ name: string; href: string }>;
     social: Array<{
-      name: string
-      href: string
-      icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-    }>
-  }
+      name: string;
+      href: string;
+      icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    }>;
+  };
 }
 
 const defaultNavigationItems = [
@@ -66,7 +70,7 @@ const defaultNavigationItems = [
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 const defaultPrimaryFeatures = [
   {
@@ -84,7 +88,7 @@ const defaultPrimaryFeatures = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
     icon: ServerIcon,
   },
-]
+];
 
 const defaultSecondaryFeatures = [
   {
@@ -108,7 +112,7 @@ const defaultSecondaryFeatures = [
     href: '#',
     icon: ArrowPathIcon,
   },
-]
+];
 
 const defaultFeaturedTestimonial = {
   body: 'Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.',
@@ -119,7 +123,7 @@ const defaultFeaturedTestimonial = {
       'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
     logoUrl: 'https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg',
   },
-}
+};
 
 const defaultTestimonials = [
   [
@@ -224,7 +228,7 @@ const defaultTestimonials = [
       },
     ],
   ],
-]
+];
 
 const defaultFooterNavigation = {
   solutions: [
@@ -313,10 +317,10 @@ const defaultFooterNavigation = {
       ),
     },
   ],
-}
+};
 
 function classNames(...classes: (string | undefined | false)[]): string {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function TestimonialsLandingPage({
@@ -334,7 +338,7 @@ export default function TestimonialsLandingPage({
   testimonials = defaultTestimonials,
   footerNavigation = defaultFooterNavigation,
 }: TestimonialsLandingPageProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -344,16 +348,8 @@ export default function TestimonialsLandingPage({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{companyName}</span>
-              <img
-                alt=""
-                src={logoUrl}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt=""
-                src={logoUrlDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt="" src={logoUrl} className="h-8 w-auto dark:hidden" />
+              <img alt="" src={logoUrlDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -385,16 +381,8 @@ export default function TestimonialsLandingPage({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{companyName}</span>
-                <img
-                  alt=""
-                  src={logoUrl}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={logoUrlDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt="" src={logoUrl} className="h-8 w-auto dark:hidden" />
+                <img alt="" src={logoUrlDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -843,7 +831,7 @@ export default function TestimonialsLandingPage({
                             (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
                             ? 'xl:row-span-2'
                             : 'xl:row-start-1',
-                          'space-y-8',
+                          'space-y-8'
                         )}
                       >
                         {column.map((testimonial) => (
@@ -883,16 +871,8 @@ export default function TestimonialsLandingPage({
       <footer className="mt-32 sm:mt-56">
         <div className="mx-auto max-w-7xl border-t border-gray-200 px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32 dark:border-white/10">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
-              alt="Company name"
-              src={logoUrl}
-              className="h-9 dark:hidden"
-            />
-            <img
-              alt="Company name"
-              src={logoUrlDark}
-              className="h-9 not-dark:hidden"
-            />
+            <img alt="Company name" src={logoUrl} className="h-9 dark:hidden" />
+            <img alt="Company name" src={logoUrlDark} className="h-9 not-dark:hidden" />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
@@ -1010,5 +990,5 @@ export default function TestimonialsLandingPage({
         </div>
       </footer>
     </div>
-  )
+  );
 }

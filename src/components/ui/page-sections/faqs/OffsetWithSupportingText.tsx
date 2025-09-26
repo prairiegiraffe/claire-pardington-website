@@ -18,7 +18,7 @@ const faqs = [
     answer:
       "Because they're so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
-]
+];
 
 export default function OffsetWithSupportingText() {
   return (
@@ -53,5 +53,5 @@ export default function OffsetWithSupportingText() {
         </div>
       </div>
     </div>
-  )
+  );
 }

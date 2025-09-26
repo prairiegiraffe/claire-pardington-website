@@ -1,4 +1,4 @@
-import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -35,7 +35,7 @@ const tiers = [
     price: { monthly: '$49', annually: '$499' },
     highlights: ['Custom domains', 'Edge content delivery', 'Advanced analytics', 'Quarterly workshops'],
   },
-]
+];
 const sections = [
   {
     name: 'Features',
@@ -64,10 +64,10 @@ const sections = [
       { name: '1:1 onboarding tour', tiers: { Starter: false, Growth: false, Scale: true } },
     ],
   },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function ThreeTiersWithFeatureComparison() {
@@ -135,7 +135,7 @@ export default function ThreeTiersWithFeatureComparison() {
                   tier.featured
                     ? 'z-10 bg-white shadow-xl outline-1 outline-gray-900/10 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10'
                     : 'bg-gray-800/80 outline-1 -outline-offset-1 outline-white/10 lg:bg-transparent lg:pb-14 lg:outline-0',
-                  'group/tier relative rounded-2xl',
+                  'group/tier relative rounded-2xl'
                 )}
               >
                 <div className="p-8 lg:pt-12 xl:p-10 xl:pt-14">
@@ -211,13 +211,13 @@ export default function ThreeTiersWithFeatureComparison() {
                   <div
                     className={classNames(
                       tier.featured ? 'border-indigo-600 dark:border-indigo-500' : 'border-transparent',
-                      '-mt-px w-72 border-t-2 pt-10 md:w-80',
+                      '-mt-px w-72 border-t-2 pt-10 md:w-80'
                     )}
                   >
                     <h3
                       className={classNames(
                         tier.featured ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-900 dark:text-white',
-                        'text-sm/6 font-semibold',
+                        'text-sm/6 font-semibold'
                       )}
                     >
                       {tier.name}
@@ -241,7 +241,7 @@ export default function ThreeTiersWithFeatureComparison() {
                               tier.featured
                                 ? 'ring-2 ring-indigo-600 dark:ring-indigo-500'
                                 : 'ring-1 ring-gray-900/10 dark:ring-white/10',
-                              'relative rounded-lg bg-white shadow-xs sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 dark:bg-gray-800/50 dark:shadow-none dark:sm:bg-transparent',
+                              'relative rounded-lg bg-white shadow-xs sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 dark:bg-gray-800/50 dark:shadow-none dark:sm:bg-transparent'
                             )}
                           >
                             <dl className="divide-y divide-gray-200 text-sm/6 dark:divide-white/10">
@@ -294,7 +294,7 @@ export default function ThreeTiersWithFeatureComparison() {
                               tier.featured
                                 ? 'ring-2 ring-indigo-600 dark:ring-indigo-500'
                                 : 'ring-1 ring-gray-900/10 dark:ring-white/10',
-                              'pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block',
+                              'pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block'
                             )}
                           />
                         </div>
@@ -318,13 +318,13 @@ export default function ThreeTiersWithFeatureComparison() {
                   <div
                     className={classNames(
                       tier.featured ? 'border-indigo-600 dark:border-indigo-500' : 'border-transparent',
-                      'border-t-2 pt-10',
+                      'border-t-2 pt-10'
                     )}
                   >
                     <p
                       className={classNames(
                         tier.featured ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-900 dark:text-white',
-                        'text-sm/6 font-semibold',
+                        'text-sm/6 font-semibold'
                       )}
                     >
                       {tier.name}
@@ -384,7 +384,7 @@ export default function ThreeTiersWithFeatureComparison() {
                                         tier.featured
                                           ? 'font-semibold text-indigo-600 dark:text-indigo-400'
                                           : 'text-gray-900 dark:text-white',
-                                        'text-sm/6',
+                                        'text-sm/6'
                                       )}
                                     >
                                       {feature.tiers[tier.name]}
@@ -428,7 +428,7 @@ export default function ThreeTiersWithFeatureComparison() {
                             tier.featured
                               ? 'ring-2 ring-indigo-600 dark:ring-indigo-500'
                               : 'ring-1 ring-gray-900/10 dark:ring-white/10',
-                            'rounded-lg',
+                            'rounded-lg'
                           )}
                         />
                       ))}
@@ -441,5 +441,5 @@ export default function ThreeTiersWithFeatureComparison() {
         </div>
       </div>
     </form>
-  )
+  );
 }

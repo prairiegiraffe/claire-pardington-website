@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
+import { useState } from 'react';
 import {
   Dialog,
   DialogPanel,
@@ -11,7 +11,7 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-} from '@headlessui/react'
+} from '@headlessui/react';
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -20,8 +20,8 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+} from '@heroicons/react/24/outline';
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid';
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -29,21 +29,21 @@ const products = [
   { name: 'Security', description: 'Your customers data will be safe and secure', href: '#', icon: FingerPrintIcon },
   { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
   { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
+];
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+];
 const company = [
   { name: 'About us', href: '#' },
   { name: 'Careers', href: '#' },
   { name: 'Support', href: '#' },
   { name: 'Press', href: '#' },
   { name: 'Blog', href: '#' },
-]
+];
 
 export default function WithMultipleFlyoutMenus() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-white dark:bg-gray-900">
@@ -249,5 +249,5 @@ export default function WithMultipleFlyoutMenus() {
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }

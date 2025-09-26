@@ -1,4 +1,4 @@
-import { XMarkIcon } from '@heroicons/react/20/solid'
+import { XMarkIcon } from '@heroicons/react/20/solid';
 
 export default function BackgroundGlowBanner() {
   return (
@@ -43,5 +43,5 @@ export default function BackgroundGlowBanner() {
         </button>
       </div>
     </div>
-  )
+  );
 }

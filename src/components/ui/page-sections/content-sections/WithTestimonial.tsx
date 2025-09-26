@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 
 export default function WithTestimonial() {
   return (
@@ -121,5 +121,5 @@ export default function WithTestimonial() {
         </div>
       </div>
     </div>
-  )
+  );
 }

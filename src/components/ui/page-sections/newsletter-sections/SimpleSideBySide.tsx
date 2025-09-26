@@ -39,5 +39,5 @@ export default function SimpleSideBySide() {
         </form>
       </div>
     </div>
-  )
+  );
 }

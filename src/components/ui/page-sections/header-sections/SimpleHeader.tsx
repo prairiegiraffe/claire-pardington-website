@@ -13,5 +13,5 @@ export default function SimpleHeader() {
         </div>
       </div>
     </div>
-  )
+  );
 }

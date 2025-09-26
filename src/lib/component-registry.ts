@@ -54,8 +54,8 @@ export const COMPONENT_CATEGORIES: ComponentCategory[] = [
       { id: 'content-sections', name: 'Content Sections', description: 'General content layouts', count: 7 },
       { id: 'logo-clouds', name: 'Logo Clouds', description: 'Company logo collections', count: 6 },
       { id: 'faqs', name: 'FAQs', description: 'Frequently asked questions', count: 7 },
-      { id: 'footers', name: 'Footers', description: 'Page footers', count: 8 }
-    ]
+      { id: 'footers', name: 'Footers', description: 'Page footers', count: 8 },
+    ],
   },
   {
     id: 'elements',
@@ -67,8 +67,8 @@ export const COMPONENT_CATEGORIES: ComponentCategory[] = [
       { id: 'flyout-menus', name: 'Flyout Menus', description: 'Dropdown and flyout menus', count: 7 },
       { id: 'banners', name: 'Banners', description: 'Notification banners', count: 14 },
       { id: 'feedback', name: 'Feedback', description: 'User feedback components', count: 0 },
-      { id: '404-pages', name: '404 Pages', description: 'Error page layouts', count: 0 }
-    ]
+      { id: '404-pages', name: '404 Pages', description: 'Error page layouts', count: 0 },
+    ],
   },
   {
     id: 'page-examples',
@@ -78,8 +78,8 @@ export const COMPONENT_CATEGORIES: ComponentCategory[] = [
     subcategories: [
       { id: 'landing-pages', name: 'Landing Pages', description: 'Complete landing page templates', count: 4 },
       { id: 'pricing-pages', name: 'Pricing Pages', description: 'Pricing page templates', count: 3 },
-      { id: 'about-pages', name: 'About Pages', description: 'About page templates', count: 0 }
-    ]
+      { id: 'about-pages', name: 'About Pages', description: 'About page templates', count: 0 },
+    ],
   },
   {
     id: 'application-ui',
@@ -94,9 +94,9 @@ export const COMPONENT_CATEGORIES: ComponentCategory[] = [
       { id: 'overlays', name: 'Overlays', description: 'Modals and overlays', count: 0 },
       { id: 'lists', name: 'Lists', description: 'List components', count: 0 },
       { id: 'headings', name: 'Headings', description: 'Heading components', count: 0 },
-      { id: 'cards', name: 'Cards', description: 'Card components', count: 0 }
-    ]
-  }
+      { id: 'cards', name: 'Cards', description: 'Card components', count: 0 },
+    ],
+  },
 ];
 
 // Component Registry - This will hold all your components
@@ -112,7 +112,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/heroes/SimpleHero.tsx'
+    filePath: 'src/components/ui/heroes/SimpleHero.tsx',
   },
   {
     id: 'split-hero',
@@ -124,7 +124,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/heroes/SplitHero.tsx'
+    filePath: 'src/components/ui/heroes/SplitHero.tsx',
   },
   {
     id: 'simple-pricing',
@@ -136,7 +136,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/pricing/SimplePricing.tsx'
+    filePath: 'src/components/ui/pricing/SimplePricing.tsx',
   },
   {
     id: 'navigation-hero',
@@ -148,7 +148,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/NavigationHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/NavigationHero.tsx',
   },
   {
     id: 'product-hero',
@@ -160,7 +160,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/ProductHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/ProductHero.tsx',
   },
   {
     id: 'app-hero',
@@ -172,7 +172,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/AppHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/AppHero.tsx',
   },
   {
     id: 'split-code-hero',
@@ -184,7 +184,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/SplitCodeHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/SplitCodeHero.tsx',
   },
   {
     id: 'background-image-hero',
@@ -196,7 +196,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/BackgroundImageHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/BackgroundImageHero.tsx',
   },
   {
     id: 'bordered-screenshot-hero',
@@ -208,7 +208,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/BorderedScreenshotHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/BorderedScreenshotHero.tsx',
   },
   {
     id: 'app-screenshot-hero',
@@ -220,7 +220,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/AppScreenshotHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/AppScreenshotHero.tsx',
   },
   {
     id: 'phone-mockup-hero',
@@ -232,7 +232,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/PhoneMockupHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/PhoneMockupHero.tsx',
   },
   {
     id: 'split-image-hero',
@@ -244,7 +244,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/SplitImageHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/SplitImageHero.tsx',
   },
   {
     id: 'angled-image-hero',
@@ -256,7 +256,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/AngledImageHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/AngledImageHero.tsx',
   },
   {
     id: 'image-tiles-hero',
@@ -268,7 +268,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/ImageTilesHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/ImageTilesHero.tsx',
   },
   {
     id: 'offset-image-hero',
@@ -280,7 +280,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/hero-sections/OffsetImageHero.tsx'
+    filePath: 'src/components/ui/page-sections/hero-sections/OffsetImageHero.tsx',
   },
   {
     id: 'product-screenshot-feature',
@@ -292,7 +292,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/ProductScreenshotFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/ProductScreenshotFeature.tsx',
   },
   {
     id: 'large-screenshot-feature',
@@ -304,7 +304,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/LargeScreenshotFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/LargeScreenshotFeature.tsx',
   },
   {
     id: 'bordered-screenshot-feature',
@@ -316,7 +316,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/BorderedScreenshotFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/BorderedScreenshotFeature.tsx',
   },
   {
     id: 'simple-three-column-feature',
@@ -328,7 +328,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/SimpleThreeColumnFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/SimpleThreeColumnFeature.tsx',
   },
   {
     id: 'screenshot-left-feature',
@@ -340,7 +340,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/ScreenshotLeftFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/ScreenshotLeftFeature.tsx',
   },
   {
     id: 'large-icons-feature',
@@ -352,7 +352,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/LargeIconsFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/LargeIconsFeature.tsx',
   },
   {
     id: 'contained-panel-feature',
@@ -364,7 +364,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/ContainedPanelFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/ContainedPanelFeature.tsx',
   },
   {
     id: 'screenshot-panel-feature',
@@ -376,7 +376,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/ScreenshotPanelFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/ScreenshotPanelFeature.tsx',
   },
   {
     id: 'testimonial-feature',
@@ -388,7 +388,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/TestimonialFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/TestimonialFeature.tsx',
   },
   {
     id: 'code-example-panel-feature',
@@ -400,7 +400,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/CodeExamplePanelFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/CodeExamplePanelFeature.tsx',
   },
   {
     id: 'offset-feature-list-feature',
@@ -412,7 +412,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/OffsetFeatureListFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/OffsetFeatureListFeature.tsx',
   },
   {
     id: 'simple-feature-list-feature',
@@ -424,7 +424,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/SimpleFeatureListFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/SimpleFeatureListFeature.tsx',
   },
   {
     id: 'centered-2x2-grid-feature',
@@ -436,7 +436,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/Centered2x2GridFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/Centered2x2GridFeature.tsx',
   },
   {
     id: 'simple-3x2-grid-feature',
@@ -448,7 +448,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/feature-sections/Simple3x2GridFeature.tsx'
+    filePath: 'src/components/ui/page-sections/feature-sections/Simple3x2GridFeature.tsx',
   },
   {
     id: 'dark-panel-app-screenshot-cta',
@@ -460,7 +460,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/DarkPanelAppScreenshotCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/DarkPanelAppScreenshotCTA.tsx',
   },
   {
     id: 'simple-stacked-cta',
@@ -472,7 +472,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/SimpleStackedCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SimpleStackedCTA.tsx',
   },
   {
     id: 'centered-dark-panel-cta',
@@ -484,7 +484,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/CenteredDarkPanelCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/CenteredDarkPanelCTA.tsx',
   },
   {
     id: 'simple-centered-cta',
@@ -496,7 +496,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/SimpleCenteredCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SimpleCenteredCTA.tsx',
   },
   {
     id: 'simple-centered-gradient-cta',
@@ -508,7 +508,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/SimpleCenteredGradientCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SimpleCenteredGradientCTA.tsx',
   },
   {
     id: 'simple-centered-on-brand-cta',
@@ -520,7 +520,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: false,
-    filePath: 'src/components/ui/page-sections/cta-sections/SimpleCenteredOnBrandCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SimpleCenteredOnBrandCTA.tsx',
   },
   {
     id: 'simple-justified-cta',
@@ -532,7 +532,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/SimpleJustifiedCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SimpleJustifiedCTA.tsx',
   },
   {
     id: 'simple-justified-on-subtle-brand-cta',
@@ -544,7 +544,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/SimpleJustifiedOnSubtleBrandCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SimpleJustifiedOnSubtleBrandCTA.tsx',
   },
   {
     id: 'split-with-image-cta',
@@ -556,7 +556,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/SplitWithImageCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/SplitWithImageCTA.tsx',
   },
   {
     id: 'two-columns-with-photo-cta',
@@ -569,7 +569,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/cta-sections/TwoColumnsWithPhotoCTA.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'with-image-tiles-cta',
@@ -581,7 +581,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/cta-sections/WithImageTilesCTA.tsx'
+    filePath: 'src/components/ui/page-sections/cta-sections/WithImageTilesCTA.tsx',
   },
   {
     id: 'three-column-bento-grid',
@@ -593,7 +593,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/bento-grids/ThreeColumnBentoGrid.tsx'
+    filePath: 'src/components/ui/page-sections/bento-grids/ThreeColumnBentoGrid.tsx',
   },
   {
     id: 'two-row-bento-grid',
@@ -605,19 +605,20 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/bento-grids/TwoRowBentoGrid.tsx'
+    filePath: 'src/components/ui/page-sections/bento-grids/TwoRowBentoGrid.tsx',
   },
   {
     id: 'two-row-three-column-bento-grid',
     name: 'Two Row Three Column Bento Grid',
-    description: 'Complex bento grid with two rows and three-column bottom section featuring performance, releases, speed, integrations, and network',
+    description:
+      'Complex bento grid with two rows and three-column bottom section featuring performance, releases, speed, integrations, and network',
     category: 'page-sections',
     subcategory: 'bento-grids',
     tags: ['bento', 'grid', 'two-row', 'three-column', 'performance', 'releases', 'speed', 'integrations', 'network'],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/bento-grids/TwoRowThreeColumnBentoGrid.tsx'
+    filePath: 'src/components/ui/page-sections/bento-grids/TwoRowThreeColumnBentoGrid.tsx',
   },
   {
     id: 'two-tiers-emphasized-right-pricing',
@@ -630,7 +631,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/TwoTiersEmphasizedRightPricing.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'two-tiers-emphasized-left-pricing',
@@ -643,12 +644,13 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/TwoTiersEmphasizedLeftPricing.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'three-logos-feature-comparison-pricing',
     name: 'Three Logos Feature Comparison Pricing',
-    description: 'Comprehensive three-tier pricing with company logos, detailed feature comparison table, and mobile tabs',
+    description:
+      'Comprehensive three-tier pricing with company logos, detailed feature comparison table, and mobile tabs',
     category: 'page-sections',
     subcategory: 'pricing-sections',
     tags: ['pricing', 'three-tier', 'logos', 'feature-comparison', 'table', 'tabs', 'comprehensive', 'radial-gradient'],
@@ -656,7 +658,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/ThreeLogosFeatureComparisonPricing.tsx',
-    dependencies: ['@heroicons/react/16/solid', '@headlessui/react']
+    dependencies: ['@heroicons/react/16/solid', '@headlessui/react'],
   },
   {
     id: 'two-tiers-with-extra-tier',
@@ -669,7 +671,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/TwoTiersWithExtraTier.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'single-price-with-details',
@@ -682,7 +684,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/SinglePriceWithDetails.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'three-tiers-pricing',
@@ -695,7 +697,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/ThreeTiersPricing.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'three-tiers-with-dividers',
@@ -708,7 +710,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/ThreeTiersWithDividers.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'three-tiers-with-emphasized-tier',
@@ -721,7 +723,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/ThreeTiersWithEmphasizedTier.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'three-tiers-with-toggle',
@@ -734,7 +736,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/ThreeTiersWithToggle.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'four-tiers-with-toggle',
@@ -747,7 +749,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/FourTiersWithToggle.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'with-comparison-table',
@@ -760,12 +762,13 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/WithComparisonTable.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'three-tiers-with-feature-comparison',
     name: 'Three Tiers With Feature Comparison',
-    description: 'Advanced three-tier pricing with dark hero section, frequency toggle, and comprehensive feature comparison table',
+    description:
+      'Advanced three-tier pricing with dark hero section, frequency toggle, and comprehensive feature comparison table',
     category: 'page-sections',
     subcategory: 'pricing-sections',
     tags: ['pricing', 'three-tier', 'feature-comparison', 'dark-hero', 'gradient', 'toggle', 'advanced'],
@@ -773,7 +776,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/pricing-sections/ThreeTiersWithFeatureComparison.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'header-with-stats',
@@ -785,7 +788,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/HeaderWithStats.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/HeaderWithStats.tsx',
   },
   {
     id: 'centered-header',
@@ -797,7 +800,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/CenteredHeader.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/CenteredHeader.tsx',
   },
   {
     id: 'centered-with-eyebrow-header',
@@ -809,7 +812,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/CenteredWithEyebrowHeader.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/CenteredWithEyebrowHeader.tsx',
   },
   {
     id: 'header-with-cards',
@@ -822,7 +825,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/header-sections/HeaderWithCards.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'simple-header',
@@ -834,7 +837,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/SimpleHeader.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/SimpleHeader.tsx',
   },
   {
     id: 'simple-with-eyebrow-header',
@@ -846,7 +849,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/SimpleWithEyebrowHeader.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/SimpleWithEyebrowHeader.tsx',
   },
   {
     id: 'simple-with-background-image-header',
@@ -858,7 +861,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/SimpleWithBackgroundImageHeader.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/SimpleWithBackgroundImageHeader.tsx',
   },
   {
     id: 'centered-with-background-image-header',
@@ -870,7 +873,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/header-sections/CenteredWithBackgroundImageHeader.tsx'
+    filePath: 'src/components/ui/page-sections/header-sections/CenteredWithBackgroundImageHeader.tsx',
   },
   {
     id: 'side-by-side-with-details',
@@ -883,7 +886,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/newsletter-sections/SideBySideWithDetails.tsx',
-    dependencies: ['@heroicons/react/24/outline']
+    dependencies: ['@heroicons/react/24/outline'],
   },
   {
     id: 'simple-side-by-side',
@@ -895,7 +898,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/newsletter-sections/SimpleSideBySide.tsx'
+    filePath: 'src/components/ui/page-sections/newsletter-sections/SimpleSideBySide.tsx',
   },
   {
     id: 'simple-side-by-side-on-brand',
@@ -907,7 +910,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/newsletter-sections/SimpleSideBySideOnBrand.tsx'
+    filePath: 'src/components/ui/page-sections/newsletter-sections/SimpleSideBySideOnBrand.tsx',
   },
   {
     id: 'simple-stacked',
@@ -919,7 +922,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/newsletter-sections/SimpleStacked.tsx'
+    filePath: 'src/components/ui/page-sections/newsletter-sections/SimpleStacked.tsx',
   },
   {
     id: 'centered-card',
@@ -931,7 +934,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/newsletter-sections/CenteredCard.tsx'
+    filePath: 'src/components/ui/page-sections/newsletter-sections/CenteredCard.tsx',
   },
   {
     id: 'side-by-side-on-card',
@@ -943,7 +946,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/newsletter-sections/SideBySideOnCard.tsx'
+    filePath: 'src/components/ui/page-sections/newsletter-sections/SideBySideOnCard.tsx',
   },
   {
     id: 'simple-stats',
@@ -955,7 +958,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/Simple.tsx'
+    filePath: 'src/components/ui/page-sections/stats/Simple.tsx',
   },
   {
     id: 'simple-grid-stats',
@@ -967,7 +970,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/SimpleGrid.tsx'
+    filePath: 'src/components/ui/page-sections/stats/SimpleGrid.tsx',
   },
   {
     id: 'with-background-image-stats',
@@ -979,7 +982,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/WithBackgroundImage.tsx'
+    filePath: 'src/components/ui/page-sections/stats/WithBackgroundImage.tsx',
   },
   {
     id: 'split-with-image-stats',
@@ -991,7 +994,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/SplitWithImage.tsx'
+    filePath: 'src/components/ui/page-sections/stats/SplitWithImage.tsx',
   },
   {
     id: 'timeline-stats',
@@ -1003,7 +1006,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/Timeline.tsx'
+    filePath: 'src/components/ui/page-sections/stats/Timeline.tsx',
   },
   {
     id: 'stepped-stats',
@@ -1015,7 +1018,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/Stepped.tsx'
+    filePath: 'src/components/ui/page-sections/stats/Stepped.tsx',
   },
   {
     id: 'with-two-column-description-stats',
@@ -1027,7 +1030,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/WithTwoColumnDescription.tsx'
+    filePath: 'src/components/ui/page-sections/stats/WithTwoColumnDescription.tsx',
   },
   {
     id: 'with-description-stats',
@@ -1039,7 +1042,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/stats/WithDescription.tsx'
+    filePath: 'src/components/ui/page-sections/stats/WithDescription.tsx',
   },
   {
     id: 'simple-centered-testimonial',
@@ -1051,7 +1054,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/SimpleCentered.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/SimpleCentered.tsx',
   },
   {
     id: 'with-large-avatar-testimonial',
@@ -1063,7 +1066,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/WithLargeAvatar.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/WithLargeAvatar.tsx',
   },
   {
     id: 'with-overlapping-image-testimonial',
@@ -1075,7 +1078,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/WithOverlappingImage.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/WithOverlappingImage.tsx',
   },
   {
     id: 'with-background-image-testimonial',
@@ -1087,7 +1090,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/WithBackgroundImage.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/WithBackgroundImage.tsx',
   },
   {
     id: 'side-by-side-testimonial',
@@ -1099,7 +1102,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/SideBySide.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/SideBySide.tsx',
   },
   {
     id: 'with-star-rating-testimonial',
@@ -1112,7 +1115,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/testimonials/WithStarRating.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'grid-testimonial',
@@ -1124,7 +1127,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/Grid.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/Grid.tsx',
   },
   {
     id: 'subtle-grid-testimonial',
@@ -1136,7 +1139,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/testimonials/SubtleGrid.tsx'
+    filePath: 'src/components/ui/page-sections/testimonials/SubtleGrid.tsx',
   },
   {
     id: 'three-column-blog',
@@ -1148,7 +1151,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/ThreeColumn.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/ThreeColumn.tsx',
   },
   {
     id: 'three-column-with-images-blog',
@@ -1160,7 +1163,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/ThreeColumnWithImages.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/ThreeColumnWithImages.tsx',
   },
   {
     id: 'three-column-with-background-images-blog',
@@ -1172,7 +1175,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/ThreeColumnWithBackgroundImages.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/ThreeColumnWithBackgroundImages.tsx',
   },
   {
     id: 'single-column-blog',
@@ -1184,7 +1187,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/SingleColumn.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/SingleColumn.tsx',
   },
   {
     id: 'single-column-with-images-blog',
@@ -1196,7 +1199,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/SingleColumnWithImages.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/SingleColumnWithImages.tsx',
   },
   {
     id: 'with-featured-post-blog',
@@ -1208,7 +1211,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/WithFeaturedPost.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/WithFeaturedPost.tsx',
   },
   {
     id: 'with-photo-and-list-blog',
@@ -1220,7 +1223,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/blog-sections/WithPhotoAndList.tsx'
+    filePath: 'src/components/ui/page-sections/blog-sections/WithPhotoAndList.tsx',
   },
   {
     id: 'contact-form-with-gradient',
@@ -1233,7 +1236,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/contact-sections/ContactFormWithGradient.tsx',
-    dependencies: ['@heroicons/react/16/solid']
+    dependencies: ['@heroicons/react/16/solid'],
   },
   {
     id: 'side-by-side-grid',
@@ -1245,7 +1248,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/contact-sections/SideBySideGrid.tsx'
+    filePath: 'src/components/ui/page-sections/contact-sections/SideBySideGrid.tsx',
   },
   {
     id: 'split-with-pattern',
@@ -1258,7 +1261,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/contact-sections/SplitWithPattern.tsx',
-    dependencies: ['@heroicons/react/24/outline']
+    dependencies: ['@heroicons/react/24/outline'],
   },
   {
     id: 'simple-four-column',
@@ -1270,7 +1273,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/contact-sections/SimpleFourColumn.tsx'
+    filePath: 'src/components/ui/page-sections/contact-sections/SimpleFourColumn.tsx',
   },
   {
     id: 'simple-centered',
@@ -1283,7 +1286,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/contact-sections/SimpleCentered.tsx',
-    dependencies: ['@heroicons/react/24/outline']
+    dependencies: ['@heroicons/react/24/outline'],
   },
   {
     id: 'with-testimonial',
@@ -1295,7 +1298,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/contact-sections/WithTestimonial.tsx'
+    filePath: 'src/components/ui/page-sections/contact-sections/WithTestimonial.tsx',
   },
   {
     id: 'split-with-image',
@@ -1307,7 +1310,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/contact-sections/SplitWithImage.tsx'
+    filePath: 'src/components/ui/page-sections/contact-sections/SplitWithImage.tsx',
   },
   {
     id: 'team-with-small-images',
@@ -1319,7 +1322,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/WithSmallImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/WithSmallImages.tsx',
   },
   {
     id: 'team-with-large-images',
@@ -1331,7 +1334,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/WithLargeImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/WithLargeImages.tsx',
   },
   {
     id: 'team-grid-with-round-images',
@@ -1343,7 +1346,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/GridWithRoundImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/GridWithRoundImages.tsx',
   },
   {
     id: 'team-large-grid-with-cards',
@@ -1355,7 +1358,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/LargeGridWithCards.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/LargeGridWithCards.tsx',
   },
   {
     id: 'team-with-image-and-paragraph',
@@ -1367,7 +1370,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/WithImageAndParagraph.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/WithImageAndParagraph.tsx',
   },
   {
     id: 'team-with-vertical-images',
@@ -1379,7 +1382,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/WithVerticalImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/WithVerticalImages.tsx',
   },
   {
     id: 'team-full-width-with-vertical-images',
@@ -1391,7 +1394,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/FullWidthWithVerticalImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/FullWidthWithVerticalImages.tsx',
   },
   {
     id: 'team-grid-with-large-round-images',
@@ -1403,7 +1406,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/GridWithLargeRoundImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/GridWithLargeRoundImages.tsx',
   },
   {
     id: 'team-with-medium-images',
@@ -1415,7 +1418,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/team-sections/WithMediumImages.tsx'
+    filePath: 'src/components/ui/page-sections/team-sections/WithMediumImages.tsx',
   },
   {
     id: 'with-sticky-product-screenshot',
@@ -1428,7 +1431,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/content-sections/WithStickyProductScreenshot.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'with-testimonial',
@@ -1441,7 +1444,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/content-sections/WithTestimonial.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'with-image-titles',
@@ -1453,7 +1456,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/content-sections/WithImageTitles.tsx'
+    filePath: 'src/components/ui/page-sections/content-sections/WithImageTitles.tsx',
   },
   {
     id: 'two-columns-with-screenshot',
@@ -1465,7 +1468,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/content-sections/TwoColumnsWithScreenshot.tsx'
+    filePath: 'src/components/ui/page-sections/content-sections/TwoColumnsWithScreenshot.tsx',
   },
   {
     id: 'with-testimonial-and-stats',
@@ -1477,7 +1480,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'complex',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/content-sections/WithTestimonialAndStats.tsx'
+    filePath: 'src/components/ui/page-sections/content-sections/WithTestimonialAndStats.tsx',
   },
   {
     id: 'split-with-image',
@@ -1490,7 +1493,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/content-sections/SplitWithImage.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'centered',
@@ -1503,7 +1506,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/content-sections/Centered.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'simple-with-heading-logo-cloud',
@@ -1515,7 +1518,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/logo-clouds/SimpleWithHeading.tsx'
+    filePath: 'src/components/ui/page-sections/logo-clouds/SimpleWithHeading.tsx',
   },
   {
     id: 'simple-with-call-to-action-logo-cloud',
@@ -1527,7 +1530,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/logo-clouds/SimpleWithCallToAction.tsx'
+    filePath: 'src/components/ui/page-sections/logo-clouds/SimpleWithCallToAction.tsx',
   },
   {
     id: 'simple-left-aligned-logo-cloud',
@@ -1539,7 +1542,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/logo-clouds/SimpleLeftAligned.tsx'
+    filePath: 'src/components/ui/page-sections/logo-clouds/SimpleLeftAligned.tsx',
   },
   {
     id: 'split-with-logos-on-right-logo-cloud',
@@ -1551,7 +1554,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/logo-clouds/SplitWithLogosOnRight.tsx'
+    filePath: 'src/components/ui/page-sections/logo-clouds/SplitWithLogosOnRight.tsx',
   },
   {
     id: 'simple-logo-cloud',
@@ -1563,7 +1566,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/logo-clouds/Simple.tsx'
+    filePath: 'src/components/ui/page-sections/logo-clouds/Simple.tsx',
   },
   {
     id: 'grid-logo-cloud',
@@ -1575,7 +1578,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/logo-clouds/Grid.tsx'
+    filePath: 'src/components/ui/page-sections/logo-clouds/Grid.tsx',
   },
   {
     id: 'offset-with-supporting-text-faq',
@@ -1587,7 +1590,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/faqs/OffsetWithSupportingText.tsx'
+    filePath: 'src/components/ui/page-sections/faqs/OffsetWithSupportingText.tsx',
   },
   {
     id: 'centered-accordion-faq',
@@ -1600,7 +1603,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/faqs/CenteredAccordion.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'side-by-side-faq',
@@ -1612,7 +1615,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/faqs/SideBySide.tsx'
+    filePath: 'src/components/ui/page-sections/faqs/SideBySide.tsx',
   },
   {
     id: 'three-columns-faq',
@@ -1624,7 +1627,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/faqs/ThreeColumns.tsx'
+    filePath: 'src/components/ui/page-sections/faqs/ThreeColumns.tsx',
   },
   {
     id: 'three-columns-centered-intro-faq',
@@ -1636,7 +1639,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/faqs/ThreeColumnsWithCenteredIntroduction.tsx'
+    filePath: 'src/components/ui/page-sections/faqs/ThreeColumnsWithCenteredIntroduction.tsx',
   },
   {
     id: 'two-columns-faq',
@@ -1648,7 +1651,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/faqs/TwoColumns.tsx'
+    filePath: 'src/components/ui/page-sections/faqs/TwoColumns.tsx',
   },
   {
     id: 'two-columns-centered-intro-faq',
@@ -1660,7 +1663,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/faqs/TwoColumnsWithCenteredIntroduction.tsx'
+    filePath: 'src/components/ui/page-sections/faqs/TwoColumnsWithCenteredIntroduction.tsx',
   },
   {
     id: 'four-column-with-company-mission',
@@ -1672,7 +1675,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/FourColumnWithCompanyMission.tsx'
+    filePath: 'src/components/ui/page-sections/footers/FourColumnWithCompanyMission.tsx',
   },
   {
     id: 'four-column-with-call-to-action',
@@ -1684,7 +1687,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/FourColumnWithCallToAction.tsx'
+    filePath: 'src/components/ui/page-sections/footers/FourColumnWithCallToAction.tsx',
   },
   {
     id: 'four-column-simple',
@@ -1696,7 +1699,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/FourColumnSimple.tsx'
+    filePath: 'src/components/ui/page-sections/footers/FourColumnSimple.tsx',
   },
   {
     id: 'four-column-with-newsletter',
@@ -1708,7 +1711,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/FourColumnWithNewsletter.tsx'
+    filePath: 'src/components/ui/page-sections/footers/FourColumnWithNewsletter.tsx',
   },
   {
     id: 'four-column-with-newsletter-below',
@@ -1720,7 +1723,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/FourColumnWithNewsletterBelow.tsx'
+    filePath: 'src/components/ui/page-sections/footers/FourColumnWithNewsletterBelow.tsx',
   },
   {
     id: 'simple-centered',
@@ -1732,7 +1735,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/SimpleCentered.tsx'
+    filePath: 'src/components/ui/page-sections/footers/SimpleCentered.tsx',
   },
   {
     id: 'simple-with-social-links',
@@ -1744,7 +1747,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/footers/SimpleWithSocialLinks.tsx'
+    filePath: 'src/components/ui/page-sections/footers/SimpleWithSocialLinks.tsx',
   },
   {
     id: 'with-stacked-flyout-menu',
@@ -1757,7 +1760,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithStackedFlyoutMenu.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid'],
   },
   {
     id: 'constrained-header',
@@ -1770,7 +1773,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/Constrained.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'on-brand-background-header',
@@ -1783,7 +1786,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/OnBrandBackground.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'with-full-width-flyout-menu',
@@ -1796,7 +1799,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithFullWidthFlyoutMenu.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid'],
   },
   {
     id: 'full-width-header',
@@ -1809,7 +1812,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/FullWidth.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'with-call-to-action-header',
@@ -1822,7 +1825,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithCallToAction.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'with-multiple-flyout-menus',
@@ -1835,7 +1838,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithMultipleFlyoutMenus.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid'],
   },
   {
     id: 'with-icons-in-mobile-menu',
@@ -1848,7 +1851,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithIconsInMobileMenu.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline', '@heroicons/react/20/solid'],
   },
   {
     id: 'with-left-aligned-nav',
@@ -1861,7 +1864,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithLeftAlignedNav.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'with-right-aligned-nav',
@@ -1874,7 +1877,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithRightAlignedNav.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'with-centered-logo',
@@ -1887,7 +1890,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/headers/WithCenteredLogo.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'stacked-with-footer-actions',
@@ -1900,7 +1903,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/StackedWithFooterActions.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'full-width-two-columns',
@@ -1913,7 +1916,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/FullWidthTwoColumns.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'stacked-with-footer-list',
@@ -1926,7 +1929,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/StackedWithFooterList.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'full-width',
@@ -1939,7 +1942,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/FullWidth.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'simple-with-descriptions',
@@ -1952,7 +1955,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/SimpleWithDescriptions.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid'],
   },
   {
     id: 'two-column',
@@ -1965,7 +1968,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/TwoColumn.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'simple',
@@ -1978,7 +1981,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/elements/flyout-menus/Simple.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid'],
   },
 
   // Banner Components
@@ -1993,7 +1996,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/ButtonBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'dark-banner',
@@ -2006,7 +2009,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/DarkBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'brand-banner',
@@ -2019,7 +2022,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/BrandBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'background-glow-banner',
@@ -2032,7 +2035,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/BackgroundGlowBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'link-banner',
@@ -2045,7 +2048,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/LinkBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'left-aligned-banner',
@@ -2058,7 +2061,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/LeftAlignedBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'bottom-aligned-banner',
@@ -2071,7 +2074,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/BottomAlignedBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'floating-bottom-banner',
@@ -2084,7 +2087,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/FloatingBottomBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'floating-centered-banner',
@@ -2097,7 +2100,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/banners/FloatingCenteredBanner.tsx',
-    dependencies: ['@heroicons/react/20/solid']
+    dependencies: ['@heroicons/react/20/solid'],
   },
   {
     id: 'privacy-right-aligned-banner',
@@ -2109,7 +2112,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/banners/PrivacyRightAlignedBanner.tsx'
+    filePath: 'src/components/ui/page-sections/banners/PrivacyRightAlignedBanner.tsx',
   },
   {
     id: 'privacy-centered-banner',
@@ -2121,7 +2124,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/banners/PrivacyCenteredBanner.tsx'
+    filePath: 'src/components/ui/page-sections/banners/PrivacyCenteredBanner.tsx',
   },
   {
     id: 'privacy-left-aligned-banner',
@@ -2133,7 +2136,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/banners/PrivacyLeftAlignedBanner.tsx'
+    filePath: 'src/components/ui/page-sections/banners/PrivacyLeftAlignedBanner.tsx',
   },
   {
     id: 'privacy-full-width-banner',
@@ -2145,7 +2148,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/banners/PrivacyFullWidthBanner.tsx'
+    filePath: 'src/components/ui/page-sections/banners/PrivacyFullWidthBanner.tsx',
   },
   // 404 Pages
   {
@@ -2158,7 +2161,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'simple',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/404-pages/Simple404.tsx'
+    filePath: 'src/components/ui/page-sections/404-pages/Simple404.tsx',
   },
   {
     id: 'split-with-404-image',
@@ -2170,7 +2173,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/404-pages/SplitWith404Image.tsx'
+    filePath: 'src/components/ui/page-sections/404-pages/SplitWith404Image.tsx',
   },
   {
     id: 'with-popular-pages-404',
@@ -2183,7 +2186,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/404-pages/WithPopularPages404.tsx',
-    dependencies: ['@heroicons/react/20/solid', '@heroicons/react/24/solid']
+    dependencies: ['@heroicons/react/20/solid', '@heroicons/react/24/solid'],
   },
   {
     id: 'with-background-image-404',
@@ -2195,7 +2198,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/page-sections/404-pages/WithBackgroundImage404.tsx'
+    filePath: 'src/components/ui/page-sections/404-pages/WithBackgroundImage404.tsx',
   },
   {
     id: 'with-navbar-and-footer-404',
@@ -2208,7 +2211,7 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/404-pages/WithNavbarAndFooter404.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/24/outline'],
   },
   {
     id: 'complete-landing-page',
@@ -2216,12 +2219,26 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Full-featured landing page with hero, features, stats, CTA, and footer sections',
     category: 'page-examples',
     subcategory: 'landing-pages',
-    tags: ['landing-page', 'complete', 'hero', 'features', 'stats', 'cta', 'footer', 'logo-cloud', 'testimonials', 'gradient', 'responsive', 'dark-mode', 'full-page'],
+    tags: [
+      'landing-page',
+      'complete',
+      'hero',
+      'features',
+      'stats',
+      'cta',
+      'footer',
+      'logo-cloud',
+      'testimonials',
+      'gradient',
+      'responsive',
+      'dark-mode',
+      'full-page',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/landing-pages/CompleteLandingPage.tsx',
-    dependencies: ['@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'navigation-landing-page',
@@ -2229,12 +2246,27 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Complete landing page with navigation, hero, features, testimonials, pricing, FAQs, and footer',
     category: 'page-examples',
     subcategory: 'landing-pages',
-    tags: ['landing-page', 'navigation', 'complete', 'hero', 'features', 'testimonials', 'pricing', 'faqs', 'footer', 'mobile-menu', 'gradient', 'responsive', 'dark-mode', 'full-page'],
+    tags: [
+      'landing-page',
+      'navigation',
+      'complete',
+      'hero',
+      'features',
+      'testimonials',
+      'pricing',
+      'faqs',
+      'footer',
+      'mobile-menu',
+      'gradient',
+      'responsive',
+      'dark-mode',
+      'full-page',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/landing-pages/NavigationLandingPage.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'background-image-landing-page',
@@ -2242,12 +2274,29 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Landing page with background image hero, collapsible FAQs, and side-by-side pricing',
     category: 'page-examples',
     subcategory: 'landing-pages',
-    tags: ['landing-page', 'background-image', 'navigation', 'hero', 'features', 'testimonial', 'pricing', 'faq', 'collapsible', 'disclosure', 'footer', 'mobile-menu', 'gradient', 'responsive', 'dark-mode', 'full-page'],
+    tags: [
+      'landing-page',
+      'background-image',
+      'navigation',
+      'hero',
+      'features',
+      'testimonial',
+      'pricing',
+      'faq',
+      'collapsible',
+      'disclosure',
+      'footer',
+      'mobile-menu',
+      'gradient',
+      'responsive',
+      'dark-mode',
+      'full-page',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/landing-pages/BackgroundImageLandingPage.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'testimonials-landing-page',
@@ -2255,12 +2304,28 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Complete landing page with navigation, hero, testimonials grid, features, newsletter, and footer',
     category: 'page-examples',
     subcategory: 'landing-pages',
-    tags: ['landing-page', 'testimonials', 'navigation', 'complete', 'hero', 'features', 'newsletter', 'footer', 'mobile-menu', 'gradient', 'responsive', 'dark-mode', 'full-page', 'logo-cloud', 'app-screenshot'],
+    tags: [
+      'landing-page',
+      'testimonials',
+      'navigation',
+      'complete',
+      'hero',
+      'features',
+      'newsletter',
+      'footer',
+      'mobile-menu',
+      'gradient',
+      'responsive',
+      'dark-mode',
+      'full-page',
+      'logo-cloud',
+      'app-screenshot',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-sections/landing-pages/TestimonialsLandingPage.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'complete-with-faqs-pricing-page',
@@ -2268,12 +2333,27 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Complete pricing page with navigation, pricing tiers, logo cloud, testimonial, FAQs, and footer',
     category: 'page-examples',
     subcategory: 'pricing-pages',
-    tags: ['pricing-page', 'complete', 'navigation', 'pricing', 'faqs', 'testimonial', 'logo-cloud', 'footer', 'mobile-menu', 'toggle', 'four-tier', 'responsive', 'dark-mode', 'full-page'],
+    tags: [
+      'pricing-page',
+      'complete',
+      'navigation',
+      'pricing',
+      'faqs',
+      'testimonial',
+      'logo-cloud',
+      'footer',
+      'mobile-menu',
+      'toggle',
+      'four-tier',
+      'responsive',
+      'dark-mode',
+      'full-page',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-examples/pricing-pages/CompleteWithFAQsPricingPage.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'comparison-table-pricing-page',
@@ -2281,12 +2361,27 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Advanced pricing page with detailed feature comparison table, dark header, and gradient backgrounds',
     category: 'page-examples',
     subcategory: 'pricing-pages',
-    tags: ['pricing-page', 'comparison-table', 'feature-comparison', 'navigation', 'dark-header', 'gradient', 'three-tier', 'faqs', 'footer', 'mobile-responsive', 'social-links', 'responsive', 'dark-mode', 'full-page'],
+    tags: [
+      'pricing-page',
+      'comparison-table',
+      'feature-comparison',
+      'navigation',
+      'dark-header',
+      'gradient',
+      'three-tier',
+      'faqs',
+      'footer',
+      'mobile-responsive',
+      'social-links',
+      'responsive',
+      'dark-mode',
+      'full-page',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-examples/pricing-pages/ComparisonTablePricingPage.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
   },
   {
     id: 'testimonials-with-newsletter-pricing-page',
@@ -2294,45 +2389,59 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     description: 'Clean pricing page with testimonials grid, newsletter signup, and minimal navigation',
     category: 'page-examples',
     subcategory: 'pricing-pages',
-    tags: ['pricing-page', 'testimonials', 'newsletter', 'navigation', 'three-tier', 'clean-design', 'minimal', 'footer', 'social-links', 'responsive', 'dark-mode', 'full-page'],
+    tags: [
+      'pricing-page',
+      'testimonials',
+      'newsletter',
+      'navigation',
+      'three-tier',
+      'clean-design',
+      'minimal',
+      'footer',
+      'social-links',
+      'responsive',
+      'dark-mode',
+      'full-page',
+    ],
     complexity: 'complex',
     responsive: true,
     darkMode: true,
     filePath: 'src/components/ui/page-examples/pricing-pages/TestimonialsWithNewsletterPricingPage.tsx',
-    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline']
-  }
+    dependencies: ['@headlessui/react', '@heroicons/react/20/solid', '@heroicons/react/24/outline'],
+  },
   // More components will be added here as you import them from Tailwind UI Plus
 ];
 
 // Helper functions for AI and developers
 export function getComponentsByCategory(categoryId: string): ComponentInfo[] {
-  return COMPONENT_REGISTRY.filter(component => component.category === categoryId);
+  return COMPONENT_REGISTRY.filter((component) => component.category === categoryId);
 }
 
 export function getComponentsBySubcategory(subcategoryId: string): ComponentInfo[] {
-  return COMPONENT_REGISTRY.filter(component => component.subcategory === subcategoryId);
+  return COMPONENT_REGISTRY.filter((component) => component.subcategory === subcategoryId);
 }
 
 export function searchComponents(query: string): ComponentInfo[] {
   const lowercaseQuery = query.toLowerCase();
-  return COMPONENT_REGISTRY.filter(component =>
-    component.name.toLowerCase().includes(lowercaseQuery) ||
-    component.description.toLowerCase().includes(lowercaseQuery) ||
-    component.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+  return COMPONENT_REGISTRY.filter(
+    (component) =>
+      component.name.toLowerCase().includes(lowercaseQuery) ||
+      component.description.toLowerCase().includes(lowercaseQuery) ||
+      component.tags.some((tag) => tag.toLowerCase().includes(lowercaseQuery))
   );
 }
 
 export function getComponentById(id: string): ComponentInfo | undefined {
-  return COMPONENT_REGISTRY.find(component => component.id === id);
+  return COMPONENT_REGISTRY.find((component) => component.id === id);
 }
 
 // Update category counts dynamically
 export function updateCategoryCounts(): ComponentCategory[] {
-  return COMPONENT_CATEGORIES.map(category => ({
+  return COMPONENT_CATEGORIES.map((category) => ({
     ...category,
-    subcategories: category.subcategories?.map(sub => ({
+    subcategories: category.subcategories?.map((sub) => ({
       ...sub,
-      count: getComponentsBySubcategory(sub.id).length
-    }))
+      count: getComponentsBySubcategory(sub.id).length,
+    })),
   }));
 }

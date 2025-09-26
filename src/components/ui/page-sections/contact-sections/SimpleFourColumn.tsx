@@ -51,5 +51,5 @@ export default function SimpleFourColumn() {
         </div>
       </div>
     </div>
-  )
+  );
 }

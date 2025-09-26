@@ -8,12 +8,12 @@ interface SimpleJustifiedOnSubtleBrandCTAProps {
 }
 
 export default function SimpleJustifiedOnSubtleBrandCTA({
-  title = "Ready to dive in?\nStart your free trial today.",
-  primaryCTAText = "Get started",
-  primaryCTAHref = "#",
-  secondaryCTAText = "Learn more",
-  secondaryCTAHref = "#",
-  className = ""
+  title = 'Ready to dive in?\nStart your free trial today.',
+  primaryCTAText = 'Get started',
+  primaryCTAHref = '#',
+  secondaryCTAText = 'Learn more',
+  secondaryCTAHref = '#',
+  className = '',
 }: SimpleJustifiedOnSubtleBrandCTAProps) {
   return (
     <div className={`bg-indigo-100 dark:bg-indigo-950 ${className}`}>
@@ -40,5 +40,5 @@ export default function SimpleJustifiedOnSubtleBrandCTA({
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -80,5 +80,5 @@ export default function Simple() {
         </div>
       </div>
     </div>
-  )
+  );
 }

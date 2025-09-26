@@ -16,40 +16,35 @@ interface SplitImageHeroProps {
 }
 
 export default function SplitImageHero({
-  title = "Data to enrich your business",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  announcementText = "Anim aute id magna aliqua ad ad non deserunt sunt. Read more",
-  announcementHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
-  imageSrc = "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80",
-  imageAlt = "Hero image",
-  className = ""
+  title = 'Data to enrich your business',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  announcementText = 'Anim aute id magna aliqua ad ad non deserunt sunt. Read more',
+  announcementHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
+  imageSrc = 'https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80',
+  imageAlt = 'Hero image',
+  className = '',
 }: SplitImageHeroProps) {
   return (
     <div className={`relative bg-white dark:bg-gray-900 ${className}`}>
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
         <div className="px-6 pt-10 pb-24 sm:pb-32 lg:col-span-7 lg:px-0 lg:pt-40 lg:pb-48 xl:col-span-6">
           <div className="mx-auto max-w-lg lg:mx-0">
-            <img
-              alt={logoAlt}
-              src={logoSrc}
-              className="h-11 dark:hidden"
-            />
-            <img
-              alt={logoAlt}
-              src={logoSrcDark}
-              className="h-11 not-dark:hidden"
-            />
+            <img alt={logoAlt} src={logoSrc} className="h-11 dark:hidden" />
+            <img alt={logoAlt} src={logoSrcDark} className="h-11 not-dark:hidden" />
             <div className="hidden sm:mt-32 sm:flex lg:mt-16">
               <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:text-gray-400 dark:ring-white/10 dark:hover:ring-white/20">
                 {announcementText.replace(' Read more', '')}{' '}
-                <a href={announcementHref} className="font-semibold whitespace-nowrap text-indigo-600 dark:text-indigo-400">
+                <a
+                  href={announcementHref}
+                  className="font-semibold whitespace-nowrap text-indigo-600 dark:text-indigo-400"
+                >
                   <span aria-hidden="true" className="absolute inset-0" />
                   Read more <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -83,5 +78,5 @@ export default function SplitImageHero({
         </div>
       </div>
     </div>
-  )
+  );
 }

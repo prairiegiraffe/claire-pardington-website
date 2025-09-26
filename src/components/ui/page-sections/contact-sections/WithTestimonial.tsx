@@ -154,5 +154,5 @@ export default function WithTestimonial() {
         </div>
       </div>
     </div>
-  )
+  );
 }

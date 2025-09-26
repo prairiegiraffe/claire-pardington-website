@@ -1,5 +1,5 @@
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import {
   ArrowPathIcon,
   ChartPieIcon,
@@ -7,7 +7,7 @@ import {
   DocumentChartBarIcon,
   FingerPrintIcon,
   SquaresPlusIcon,
-} from '@heroicons/react/24/outline'
+} from '@heroicons/react/24/outline';
 
 const solutions = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -31,7 +31,7 @@ const solutions = [
     href: '#',
     icon: DocumentChartBarIcon,
   },
-]
+];
 
 export default function TwoColumn() {
   return (
@@ -82,5 +82,5 @@ export default function TwoColumn() {
         </div>
       </PopoverPanel>
     </Popover>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 
 interface Feature {
   name: string;
@@ -34,16 +34,21 @@ const defaultFeatures: Feature[] = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: ServerIcon,
   },
-]
+];
 
 const defaultCodeExample = (
   <div className="bg-gray-800 text-gray-300 p-6 text-sm font-mono">
     <div className="text-blue-400">import</div>
-    <div className="ml-4">{'{ useState, useEffect }'} <span className="text-blue-400">from</span> <span className="text-green-400">'react'</span></div>
-    <br />
-    <div className="text-purple-400">export default function</div> <span className="text-yellow-400">NotificationSettings</span>() {'{'}
     <div className="ml-4">
-      <div className="text-blue-400">const</div> [notifications, setNotifications] = <span className="text-yellow-400">useState</span>(<span className="text-green-400">true</span>)
+      {'{ useState, useEffect }'} <span className="text-blue-400">from</span>{' '}
+      <span className="text-green-400">'react'</span>
+    </div>
+    <br />
+    <div className="text-purple-400">export default function</div>{' '}
+    <span className="text-yellow-400">NotificationSettings</span>() {'{'}
+    <div className="ml-4">
+      <div className="text-blue-400">const</div> [notifications, setNotifications] ={' '}
+      <span className="text-yellow-400">useState</span>(<span className="text-green-400">true</span>)
     </div>
     <br />
     <div className="ml-4">
@@ -54,9 +59,7 @@ const defaultCodeExample = (
           {'<h2>Notification Settings</h2>'}
           <br />
           {'<button onClick={() => setNotifications(!notifications)}>'}
-          <div className="ml-4">
-            {'{notifications ? "Disable" : "Enable"}'}
-          </div>
+          <div className="ml-4">{'{notifications ? "Disable" : "Enable"}'}</div>
           {'</button>'}
         </div>
         {'</div>'}
@@ -65,17 +68,17 @@ const defaultCodeExample = (
     </div>
     {'}'}
   </div>
-)
+);
 
 export default function CodeExamplePanelFeature({
-  eyebrow = "Deploy faster",
-  title = "A better workflow",
-  subtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+  eyebrow = 'Deploy faster',
+  title = 'A better workflow',
+  subtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
   codeExample = defaultCodeExample,
-  activeTab = "NotificationSetting.jsx",
-  inactiveTab = "App.jsx",
+  activeTab = 'NotificationSetting.jsx',
+  inactiveTab = 'App.jsx',
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: CodeExamplePanelFeatureProps) {
   return (
     <div className={`overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -87,9 +90,7 @@ export default function CodeExamplePanelFeature({
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                 {title}
               </p>
-              <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">
-                {subtitle}
-              </p>
+              <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">{subtitle}</p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
@@ -134,5 +135,5 @@ export default function CodeExamplePanelFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

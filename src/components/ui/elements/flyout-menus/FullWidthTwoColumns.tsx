@@ -1,5 +1,5 @@
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import {
   BookOpenIcon,
   BriefcaseIcon,
@@ -10,7 +10,7 @@ import {
   UserGroupIcon,
   UsersIcon,
   VideoCameraIcon,
-} from '@heroicons/react/24/outline'
+} from '@heroicons/react/24/outline';
 
 const engagement = [
   { name: 'About', href: '#', icon: InformationCircleIcon },
@@ -18,13 +18,13 @@ const engagement = [
   { name: 'Press', href: '#', icon: NewspaperIcon },
   { name: 'Careers', href: '#', icon: BriefcaseIcon },
   { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
-]
+];
 const resources = [
   { name: 'Community', href: '#', icon: UserGroupIcon },
   { name: 'Partners', href: '#', icon: GlobeAltIcon },
   { name: 'Guides', href: '#', icon: BookOpenIcon },
   { name: 'Webinars', href: '#', icon: VideoCameraIcon },
-]
+];
 const recentPosts = [
   {
     id: 1,
@@ -49,7 +49,7 @@ const recentPosts = [
       'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80',
     description: 'Optio cum necessitatibus dolor voluptatum provident commodi et.',
   },
-]
+];
 
 export default function FullWidthTwoColumns() {
   return (
@@ -152,5 +152,5 @@ export default function FullWidthTwoColumns() {
         </div>
       </PopoverPanel>
     </Popover>
-  )
+  );
 }

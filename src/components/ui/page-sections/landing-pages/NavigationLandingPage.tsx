@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -7,15 +7,15 @@ import {
   FingerPrintIcon,
   LockClosedIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { CheckIcon } from '@heroicons/react/20/solid'
+} from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 const features = [
   {
@@ -42,7 +42,7 @@ const features = [
       'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
     icon: FingerPrintIcon,
   },
-]
+];
 
 const tiers = [
   {
@@ -84,7 +84,7 @@ const tiers = [
     ],
     mostPopular: false,
   },
-]
+];
 
 const faqs = [
   {
@@ -123,7 +123,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
   },
-]
+];
 
 const footerNavigation = {
   solutions: [
@@ -149,10 +149,10 @@ const footerNavigation = {
     { name: 'Privacy policy', href: '#' },
     { name: 'License', href: '#' },
   ],
-}
+};
 
 function classNames(...classes: (string | boolean | undefined)[]): string {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 interface NavigationLandingPageProps {
@@ -173,22 +173,22 @@ interface NavigationLandingPageProps {
 }
 
 export default function NavigationLandingPage({
-  title = "Deploy to the cloud with confidence",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoAlt = "Your Company",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  screenshotSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  screenshotSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  screenshotAlt = "App screenshot",
-  companyName = "Your Company",
+  title = 'Deploy to the cloud with confidence',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoAlt = 'Your Company',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  screenshotSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  screenshotSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  screenshotAlt = 'App screenshot',
+  companyName = 'Your Company',
   navigationItems = navigation,
 }: NavigationLandingPageProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -198,16 +198,8 @@ export default function NavigationLandingPage({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{companyName}</span>
-              <img
-                alt={logoAlt}
-                src={logoSrc}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt={logoAlt}
-                src={logoSrcDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt={logoAlt} src={logoSrc} className="h-8 w-auto dark:hidden" />
+              <img alt={logoAlt} src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -239,16 +231,8 @@ export default function NavigationLandingPage({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{companyName}</span>
-                <img
-                  alt={logoAlt}
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt={logoAlt}
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt={logoAlt} src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt={logoAlt} src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -558,7 +542,7 @@ export default function NavigationLandingPage({
                     tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
                     tierIdx === 0 ? '-mr-px lg:rounded-r-none' : '',
                     tierIdx === tiers.length - 1 ? '-ml-px lg:rounded-l-none' : '',
-                    'flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-inset ring-gray-200 xl:p-10 dark:bg-gray-800/50 dark:ring-gray-700',
+                    'flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-inset ring-gray-200 xl:p-10 dark:bg-gray-800/50 dark:ring-gray-700'
                   )}
                 >
                   <div>
@@ -567,7 +551,7 @@ export default function NavigationLandingPage({
                         id={tier.id}
                         className={classNames(
                           tier.mostPopular ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-900 dark:text-white',
-                          'text-lg/8 font-semibold',
+                          'text-lg/8 font-semibold'
                         )}
                       >
                         {tier.name}
@@ -604,7 +588,7 @@ export default function NavigationLandingPage({
                       tier.mostPopular
                         ? 'bg-indigo-600 text-white shadow-xs hover:bg-indigo-500 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400'
                         : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 dark:bg-white/10 dark:text-white dark:ring-white/5 dark:hover:bg-white/20 dark:hover:ring-white/5 dark:focus-visible:outline-white/75',
-                      'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500',
+                      'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500'
                     )}
                   >
                     Buy plan
@@ -687,16 +671,8 @@ export default function NavigationLandingPage({
       <footer className="relative mx-auto mt-32 max-w-7xl px-6 lg:px-8">
         <div className="border-t border-gray-900/10 py-16 sm:py-24 lg:py-32 dark:border-white/10">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
-              alt={companyName}
-              src={logoSrc}
-              className="h-9 dark:hidden"
-            />
-            <img
-              alt={companyName}
-              src={logoSrcDark}
-              className="h-9 not-dark:hidden"
-            />
+            <img alt={companyName} src={logoSrc} className="h-9 dark:hidden" />
+            <img alt={companyName} src={logoSrcDark} className="h-9 not-dark:hidden" />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
@@ -767,5 +743,5 @@ export default function NavigationLandingPage({
         </div>
       </footer>
     </div>
-  )
+  );
 }

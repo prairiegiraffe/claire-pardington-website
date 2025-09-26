@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface NavigationItem {
   name: string;
@@ -35,29 +35,29 @@ const defaultNavigation: NavigationItem[] = [
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 export default function AppScreenshotHero({
-  title = "Data to enrich your online business",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  imageSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "App screenshot",
+  title = 'Data to enrich your online business',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  imageSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'App screenshot',
   imageWidth = 2432,
   imageHeight = 1442,
   navigation = defaultNavigation,
-  loginText = "Log in",
-  loginHref = "#",
-  className = ""
+  loginText = 'Log in',
+  loginHref = '#',
+  className = '',
 }: AppScreenshotHeroProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -66,16 +66,8 @@ export default function AppScreenshotHero({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{logoAlt}</span>
-              <img
-                alt=""
-                src={logoSrc}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt=""
-                src={logoSrcDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+              <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -107,16 +99,8 @@ export default function AppScreenshotHero({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{logoAlt}</span>
-                <img
-                  alt=""
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -219,5 +203,5 @@ export default function AppScreenshotHero({
         </div>
       </div>
     </div>
-  )
+  );
 }

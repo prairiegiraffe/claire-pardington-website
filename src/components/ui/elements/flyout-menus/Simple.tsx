@@ -1,5 +1,5 @@
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const solutions = [
   { name: 'Analytics', href: '#' },
@@ -8,7 +8,7 @@ const solutions = [
   { name: 'Integrations', href: '#' },
   { name: 'Automations', href: '#' },
   { name: 'Reports', href: '#' },
-]
+];
 
 export default function Simple() {
   return (
@@ -31,5 +31,5 @@ export default function Simple() {
         </div>
       </PopoverPanel>
     </Popover>
-  )
+  );
 }

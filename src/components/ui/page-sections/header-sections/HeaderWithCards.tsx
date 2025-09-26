@@ -1,4 +1,4 @@
-import { LifebuoyIcon, NewspaperIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { LifebuoyIcon, NewspaperIcon, PhoneIcon } from '@heroicons/react/20/solid';
 
 const cards = [
   {
@@ -16,7 +16,7 @@ const cards = [
     description: 'Ratione et porro eligendi est sed ratione rerum itaque. Placeat accusantium impedit eum odit.',
     icon: NewspaperIcon,
   },
-]
+];
 
 export default function HeaderWithCards() {
   return (
@@ -81,5 +81,5 @@ export default function HeaderWithCards() {
         </div>
       </div>
     </div>
-  )
+  );
 }

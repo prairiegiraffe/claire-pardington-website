@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface NavigationItem {
   name: string;
@@ -36,48 +36,48 @@ const defaultNavigation: NavigationItem[] = [
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 const defaultImageTiles: ImageTile[] = [
   {
-    src: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80",
-    alt: "Person 1"
+    src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80',
+    alt: 'Person 1',
   },
   {
-    src: "https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80",
-    alt: "Person 2"
+    src: 'https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80',
+    alt: 'Person 2',
   },
   {
-    src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80",
-    alt: "Person 3"
+    src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80',
+    alt: 'Person 3',
   },
   {
-    src: "https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80",
-    alt: "Person 4"
+    src: 'https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80',
+    alt: 'Person 4',
   },
   {
-    src: "https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80",
-    alt: "Person 5"
-  }
-]
+    src: 'https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80',
+    alt: 'Person 5',
+  },
+];
 
 export default function ImageTilesHero({
   title = "We're changing the way people connect",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Live demo",
-  secondaryCtaHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Live demo',
+  secondaryCtaHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
   imageTiles = defaultImageTiles,
   navigation = defaultNavigation,
-  loginText = "Log in",
-  loginHref = "#",
-  className = ""
+  loginText = 'Log in',
+  loginHref = '#',
+  className = '',
 }: ImageTilesHeroProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -86,16 +86,8 @@ export default function ImageTilesHero({
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{logoAlt}</span>
-              <img
-                alt=""
-                src={logoSrc}
-                className="h-8 w-auto dark:hidden"
-              />
-              <img
-                alt=""
-                src={logoSrcDark}
-                className="h-8 w-auto not-dark:hidden"
-              />
+              <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+              <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -127,16 +119,8 @@ export default function ImageTilesHero({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{logoAlt}</span>
-                <img
-                  alt=""
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -237,7 +221,7 @@ export default function ImageTilesHero({
                   <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-0 xl:pt-80">
                     <div className="relative">
                       <img
-                        alt={imageTiles[0]?.alt || "Image 1"}
+                        alt={imageTiles[0]?.alt || 'Image 1'}
                         src={imageTiles[0]?.src || defaultImageTiles[0].src}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
@@ -247,7 +231,7 @@ export default function ImageTilesHero({
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
                       <img
-                        alt={imageTiles[1]?.alt || "Image 2"}
+                        alt={imageTiles[1]?.alt || 'Image 2'}
                         src={imageTiles[1]?.src || defaultImageTiles[1].src}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
@@ -255,7 +239,7 @@ export default function ImageTilesHero({
                     </div>
                     <div className="relative">
                       <img
-                        alt={imageTiles[2]?.alt || "Image 3"}
+                        alt={imageTiles[2]?.alt || 'Image 3'}
                         src={imageTiles[2]?.src || defaultImageTiles[2].src}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
@@ -265,7 +249,7 @@ export default function ImageTilesHero({
                   <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                     <div className="relative">
                       <img
-                        alt={imageTiles[3]?.alt || "Image 4"}
+                        alt={imageTiles[3]?.alt || 'Image 4'}
                         src={imageTiles[3]?.src || defaultImageTiles[3].src}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
@@ -273,7 +257,7 @@ export default function ImageTilesHero({
                     </div>
                     <div className="relative">
                       <img
-                        alt={imageTiles[4]?.alt || "Image 5"}
+                        alt={imageTiles[4]?.alt || 'Image 5'}
                         src={imageTiles[4]?.src || defaultImageTiles[4].src}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
@@ -287,5 +271,5 @@ export default function ImageTilesHero({
         </div>
       </main>
     </div>
-  )
+  );
 }

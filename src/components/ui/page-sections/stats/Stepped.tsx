@@ -46,5 +46,5 @@ export default function Stepped() {
         </div>
       </div>
     </div>
-  )
+  );
 }

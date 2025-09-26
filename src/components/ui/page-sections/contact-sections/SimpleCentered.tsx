@@ -1,4 +1,4 @@
-import { BugAntIcon, ChatBubbleLeftRightIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
+import { BugAntIcon, ChatBubbleLeftRightIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
 
 export default function SimpleCentered() {
   return (
@@ -63,5 +63,5 @@ export default function SimpleCentered() {
         </div>
       </div>
     </div>
-  )
+  );
 }

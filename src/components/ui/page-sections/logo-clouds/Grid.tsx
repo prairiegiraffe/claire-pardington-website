@@ -102,5 +102,5 @@ export default function Grid() {
         </div>
       </div>
     </div>
-  )
+  );
 }

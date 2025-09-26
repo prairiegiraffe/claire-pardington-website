@@ -57,5 +57,5 @@ export default function WithBackgroundImage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

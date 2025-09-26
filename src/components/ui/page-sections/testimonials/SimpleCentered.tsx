@@ -38,5 +38,5 @@ export default function SimpleCentered() {
         </figure>
       </div>
     </section>
-  )
+  );
 }

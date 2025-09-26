@@ -47,5 +47,5 @@ export default function SimpleWithBackgroundImageHeader() {
         </div>
       </div>
     </div>
-  )
+  );
 }

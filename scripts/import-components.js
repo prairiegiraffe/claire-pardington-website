@@ -8,9 +8,9 @@
  * node scripts/import-components.js --single --category hero-sections --name ModernHero --code "component-code"
  */
 
-const fs = require('fs');
-const path = require('path');
-const { program } = require('commander');
+import fs from 'node:fs';
+import path from 'node:path';
+import { program } from 'commander';
 
 // Category mappings for auto-detection
 const CATEGORY_KEYWORDS = {
@@ -18,12 +18,12 @@ const CATEGORY_KEYWORDS = {
   'pricing-sections': ['pricing', 'plan', 'subscription', 'tier', 'price'],
   'feature-sections': ['feature', 'benefit', 'highlight', 'showcase'],
   'cta-sections': ['cta', 'call-to-action', 'signup', 'conversion'],
-  'testimonials': ['testimonial', 'review', 'feedback', 'quote'],
-  'stats': ['stat', 'metric', 'number', 'count', 'analytics'],
-  'forms': ['form', 'input', 'field', 'contact', 'login', 'register'],
-  'navigation': ['nav', 'menu', 'breadcrumb', 'sidebar'],
-  'cards': ['card', 'tile', 'item', 'post'],
-  'buttons': ['button', 'btn', 'action'],
+  testimonials: ['testimonial', 'review', 'feedback', 'quote'],
+  stats: ['stat', 'metric', 'number', 'count', 'analytics'],
+  forms: ['form', 'input', 'field', 'contact', 'login', 'register'],
+  navigation: ['nav', 'menu', 'breadcrumb', 'sidebar'],
+  cards: ['card', 'tile', 'item', 'post'],
+  buttons: ['button', 'btn', 'action'],
 };
 
 // Component template generator
@@ -42,7 +42,7 @@ function generateComponent(name, code, category, description = '') {
     filePath: getFilePath(category, componentName),
     code: processComponentCode(code, componentName, propsInterface),
     registryEntry: generateRegistryEntry(componentId, componentName, category, description),
-    tags: generateTags(code, category)
+    tags: generateTags(code, category),
   };
 }
 
@@ -73,12 +73,12 @@ function generateDescription(code, category) {
     'pricing-sections': 'Pricing component with subscription plans',
     'feature-sections': 'Feature showcase section',
     'cta-sections': 'Call-to-action section',
-    'testimonials': 'Customer testimonial component',
-    'stats': 'Statistics display component',
-    'forms': 'Form component with validation',
-    'navigation': 'Navigation component',
-    'cards': 'Card component for content display',
-    'buttons': 'Button component with variants'
+    testimonials: 'Customer testimonial component',
+    stats: 'Statistics display component',
+    forms: 'Form component with validation',
+    navigation: 'Navigation component',
+    cards: 'Card component for content display',
+    buttons: 'Button component with variants',
   };
 
   return descriptions[category] || 'UI component';
@@ -92,7 +92,7 @@ function extractPropsInterface(code) {
   if (interfaceMatch) {
     return {
       name: interfaceMatch[1],
-      content: interfaceMatch[2]
+      content: interfaceMatch[2],
     };
   }
 
@@ -102,7 +102,7 @@ function extractPropsInterface(code) {
     content: `
   title?: string;
   subtitle?: string;
-  className?: string;`
+  className?: string;`,
   };
 }
 
@@ -119,15 +119,12 @@ ${processedCode}`;
   }
 
   // Ensure dark mode classes
-  processedCode = processedCode.replace(
-    /className="([^"]*?)"/g,
-    (match, classes) => {
-      if (!classes.includes('dark:')) {
-        return match; // Keep as is if already has dark mode
-      }
-      return match;
+  processedCode = processedCode.replace(/className="([^"]*?)"/g, (match, classes) => {
+    if (!classes.includes('dark:')) {
+      return match; // Keep as is if already has dark mode
     }
-  );
+    return match;
+  });
 
   return processedCode;
 }
@@ -144,7 +141,7 @@ function generateRegistryEntry(id, name, category, description) {
     description: '${description}',
     category: '${category.includes('-') ? category.split('-')[0] : 'page-sections'}',
     subcategory: '${subcategory}',
-    tags: [${tags.map(tag => `'${tag}'`).join(', ')}],
+    tags: [${tags.map((tag) => `'${tag}'`).join(', ')}],
     complexity: '${complexity}',
     responsive: true,
     darkMode: true,
@@ -154,9 +151,7 @@ function generateRegistryEntry(id, name, category, description) {
 
 // Utility functions
 function toPascalCase(str) {
-  return str.replace(/(^\w|[-_]\w)/g, (match) =>
-    match.replace(/[-_]/, '').toUpperCase()
-  );
+  return str.replace(/(^\w|[-_]\w)/g, (match) => match.replace(/[-_]/, '').toUpperCase());
 }
 
 function toKebabCase(str) {
@@ -178,12 +173,12 @@ function getSubcategory(category) {
     'pricing-sections': 'page-sections/pricing-sections',
     'feature-sections': 'page-sections/feature-sections',
     'cta-sections': 'page-sections/cta-sections',
-    'testimonials': 'page-sections/testimonials',
-    'stats': 'page-sections/stats',
-    'forms': 'application-ui/forms',
-    'navigation': 'application-ui/navigation',
-    'cards': 'application-ui/cards',
-    'buttons': 'elements/buttons'
+    testimonials: 'page-sections/testimonials',
+    stats: 'page-sections/stats',
+    forms: 'application-ui/forms',
+    navigation: 'application-ui/navigation',
+    cards: 'application-ui/cards',
+    buttons: 'elements/buttons',
   };
 
   return mapping[category] || 'page-sections/content-sections';
@@ -237,13 +232,10 @@ function updateRegistry(components) {
   let registryContent = fs.readFileSync(registryPath, 'utf8');
 
   // Find the COMPONENT_REGISTRY array and add new entries
-  const registryEntries = components.map(c => c.registryEntry).join(',\n');
+  const registryEntries = components.map((c) => c.registryEntry).join(',\n');
 
   // Insert before the closing bracket
-  registryContent = registryContent.replace(
-    /(\];[\s]*$)/m,
-    `,\n${registryEntries}\n$1`
-  );
+  registryContent = registryContent.replace(/(\];[\s]*$)/m, `,\n${registryEntries}\n$1`);
 
   fs.writeFileSync(registryPath, registryContent);
   console.log(`✅ Updated registry with ${components.length} components`);
@@ -251,12 +243,7 @@ function updateRegistry(components) {
 
 // Main processing functions
 function processSingleComponent(options) {
-  const component = generateComponent(
-    options.name,
-    options.code,
-    options.category,
-    options.description
-  );
+  const component = generateComponent(options.name, options.code, options.category, options.description);
 
   writeComponentFile(component);
   updateRegistry([component]);
@@ -273,7 +260,7 @@ function processBatchFile(filePath) {
 
   console.log(`Processing ${components.length} components...`);
 
-  const processedComponents = components.map(comp =>
+  const processedComponents = components.map((comp) =>
     generateComponent(comp.name, comp.code, comp.category, comp.description)
   );
 
@@ -284,7 +271,7 @@ function processBatchFile(filePath) {
   updateRegistry(processedComponents);
 
   console.log(`\n🎉 Successfully imported ${components.length} components!`);
-  processedComponents.forEach(comp => {
+  processedComponents.forEach((comp) => {
     console.log(`- ${comp.componentName} (${comp.componentId})`);
   });
 }
@@ -297,20 +284,20 @@ function parseBatchFile(content) {
   // [component code]
 
   const components = [];
-  const sections = content.split('---').filter(section => section.trim());
+  const sections = content.split('---').filter((section) => section.trim());
 
   for (let i = 0; i < sections.length; i += 2) {
     const header = sections[i]?.trim();
     const code = sections[i + 1]?.trim();
 
     if (header && code) {
-      const [name, category, description] = header.split('|').map(s => s.trim());
+      const [name, category, description] = header.split('|').map((s) => s.trim());
 
       components.push({
-        name: name || `Component${i/2 + 1}`,
+        name: name || `Component${i / 2 + 1}`,
         category: category || detectCategory(code, name),
         description: description || '',
-        code
+        code,
       });
     }
   }
@@ -319,10 +306,7 @@ function parseBatchFile(content) {
 }
 
 // CLI Setup
-program
-  .name('import-components')
-  .description('Automated Tailwind UI Plus component importer')
-  .version('1.0.0');
+program.name('import-components').description('Automated Tailwind UI Plus component importer').version('1.0.0');
 
 program
   .command('single')
@@ -347,10 +331,4 @@ program
 
 program.parse();
 
-// Export for use as a module
-module.exports = {
-  generateComponent,
-  detectCategory,
-  processSingleComponent,
-  processBatchFile
-};
+export { generateComponent, detectCategory, processSingleComponent, processBatchFile };

@@ -42,5 +42,5 @@ export default function WithOverlappingImage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

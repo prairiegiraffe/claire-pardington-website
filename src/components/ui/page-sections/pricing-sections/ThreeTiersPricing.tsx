@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -40,10 +40,10 @@ const tiers = [
     ],
     mostPopular: false,
   },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function ThreeTiersPricing() {
@@ -68,7 +68,7 @@ export default function ThreeTiersPricing() {
                 tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
                 tierIdx === 0 ? '-mr-px lg:rounded-r-none' : '',
                 tierIdx === tiers.length - 1 ? '-ml-px lg:rounded-l-none' : '',
-                'flex flex-col justify-between rounded-3xl bg-white p-8 inset-ring inset-ring-gray-200 xl:p-10 dark:bg-gray-800/50 dark:inset-ring-gray-700',
+                'flex flex-col justify-between rounded-3xl bg-white p-8 inset-ring inset-ring-gray-200 xl:p-10 dark:bg-gray-800/50 dark:inset-ring-gray-700'
               )}
             >
               <div>
@@ -77,7 +77,7 @@ export default function ThreeTiersPricing() {
                     id={tier.id}
                     className={classNames(
                       tier.mostPopular ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-900 dark:text-white',
-                      'text-lg/8 font-semibold',
+                      'text-lg/8 font-semibold'
                     )}
                   >
                     {tier.name}
@@ -114,7 +114,7 @@ export default function ThreeTiersPricing() {
                   tier.mostPopular
                     ? 'bg-indigo-600 text-white shadow-xs hover:bg-indigo-500 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400'
                     : 'text-indigo-600 inset-ring inset-ring-indigo-200 hover:inset-ring-indigo-300 dark:bg-white/10 dark:text-white dark:inset-ring-white/5 dark:hover:bg-white/20 dark:hover:inset-ring-white/5 dark:focus-visible:outline-white/75',
-                  'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500',
+                  'mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500'
                 )}
               >
                 Buy plan
@@ -124,5 +124,5 @@ export default function ThreeTiersPricing() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -7,11 +7,11 @@ interface BorderedScreenshotFeatureProps {
 }
 
 export default function BorderedScreenshotFeature({
-  title = "Everything you need to deploy your app",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  imageSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "App screenshot",
-  className = ""
+  title = 'Everything you need to deploy your app',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  imageSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'App screenshot',
+  className = '',
 }: BorderedScreenshotFeatureProps) {
   return (
     <div className={`overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -34,5 +34,5 @@ export default function BorderedScreenshotFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

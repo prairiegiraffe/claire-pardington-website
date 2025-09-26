@@ -41,13 +41,13 @@ const defaultFeatures: Feature[] = [
     description:
       'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
   },
-]
+];
 
 export default function SimpleFeatureListFeature({
-  title = "All-in-one platform",
-  subtitle = "Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.",
+  title = 'All-in-one platform',
+  subtitle = 'Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.',
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: SimpleFeatureListFeatureProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -56,9 +56,7 @@ export default function SimpleFeatureListFeature({
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
             {title}
           </h2>
-          <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">{subtitle}</p>
         </div>
         <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {features.map((feature) => (
@@ -70,5 +68,5 @@ export default function SimpleFeatureListFeature({
         </dl>
       </div>
     </div>
-  )
+  );
 }

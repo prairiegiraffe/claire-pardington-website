@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 interface ProductHeroProps {
   title?: string;
@@ -21,23 +21,23 @@ interface ProductHeroProps {
 }
 
 export default function ProductHero({
-  title = "Deploy to the cloud with confidence",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
+  title = 'Deploy to the cloud with confidence',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
   announcementBadge = "What's new",
-  announcementText = "Just shipped v1.0",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  imageSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "App screenshot",
+  announcementText = 'Just shipped v1.0',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  imageSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'App screenshot',
   imageWidth = 2432,
   imageHeight = 1442,
-  className = ""
+  className = '',
 }: ProductHeroProps) {
   return (
     <div className={`relative isolate overflow-hidden bg-white dark:bg-gray-900 ${className}`}>
@@ -79,16 +79,8 @@ export default function ProductHero({
       </div>
       <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
-          <img
-            alt={logoAlt}
-            src={logoSrc}
-            className="h-11 dark:hidden"
-          />
-          <img
-            alt={logoAlt}
-            src={logoSrcDark}
-            className="h-11 not-dark:hidden"
-          />
+          <img alt={logoAlt} src={logoSrc} className="h-11 dark:hidden" />
+          <img alt={logoAlt} src={logoSrcDark} className="h-11 not-dark:hidden" />
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <a href="#" className="inline-flex space-x-6">
               <span className="rounded-full bg-indigo-50 px-3 py-1 text-sm/6 font-semibold text-indigo-600 ring-1 ring-indigo-600/20 ring-inset dark:bg-indigo-500/10 dark:text-indigo-400 dark:ring-indigo-500/25">
@@ -138,5 +130,5 @@ export default function ProductHero({
         </div>
       </div>
     </div>
-  )
+  );
 }

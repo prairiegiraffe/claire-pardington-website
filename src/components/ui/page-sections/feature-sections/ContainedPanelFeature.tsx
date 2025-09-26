@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 
 interface Feature {
   name: string;
@@ -33,17 +33,17 @@ const defaultFeatures: Feature[] = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
     icon: ServerIcon,
   },
-]
+];
 
 export default function ContainedPanelFeature({
-  title = "Boost your productivity. Start using our app today.",
-  subtitle = "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla. Ac euismod vel sit maecenas.",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "Product screenshot",
+  title = 'Boost your productivity. Start using our app today.',
+  subtitle = 'Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla. Ac euismod vel sit maecenas.',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'Product screenshot',
   imageWidth = 2432,
   imageHeight = 1442,
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: ContainedPanelFeatureProps) {
   return (
     <div className={`bg-white py-24 dark:bg-gray-900 ${className}`}>
@@ -51,12 +51,8 @@ export default function ContainedPanelFeature({
         <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-20 sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:inset-ring dark:after:inset-ring-white/10 dark:after:sm:rounded-3xl">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:row-start-2 lg:max-w-md">
-              <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-                {title}
-              </h2>
-              <p className="mt-6 text-lg/8 text-gray-300">
-                {subtitle}
-              </p>
+              <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">{title}</h2>
+              <p className="mt-6 text-lg/8 text-gray-300">{subtitle}</p>
             </div>
             <img
               alt={imageAlt}
@@ -97,5 +93,5 @@ export default function ContainedPanelFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

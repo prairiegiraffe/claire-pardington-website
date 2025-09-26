@@ -1,4 +1,4 @@
-import { XMarkIcon } from '@heroicons/react/20/solid'
+import { XMarkIcon } from '@heroicons/react/20/solid';
 
 export default function LinkBanner() {
   return (
@@ -43,5 +43,5 @@ export default function LinkBanner() {
         </button>
       </div>
     </div>
-  )
+  );
 }

@@ -5,7 +5,7 @@ import {
   FingerPrintIcon,
   LockClosedIcon,
   ServerIcon,
-} from '@heroicons/react/20/solid'
+} from '@heroicons/react/20/solid';
 
 interface Feature {
   name: string;
@@ -57,19 +57,19 @@ const defaultFeatures: Feature[] = [
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
     icon: ServerIcon,
   },
-]
+];
 
 export default function LargeScreenshotFeature({
-  eyebrow = "Everything you need",
-  title = "No server? No problem.",
-  subtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis.",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png",
-  imageSrcDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "App screenshot",
+  eyebrow = 'Everything you need',
+  title = 'No server? No problem.',
+  subtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis.',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png',
+  imageSrcDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'App screenshot',
   imageWidth = 2432,
   imageHeight = 1442,
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: LargeScreenshotFeatureProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -79,9 +79,7 @@ export default function LargeScreenshotFeature({
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl sm:text-balance dark:text-white">
             {title}
           </p>
-          <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">{subtitle}</p>
         </div>
       </div>
       <div className="relative overflow-hidden pt-16">
@@ -122,5 +120,5 @@ export default function LargeScreenshotFeature({
         </dl>
       </div>
     </div>
-  )
+  );
 }

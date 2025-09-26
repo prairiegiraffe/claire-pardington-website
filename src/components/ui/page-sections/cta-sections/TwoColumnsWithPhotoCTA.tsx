@@ -1,4 +1,4 @@
-import { CheckCircleIcon } from '@heroicons/react/20/solid'
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 
 const defaultBenefits = [
   'Competitive salaries',
@@ -7,7 +7,7 @@ const defaultBenefits = [
   'Annual team retreats',
   'Benefits for you and your family',
   'A great work environment',
-]
+];
 
 interface TwoColumnsWithPhotoCTAProps {
   title?: string;
@@ -21,14 +21,14 @@ interface TwoColumnsWithPhotoCTAProps {
 }
 
 export default function TwoColumnsWithPhotoCTA({
-  title = "Join our team",
-  subtitle = "Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.",
+  title = 'Join our team',
+  subtitle = 'Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.',
   benefits = defaultBenefits,
-  ctaText = "See our job postings",
-  ctaHref = "#",
-  imageSrc = "https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-  imageAlt = "",
-  className = ""
+  ctaText = 'See our job postings',
+  ctaHref = '#',
+  imageSrc = 'https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+  imageAlt = '',
+  className = '',
 }: TwoColumnsWithPhotoCTAProps) {
   return (
     <div className={`overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -44,9 +44,7 @@ export default function TwoColumnsWithPhotoCTA({
               <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl dark:text-white">
                 {title}
               </h2>
-              <p className="mt-6 text-lg/8 text-pretty text-gray-600 dark:text-gray-400">
-                {subtitle}
-              </p>
+              <p className="mt-6 text-lg/8 text-pretty text-gray-600 dark:text-gray-400">{subtitle}</p>
               <ul
                 role="list"
                 className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2 dark:text-gray-200"
@@ -87,5 +85,5 @@ export default function TwoColumnsWithPhotoCTA({
         </div>
       </div>
     </div>
-  )
+  );
 }

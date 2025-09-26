@@ -21,7 +21,7 @@ const defaultPlans: PricingPlan[] = [
     description: 'Perfect for getting started',
     features: ['Up to 5 projects', '10GB storage', 'Email support', 'Basic analytics'],
     buttonText: 'Start free trial',
-    buttonHref: '#'
+    buttonHref: '#',
   },
   {
     name: 'Professional',
@@ -30,31 +30,35 @@ const defaultPlans: PricingPlan[] = [
     features: ['Unlimited projects', '100GB storage', 'Priority support', 'Advanced analytics', 'Custom integrations'],
     buttonText: 'Start free trial',
     buttonHref: '#',
-    popular: true
+    popular: true,
   },
   {
     name: 'Enterprise',
     price: '$99',
     description: 'For large organizations',
-    features: ['Everything in Professional', 'Unlimited storage', '24/7 phone support', 'Custom contracts', 'Dedicated manager'],
+    features: [
+      'Everything in Professional',
+      'Unlimited storage',
+      '24/7 phone support',
+      'Custom contracts',
+      'Dedicated manager',
+    ],
     buttonText: 'Contact sales',
-    buttonHref: '#'
-  }
+    buttonHref: '#',
+  },
 ];
 
 export default function SimplePricing({
-  title = "Simple, transparent pricing",
+  title = 'Simple, transparent pricing',
   subtitle = "Choose the perfect plan for your needs. Always know what you'll pay.",
-  plans = defaultPlans
+  plans = defaultPlans,
 }: SimplePricingProps) {
   return (
     <div className="bg-white dark:bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">{title}</h2>
-          <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-            {subtitle}
-          </p>
+          <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">{subtitle}</p>
         </div>
         <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 xl:gap-x-12">
           {plans.map((plan) => (
@@ -74,19 +78,11 @@ export default function SimplePricing({
                 </div>
               )}
               <div className={plan.popular ? 'mt-4' : ''}>
-                <h3 className="text-lg font-semibold leading-8 text-gray-900 dark:text-white">
-                  {plan.name}
-                </h3>
-                <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
-                  {plan.description}
-                </p>
+                <h3 className="text-lg font-semibold leading-8 text-gray-900 dark:text-white">{plan.name}</h3>
+                <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">{plan.description}</p>
                 <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {plan.price}
-                  </span>
-                  <span className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300">
-                    /month
-                  </span>
+                  <span className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{plan.price}</span>
+                  <span className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300">/month</span>
                 </p>
                 <a
                   href={plan.buttonHref}

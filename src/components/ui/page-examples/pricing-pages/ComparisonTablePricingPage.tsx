@@ -1,16 +1,17 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon as XMarkIconOutline } from '@heroicons/react/24/outline'
-import { CheckIcon, XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid'
+import { useState } from 'react';
+import type { SVGProps } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon as XMarkIconOutline } from '@heroicons/react/24/outline';
+import { CheckIcon, XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 const pricing = {
   tiers: [
     {
@@ -74,7 +75,7 @@ const pricing = {
       ],
     },
   ],
-}
+};
 const faqs = [
   {
     id: 1,
@@ -112,7 +113,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
   },
-]
+];
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -141,7 +142,7 @@ const footerNavigation = {
     {
       name: 'Facebook',
       href: '#',
-      icon: (props) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -154,7 +155,7 @@ const footerNavigation = {
     {
       name: 'Instagram',
       href: '#',
-      icon: (props) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -167,7 +168,7 @@ const footerNavigation = {
     {
       name: 'X',
       href: '#',
-      icon: (props) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
         </svg>
@@ -176,7 +177,7 @@ const footerNavigation = {
     {
       name: 'GitHub',
       href: '#',
-      icon: (props) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -189,7 +190,7 @@ const footerNavigation = {
     {
       name: 'YouTube',
       href: '#',
-      icon: (props) => (
+      icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -200,14 +201,14 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+function classNames(...classes: Array<string | false | null | undefined>): string {
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function ComparisonTablePricingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -355,7 +356,14 @@ export default function ComparisonTablePricingPage() {
                       <ellipse cx="604" cy="512" rx="604" ry="512" fill="url(#mask-gradient)" />
                     </mask>
                   </defs>
-                  <ellipse cx={604} cy={512} rx={604} ry={512} fill="url(#d25c25d4-6d43-4bf9-b9ac-1842a30a4867)" mask="url(#fade-mask)" />
+                  <ellipse
+                    cx={604}
+                    cy={512}
+                    rx={604}
+                    ry={512}
+                    fill="url(#d25c25d4-6d43-4bf9-b9ac-1842a30a4867)"
+                    mask="url(#fade-mask)"
+                  />
                 </svg>
                 <div
                   aria-hidden="true"
@@ -369,7 +377,7 @@ export default function ComparisonTablePricingPage() {
                       tier.featured
                         ? 'z-10 bg-white shadow-xl outline-1 outline-gray-900/10 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10'
                         : 'bg-gray-800/80 outline-1 -outline-offset-1 outline-white/10 lg:bg-transparent lg:pb-14 lg:outline-0',
-                      'group/tier relative rounded-2xl',
+                      'group/tier relative rounded-2xl'
                     )}
                   >
                     <div className="p-8 lg:pt-12 xl:p-10 xl:pt-14">
@@ -445,13 +453,13 @@ export default function ComparisonTablePricingPage() {
                       <div
                         className={classNames(
                           tier.featured ? 'border-indigo-600 dark:border-indigo-500' : 'border-transparent',
-                          '-mt-px w-72 border-t-2 pt-10 md:w-80',
+                          '-mt-px w-72 border-t-2 pt-10 md:w-80'
                         )}
                       >
                         <h3
                           className={classNames(
                             tier.featured ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-900 dark:text-white',
-                            'text-sm/6 font-semibold',
+                            'text-sm/6 font-semibold'
                           )}
                         >
                           {tier.name}
@@ -475,7 +483,7 @@ export default function ComparisonTablePricingPage() {
                                   tier.featured
                                     ? 'ring-2 ring-indigo-600 dark:ring-indigo-500'
                                     : 'ring-1 ring-gray-900/10 dark:ring-white/10',
-                                  'relative rounded-lg bg-white shadow-xs sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 dark:bg-gray-800/50 dark:shadow-none dark:sm:bg-transparent',
+                                  'relative rounded-lg bg-white shadow-xs sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 dark:bg-gray-800/50 dark:shadow-none dark:sm:bg-transparent'
                                 )}
                               >
                                 <dl className="divide-y divide-gray-200 text-sm/6 dark:divide-white/10">
@@ -528,7 +536,7 @@ export default function ComparisonTablePricingPage() {
                                   tier.featured
                                     ? 'ring-2 ring-indigo-600 dark:ring-indigo-500'
                                     : 'ring-1 ring-gray-900/10 dark:ring-white/10',
-                                  'pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block',
+                                  'pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block'
                                 )}
                               />
                             </div>
@@ -552,13 +560,13 @@ export default function ComparisonTablePricingPage() {
                       <div
                         className={classNames(
                           tier.featured ? 'border-indigo-600 dark:border-indigo-500' : 'border-transparent',
-                          'border-t-2 pt-10',
+                          'border-t-2 pt-10'
                         )}
                       >
                         <p
                           className={classNames(
                             tier.featured ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-900 dark:text-white',
-                            'text-sm/6 font-semibold',
+                            'text-sm/6 font-semibold'
                           )}
                         >
                           {tier.name}
@@ -618,7 +626,7 @@ export default function ComparisonTablePricingPage() {
                                             tier.featured
                                               ? 'font-semibold text-indigo-600 dark:text-indigo-400'
                                               : 'text-gray-900 dark:text-white',
-                                            'text-sm/6',
+                                            'text-sm/6'
                                           )}
                                         >
                                           {feature.tiers[tier.name]}
@@ -662,7 +670,7 @@ export default function ComparisonTablePricingPage() {
                                 tier.featured
                                   ? 'ring-2 ring-indigo-600 dark:ring-indigo-500'
                                   : 'ring-1 ring-gray-900/10 dark:ring-white/10',
-                                'rounded-lg',
+                                'rounded-lg'
                               )}
                             />
                           ))}
@@ -802,5 +810,5 @@ export default function ComparisonTablePricingPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

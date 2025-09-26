@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 export default function WithCallToAction() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-white dark:bg-gray-900">
@@ -119,5 +119,5 @@ export default function WithCallToAction() {
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }

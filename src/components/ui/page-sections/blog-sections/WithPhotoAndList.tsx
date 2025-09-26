@@ -26,7 +26,7 @@ const jobOpenings = [
     salary: '$105,000 USD',
     location: 'San Francisco, CA',
   },
-]
+];
 
 export default function WithPhotoAndList() {
   return (
@@ -93,5 +93,5 @@ export default function WithPhotoAndList() {
         </div>
       </div>
     </div>
-  )
+  );
 }

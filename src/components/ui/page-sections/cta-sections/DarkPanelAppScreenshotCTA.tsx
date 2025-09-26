@@ -13,17 +13,17 @@ interface DarkPanelAppScreenshotCTAProps {
 }
 
 export default function DarkPanelAppScreenshotCTA({
-  title = "Boost your productivity. Start using our app today.",
-  subtitle = "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.",
-  primaryCTAText = "Get started",
-  primaryCTAHref = "#",
-  secondaryCTAText = "Learn more",
-  secondaryCTAHref = "#",
-  imageSrc = "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-  imageAlt = "App screenshot",
+  title = 'Boost your productivity. Start using our app today.',
+  subtitle = 'Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.',
+  primaryCTAText = 'Get started',
+  primaryCTAHref = '#',
+  secondaryCTAText = 'Learn more',
+  secondaryCTAHref = '#',
+  imageSrc = 'https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png',
+  imageAlt = 'App screenshot',
   imageWidth = 1824,
   imageHeight = 1080,
-  className = ""
+  className = '',
 }: DarkPanelAppScreenshotCTAProps) {
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -44,12 +44,8 @@ export default function DarkPanelAppScreenshotCTA({
             </defs>
           </svg>
           <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-              {title}
-            </h2>
-            <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-              {subtitle}
-            </p>
+            <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">{title}</h2>
+            <p className="mt-6 text-lg/8 text-pretty text-gray-300">{subtitle}</p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
                 href={primaryCTAHref}
@@ -75,5 +71,5 @@ export default function DarkPanelAppScreenshotCTA({
         </div>
       </div>
     </div>
-  )
+  );
 }

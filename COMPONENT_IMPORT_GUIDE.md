@@ -64,15 +64,8 @@ interface ModernHeroProps {
   // ... more props
 }
 
-export default function ModernHero({
-  title = "Default title",
-  subtitle = "Default subtitle"
-}: ModernHeroProps) {
-  return (
-    <div className="bg-white dark:bg-gray-900">
-      {/* Your Tailwind UI Plus component code */}
-    </div>
-  );
+export default function ModernHero({ title = 'Default title', subtitle = 'Default subtitle' }: ModernHeroProps) {
+  return <div className="bg-white dark:bg-gray-900">{/* Your Tailwind UI Plus component code */}</div>;
 }
 ```
 
@@ -92,21 +85,20 @@ export const COMPONENT_REGISTRY: ComponentInfo[] = [
     complexity: 'medium',
     responsive: true,
     darkMode: true,
-    filePath: 'src/components/ui/hero-sections/ModernHero.tsx'
-  }
+    filePath: 'src/components/ui/hero-sections/ModernHero.tsx',
+  },
 ];
 ```
 
 ### Step 3: Add to Showcase Page
 
 ```astro
-<!-- src/pages/dev-components/hero-sections.astro -->
 ---
 import ModernHero from '~/components/ui/hero-sections/ModernHero';
 // ... other imports
 ---
 
-<!-- Add to the component showcase -->
+<!-- src/pages/dev-components/hero-sections.astro --><!-- Add to the component showcase -->
 <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
   <div class="border-b border-gray-200 dark:border-gray-700">
     <ModernHero client:load />
@@ -118,24 +110,29 @@ import ModernHero from '~/components/ui/hero-sections/ModernHero';
 ## 🤖 AI-Friendly Naming Conventions
 
 ### Component IDs
+
 - Use kebab-case: `simple-hero`, `modern-pricing`, `contact-form-basic`
 - Be descriptive: `testimonials-grid-3col` not `testimonials1`
 - Include variants: `hero-split-image`, `hero-centered-video`
 
 ### Component Names
+
 - Use PascalCase: `SimpleHero`, `ModernPricing`, `ContactFormBasic`
 - Match the ID but in PascalCase
 - Be consistent across similar components
 
 ### Tags
+
 Include relevant tags for AI discovery:
+
 ```ts
-tags: ['hero', 'landing', 'cta', 'gradient', 'animated', 'video', 'split-layout']
+tags: ['hero', 'landing', 'cta', 'gradient', 'animated', 'video', 'split-layout'];
 ```
 
 ## 📊 Tracking Progress
 
 The component registry automatically tracks:
+
 - Total components per category
 - Completion status
 - Component complexity levels
@@ -170,6 +167,7 @@ For each new component:
 ## 🎨 Component Standards
 
 ### Required Features
+
 - **TypeScript interfaces** for all props
 - **Dark mode support** using Tailwind's `dark:` prefix
 - **Responsive design** with mobile-first approach
@@ -177,6 +175,7 @@ For each new component:
 - **Customizable props** for flexibility
 
 ### Example Template
+
 ```tsx
 interface ComponentNameProps {
   title?: string;
@@ -186,15 +185,11 @@ interface ComponentNameProps {
 }
 
 export default function ComponentName({
-  title = "Default title",
-  subtitle = "Default subtitle",
-  className = ""
+  title = 'Default title',
+  subtitle = 'Default subtitle',
+  className = '',
 }: ComponentNameProps) {
-  return (
-    <div className={`base-styles dark:dark-styles ${className}`}>
-      {/* Component content */}
-    </div>
-  );
+  return <div className={`base-styles dark:dark-styles ${className}`}>{/* Component content */}</div>;
 }
 ```
 

@@ -1,4 +1,4 @@
-import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
+import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid';
 
 interface Feature {
   name: string;
@@ -37,14 +37,14 @@ const defaultFeatures: Feature[] = [
     href: '#',
     icon: ArrowPathIcon,
   },
-]
+];
 
 export default function SimpleThreeColumnFeature({
-  eyebrow = "Deploy faster",
-  title = "Everything you need to deploy your app",
-  subtitle = "Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.",
+  eyebrow = 'Deploy faster',
+  title = 'Everything you need to deploy your app',
+  subtitle = 'Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.',
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: SimpleThreeColumnFeatureProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -54,9 +54,7 @@ export default function SimpleThreeColumnFeature({
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
             {title}
           </p>
-          <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">{subtitle}</p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
@@ -83,5 +81,5 @@ export default function SimpleThreeColumnFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

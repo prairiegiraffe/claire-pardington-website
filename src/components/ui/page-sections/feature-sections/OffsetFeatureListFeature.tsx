@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 interface Feature {
   name: string;
@@ -28,14 +28,14 @@ const defaultFeatures: Feature[] = [
   { name: 'Boards', description: 'Quae sit sunt excepturi fugit veniam voluptatem ipsum commodi.' },
   { name: 'Reporting', description: 'Eos laudantium repellat sed architecto earum unde incidunt.' },
   { name: 'Mobile app', description: 'Nulla est saepe accusamus nostrum est est fugit omnis.' },
-]
+];
 
 export default function OffsetFeatureListFeature({
-  eyebrow = "Everything you need",
-  title = "All-in-one platform",
-  subtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+  eyebrow = 'Everything you need',
+  title = 'All-in-one platform',
+  subtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: OffsetFeatureListFeatureProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -46,9 +46,7 @@ export default function OffsetFeatureListFeature({
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
               {title}
             </p>
-            <p className="mt-6 text-base/7 text-gray-700 dark:text-gray-300">
-              {subtitle}
-            </p>
+            <p className="mt-6 text-base/7 text-gray-700 dark:text-gray-300">{subtitle}</p>
           </div>
           <dl className="col-span-3 grid grid-cols-1 gap-x-8 gap-y-10 text-base/7 text-gray-600 sm:grid-cols-2 lg:gap-y-16 dark:text-gray-400">
             {features.map((feature) => (
@@ -67,5 +65,5 @@ export default function OffsetFeatureListFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }

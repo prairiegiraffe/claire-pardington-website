@@ -18,22 +18,22 @@ interface ThreeColumnBentoGridProps {
 }
 
 export default function ThreeColumnBentoGrid({
-  eyebrow = "Deploy faster",
-  title = "Everything you need to deploy your app",
-  mobileTitle = "Mobile friendly",
-  mobileSubtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-  performanceTitle = "Performance",
-  performanceSubtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.",
-  securityTitle = "Security",
-  securitySubtitle = "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi.",
-  apisTitle = "Powerful APIs",
-  apisSubtitle = "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.",
-  mobileImage = "https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png",
-  performanceImageLight = "https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png",
-  performanceImageDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png",
-  securityImageLight = "https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png",
-  securityImageDark = "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png",
-  className = ""
+  eyebrow = 'Deploy faster',
+  title = 'Everything you need to deploy your app',
+  mobileTitle = 'Mobile friendly',
+  mobileSubtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+  performanceTitle = 'Performance',
+  performanceSubtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.',
+  securityTitle = 'Security',
+  securitySubtitle = 'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi.',
+  apisTitle = 'Powerful APIs',
+  apisSubtitle = 'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.',
+  mobileImage = 'https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png',
+  performanceImageLight = 'https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png',
+  performanceImageDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png',
+  securityImageLight = 'https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png',
+  securityImageDark = 'https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png',
+  className = '',
 }: ThreeColumnBentoGridProps) {
   return (
     <div className={`bg-gray-50 py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -56,11 +56,7 @@ export default function ThreeColumnBentoGrid({
               </div>
               <div className="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
                 <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl dark:shadow-none dark:outline dark:outline-white/20">
-                  <img
-                    alt=""
-                    src={mobileImage}
-                    className="size-full object-cover object-top"
-                  />
+                  <img alt="" src={mobileImage} className="size-full object-cover object-top" />
                 </div>
               </div>
             </div>
@@ -78,16 +74,8 @@ export default function ThreeColumnBentoGrid({
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
-                <img
-                  alt=""
-                  src={performanceImageLight}
-                  className="w-full max-lg:max-w-xs dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={performanceImageDark}
-                  className="w-full hidden dark:block max-lg:max-w-xs"
-                />
+                <img alt="" src={performanceImageLight} className="w-full max-lg:max-w-xs dark:hidden" />
+                <img alt="" src={performanceImageDark} className="w-full hidden dark:block max-lg:max-w-xs" />
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl dark:outline-white/15" />
@@ -104,16 +92,8 @@ export default function ThreeColumnBentoGrid({
                 </p>
               </div>
               <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
-                <img
-                  alt=""
-                  src={securityImageLight}
-                  className="h-[min(152px,40cqw)] object-cover dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={securityImageDark}
-                  className="h-[min(152px,40cqw)] object-cover hidden dark:block"
-                />
+                <img alt="" src={securityImageLight} className="h-[min(152px,40cqw)] object-cover dark:hidden" />
+                <img alt="" src={securityImageDark} className="h-[min(152px,40cqw)] object-cover hidden dark:block" />
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 dark:outline-white/15" />
@@ -146,7 +126,8 @@ export default function ThreeColumnBentoGrid({
                         <span className="text-blue-400">const</span> <span className="text-white">config</span> = {'{'}
                       </div>
                       <div className="ml-4">
-                        <span className="text-green-400">apiUrl</span>: <span className="text-yellow-400">'https://api.example.com'</span>,
+                        <span className="text-green-400">apiUrl</span>:{' '}
+                        <span className="text-yellow-400">'https://api.example.com'</span>,
                       </div>
                       <div className="ml-4">
                         <span className="text-green-400">timeout</span>: <span className="text-purple-400">5000</span>
@@ -162,5 +143,5 @@ export default function ThreeColumnBentoGrid({
         </div>
       </div>
     </div>
-  )
+  );
 }

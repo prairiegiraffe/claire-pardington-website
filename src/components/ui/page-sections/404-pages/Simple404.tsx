@@ -24,5 +24,5 @@ export default function Simple404() {
         </div>
       </main>
     </>
-  )
+  );
 }

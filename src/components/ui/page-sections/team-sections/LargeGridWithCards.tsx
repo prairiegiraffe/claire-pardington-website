@@ -47,7 +47,7 @@ const people = [
     xUrl: '#',
     linkedinUrl: '#',
   },
-]
+];
 
 export default function LargeGridWithCards() {
   return (
@@ -110,5 +110,5 @@ export default function LargeGridWithCards() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

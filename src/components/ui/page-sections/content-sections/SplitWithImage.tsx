@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 
 export default function SplitWithImage() {
   return (
@@ -83,5 +83,5 @@ export default function SplitWithImage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

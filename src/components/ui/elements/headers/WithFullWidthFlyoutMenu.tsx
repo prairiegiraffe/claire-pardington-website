@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
+import { useState } from 'react';
 import {
   Dialog,
   DialogPanel,
@@ -11,7 +11,7 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-} from '@headlessui/react'
+} from '@headlessui/react';
 import {
   Bars3Icon,
   ChartPieIcon,
@@ -19,8 +19,8 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
+} from '@heroicons/react/24/outline';
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid';
 
 const products = [
   {
@@ -42,15 +42,15 @@ const products = [
     href: '#',
     icon: SquaresPlusIcon,
   },
-]
+];
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
-]
+];
 
 export default function WithFullWidthFlyoutMenu() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="relative isolate z-10 bg-white dark:bg-gray-900">
@@ -232,5 +232,5 @@ export default function WithFullWidthFlyoutMenu() {
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }

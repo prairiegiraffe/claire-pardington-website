@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface NavigationItem {
   name: string;
@@ -33,26 +33,26 @@ const defaultNavigation: NavigationItem[] = [
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
   { name: 'Log in', href: '#' },
-]
+];
 
 export default function AngledImageHero({
-  title = "Data to enrich your business",
-  subtitle = "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
-  ctaText = "Get started",
-  ctaHref = "#",
-  secondaryCtaText = "Learn more",
-  secondaryCtaHref = "#",
-  announcementText = "Anim aute id magna aliqua ad ad non deserunt sunt. Read more",
-  announcementHref = "#",
-  logoSrc = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600",
-  logoSrcDark = "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500",
-  logoAlt = "Your Company",
-  imageSrc = "https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80",
-  imageAlt = "Hero image",
+  title = 'Data to enrich your business',
+  subtitle = 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',
+  ctaText = 'Get started',
+  ctaHref = '#',
+  secondaryCtaText = 'Learn more',
+  secondaryCtaHref = '#',
+  announcementText = 'Anim aute id magna aliqua ad ad non deserunt sunt. Read more',
+  announcementHref = '#',
+  logoSrc = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600',
+  logoSrcDark = 'https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500',
+  logoAlt = 'Your Company',
+  imageSrc = 'https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80',
+  imageAlt = 'Hero image',
   navigation = defaultNavigation,
-  className = ""
+  className = '',
 }: AngledImageHeroProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={`bg-white dark:bg-gray-900 ${className}`}>
@@ -62,16 +62,8 @@ export default function AngledImageHero({
             <nav aria-label="Global" className="flex items-center justify-between lg:justify-start">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{logoAlt}</span>
-                <img
-                  alt={logoAlt}
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt={logoAlt}
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt={logoAlt} src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt={logoAlt} src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -97,16 +89,8 @@ export default function AngledImageHero({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">{logoAlt}</span>
-                <img
-                  alt=""
-                  src={logoSrc}
-                  className="h-8 w-auto dark:hidden"
-                />
-                <img
-                  alt=""
-                  src={logoSrcDark}
-                  className="h-8 w-auto not-dark:hidden"
-                />
+                <img alt="" src={logoSrc} className="h-8 w-auto dark:hidden" />
+                <img alt="" src={logoSrcDark} className="h-8 w-auto not-dark:hidden" />
               </a>
               <button
                 type="button"
@@ -161,7 +145,10 @@ export default function AngledImageHero({
                 <div className="hidden sm:mb-10 sm:flex">
                   <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:text-gray-400 dark:ring-white/10 dark:hover:ring-white/20">
                     {announcementText.replace(' Read more', '')}{' '}
-                    <a href={announcementHref} className="font-semibold whitespace-nowrap text-indigo-600 dark:text-indigo-400">
+                    <a
+                      href={announcementHref}
+                      className="font-semibold whitespace-nowrap text-indigo-600 dark:text-indigo-400"
+                    >
                       <span aria-hidden="true" className="absolute inset-0" />
                       Read more <span aria-hidden="true">&rarr;</span>
                     </a>
@@ -189,13 +176,9 @@ export default function AngledImageHero({
           </div>
         </div>
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 dark:bg-gray-800">
-          <img
-            alt={imageAlt}
-            src={imageSrc}
-            className="aspect-3/2 object-cover lg:aspect-auto lg:size-full"
-          />
+          <img alt={imageAlt} src={imageSrc} className="aspect-3/2 object-cover lg:aspect-auto lg:size-full" />
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -92,5 +92,5 @@ export default function SimpleWithCallToAction() {
         </div>
       </div>
     </div>
-  )
+  );
 }

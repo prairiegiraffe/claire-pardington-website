@@ -27,7 +27,7 @@ const timeline = [
     date: 'Dec 2022',
     dateTime: '2022-12',
   },
-]
+];
 
 export default function Timeline() {
   return (
@@ -56,5 +56,5 @@ export default function Timeline() {
         </div>
       </div>
     </div>
-  )
+  );
 }

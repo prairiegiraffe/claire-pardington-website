@@ -45,5 +45,5 @@ export default function CenteredWithBackgroundImageHeader() {
         </p>
       </div>
     </div>
-  )
+  );
 }

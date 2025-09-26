@@ -11,35 +11,34 @@ import SimpleJustifiedOnSubtleBrandCTA from '~/components/ui/page-sections/cta-s
 import SplitWithImageCTA from '~/components/ui/page-sections/cta-sections/SplitWithImageCTA';
 import TwoColumnsWithPhotoCTA from '~/components/ui/page-sections/cta-sections/TwoColumnsWithPhotoCTA';
 import WithImageTilesCTA from '~/components/ui/page-sections/cta-sections/WithImageTilesCTA';
-import { getComponentsBySubcategory } from '~/lib/component-registry';
 
 const metadata = {
   title: 'CTA Sections — Component Library',
   description: 'Collection of call-to-action section components for development reference.',
   robots: { index: false, follow: false },
 };
-
-// Get components for this subcategory
-const components = getComponentsBySubcategory('cta-sections');
 ---
 
 <Layout metadata={metadata}>
   <div class="container mx-auto px-4 py-8 max-w-7xl">
-
     <!-- Developer Warning Banner -->
     <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
       <div class="flex">
         <div class="flex-shrink-0">
           <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+              clip-rule="evenodd"></path>
           </svg>
         </div>
         <div class="ml-3">
-          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
-            Development Component Library
-          </h3>
+          <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Development Component Library</h3>
           <div class="mt-2 text-sm text-red-700 dark:text-red-300">
-            <p>This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to public.</p>
+            <p>
+              This page is for development purposes only. Components use Tailwind UI Plus license. Do not expose to
+              public.
+            </p>
           </div>
         </div>
       </div>
@@ -50,13 +49,14 @@ const components = getComponentsBySubcategory('cta-sections');
       <div class="flex items-center gap-2 text-sm text-muted mb-2">
         <a href="/dev-components" class="hover:text-primary">Component Library</a>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
         <span>CTA Sections</span>
       </div>
       <h1 class="text-4xl font-bold mb-4">CTA Sections</h1>
       <p class="text-lg text-muted max-w-3xl">
-        Call-to-action section components with clear AI naming conventions. Perfect for driving conversions and user engagement.
+        Call-to-action section components with clear AI naming conventions. Perfect for driving conversions and user
+        engagement.
       </p>
     </div>
 
@@ -82,7 +82,6 @@ const components = getComponentsBySubcategory('cta-sections');
 
     <!-- Component Library -->
     <div class="space-y-16">
-
       <!-- Dark Panel App Screenshot CTA Component -->
       <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
         <!-- Component Preview -->
@@ -98,8 +97,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Dark panel with gradient background, app screenshot, and dual CTAs</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">dark-panel-app-screenshot-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">DarkPanelAppScreenshotCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >dark-panel-app-screenshot-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >DarkPanelAppScreenshotCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -118,7 +127,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<DarkPanelAppScreenshotCTA
   title="Boost your productivity. Start using our app today."
   subtitle="Ac euismod vel sit maecenas id pellentesque..."
@@ -147,8 +157,16 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Minimal left-aligned title with stacked CTA buttons</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-stacked-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleStackedCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >simple-stacked-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleStackedCTA</code>
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -167,7 +185,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleStackedCTA
   title="Boost your productivity. Start using our app today."
   primaryCTAText="Get started"
@@ -194,8 +213,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Centered content on dark panel with gradient background and dual CTAs</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">centered-dark-panel-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">CenteredDarkPanelCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >centered-dark-panel-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >CenteredDarkPanelCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -213,7 +242,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<CenteredDarkPanelCTA
   title="Boost your productivity today"
   subtitle="Incididunt sint fugiat pariatur cupidatat..."
@@ -241,8 +271,17 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Clean centered layout with title, subtitle, and dual CTAs</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-centered-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleCenteredCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >simple-centered-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleCenteredCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -261,7 +300,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleCenteredCTA
   title="Boost your productivity. Start using our app today."
   subtitle="Incididunt sint fugiat pariatur cupidatat..."
@@ -289,8 +329,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Centered layout with subtle gradient background and dual CTAs</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-centered-gradient-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleCenteredGradientCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >simple-centered-gradient-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >SimpleCenteredGradientCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -309,7 +359,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleCenteredGradientCTA
   title="Boost your productivity. Start using our app today."
   subtitle="Incididunt sint fugiat pariatur cupidatat..."
@@ -337,8 +388,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Centered CTA on brand color background with white primary button</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-centered-on-brand-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleCenteredOnBrandCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >simple-centered-on-brand-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >SimpleCenteredOnBrandCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -356,7 +417,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleCenteredOnBrandCTA
   title="Boost your productivity. Start using our app today."
   subtitle="Incididunt sint fugiat pariatur cupidatat..."
@@ -384,8 +446,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Left-aligned title with right-aligned CTA buttons in justified layout</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-justified-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleJustifiedCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >simple-justified-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >SimpleJustifiedCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -404,7 +476,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleJustifiedCTA
   title="Ready to dive in?\\nStart your free trial today."
   primaryCTAText="Get started"
@@ -431,8 +504,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Justified layout on subtle brand background with dual CTAs</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">simple-justified-on-subtle-brand-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SimpleJustifiedOnSubtleBrandCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >simple-justified-on-subtle-brand-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >SimpleJustifiedOnSubtleBrandCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-green-600">Simple</span></div>
               </div>
 
@@ -451,7 +534,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SimpleJustifiedOnSubtleBrandCTA
   title="Ready to dive in?\\nStart your free trial today."
   primaryCTAText="Get started"
@@ -478,8 +562,17 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Split layout with image background on left and content with CTA on right</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">split-with-image-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitWithImageCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >split-with-image-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">SplitWithImageCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -498,7 +591,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<SplitWithImageCTA
   eyebrow="Award winning support"
   title="We're here to help"
@@ -527,8 +621,18 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Two-column layout with photo, benefits checklist, and link CTA</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">two-columns-with-photo-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">TwoColumnsWithPhotoCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >two-columns-with-photo-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >TwoColumnsWithPhotoCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-yellow-600">Medium</span></div>
               </div>
 
@@ -548,7 +652,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<TwoColumnsWithPhotoCTA
   title="Join our team"
   subtitle="Lorem ipsum dolor sit amet consect..."
@@ -577,8 +682,17 @@ const components = getComponentsBySubcategory('cta-sections');
               <p class="text-muted mb-4">Complex layout with staggered image tiles gallery and content CTA</p>
 
               <div class="text-sm space-y-2">
-                <div><strong>AI Reference:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">with-image-tiles-cta</code></div>
-                <div><strong>Component:</strong> <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithImageTilesCTA</code></div>
+                <div>
+                  <strong>AI Reference:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs"
+                    >with-image-tiles-cta</code
+                  >
+                </div>
+                <div>
+                  <strong>Component:</strong>
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">WithImageTilesCTA</code
+                  >
+                </div>
                 <div><strong>Complexity:</strong> <span class="text-red-600">Complex</span></div>
               </div>
 
@@ -597,7 +711,8 @@ const components = getComponentsBySubcategory('cta-sections');
 
             <div class="lg:col-span-2">
               <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Usage Example:</h4>
-              <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
+              <pre
+                class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg text-xs overflow-x-auto">
                 <code>{`<WithImageTilesCTA
   title="Our people"
   subtitle="Quasi est quaerat. Sit molestiae et..."
@@ -611,15 +726,11 @@ const components = getComponentsBySubcategory('cta-sections');
           </div>
         </div>
       </section>
-
     </div>
 
     <!-- Navigation -->
     <div class="mt-12 flex justify-between items-center">
-      <a
-        href="/dev-components"
-        class="inline-flex items-center text-primary hover:text-primary/80 font-medium"
-      >
+      <a href="/dev-components" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
         ← Back to Component Library
       </a>
       <a
@@ -629,6 +740,5 @@ const components = getComponentsBySubcategory('cta-sections');
         Feature Sections →
       </a>
     </div>
-
   </div>
 </Layout>

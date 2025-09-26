@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -50,7 +50,7 @@ const tiers = [
     ],
     featured: false,
   },
-]
+];
 
 export default function FourTiersWithToggle() {
   return (
@@ -141,5 +141,5 @@ export default function FourTiersWithToggle() {
         </div>
       </div>
     </form>
-  )
+  );
 }

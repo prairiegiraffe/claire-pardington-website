@@ -35,7 +35,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
   },
-]
+];
 
 export default function SideBySide() {
   return (
@@ -56,5 +56,5 @@ export default function SideBySide() {
         </dl>
       </div>
     </div>
-  )
+  );
 }

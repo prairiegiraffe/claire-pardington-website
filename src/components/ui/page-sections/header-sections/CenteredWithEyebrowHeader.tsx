@@ -12,5 +12,5 @@ export default function CenteredWithEyebrowHeader() {
         </p>
       </div>
     </div>
-  )
+  );
 }

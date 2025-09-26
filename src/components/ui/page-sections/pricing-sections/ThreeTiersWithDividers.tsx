@@ -1,4 +1,4 @@
-import { CheckCircleIcon } from '@heroicons/react/20/solid'
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
@@ -38,7 +38,7 @@ const tiers = [
       'Custom reporting tools',
     ],
   },
-]
+];
 
 export default function ThreeTiersWithDividers() {
   return (
@@ -95,5 +95,5 @@ export default function ThreeTiersWithDividers() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { useState } from 'react';
+import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 const pricing = {
   tiers: [
     {
@@ -63,7 +63,7 @@ const pricing = {
       featured: false,
     },
   ],
-}
+};
 const faqs = [
   {
     question: "What's the best thing about Switzerland?",
@@ -95,7 +95,7 @@ const faqs = [
     answer:
       "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
   },
-]
+];
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -120,10 +120,10 @@ const footerNavigation = {
     { name: 'Privacy policy', href: '#' },
     { name: 'License', href: '#' },
   ],
-}
+};
 
 export default function CompleteWithFAQsPricingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -577,5 +577,5 @@ export default function CompleteWithFAQsPricingPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

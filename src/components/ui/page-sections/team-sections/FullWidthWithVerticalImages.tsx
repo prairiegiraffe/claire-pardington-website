@@ -27,7 +27,7 @@ const people = [
       'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
     bio: 'Quis bibendum velit diam tellus sed ut. Faucibus posuere enim, vitae enim eget neque tortor. Metus lectus mattis id id. Tellus ornare etiam id velit ut enim lacinia congue ultrices. Sit morbi vel elit a maecenas mauris elit lectus magna.',
   },
-]
+];
 
 export default function FullWidthWithVerticalImages() {
   return (
@@ -63,5 +63,5 @@ export default function FullWidthWithVerticalImages() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

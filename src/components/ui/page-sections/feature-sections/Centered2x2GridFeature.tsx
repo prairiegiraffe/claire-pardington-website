@@ -1,4 +1,4 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline';
 
 interface Feature {
   name: string;
@@ -39,14 +39,14 @@ const defaultFeatures: Feature[] = [
       'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
     icon: FingerPrintIcon,
   },
-]
+];
 
 export default function Centered2x2GridFeature({
-  eyebrow = "Deploy faster",
-  title = "Everything you need to deploy your app",
-  subtitle = "Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.",
+  eyebrow = 'Deploy faster',
+  title = 'Everything you need to deploy your app',
+  subtitle = 'Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.',
   features = defaultFeatures,
-  className = ""
+  className = '',
 }: Centered2x2GridFeatureProps) {
   return (
     <div className={`bg-white py-24 sm:py-32 dark:bg-gray-900 ${className}`}>
@@ -56,9 +56,7 @@ export default function Centered2x2GridFeature({
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
             {title}
           </p>
-          <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">{subtitle}</p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
@@ -77,5 +75,5 @@ export default function Centered2x2GridFeature({
         </div>
       </div>
     </div>
-  )
+  );
 }
