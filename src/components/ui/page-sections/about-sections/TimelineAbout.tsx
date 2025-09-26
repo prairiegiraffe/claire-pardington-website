@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Resources', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 const timeline = [
   {
     name: 'Founded company',
@@ -39,7 +39,7 @@ const timeline = [
     date: 'Dec 2022',
     dateTime: '2022-12',
   },
-]
+];
 const jobOpenings = [
   {
     id: 1,
@@ -68,7 +68,7 @@ const jobOpenings = [
     salary: '$105,000 USD',
     location: 'San Francisco, CA',
   },
-]
+];
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -156,10 +156,10 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 export default function TimelineAbout() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -652,5 +652,5 @@ export default function TimelineAbout() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

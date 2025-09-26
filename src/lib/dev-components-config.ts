@@ -63,9 +63,7 @@ export const PAGE_COMPONENTS: Record<string, PageComponent[]> = {
     { id: 'simple-hero', name: 'SimpleHero', title: 'Simple Hero' },
     { id: 'split-hero', name: 'SplitHero', title: 'Split Hero' },
   ],
-  pricing: [
-    { id: 'simple-pricing', name: 'SimplePricing', title: 'Simple Pricing' },
-  ],
+  pricing: [{ id: 'simple-pricing', name: 'SimplePricing', title: 'Simple Pricing' }],
 };
 
 const SUBCATEGORY_OVERRIDES: Record<string, string> = {

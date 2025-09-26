@@ -67,73 +67,75 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
     <div>
       <h3 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Pages</h3>
       <ul class="space-y-1">
-        {resolvedPages.map((page) => (
-          <li>
-            <div class="flex items-center">
-              <a
-                href={page.href}
-                class={`flex-1 rounded-lg px-3 py-2 text-sm transition-colors ${
-                  page.isCurrent
-                    ? 'bg-primary/10 font-medium text-primary'
-                    : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
-                }`}
-              >
-                {page.name}
+        {
+          resolvedPages.map((page) => (
+            <li>
+              <div class="flex items-center">
+                <a
+                  href={page.href}
+                  class={`flex-1 rounded-lg px-3 py-2 text-sm transition-colors ${
+                    page.isCurrent
+                      ? 'bg-primary/10 font-medium text-primary'
+                      : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
+                  }`}
+                >
+                  {page.name}
+                  {page.hasComponents && (
+                    <span class="ml-2 rounded bg-gray-200 px-1.5 py-0.5 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">
+                      {page.components.length}
+                    </span>
+                  )}
+                </a>
+
                 {page.hasComponents && (
-                  <span class="ml-2 rounded bg-gray-200 px-1.5 py-0.5 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">
-                    {page.components.length}
-                  </span>
+                  <button
+                    type="button"
+                    class="ml-1 rounded p-1 text-gray-400 transition-colors hover:text-gray-600 dark:hover:text-gray-300"
+                    data-submenu-toggle={page.id}
+                    aria-controls={`submenu-${page.id}`}
+                    aria-expanded={page.isCurrent ? 'true' : 'false'}
+                  >
+                    <span class="sr-only">Toggle {page.name} components</span>
+                    <svg
+                      class={`h-4 w-4 transition-transform ${page.isCurrent ? 'rotate-90' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 )}
-              </a>
+              </div>
 
               {page.hasComponents && (
-                <button
-                  type="button"
-                  class="ml-1 rounded p-1 text-gray-400 transition-colors hover:text-gray-600 dark:hover:text-gray-300"
-                  data-submenu-toggle={page.id}
-                  aria-controls={`submenu-${page.id}`}
-                  aria-expanded={page.isCurrent ? 'true' : 'false'}
+                <div
+                  id={`submenu-${page.id}`}
+                  data-submenu={page.id}
+                  class={`ml-4 mt-1 space-y-1 overflow-hidden transition-all duration-200 ${
+                    page.isCurrent ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
                 >
-                  <span class="sr-only">Toggle {page.name} components</span>
-                  <svg
-                    class={`h-4 w-4 transition-transform ${page.isCurrent ? 'rotate-90' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
+                  {page.components.map((component) => {
+                    const isSamePage = page.isCurrent;
+                    const href = isSamePage ? `#${component.id}` : `${page.href}#${component.id}`;
+
+                    return (
+                      <a
+                        href={href}
+                        data-component-link={isSamePage ? 'same-page' : 'other-page'}
+                        data-component-target={component.id}
+                        class="block rounded px-3 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-50 hover:text-primary dark:text-gray-400 dark:hover:bg-gray-800"
+                      >
+                        {component.title}
+                      </a>
+                    );
+                  })}
+                </div>
               )}
-            </div>
-
-            {page.hasComponents && (
-              <div
-                id={`submenu-${page.id}`}
-                data-submenu={page.id}
-                class={`ml-4 mt-1 space-y-1 overflow-hidden transition-all duration-200 ${
-                  page.isCurrent ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                {page.components.map((component) => {
-                  const isSamePage = page.isCurrent;
-                  const href = isSamePage ? `#${component.id}` : `${page.href}#${component.id}`;
-
-                  return (
-                    <a
-                      href={href}
-                      data-component-link={isSamePage ? 'same-page' : 'other-page'}
-                      data-component-target={component.id}
-                      class="block rounded px-3 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-50 hover:text-primary dark:text-gray-400 dark:hover:bg-gray-800"
-                    >
-                      {component.title}
-                    </a>
-                  );
-                })}
-              </div>
-            )}
-          </li>
-        ))}
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -158,7 +160,6 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
   <slot />
 </div>
 
-
 <style>
   #dev-sidebar {
     scrollbar-width: none;
@@ -179,10 +180,8 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
       return;
     }
 
-    const openIcon =
-      `<svg class="h-4 w-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>`;
-    const closedIcon =
-      `<svg class="h-4 w-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
+    const openIcon = `<svg class="h-4 w-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>`;
+    const closedIcon = `<svg class="h-4 w-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
 
     if (!(toggleBtn as HTMLElement).dataset.sidebarBound) {
       (toggleBtn as HTMLElement).dataset.sidebarBound = 'true';

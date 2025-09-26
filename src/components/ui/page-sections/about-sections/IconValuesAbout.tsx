@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import {
   AcademicCapIcon,
   CheckCircleIcon,
@@ -11,20 +11,20 @@ import {
   SparklesIcon,
   SunIcon,
   UserGroupIcon,
-} from '@heroicons/react/20/solid'
+} from '@heroicons/react/20/solid';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 const stats = [
   { label: 'Business was founded', value: '2012' },
   { label: 'People on the team', value: '120+' },
   { label: 'Users on the platform', value: '250k' },
   { label: 'Paid out to creators', value: '$70M' },
-]
+];
 const values = [
   {
     name: 'Be world-class.',
@@ -56,7 +56,7 @@ const values = [
     description: 'Culpa dolorem voluptatem velit autem rerum qui et corrupti. Quibusdam quo placeat.',
     icon: SunIcon,
   },
-]
+];
 const team = [
   {
     name: 'Leslie Alexander',
@@ -114,7 +114,7 @@ const team = [
       'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
     location: 'Toronto, Canada',
   },
-]
+];
 const benefits = [
   'Competitive salaries',
   'Flexible work hours',
@@ -122,7 +122,7 @@ const benefits = [
   'Annual team retreats',
   'Benefits for you and your family',
   'A great work environment',
-]
+];
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -210,10 +210,10 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 export default function IconValuesAbout() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -436,11 +436,7 @@ export default function IconValuesAbout() {
           >
             {team.map((person) => (
               <li key={person.name}>
-                <img
-                  alt=""
-                  src={person.imageUrl}
-                  className="aspect-[14/13] w-full rounded-2xl object-cover"
-                />
+                <img alt="" src={person.imageUrl} className="aspect-[14/13] w-full rounded-2xl object-cover" />
                 <h3 className="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900 dark:text-white">
                   {person.name}
                 </h3>
@@ -613,5 +609,5 @@ export default function IconValuesAbout() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

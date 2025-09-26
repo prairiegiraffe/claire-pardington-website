@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Resources', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 const stats = [
   { label: 'Transactions every 24 hours', value: '44 million' },
   { label: 'Assets under holding', value: '$119 trillion' },
   { label: 'New users annually', value: '46,000' },
-]
+];
 const values = [
   {
     name: 'Be world-class',
@@ -46,7 +46,7 @@ const values = [
     description:
       'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
   },
-]
+];
 const team = [
   {
     name: 'Michael Foster',
@@ -120,7 +120,7 @@ const team = [
     imageUrl:
       'https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
   },
-]
+];
 const blogPosts = [
   {
     id: 1,
@@ -169,7 +169,7 @@ const blogPosts = [
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
   },
-]
+];
 const footerNavigation = {
   main: [
     { name: 'About', href: '#' },
@@ -242,10 +242,10 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 export default function ComprehensiveAbout() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -638,11 +638,7 @@ export default function ComprehensiveAbout() {
           >
             {team.map((person) => (
               <li key={person.name}>
-                <img
-                  alt=""
-                  src={person.imageUrl}
-                  className="mx-auto size-24 rounded-full"
-                />
+                <img alt="" src={person.imageUrl} className="mx-auto size-24 rounded-full" />
                 <h3 className="mt-6 text-base/7 font-semibold tracking-tight text-gray-900 dark:text-white">
                   {person.name}
                 </h3>
@@ -734,5 +730,5 @@ export default function ComprehensiveAbout() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
