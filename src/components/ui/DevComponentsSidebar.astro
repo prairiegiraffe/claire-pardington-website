@@ -184,10 +184,10 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
     const closedIcon =
       '<svg class=\"h-4 w-4 text-gray-600 dark:text-gray-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5l7 7-7 7\"></path></svg>';
 
-    if (!toggleBtn.dataset.sidebarBound) {
-      toggleBtn.dataset.sidebarBound = 'true';
+    if (!(toggleBtn as HTMLElement).dataset.sidebarBound) {
+      (toggleBtn as HTMLElement).dataset.sidebarBound = 'true';
       let sidebarOpen = true;
-      const setSidebarState = (isOpen) => {
+      const setSidebarState = (isOpen: boolean) => {
         sidebarOpen = isOpen;
 
         if (isOpen) {
@@ -215,11 +215,11 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
     }
 
     document.querySelectorAll('[data-submenu-toggle]').forEach((button) => {
-      if (button.dataset.sidebarBound) {
+      if ((button as HTMLElement).dataset.sidebarBound) {
         return;
       }
 
-      button.dataset.sidebarBound = 'true';
+      (button as HTMLElement).dataset.sidebarBound = 'true';
       button.addEventListener('click', () => {
         const pageId = button.getAttribute('data-submenu-toggle');
         if (!pageId) return;
@@ -246,17 +246,17 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
       });
     });
 
-    const componentIds = (contentOffset.dataset.componentIds || '')
+    const componentIds = ((contentOffset as HTMLElement).dataset.componentIds || '')
       .split(',')
       .map((id) => id.trim())
       .filter(Boolean);
 
     document.querySelectorAll('[data-component-link]').forEach((link) => {
-      if (link.dataset.sidebarBound) {
+      if ((link as HTMLElement).dataset.sidebarBound) {
         return;
       }
 
-      link.dataset.sidebarBound = 'true';
+      (link as HTMLElement).dataset.sidebarBound = 'true';
       link.addEventListener('click', (event) => {
         const targetId = link.getAttribute('data-component-target');
         if (!targetId) {
@@ -264,7 +264,7 @@ const samePageComponentIds = currentPageComponents.map((component) => component.
         }
 
         const targetHref = (link.getAttribute('href') || '').trim();
-        const samePageHref = targetHref.startsWith('#') || link.dataset.componentLink === 'same-page';
+        const samePageHref = targetHref.startsWith('#') || (link as HTMLElement).dataset.componentLink === 'same-page';
         const samePath = targetHref.startsWith(window.location.pathname + '#');
         const isSamePageLink = samePageHref || samePath;
 
