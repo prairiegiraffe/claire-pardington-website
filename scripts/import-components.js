@@ -67,7 +67,7 @@ function detectCategory(code, name = '') {
 }
 
 // Generate component description
-function generateDescription(code, category) {
+function generateDescription(_code, category) {
   const descriptions = {
     'hero-sections': 'Hero section for landing pages',
     'pricing-sections': 'Pricing component with subscription plans',
@@ -107,7 +107,7 @@ function extractPropsInterface(code) {
 }
 
 // Process component code to ensure standards
-function processComponentCode(code, componentName, propsInterface) {
+function processComponentCode(code, _componentName, propsInterface) {
   let processedCode = code;
 
   // Ensure TypeScript interface exists

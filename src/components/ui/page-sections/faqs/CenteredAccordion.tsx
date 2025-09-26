@@ -1,5 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
+import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 
 const faqs = [
   {
@@ -52,9 +52,9 @@ export default function CenteredAccordion() {
                         <span className="text-base/7 font-semibold">{faq.question}</span>
                         <span className="ml-6 flex h-7 items-center">
                           {open ? (
-                            <MinusSmallIcon aria-hidden="true" className="size-6" />
+                            <MinusIcon aria-hidden="true" className="size-6" />
                           ) : (
-                            <PlusSmallIcon aria-hidden="true" className="size-6" />
+                            <PlusIcon aria-hidden="true" className="size-6" />
                           )}
                         </span>
                       </DisclosureButton>
