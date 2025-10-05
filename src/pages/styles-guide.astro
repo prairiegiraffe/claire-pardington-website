@@ -14,26 +14,26 @@ const cssCustomProperties = {
     '--aw-font-sans': 'Inter Variable',
     '--aw-font-serif': 'Inter Variable',
     '--aw-font-heading': 'Inter Variable',
-    '--aw-color-primary': 'rgb(1 97 239)',
-    '--aw-color-secondary': 'rgb(1 84 207)',
-    '--aw-color-accent': 'rgb(109 40 217)',
+    '--aw-color-primary': 'rgb(0 0 0)',
+    '--aw-color-secondary': 'rgb(64 64 64)',
+    '--aw-color-accent': 'rgb(0 0 0)',
     '--aw-color-text-heading': 'rgb(0 0 0)',
-    '--aw-color-text-default': 'rgb(16 16 16)',
-    '--aw-color-text-muted': 'rgb(16 16 16 / 66%)',
+    '--aw-color-text-default': 'rgb(0 0 0)',
+    '--aw-color-text-muted': 'rgb(64 64 64)',
     '--aw-color-bg-page': 'rgb(255 255 255)',
-    '--aw-color-bg-page-dark': 'rgb(3 6 32)',
+    '--aw-color-bg-page-dark': 'rgb(0 0 0)',
   },
   dark: {
     '--aw-font-sans': 'Inter Variable',
     '--aw-font-serif': 'Inter Variable',
     '--aw-font-heading': 'Inter Variable',
-    '--aw-color-primary': 'rgb(1 97 239)',
-    '--aw-color-secondary': 'rgb(1 84 207)',
-    '--aw-color-accent': 'rgb(109 40 217)',
-    '--aw-color-text-heading': 'rgb(247, 248, 248)',
-    '--aw-color-text-default': 'rgb(229 236 246)',
-    '--aw-color-text-muted': 'rgb(229 236 246 / 66%)',
-    '--aw-color-bg-page': 'rgb(3 6 32)',
+    '--aw-color-primary': 'rgb(255 255 255)',
+    '--aw-color-secondary': 'rgb(200 200 200)',
+    '--aw-color-accent': 'rgb(255 255 255)',
+    '--aw-color-text-heading': 'rgb(255 255 255)',
+    '--aw-color-text-default': 'rgb(255 255 255)',
+    '--aw-color-text-muted': 'rgb(200 200 200)',
+    '--aw-color-bg-page': 'rgb(0 0 0)',
   },
 };
 
@@ -50,13 +50,13 @@ const tailwindUtilities = [
 const buttonComponents = [
   {
     class: '.btn',
-    description: 'Base button component with rounded, border, and hover styles',
-    css: 'inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent...',
+    description: 'Base button component with squared corners, border, and hover styles',
+    css: 'inline-flex items-center justify-center border-black dark:border-white border bg-transparent...',
   },
   {
     class: '.btn-primary',
-    description: 'Primary button with brand colors',
-    css: 'btn + font-semibold bg-primary text-white border-primary hover:bg-secondary...',
+    description: 'Primary button with black/white colors',
+    css: 'btn + font-semibold bg-black text-white border-black hover:bg-gray-700...',
   },
   {
     class: '.btn-secondary',
@@ -66,7 +66,7 @@ const buttonComponents = [
   {
     class: '.btn-tertiary',
     description: 'Tertiary button without borders',
-    css: 'btn + border-none shadow-none text-muted hover:text-gray-900...',
+    css: 'btn + border-none shadow-none text-muted hover:text-black dark:hover:text-white...',
   },
 ];
 
@@ -199,18 +199,18 @@ const fontExamples = [
 const cardExamples = [
   {
     title: 'Simple Card',
-    class: 'bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm',
-    description: 'Basic card with border and subtle shadow',
+    class: 'bg-white dark:bg-black border border-black dark:border-white p-6',
+    description: 'Basic card with border in black/white theme',
   },
   {
     title: 'Elevated Card',
-    class: 'bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg',
-    description: 'Card with larger shadow for more elevation',
+    class: 'bg-white dark:bg-black border border-black dark:border-white p-6',
+    description: 'Card with black/white borders',
   },
   {
     title: 'Interactive Card',
-    class: 'bg-white dark:bg-gray-900 rounded-lg border p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer',
-    description: 'Card with hover effects and transitions',
+    class: 'bg-white dark:bg-black border border-black dark:border-white p-6 hover:bg-gray-100 dark:hover:bg-gray-900 transition cursor-pointer',
+    description: 'Card with hover effects in black/white theme',
   },
 ];
 ---
@@ -659,11 +659,11 @@ const cardExamples = [
               <div class="space-y-2">
                 <div>
                   <span class="text-sm text-muted">Light: </span>
-                  <span class="px-2 py-1 rounded text-sm" style="background: lavender;">lavender</span>
+                  <span class="px-2 py-1 rounded text-sm" style="background: rgb(200, 200, 200);">rgb(200, 200, 200)</span>
                 </div>
                 <div>
                   <span class="text-sm text-muted">Dark: </span>
-                  <span class="px-2 py-1 rounded text-sm bg-black text-white">black with snow text</span>
+                  <span class="px-2 py-1 rounded text-sm" style="background: rgb(64, 64, 64); color: rgb(255, 255, 255);">rgb(64, 64, 64) with white text</span>
                 </div>
               </div>
             </div>
