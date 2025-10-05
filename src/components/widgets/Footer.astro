@@ -42,19 +42,21 @@ const { socialLinks = [] } = Astro.props;
       <!-- Center: Social Links -->
       <div class="md:col-span-5 flex justify-center">
         <ul class="flex gap-4">
-          {socialLinks.map(({ ariaLabel, href, icon }) => (
-            <li>
-              <a
-                class="text-white hover:text-gray-300 transition p-2 inline-flex items-center"
-                aria-label={ariaLabel}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {icon && <Icon name={icon} class="w-6 h-6" />}
-              </a>
-            </li>
-          ))}
+          {
+            socialLinks.map(({ ariaLabel, href, icon }) => (
+              <li>
+                <a
+                  class="text-white hover:text-gray-300 transition p-2 inline-flex items-center"
+                  aria-label={ariaLabel}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {icon && <Icon name={icon} class="w-6 h-6" />}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
@@ -70,10 +72,7 @@ const { socialLinks = [] } = Astro.props;
               class="flex-1 px-4 py-2 bg-white text-black border border-white focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
-            <button
-              type="submit"
-              class="px-6 py-2 bg-white text-black hover:bg-gray-200 transition font-medium"
-            >
+            <button type="submit" class="px-6 py-2 bg-white text-black hover:bg-gray-200 transition font-medium">
               Sign Up
             </button>
           </div>

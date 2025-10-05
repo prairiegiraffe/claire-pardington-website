@@ -28,10 +28,22 @@ export const headerData = {
 
 export const footerData = {
   socialLinks: [
-    { ariaLabel: 'Instagram - Claire Pardington', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/clairepardington/' },
-    { ariaLabel: 'Instagram - Pardington Collective', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/pardingtoncollective/' },
+    {
+      ariaLabel: 'Instagram - Claire Pardington',
+      icon: 'tabler:brand-instagram',
+      href: 'https://www.instagram.com/clairepardington/',
+    },
+    {
+      ariaLabel: 'Instagram - Pardington Collective',
+      icon: 'tabler:brand-instagram',
+      href: 'https://www.instagram.com/pardingtoncollective/',
+    },
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/clairepardington/' },
     { ariaLabel: 'Pinterest', icon: 'tabler:brand-pinterest', href: 'https://www.pinterest.com/cpardington/' },
-    { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/channel/UCRV7h12mlAInV1NcWZ6uOYg/' },
+    {
+      ariaLabel: 'YouTube',
+      icon: 'tabler:brand-youtube',
+      href: 'https://www.youtube.com/channel/UCRV7h12mlAInV1NcWZ6uOYg/',
+    },
   ],
 };
