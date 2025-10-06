@@ -1,4 +1,5 @@
 import { getPermalink } from './utils/permalinks';
+import logo from '~/assets/images/CP STACKED Home Page.webp';
 
 export const headerData = {
   links: [
@@ -24,6 +25,8 @@ export const headerData = {
     },
   ],
   actions: [],
+  logo: logo,
+  position: 'right',
 };
 
 export const footerData = {

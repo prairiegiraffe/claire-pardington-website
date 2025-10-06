@@ -1,0 +1,81 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import resumePage1 from '~/assets/images/Resume 1.png';
+import resumePage2 from '~/assets/images/Resume 2.png';
+
+const metadata = {
+  title: 'Resume',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <!-- Left Column: Resume Page 1 -->
+      <div>
+        <img
+          src={resumePage1.src}
+          alt="Resume Page 1"
+          class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
+          data-lightbox="true"
+        />
+      </div>
+
+      <!-- Right Column: Resume Page 2 -->
+      <div>
+        <img
+          src={resumePage2.src}
+          alt="Resume Page 2"
+          class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
+          data-lightbox="true"
+        />
+      </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="flex justify-center mt-12">
+      <a
+        href="/Pardington Resume 2025 Website.pdf"
+        download
+        class="inline-block px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors"
+      >
+        Download Resume
+      </a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain" />
+    <button id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">&times;</button>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img[data-lightbox]');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.getElementById('close-lightbox');
+
+      images.forEach(function(img) {
+        img.addEventListener('click', function() {
+          lightbox.classList.remove('hidden');
+          lightboxImg.src = this.src;
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeBtn.addEventListener('click', function() {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      });
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          lightbox.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  </script>
+</Layout>

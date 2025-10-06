@@ -1,0 +1,160 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import pressHeading from '~/assets/images/Achievements Headline.webp';
+import claireShelvesImage from '~/assets/images/claire with shelves.webp';
+import entrepreneurImage from '~/assets/images/Entrepreneur of the year.webp';
+import vogueImage from '~/assets/images/VOGUE.jpg';
+import vMagazineImage from '~/assets/images/V MAGAZINE.jpg';
+import vsCatalogImage from '~/assets/images/VS Catalog.JPG';
+import gq1 from '~/assets/images/760x76000.jpeg';
+import gq2 from '~/assets/images/760x76000 (1).jpeg';
+import gq3 from '~/assets/images/760x76000 (2).jpeg';
+import gq4 from '~/assets/images/760x76000 (6).jpeg';
+
+const metadata = {
+  title: 'Press',
+};
+
+// Add your press items here with images and text
+const pressItems = [
+  {
+    image: claireShelvesImage.src,
+    alt: 'Designing the Career of Her Dreams',
+    header: 'DESIGNING THE CAREER OF HER DREAMS',
+    text: "An article from Ross's Zell Lurie Institute",
+    link: 'https://zli.umich.edu/designing-the-career-of-her-dreams/',
+  },
+  {
+    image: entrepreneurImage.src,
+    alt: 'Entrepreneur of the Year Award 2022',
+    header: 'ENTREPRENEUR OF THE YEAR AWARD 2022',
+    text: "U Of M's Ross Business School Zell Lurie Institute",
+  },
+  {
+    image: vogueImage.src,
+    alt: 'Vogue November 2014 Issue',
+    header: 'VOGUE NOVEMBER 2014 ISSUE',
+    text: '',
+  },
+  {
+    image: vMagazineImage.src,
+    alt: 'V Magazine Fall 2014',
+    header: 'V MAGAZINE FALL 2014',
+    text: '',
+  },
+  {
+    image: vsCatalogImage.src,
+    alt: 'Cover of VS Catalogue September 2013',
+    header: 'COVER OF VS CATALOGUE',
+    text: 'SEPTEMBER 2013',
+    link: '/vs-catalog',
+  },
+  {
+    images: [gq1.src, gq2.src, gq3.src, gq4.src],
+    alt: 'GQ Magazine 2015',
+    header: 'GQ MAGAZINE 2015',
+    text: '',
+    isMulti: true,
+    link: '/gq-magazine',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20">
+    {/* Heading Image */}
+    <div class="flex justify-center mb-12">
+      <img
+        src={pressHeading.src}
+        alt="Press & Achievements"
+        class="w-64 md:w-72 lg:w-[300px]"
+      />
+    </div>
+
+    {/* First row - 4 items */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+      {
+        pressItems.slice(0, 4).map((item) => (
+          <div class="flex flex-col">
+            {item.link ? (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-64">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  class="h-64 w-auto object-cover"
+                />
+              </a>
+            ) : (
+              <div class="flex items-center justify-center h-64">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  class="h-64 w-auto object-cover"
+                />
+              </div>
+            )}
+            <div class="mt-4 text-center">
+              <h3 class="font-bold text-base mb-2">{item.header}</h3>
+              {item.text && <p class="prose dark:prose-invert">{item.text}</p>}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* Second row - 2 items */}
+    <div class="flex flex-col lg:flex-row gap-6 lg:justify-start items-start">
+      {
+        pressItems.slice(4, 6).map((item) => (
+          <div class="flex flex-col">
+            {item.isMulti ? (
+              item.link ? (
+                <a href={item.link} class="flex gap-4 items-center justify-center h-64">
+                  {item.images.map((img) => (
+                    <img
+                      src={img}
+                      alt={item.alt}
+                      class="h-full w-auto object-contain"
+                    />
+                  ))}
+                </a>
+              ) : (
+                <div class="flex gap-4 items-center justify-center h-64">
+                  {item.images.map((img) => (
+                    <img
+                      src={img}
+                      alt={item.alt}
+                      class="h-full w-auto object-contain"
+                    />
+                  ))}
+                </div>
+              )
+            ) : (
+              item.link ? (
+                <a href={item.link} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-64">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    class="h-64 w-auto object-cover"
+                  />
+                </a>
+              ) : (
+                <div class="flex items-center justify-center h-64">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    class="h-64 w-auto object-cover"
+                  />
+                </div>
+              )
+            )}
+            <div class="mt-4 text-center">
+              <h3 class="font-bold text-base mb-2">{item.header}</h3>
+              {item.text && <p class="prose dark:prose-invert">{item.text}</p>}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

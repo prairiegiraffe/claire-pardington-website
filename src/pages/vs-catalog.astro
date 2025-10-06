@@ -1,0 +1,44 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import vs1 from '~/assets/images/press-vs-catalog/VS CATALOGUE.jpg';
+import vs2 from '~/assets/images/press-vs-catalog/s-l1600 (11).jpg';
+import vs3 from '~/assets/images/press-vs-catalog/s-l1600 (13).jpg';
+import vs4 from '~/assets/images/press-vs-catalog/s-l1600 (14).jpg';
+import vs5 from '~/assets/images/press-vs-catalog/s-l1600 (2).jpg';
+
+const metadata = {
+  title: 'VS Catalogue September 2013',
+};
+
+const vsImages = [
+  { src: vs1.src, alt: 'VS Catalogue September 2013 - Image 1' },
+  { src: vs2.src, alt: 'VS Catalogue September 2013 - Image 2' },
+  { src: vs3.src, alt: 'VS Catalogue September 2013 - Image 3' },
+  { src: vs4.src, alt: 'VS Catalogue September 2013 - Image 4' },
+  { src: vs5.src, alt: 'VS Catalogue September 2013 - Image 5' },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    {/* Heading */}
+    <div class="flex justify-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-light text-center">VS CATALOGUE SEPTEMBER 2013</h1>
+    </div>
+
+    {/* Masonry Gallery */}
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-[10px]">
+      {
+        vsImages.map((image) => (
+          <div class="break-inside-avoid mb-[10px]">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-auto object-cover"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
