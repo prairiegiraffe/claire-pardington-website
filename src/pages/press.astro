@@ -64,11 +64,7 @@ const pressItems = [
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20">
     {/* Heading Image */}
     <div class="flex justify-center mb-12">
-      <img
-        src={pressHeading.src}
-        alt="Press & Achievements"
-        class="w-64 md:w-72 lg:w-[300px]"
-      />
+      <img src={pressHeading.src} alt="Press & Achievements" class="w-64 md:w-72 lg:w-[300px]" />
     </div>
 
     {/* First row - 4 items */}
@@ -77,20 +73,17 @@ const pressItems = [
         pressItems.slice(0, 4).map((item) => (
           <div class="flex flex-col">
             {item.link ? (
-              <a href={item.link} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-64">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  class="h-64 w-auto object-cover"
-                />
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-64"
+              >
+                <img src={item.image} alt={item.alt} class="h-64 w-auto object-cover" />
               </a>
             ) : (
               <div class="flex items-center justify-center h-64">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  class="h-64 w-auto object-cover"
-                />
+                <img src={item.image} alt={item.alt} class="h-64 w-auto object-cover" />
               </div>
             )}
             <div class="mt-4 text-center">
@@ -111,42 +104,29 @@ const pressItems = [
               item.link ? (
                 <a href={item.link} class="flex gap-4 items-center justify-center h-64">
                   {item.images.map((img) => (
-                    <img
-                      src={img}
-                      alt={item.alt}
-                      class="h-full w-auto object-contain"
-                    />
+                    <img src={img} alt={item.alt} class="h-full w-auto object-contain" />
                   ))}
                 </a>
               ) : (
                 <div class="flex gap-4 items-center justify-center h-64">
                   {item.images.map((img) => (
-                    <img
-                      src={img}
-                      alt={item.alt}
-                      class="h-full w-auto object-contain"
-                    />
+                    <img src={img} alt={item.alt} class="h-full w-auto object-contain" />
                   ))}
                 </div>
               )
+            ) : item.link ? (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-64"
+              >
+                <img src={item.image} alt={item.alt} class="h-64 w-auto object-cover" />
+              </a>
             ) : (
-              item.link ? (
-                <a href={item.link} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-64">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    class="h-64 w-auto object-cover"
-                  />
-                </a>
-              ) : (
-                <div class="flex items-center justify-center h-64">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    class="h-64 w-auto object-cover"
-                  />
-                </div>
-              )
+              <div class="flex items-center justify-center h-64">
+                <img src={item.image} alt={item.alt} class="h-64 w-auto object-cover" />
+              </div>
             )}
             <div class="mt-4 text-center">
               <h3 class="font-bold text-base mb-2">{item.header}</h3>

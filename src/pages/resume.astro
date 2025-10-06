@@ -51,26 +51,26 @@ const metadata = {
   </div>
 
   <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const images = document.querySelectorAll('img[data-lightbox]');
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const closeBtn = document.getElementById('close-lightbox');
 
-      images.forEach(function(img) {
-        img.addEventListener('click', function() {
+      images.forEach(function (img) {
+        img.addEventListener('click', function () {
           lightbox.classList.remove('hidden');
           lightboxImg.src = this.src;
           document.body.style.overflow = 'hidden';
         });
       });
 
-      closeBtn.addEventListener('click', function() {
+      closeBtn.addEventListener('click', function () {
         lightbox.classList.add('hidden');
         document.body.style.overflow = 'auto';
       });
 
-      lightbox.addEventListener('click', function(e) {
+      lightbox.addEventListener('click', function (e) {
         if (e.target === lightbox) {
           lightbox.classList.add('hidden');
           document.body.style.overflow = 'auto';
