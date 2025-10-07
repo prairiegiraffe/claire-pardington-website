@@ -1,0 +1,303 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+
+// Concept images
+import concept01 from '~/assets/images/Home Reno/Concept/01.webp';
+import concept02 from '~/assets/images/Home Reno/Concept/02.webp';
+import concept03 from '~/assets/images/Home Reno/Concept/03.webp';
+import concept04 from '~/assets/images/Home Reno/Concept/04.webp';
+import concept05 from '~/assets/images/Home Reno/Concept/05.webp';
+import concept06 from '~/assets/images/Home Reno/Concept/06.webp';
+import concept07 from '~/assets/images/Home Reno/Concept/07.webp';
+import concept08 from '~/assets/images/Home Reno/Concept/08.webp';
+import concept09 from '~/assets/images/Home Reno/Concept/09.webp';
+import concept10 from '~/assets/images/Home Reno/Concept/10.webp';
+import concept11 from '~/assets/images/Home Reno/Concept/11.webp';
+import concept12 from '~/assets/images/Home Reno/Concept/12.webp';
+import concept13 from '~/assets/images/Home Reno/Concept/13.webp';
+import concept14 from '~/assets/images/Home Reno/Concept/14.webp';
+
+// Final Design images
+import final01 from '~/assets/images/Home Reno/Final Design/277759000_4760868910707323_8526804745478988693_n.webp';
+import final02 from '~/assets/images/Home Reno/Final Design/277764108_4760868370707377_4898779575181623675_n.webp';
+import final03 from '~/assets/images/Home Reno/Final Design/277764618_4760868387374042_8051710536961164389_n.webp';
+import final04 from '~/assets/images/Home Reno/Final Design/277765934_4760868894040658_9050298348615860418_n.webp';
+import final05 from '~/assets/images/Home Reno/Final Design/277766266_4760868844040663_4595689432424689199_n.webp';
+import final06 from '~/assets/images/Home Reno/Final Design/277772515_4760868754040672_6753002034497938613_n.webp';
+import final07 from '~/assets/images/Home Reno/Final Design/277786990_4760868400707374_3949545687014018196_n.webp';
+import final08 from '~/assets/images/Home Reno/Final Design/277787754_4760869070707307_5602662399179920656_n.webp';
+import final09 from '~/assets/images/Home Reno/Final Design/277789501_4760868740707340_4306040039767304256_n.webp';
+import final10 from '~/assets/images/Home Reno/Final Design/277792054_4760868897373991_6388283508734243659_n.webp';
+import final11 from '~/assets/images/Home Reno/Final Design/277795146_4760869397373941_1222891787528337821_n.webp';
+
+const metadata = {
+  title: 'Interior Design: Entire Home Renovation 2018 - Claire Pardington',
+};
+
+const conceptImages = [
+  concept01,
+  concept02,
+  concept03,
+  concept04,
+  concept05,
+  concept06,
+  concept07,
+  concept08,
+  concept09,
+  concept10,
+  concept11,
+  concept12,
+  concept13,
+  concept14,
+];
+
+const finalDesignImages = [final01, final02, final03, final04, final05, final06, final07, final08, final09, final10, final11];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="container mx-auto px-4 py-8">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Title and Description -->
+  <div class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h1 class="text-3xl md:text-4xl uppercase tracking-wide" style="font-weight: 200;">HOME RENO</h1>
+
+      <p class="text-base leading-relaxed">
+        Claire directed a full-scale renovation of a private residence with a $300K budget, reimagining the home from
+        the ground up. Structural changes were made to enhance flow and functionality, including the addition of a
+        four-seasons room. From architectural finishes like tile, flooring, countertops, and lighting to complete
+        interior decoration, the project delivered a transformed living space tailored to the new owner's lifestyle.
+      </p>
+    </div>
+  </div>
+
+  <!-- Design Concept Section -->
+  <div class="w-full py-16 overflow-hidden">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design Concept</h2>
+
+    <!-- Scrollable Image Container -->
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
+      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+        {
+          conceptImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item"
+              data-lightbox={`lightbox-concept-${index}`}
+              style="height: 600px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`Design Concept ${index + 1}`}
+                style="height: 600px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View Portfolio]</p>
+  </div>
+
+  <!-- Final Design Section -->
+  <div class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Final Design</h2>
+
+    <div class="masonry-grid">
+      {
+        finalDesignImages.map((img, index) => (
+          <div class="masonry-item" data-lightbox={`lightbox-final-${index}`}>
+            <Image src={img} alt={`Final Design ${index + 1}`} class="w-full h-auto cursor-pointer" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Lightbox Modals - Concept -->
+  {
+    conceptImages.map((img, index) => (
+      <div
+        id={`lightbox-concept-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-concept-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Design Concept ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+
+  <!-- Lightbox Modals - Final Design -->
+  {
+    finalDesignImages.map((img, index) => (
+      <div
+        id={`lightbox-final-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-final-${index}').classList.add('hidden')`}
+      >
+        <button
+          class="absolute top-4 right-4 text-white text-4xl hover:opacity-70"
+          onclick={`document.getElementById('lightbox-final-${index}').classList.add('hidden')`}
+        >
+          ×
+        </button>
+        <img
+          src={img.src}
+          alt={`Final Design ${index + 1}`}
+          style="max-height: 90vh; max-width: 90%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .masonry-grid {
+    column-count: 1;
+    column-gap: 10px;
+  }
+
+  @media (min-width: 640px) {
+    .masonry-grid {
+      column-count: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      column-count: 3;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .masonry-item:hover {
+    opacity: 0.8;
+  }
+
+  .masonry-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
+    if (!slider) return;
+
+    let isDown = false;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
+    let hasMoved = false;
+
+    slider.addEventListener('mousedown', (e: MouseEvent) => {
+      isDown = true;
+      hasMoved = false;
+      slider.style.cursor = 'grabbing';
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', (e: MouseEvent) => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+
+      if (!hasMoved && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      }
+
+      hasMoved = false;
+    });
+
+    slider.addEventListener('mousemove', (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      hasMoved = true;
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        if (!hasMoved) {
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
+        }
+      });
+    });
+
+    // Masonry grid lightbox
+    document.querySelectorAll('.masonry-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const lightboxId = (item as HTMLElement).getAttribute('data-lightbox');
+        if (lightboxId) {
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
+</script>

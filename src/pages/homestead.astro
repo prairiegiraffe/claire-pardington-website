@@ -1,0 +1,177 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import designConcept from '~/assets/images/Homestead/Design Concept.webp';
+import img7627 from '~/assets/images/Homestead/IMG_7627.webp';
+import img7629 from '~/assets/images/Homestead/IMG_7629.webp';
+import img7633 from '~/assets/images/Homestead/IMG_7633.webp';
+import img7639 from '~/assets/images/Homestead/IMG_7639.webp';
+import img7644 from '~/assets/images/Homestead/IMG_7644.webp';
+import img7655 from '~/assets/images/Homestead/IMG_7655.webp';
+import img76682 from '~/assets/images/Homestead/IMG_7668-2.webp';
+import img7670 from '~/assets/images/Homestead/IMG_7670.webp';
+import img7684 from '~/assets/images/Homestead/IMG_7684.webp';
+import img7685 from '~/assets/images/Homestead/IMG_7685.webp';
+import img7689 from '~/assets/images/Homestead/IMG_7689.webp';
+import img7691 from '~/assets/images/Homestead/IMG_7691.webp';
+import img7706 from '~/assets/images/Homestead/IMG_7706.webp';
+import img7713 from '~/assets/images/Homestead/IMG_7713.webp';
+import img7717 from '~/assets/images/Homestead/IMG_7717.webp';
+import img8484 from '~/assets/images/Homestead/IMG_8484.webp';
+
+const metadata = {
+  title: 'Interior Design: New Home Build 2021 - Claire Pardington',
+};
+
+const finalDesignImages = [
+  img7627,
+  img7629,
+  img7633,
+  img7639,
+  img7644,
+  img7655,
+  img76682,
+  img7670,
+  img7684,
+  img7685,
+  img7689,
+  img7691,
+  img7706,
+  img7713,
+  img7717,
+  img8484,
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="container mx-auto px-4 py-8">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Title and Description -->
+  <div class="container mx-auto px-4 py-12 max-w-4xl text-center">
+    <h1 class="text-3xl md:text-4xl uppercase tracking-wide mb-8" style="font-weight: 200;">HOMESTEAD</h1>
+
+    <p class="text-base leading-relaxed mb-16">
+      Claire led the design of a newly constructed residence with a $3M budget, shaping both the architectural
+      foundation and the interior vision. From tile, flooring, cabinetry, and countertops to furnishings and finishes,
+      every detail was curated for cohesion. The result is a home where structure and style merge seamlessly, balancing
+      elevated design with livable comfort.
+    </p>
+
+    <!-- Design Concept Section -->
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide mb-8" style="font-weight: 200;">Design Concept</h2>
+    <div class="mb-16">
+      <Image src={designConcept} alt="Design Concept" class="w-full h-auto" />
+    </div>
+
+    <!-- Final Design Section -->
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide mb-8" style="font-weight: 200;">Final Design</h2>
+  </div>
+
+  <!-- Final Design Images Grid -->
+  <div class="container mx-auto px-4 pb-16">
+    <div class="masonry-grid">
+      {
+        finalDesignImages.map((img, index) => (
+          <div class="masonry-item" data-lightbox={`lightbox-${index}`}>
+            <Image src={img} alt={`Final Design ${index + 1}`} class="w-full h-auto cursor-pointer" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Lightbox Modals -->
+  {
+    finalDesignImages.map((img, index) => (
+      <div
+        id={`lightbox-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+      >
+        <button
+          class="absolute top-4 right-4 text-white text-4xl hover:opacity-70"
+          onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+        >
+          ×
+        </button>
+        <img
+          src={img.src}
+          alt={`Final Design ${index + 1}`}
+          style="max-height: 90vh; max-width: 90%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .masonry-grid {
+    column-count: 1;
+    column-gap: 10px;
+  }
+
+  @media (min-width: 640px) {
+    .masonry-grid {
+      column-count: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      column-count: 3;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .masonry-item:hover {
+    opacity: 0.8;
+  }
+
+  .masonry-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('.masonry-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const lightboxId = item.getAttribute('data-lightbox');
+        if (lightboxId) {
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
+</script>
