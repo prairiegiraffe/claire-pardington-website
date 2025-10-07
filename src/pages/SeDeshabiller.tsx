@@ -75,7 +75,7 @@ const GalleryContainer = styled.div`
 const GalleryTrack = styled.div<{ $currentIndex: number }>`
   display: flex;
   transition: transform 0.3s ease-out;
-  transform: translateX(-${props => props.$currentIndex * 100}%);
+  transform: translateX(-${(props: { $currentIndex: number }) => props.$currentIndex * 100}%);
 `;
 
 const GallerySlide = styled.div`
@@ -106,7 +106,7 @@ const DotButton = styled.button<{ $active: boolean }>`
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: ${props => props.$active ? '#fff' : 'rgba(255, 255, 255, 0.5)'};
+  background: ${(props: { $active: boolean }) => props.$active ? '#fff' : 'rgba(255, 255, 255, 0.5)'};
   cursor: pointer;
   padding: 0;
   transition: background 0.3s ease;
@@ -169,7 +169,7 @@ const LightboxThumbnail = styled.img`
 `;
 
 const LightboxOverlay = styled.div<{ $isOpen: boolean }>`
-  display: ${props => props.$isOpen ? 'flex' : 'none'};
+  display: ${(props: { $isOpen: boolean }) => props.$isOpen ? 'flex' : 'none'};
   position: fixed;
   top: 0;
   left: 0;
@@ -210,14 +210,14 @@ const LightboxClose = styled.button`
   }
 `;
 
-const pageImages = [page12, page34];
+const pageImages = [page12.src, page34.src];
 
 const galleryImages = [
-  flatFinal01,
-  flatFinal02,
-  flatFinal03,
-  flatFinal04,
-  flatFinal05,
+  flatFinal01.src,
+  flatFinal02.src,
+  flatFinal03.src,
+  flatFinal04.src,
+  flatFinal05.src,
 ];
 
 const SeDeshabiller: React.FC = () => {
@@ -270,11 +270,11 @@ const SeDeshabiller: React.FC = () => {
 
   return (
     <PageContainer>
-      <FullWidthImage src={coverImage} alt="SE DÉSHABILLER Cover" />
+      <FullWidthImage src={coverImage.src} alt="SE DÉSHABILLER Cover" />
 
       <ContentSection>
         <ImageContainer>
-          <img src={definitionImage} alt="SE DÉSHABILLER Definition" />
+          <img src={definitionImage.src} alt="SE DÉSHABILLER Definition" />
         </ImageContainer>
 
         <TextContainer>
@@ -305,7 +305,7 @@ const SeDeshabiller: React.FC = () => {
 
       <LightboxOverlay $isOpen={lightboxOpen} onClick={closeLightbox}>
         <LightboxClose onClick={closeLightbox}>×</LightboxClose>
-        <LightboxImage src={lightboxImage} alt="Lightbox" onClick={(e) => e.stopPropagation()} />
+        <LightboxImage src={lightboxImage} alt="Lightbox" onClick={(e: React.MouseEvent) => e.stopPropagation()} />
       </LightboxOverlay>
 
       <GalleryContainer
