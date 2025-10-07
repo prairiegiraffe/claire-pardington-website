@@ -1,0 +1,429 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+
+// Catalogue images for flipbook
+import cat01 from '~/assets/images/VS Deigner Amour/Catalogue/01.webp';
+import cat02 from '~/assets/images/VS Deigner Amour/Catalogue/02.webp';
+import cat03 from '~/assets/images/VS Deigner Amour/Catalogue/03.webp';
+import cat04 from '~/assets/images/VS Deigner Amour/Catalogue/04.webp';
+import cat05 from '~/assets/images/VS Deigner Amour/Catalogue/05.webp';
+import cat06 from '~/assets/images/VS Deigner Amour/Catalogue/06.webp';
+import cat07 from '~/assets/images/VS Deigner Amour/Catalogue/07.webp';
+import cat08 from '~/assets/images/VS Deigner Amour/Catalogue/08.webp';
+import cat09 from '~/assets/images/VS Deigner Amour/Catalogue/09.webp';
+import cat10 from '~/assets/images/VS Deigner Amour/Catalogue/10.webp';
+import cat11 from '~/assets/images/VS Deigner Amour/Catalogue/11.webp';
+import cat12 from '~/assets/images/VS Deigner Amour/Catalogue/12.webp';
+import cat13 from '~/assets/images/VS Deigner Amour/Catalogue/13.webp';
+import cat14 from '~/assets/images/VS Deigner Amour/Catalogue/14.webp';
+import cat15 from '~/assets/images/VS Deigner Amour/Catalogue/15.webp';
+import cat16 from '~/assets/images/VS Deigner Amour/Catalogue/16.webp';
+import cat17 from '~/assets/images/VS Deigner Amour/Catalogue/17.webp';
+import cat18 from '~/assets/images/VS Deigner Amour/Catalogue/18.webp';
+import cat19 from '~/assets/images/VS Deigner Amour/Catalogue/19.webp';
+import cat20 from '~/assets/images/VS Deigner Amour/Catalogue/20.webp';
+import cat21 from '~/assets/images/VS Deigner Amour/Catalogue/21.webp';
+import cat22 from '~/assets/images/VS Deigner Amour/Catalogue/22.webp';
+import cat23 from '~/assets/images/VS Deigner Amour/Catalogue/23.webp';
+import cat24 from '~/assets/images/VS Deigner Amour/Catalogue/24.webp';
+import cat25 from '~/assets/images/VS Deigner Amour/Catalogue/25.webp';
+import cat26 from '~/assets/images/VS Deigner Amour/Catalogue/26.webp';
+import cat27 from '~/assets/images/VS Deigner Amour/Catalogue/27.webp';
+import cat28 from '~/assets/images/VS Deigner Amour/Catalogue/28.webp';
+import cat29 from '~/assets/images/VS Deigner Amour/Catalogue/29.webp';
+import cat30 from '~/assets/images/VS Deigner Amour/Catalogue/30.webp';
+import cat31 from '~/assets/images/VS Deigner Amour/Catalogue/31.webp';
+import cat32 from '~/assets/images/VS Deigner Amour/Catalogue/32.webp';
+import cat33 from '~/assets/images/VS Deigner Amour/Catalogue/33.webp';
+import cat34 from '~/assets/images/VS Deigner Amour/Catalogue/34.webp';
+import cat35 from '~/assets/images/VS Deigner Amour/Catalogue/35.webp';
+import cat36 from '~/assets/images/VS Deigner Amour/Catalogue/36.webp';
+
+// Creative Direction gallery images
+import aj01 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-01.webp';
+import aj02 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-02.webp';
+import aj03 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-03.webp';
+import aj04 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-04.webp';
+import aj05 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-05.webp';
+import aj06 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-06.webp';
+import aj07 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-07.webp';
+import aj08 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-08.webp';
+import aj09 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-09.webp';
+import aj10 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-10.webp';
+import aj11 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-11.webp';
+import aj12 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-12.webp';
+import aj13 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-13.webp';
+import aj14 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-14.webp';
+import aj15 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-15.webp';
+import aj16 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-16.webp';
+import aj17 from '~/assets/images/VS Deigner Amour/AMOUR JOURNAL/Amour Journal-17.webp';
+
+// Grid photos for masonry
+import grid01 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/1134dc40-6259-0132-42fc-0ebc4eccb42f.webp';
+import grid02 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/23ac30c700000578-0-image-56_1417547602244 2.webp';
+import grid03 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/367a601fafcd697da335a4033286bf1f.webp';
+import grid04 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/4222d150-6258-0132-17b7-0a7dfd902b7c.webp';
+import grid05 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/549bc466630c9_-_elle-01-victorias-secret-fashion-show.webp';
+import grid06 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/549bc4680e786_-_elle-03-victorias-secret-fashion-show.webp';
+import grid07 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/549bc4a62cc1d_-_elle-28-victorias-secret-fashion-show.webp';
+import grid08 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/549bc4d3738c5_-_elle-51-victorias-secret-fashion-show-joan-smalls.webp';
+import grid09 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/549bc5007558d_-_elle-69-victorias-secret-fashion-show-sigrid-agren 2.webp';
+import grid10 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/7ffb8c90-6256-0132-42fd-0ebc4eccb42f.webp';
+import grid11 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/IMG_0512.webp';
+import grid12 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/IMG_1615.webp';
+import grid13 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/IMG_2062.webp';
+import grid14 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/IMG_2109 2.webp';
+import grid15 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Screen Shot 2021-03-06 at 4.44.41 PM.webp';
+import grid16 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Screen Shot 2021-03-06 at 4.45.38 PM.webp';
+import grid17 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Screen Shot 2021-03-06 at 5.09.33 PM.webp';
+import grid18 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Screen Shot 2021-03-06 at 5.52.07 PM 2.webp';
+import grid19 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Screen Shot 2021-03-06 at 5.55.55 PM 2.webp';
+import grid20 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Victorias-Secret-black-chiffon-babydoll.webp';
+import grid21 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Victorias-Secret-chiffon-and-lace-babydoll.webp';
+import grid22 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Victorias-Secret-lace-and-chiffon-gown.webp';
+import grid23 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Victorias-Secret-lace-demi-bra.webp';
+import grid24 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Victorias-Secret-lace-plunge-bra.webp';
+import grid25 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/Victorias-Secret-lace-push-up-bra.webp';
+import grid26 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/b295eeb554c142268818d5c48eb96f52.webp';
+import grid27 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/c0df74ac3b8e18f7a6e6457f3b6298c3.webp';
+import grid28 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/rs_634x833-141001044718-634.Taylor-Swift-British-Vogue-JR-10114.webp';
+import grid29 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/victorias-secret-tulle-lace-bustier.webp';
+import grid30 from '~/assets/images/VS Deigner Amour/GRID PHOTOS/x354-q80 (1).webp';
+
+const metadata = {
+  title: "Victoria's Secret Designer Collection: Amour Fall/Holiday 2014 - Claire Pardington",
+};
+
+const catalogueImages = [
+  cat01.src,
+  cat02.src,
+  cat03.src,
+  cat04.src,
+  cat05.src,
+  cat06.src,
+  cat07.src,
+  cat08.src,
+  cat09.src,
+  cat10.src,
+  cat11.src,
+  cat12.src,
+  cat13.src,
+  cat14.src,
+  cat15.src,
+  cat16.src,
+  cat17.src,
+  cat18.src,
+  cat19.src,
+  cat20.src,
+  cat21.src,
+  cat22.src,
+  cat23.src,
+  cat24.src,
+  cat25.src,
+  cat26.src,
+  cat27.src,
+  cat28.src,
+  cat29.src,
+  cat30.src,
+  cat31.src,
+  cat32.src,
+  cat33.src,
+  cat34.src,
+  cat35.src,
+  cat36.src,
+];
+
+const creativeDirectionImages = [
+  aj01,
+  aj02,
+  aj03,
+  aj04,
+  aj05,
+  aj06,
+  aj07,
+  aj08,
+  aj09,
+  aj10,
+  aj11,
+  aj12,
+  aj13,
+  aj14,
+  aj15,
+  aj16,
+  aj17,
+];
+
+const gridImages = [
+  grid01,
+  grid02,
+  grid03,
+  grid04,
+  grid05,
+  grid06,
+  grid07,
+  grid08,
+  grid09,
+  grid10,
+  grid11,
+  grid12,
+  grid13,
+  grid14,
+  grid15,
+  grid16,
+  grid17,
+  grid18,
+  grid19,
+  grid20,
+  grid21,
+  grid22,
+  grid23,
+  grid24,
+  grid25,
+  grid26,
+  grid27,
+  grid28,
+  grid29,
+  grid30,
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="container mx-auto px-4 py-8">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Title and Text Section -->
+  <div class="container mx-auto px-4 pb-8">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h1 class="text-3xl md:text-4xl uppercase tracking-wide" style="font-weight: 200;">
+        VS AMOUR COLLECTION & DESIGNER COLLECTION COLLECTED WORKS
+      </h1>
+
+      <div class="text-base leading-relaxed">
+        <p>
+          As Senior Designer, I led the creative direction for runway-dominating designs that achieved rapid
+          sell-through rates and high-demand reorders. Working closely with a talented team, my designs garnered media
+          coverage in outlets like Vogue, W Magazine, and on television and film, solidifying the collection's
+          influence.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flipbook Section -->
+  <FlipBookTurnJS images={catalogueImages} />
+
+  <!-- Creative Direction Section -->
+  <div class="w-full py-16 overflow-hidden">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
+      Creative Direction
+    </h2>
+
+    <!-- Scrollable Image Container -->
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
+      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+        {
+          creativeDirectionImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item"
+              data-lightbox={`lightbox-cd-${index}`}
+              style="height: 400px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`Creative Direction ${index + 1}`}
+                style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View Portfolio]</p>
+  </div>
+
+  <!-- Masonry Grid Section -->
+  <div class="container mx-auto px-4 py-16">
+    <div class="masonry-grid">
+      {
+        gridImages.map((img, index) => (
+          <div class="masonry-item" data-lightbox={`lightbox-grid-${index}`}>
+            <img src={img.src} alt={`Grid Image ${index + 1}`} class="w-full h-80 object-cover cursor-pointer" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Lightbox Modals - Creative Direction -->
+  {
+    creativeDirectionImages.map((img, index) => (
+      <div
+        id={`lightbox-cd-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-cd-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Creative Direction ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+
+  <!-- Lightbox Modals - Grid -->
+  {
+    gridImages.map((img, index) => (
+      <div
+        id={`lightbox-grid-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-grid-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Grid Image ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .masonry-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .masonry-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    // Creative Direction gallery
+    const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
+    if (slider) {
+      let isDown = false;
+      let startX: number = 0;
+      let scrollLeft: number = 0;
+      let hasMoved = false;
+
+      slider.addEventListener('mousedown', (e: MouseEvent) => {
+        isDown = true;
+        hasMoved = false;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mouseup', (e: MouseEvent) => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+
+        if (!hasMoved && e.target) {
+          const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
+          if (item && item.dataset.lightbox) {
+            const lightboxId = item.dataset.lightbox;
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
+        }
+
+        hasMoved = false;
+      });
+
+      slider.addEventListener('mousemove', (e: MouseEvent) => {
+        if (!isDown) return;
+        e.preventDefault();
+        hasMoved = true;
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      document.querySelectorAll('.gallery-item').forEach((item) => {
+        item.addEventListener('click', () => {
+          if (!hasMoved) {
+            const lightboxId = (item as HTMLElement).dataset.lightbox;
+            if (lightboxId) {
+              const lightbox = document.getElementById(lightboxId);
+              if (lightbox) {
+                lightbox.classList.remove('hidden');
+              }
+            }
+          }
+        });
+      });
+    }
+
+    // Masonry grid lightbox
+    document.querySelectorAll('.masonry-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const lightboxId = (item as HTMLElement).dataset.lightbox;
+        if (lightboxId) {
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>
