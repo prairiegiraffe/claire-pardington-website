@@ -46,16 +46,55 @@ const metadata = {
   title: 'Pardington Collective - Claire Pardington',
 };
 
-const journalImages = [j01, j02, j03, j04, j05, j06, j07, j08, j09, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26];
+const journalImages = [
+  j01,
+  j02,
+  j03,
+  j04,
+  j05,
+  j06,
+  j07,
+  j08,
+  j09,
+  j10,
+  j11,
+  j12,
+  j13,
+  j14,
+  j15,
+  j16,
+  j17,
+  j18,
+  j19,
+  j20,
+  j21,
+  j22,
+  j23,
+  j24,
+  j25,
+  j26,
+];
 const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, c13];
 ---
 
 <Layout metadata={metadata}>
   <!-- Back to Works Button -->
   <div class="container mx-auto px-4 py-8">
-    <a href="/works" class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
       </svg>
       Back to Works
     </a>
@@ -63,21 +102,23 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
 
   <!-- Headline -->
   <div class="px-4 py-12">
-    <h1 class="text-3xl md:text-4xl uppercase tracking-wide text-center mb-12" style="font-weight: 200;">Pardington Collective</h1>
+    <h1 class="text-3xl md:text-4xl uppercase tracking-wide text-center mb-12" style="font-weight: 200;">
+      Pardington Collective
+    </h1>
 
     <!-- Top Image -->
     <div class="w-full">
-      <Image
-        src={topImage}
-        alt="Pardington Collective"
-        class="w-full h-auto"
-      />
+      <Image src={topImage} alt="Pardington Collective" class="w-full h-auto" />
     </div>
 
     <!-- Description Text -->
     <div class="container mx-auto max-w-[1200px] mt-12 mb-8 text-center px-4">
       <p class="text-base leading-relaxed">
-        Pardington Collective emerged from Claire Pardington's belief that clothing should transcend trends - designed with a precision fit, timeless sensibility, and the power to make the wearer feel extraordinary. Built on collaboration, the brand brought together artists from fashion, art, and beyond to blur boundaries and expand possibility. More than a label, Pardington Collective remains a living dialogue between style, creativity, and culture.
+        Pardington Collective emerged from Claire Pardington's belief that clothing should transcend trends - designed
+        with a precision fit, timeless sensibility, and the power to make the wearer feel extraordinary. Built on
+        collaboration, the brand brought together artists from fashion, art, and beyond to blur boundaries and expand
+        possibility. More than a label, Pardington Collective remains a living dialogue between style, creativity, and
+        culture.
       </p>
     </div>
 
@@ -97,21 +138,26 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
   <!-- Journal Gallery Section -->
   <div class="w-full pb-16 overflow-hidden">
     <!-- Scrollable Image Container -->
-    <div class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll" style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;">
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
       <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
-        {journalImages.map((img, index) => (
-          <div
-            class="flex-shrink-0 gallery-item"
-            data-lightbox={`lightbox-${index}`}
-            style="height: 400px; cursor: grab;"
-          >
-            <img
-              src={img.src}
-              alt={`Journal ${index + 1}`}
-              style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
-            />
-          </div>
-        ))}
+        {
+          journalImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item"
+              data-lightbox={`lightbox-${index}`}
+              style="height: 400px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`Journal ${index + 1}`}
+                style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
 
@@ -120,7 +166,9 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
 
   <!-- Collaboration Section -->
   <div class="container mx-auto px-4 py-16">
-    <h2 class="text-3xl md:text-4xl uppercase tracking-wide text-center mb-12" style="font-weight: 200;">Collaboration</h2>
+    <h2 class="text-3xl md:text-4xl uppercase tracking-wide text-center mb-12" style="font-weight: 200;">
+      Collaboration
+    </h2>
 
     <!-- Video -->
     <div class="flex justify-center mb-12">
@@ -132,18 +180,23 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen></iframe>
       </div>
     </div>
 
     <!-- Description Text -->
     <div class="max-w-[1200px] mx-auto text-center space-y-4 text-base leading-relaxed">
       <p>
-        From the beginning, Pardington Collective was imagined as a space where fashion and art could meet. That vision took shape in the debut collaboration with artist Kayo Shido, whose emotionally expressive paintings are layered with color, depth, and movement. Claire first discovered Kayo's work on the Bowery in New York City, drawn instantly to its raw beauty and complexity.
+        From the beginning, Pardington Collective was imagined as a space where fashion and art could meet. That vision
+        took shape in the debut collaboration with artist Kayo Shido, whose emotionally expressive paintings are layered
+        with color, depth, and movement. Claire first discovered Kayo's work on the Bowery in New York City, drawn
+        instantly to its raw beauty and complexity.
       </p>
       <p>
-        Together, they transformed one of Kayo's original pieces into a custom lining for the brand's classic women's blazer, while also offering the artwork itself for sale. This partnership set the tone for what Pardington Collective was always meant to be — a dialogue between artists and disciplines, creating pieces that carry both style and soul.
+        Together, they transformed one of Kayo's original pieces into a custom lining for the brand's classic women's
+        blazer, while also offering the artwork itself for sale. This partnership set the tone for what Pardington
+        Collective was always meant to be — a dialogue between artists and disciplines, creating pieces that carry both
+        style and soul.
       </p>
     </div>
   </div>
@@ -151,21 +204,26 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
   <!-- Collaboration Gallery Section -->
   <div class="w-full pb-16 overflow-hidden">
     <!-- Scrollable Image Container -->
-    <div class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll-collab" style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;">
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll-collab"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
       <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
-        {collaborationImages.map((img, index) => (
-          <div
-            class="flex-shrink-0 gallery-item-collab"
-            data-lightbox={`lightbox-collab-${index}`}
-            style="height: 400px; cursor: grab;"
-          >
-            <img
-              src={img.src}
-              alt={`Collaboration ${index + 1}`}
-              style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
-            />
-          </div>
-        ))}
+        {
+          collaborationImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item-collab"
+              data-lightbox={`lightbox-collab-${index}`}
+              style="height: 400px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`Collaboration ${index + 1}`}
+                style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
 
@@ -174,7 +232,9 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
 
   <!-- Behind the Scenes Section -->
   <div class="container mx-auto px-4 py-16">
-    <h2 class="text-3xl md:text-4xl uppercase tracking-wide text-center mb-12" style="font-weight: 200;">Behind the Scenes</h2>
+    <h2 class="text-3xl md:text-4xl uppercase tracking-wide text-center mb-12" style="font-weight: 200;">
+      Behind the Scenes
+    </h2>
 
     <!-- YouTube Video Thumbnails -->
     <div style="display: flex; justify-content: center; gap: 24px; align-items: flex-start;">
@@ -203,7 +263,10 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
   </div>
 
   <!-- YouTube Video Lightbox -->
-  <div id="video-lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+  <div
+    id="video-lightbox"
+    class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+  >
     <div class="relative w-full max-w-5xl">
       <button
         onclick="document.getElementById('video-lightbox').classList.add('hidden'); document.getElementById('youtube-player').src = '';"
@@ -218,41 +281,44 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
           src=""
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <!-- Lightbox Modals - Collaboration -->
-  {collaborationImages.map((img, index) => (
-    <div
-      id={`lightbox-collab-${index}`}
-      class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-      onclick={`document.getElementById('lightbox-collab-${index}').classList.add('hidden')`}
-    >
-      <img
-        src={img.src}
-        alt={`Collaboration ${index + 1}`}
-        style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
-      />
-    </div>
-  ))}
+  {
+    collaborationImages.map((img, index) => (
+      <div
+        id={`lightbox-collab-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-collab-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Collaboration ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
 
   <!-- Lightbox Modals -->
-  {journalImages.map((img, index) => (
-    <div
-      id={`lightbox-${index}`}
-      class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-      onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
-    >
-      <img
-        src={img.src}
-        alt={`Journal ${index + 1}`}
-        style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
-      />
-    </div>
-  ))}
+  {
+    journalImages.map((img, index) => (
+      <div
+        id={`lightbox-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Journal ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
 </Layout>
 
 <style>
@@ -263,7 +329,6 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
 </style>
 
 <script>
