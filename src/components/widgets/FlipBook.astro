@@ -1,0 +1,197 @@
+---
+interface Props {
+  images: string[];
+  title?: string;
+}
+
+const { images, title } = Astro.props;
+
+// Group images into pairs for book spreads
+const spreads = [];
+for (let i = 0; i < images.length; i += 2) {
+  spreads.push({
+    left: images[i],
+    right: images[i + 1] || null,
+  });
+}
+---
+
+<div class="flip-book-container max-w-7xl mx-auto px-4 py-16">
+  {title && <h1 class="text-4xl font-light text-center mb-12">{title}</h1>}
+
+  <div class="relative">
+    <!-- Book Spreads -->
+    <div class="book-spreads relative" style="perspective: 2000px;">
+      {spreads.map((spread, index) => (
+        <div
+          class="book-spread absolute inset-0 transition-all duration-700 ease-in-out"
+          data-spread={index}
+          style={index === 0 ? 'opacity: 1; visibility: visible; transform: rotateY(0deg);' : 'opacity: 0; visibility: hidden; transform: rotateY(-20deg);'}
+        >
+          <div class="grid md:grid-cols-2 gap-2 md:gap-4">
+            <!-- Left Page -->
+            <div class="page left-page">
+              <img
+                src={spread.left}
+                alt={`Page ${index * 2 + 1}`}
+                class="book-image shadow-lg"
+              />
+            </div>
+
+            <!-- Right Page -->
+            {spread.right && (
+              <div class="page right-page">
+                <img
+                  src={spread.right}
+                  alt={`Page ${index * 2 + 2}`}
+                  class="book-image shadow-lg"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation-controls flex justify-center items-center gap-8 mt-8">
+      <button
+        id="prevBtn"
+        class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Previous spread"
+      >
+        ← Previous
+      </button>
+
+      <div class="page-counter text-lg">
+        <span id="currentSpread">1</span> / <span id="totalSpreads">{spreads.length}</span>
+      </div>
+
+      <button
+        id="nextBtn"
+        class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Next spread"
+      >
+        Next →
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .book-spreads {
+    height: 75vh;
+    max-height: 900px;
+  }
+
+  .book-spread {
+    transform-style: preserve-3d;
+  }
+
+  .page {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    max-height: 900px;
+    background: transparent;
+  }
+
+  .book-image {
+    max-height: 75vh;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Simulate 4:6 photo aspect ratio preference */
+    aspect-ratio: 2/3;
+    object-position: center;
+  }
+
+  @media (max-width: 768px) {
+    .book-spreads {
+      height: 60vh;
+    }
+
+    .page {
+      height: 60vh;
+    }
+
+    .book-image {
+      max-height: 60vh;
+    }
+  }
+</style>
+
+<script>
+  let currentSpread = 0;
+  const spreads = document.querySelectorAll('.book-spread');
+  const totalSpreads = spreads.length;
+  const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
+  const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
+  const currentSpreadEl = document.getElementById('currentSpread');
+
+  function updateSpread() {
+    spreads.forEach((spread, index) => {
+      const spreadEl = spread as HTMLElement;
+
+      if (index === currentSpread) {
+        // Current spread
+        spreadEl.style.opacity = '1';
+        spreadEl.style.visibility = 'visible';
+        spreadEl.style.transform = 'rotateY(0deg)';
+        spreadEl.style.zIndex = '10';
+      } else if (index < currentSpread) {
+        // Previous spreads (flipped left)
+        spreadEl.style.opacity = '0';
+        spreadEl.style.visibility = 'hidden';
+        spreadEl.style.transform = 'rotateY(20deg)';
+        spreadEl.style.zIndex = '0';
+      } else {
+        // Future spreads (not yet flipped)
+        spreadEl.style.opacity = '0';
+        spreadEl.style.visibility = 'hidden';
+        spreadEl.style.transform = 'rotateY(-20deg)';
+        spreadEl.style.zIndex = '0';
+      }
+    });
+
+    // Update counter
+    if (currentSpreadEl) {
+      currentSpreadEl.textContent = (currentSpread + 1).toString();
+    }
+
+    // Update button states
+    prevBtn.disabled = currentSpread === 0;
+    nextBtn.disabled = currentSpread === totalSpreads - 1;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSpread > 0) {
+      currentSpread--;
+      updateSpread();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSpread < totalSpreads - 1) {
+      currentSpread++;
+      updateSpread();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' && currentSpread > 0) {
+      currentSpread--;
+      updateSpread();
+    } else if (e.key === 'ArrowRight' && currentSpread < totalSpreads - 1) {
+      currentSpread++;
+      updateSpread();
+    }
+  });
+
+  // Initialize
+  updateSpread();
+</script>

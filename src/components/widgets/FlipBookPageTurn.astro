@@ -1,0 +1,311 @@
+---
+interface Props {
+  images: string[];
+  title?: string;
+}
+
+const { images, title } = Astro.props;
+
+// Group images into pairs for book spreads
+const spreads = [];
+for (let i = 0; i < images.length; i += 2) {
+  spreads.push({
+    left: images[i],
+    right: images[i + 1] || null,
+  });
+}
+---
+
+<div class="flip-book-container max-w-7xl mx-auto px-4 py-16">
+  {title && <h1 class="text-4xl font-light text-center mb-12">{title}</h1>}
+
+  <div class="book-wrapper" style="perspective: 2500px;">
+    <div class="book" id="book" data-spreads={JSON.stringify(spreads)}>
+      <!-- Left side (static) -->
+      <div class="book-side left-side">
+        <div class="page-display" id="leftPage">
+          <img src={spreads[0].left} alt="Left page" class="page-image" id="leftPageImg" />
+        </div>
+      </div>
+
+      <!-- Right side (flipping pages) -->
+      <div class="book-side right-side">
+        {spreads.map((spread, index) => (
+          <div class="page-wrapper" data-spread={index}>
+            <div class="page">
+              <div class="page-content front">
+                <img src={spread.right || spread.left} alt={`Page ${index * 2 + 2}`} class="page-image" />
+              </div>
+              <div class="page-content back">
+                {spreads[index + 1] && spreads[index + 1].left && (
+                  <img src={spreads[index + 1].left} alt={`Page ${(index + 1) * 2 + 1}`} class="page-image" />
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="navigation-controls flex justify-center items-center gap-8 mt-8">
+    <button
+      id="prevBtn"
+      class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      aria-label="Previous page"
+    >
+      ← Previous
+    </button>
+
+    <div class="page-counter text-lg">
+      <span id="currentSpread">1</span> / <span id="totalSpreads">{spreads.length}</span>
+    </div>
+
+    <button
+      id="nextBtn"
+      class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      aria-label="Next page"
+    >
+      Next →
+    </button>
+  </div>
+</div>
+
+<style>
+  .book-wrapper {
+    height: 75vh;
+    max-height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .book {
+    position: relative;
+    width: 80%;
+    height: 75vh;
+    max-height: 900px;
+    transform-style: preserve-3d;
+    display: flex;
+  }
+
+  .book-side {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+
+  .left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-side {
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+  .page-display {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0s linear 0s;
+  }
+
+  .page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+
+  .page-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-content.front {
+    transform: rotateY(0deg);
+  }
+
+  .page-content.back {
+    transform: rotateY(180deg);
+  }
+
+  .page-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 2/3;
+  }
+
+  .page-wrapper.flipped {
+    transform: rotateY(-180deg);
+  }
+
+  .page-wrapper.hidden {
+    visibility: hidden;
+    transition: visibility 0s linear 1.2s;
+  }
+
+  @media (max-width: 768px) {
+    .book-wrapper {
+      height: 60vh;
+    }
+
+    .book {
+      height: 60vh;
+      width: 95%;
+      flex-direction: column;
+    }
+
+    .book-side {
+      width: 100%;
+      height: 50%;
+    }
+
+    .page-image {
+      max-height: 28vh;
+    }
+  }
+</style>
+
+<script>
+  interface Spread {
+    left: string;
+    right: string | null;
+  }
+
+  let currentSpread = 0;
+  const pageWrappers = document.querySelectorAll('.page-wrapper');
+  const totalSpreads = pageWrappers.length;
+  const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
+  const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
+  const currentSpreadEl = document.getElementById('currentSpread');
+  const leftPageImg = document.getElementById('leftPageImg') as HTMLImageElement;
+
+  // Get spread data from the page
+  const spreads: Spread[] = [];
+  const book = document.getElementById('book');
+  if (book) {
+    const scriptData = book.dataset.spreads;
+    if (scriptData) {
+      spreads.push(...JSON.parse(scriptData));
+    }
+  }
+
+  function updateBook() {
+    // Update left page
+    if (currentSpread < totalSpreads && spreads[currentSpread]) {
+      leftPageImg.src = spreads[currentSpread].left;
+      leftPageImg.style.display = 'block';
+    } else {
+      leftPageImg.style.display = 'none';
+    }
+
+    // Update right side pages
+    pageWrappers.forEach((wrapper, index) => {
+      const wrapperEl = wrapper as HTMLElement;
+
+      if (index < currentSpread) {
+        // Already flipped - hide immediately since it's already done
+        wrapperEl.classList.add('flipped');
+        wrapperEl.classList.add('hidden');
+        wrapperEl.style.zIndex = (index + 1).toString();
+      } else if (index === currentSpread) {
+        // Current page on right side - show it
+        wrapperEl.classList.remove('flipped');
+        wrapperEl.classList.remove('hidden');
+        wrapperEl.style.zIndex = (totalSpreads - index + 10).toString();
+      } else if (index === currentSpread + 1) {
+        // Next page - needs to be visible behind the current flipping page
+        wrapperEl.classList.remove('flipped');
+        wrapperEl.classList.remove('hidden');
+        wrapperEl.style.zIndex = (totalSpreads - index - 1).toString();
+      } else {
+        // Future pages - keep hidden
+        wrapperEl.classList.remove('flipped');
+        wrapperEl.classList.add('hidden');
+        wrapperEl.style.zIndex = (totalSpreads - index).toString();
+      }
+    });
+
+    // Update counter
+    if (currentSpreadEl) {
+      currentSpreadEl.textContent = (currentSpread + 1).toString();
+    }
+
+    // Update button states
+    prevBtn.disabled = currentSpread === 0;
+    nextBtn.disabled = currentSpread >= totalSpreads - 1;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSpread > 0) {
+      // First flip the page back
+      const pageToFlipBack = pageWrappers[currentSpread - 1] as HTMLElement;
+      pageToFlipBack.classList.remove('flipped');
+      pageToFlipBack.classList.remove('hidden');
+
+      currentSpread--;
+
+      // Update after a short delay to let the unflip start
+      setTimeout(() => updateBook(), 50);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSpread < totalSpreads - 1) {
+      // First show the page that will flip
+      const pageToFlip = pageWrappers[currentSpread] as HTMLElement;
+      pageToFlip.classList.remove('hidden');
+
+      // Then flip it after a tiny delay
+      setTimeout(() => {
+        pageToFlip.classList.add('flipped');
+        currentSpread++;
+        updateBook();
+      }, 50);
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' && currentSpread > 0) {
+      currentSpread--;
+      updateBook();
+    } else if (e.key === 'ArrowRight' && currentSpread < totalSpreads - 1) {
+      currentSpread++;
+      updateBook();
+    }
+  });
+
+  // Initialize
+  updateBook();
+</script>

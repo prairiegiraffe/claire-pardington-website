@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FlipBookPageTurn from '~/components/widgets/FlipBookPageTurn.astro';
+
+// Example: Import your journal images
+import image1 from '~/assets/images/GQ Magazine/760x76000 (1).jpeg';
+import image2 from '~/assets/images/GQ Magazine/760x76000 (2).jpeg';
+import image3 from '~/assets/images/GQ Magazine/760x76000 (3).jpeg';
+import image4 from '~/assets/images/GQ Magazine/760x76000 (4).jpeg';
+import image5 from '~/assets/images/GQ Magazine/760x76000 (5).jpeg';
+import image6 from '~/assets/images/GQ Magazine/760x76000 (6).jpeg';
+
+const metadata = {
+  title: 'Journal Page Turn Example',
+};
+
+const journalImages = [
+  image1.src,
+  image2.src,
+  image3.src,
+  image4.src,
+  image5.src,
+  image6.src,
+];
+---
+
+<Layout metadata={metadata}>
+  <FlipBookPageTurn images={journalImages} title="Journal Page Turn Example" />
+</Layout>

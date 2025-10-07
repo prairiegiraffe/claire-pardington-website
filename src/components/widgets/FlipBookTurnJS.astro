@@ -1,0 +1,175 @@
+---
+interface Props {
+  images: string[];
+  title?: string;
+}
+
+const { images, title } = Astro.props;
+---
+
+<div class="flipbook-container max-w-7xl mx-auto px-4 py-16">
+  {title && <h1 class="text-4xl font-light text-center mb-12">{title}</h1>}
+
+  <div id="flipbook" class="flipbook">
+    {images.map((image, index) => (
+      <div class:list={["page", index === 0 || index === images.length - 1 ? "hard" : ""]}>
+        <img src={image} alt={`Page ${index + 1}`} class="page-image" />
+      </div>
+    ))}
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="navigation-controls flex justify-center items-center gap-8 mt-8">
+    <button
+      id="prevBtn"
+      class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      style="min-width: 150px;"
+      aria-label="Previous page"
+    >
+      ← Previous
+    </button>
+
+    <div class="page-counter text-lg w-20 text-center">
+      <span id="currentPage">1</span> / <span id="totalPages">{images.length}</span>
+    </div>
+
+    <button
+      id="nextBtn"
+      class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      style="min-width: 150px;"
+      aria-label="Next page"
+    >
+      Next →
+    </button>
+  </div>
+</div>
+
+<style>
+  .flipbook-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flipbook {
+    width: 800px;
+    height: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .flipbook {
+      width: 90vw !important;
+      height: 60vh !important;
+    }
+  }
+
+  .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .page.hard {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(235,235,235,1) 100%);
+  }
+
+  .page.even {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(235,235,235,1) 100%);
+  }
+
+  .page.odd {
+    background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(235,235,235,1) 100%);
+  }
+
+  .page-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    .flipbook {
+      width: 95%;
+      height: 400px;
+    }
+  }
+</style>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', function() {
+    // Wait for jQuery to be available
+    function initFlipbook() {
+      if (typeof jQuery === 'undefined') {
+        setTimeout(initFlipbook, 100);
+        return;
+      }
+
+      const flipbook = document.getElementById('flipbook');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const currentPageEl = document.getElementById('currentPage');
+      const totalPages = parseInt(document.getElementById('totalPages')?.textContent || '0');
+
+      // Initialize turn.js with responsive settings
+      const isMobile = window.innerWidth < 768;
+
+      jQuery(flipbook).turn({
+        width: isMobile ? window.innerWidth * 0.9 : 800,
+        height: isMobile ? window.innerHeight * 0.6 : 600,
+        display: isMobile ? 'single' : 'double',
+        autoCenter: false,
+        gradients: true,
+        acceleration: true,
+        elevation: 50,
+        duration: 1000
+      });
+
+      // Handle window resize
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          const nowMobile = window.innerWidth < 768;
+          jQuery(flipbook).turn('display', nowMobile ? 'single' : 'double');
+          jQuery(flipbook).turn('size',
+            nowMobile ? window.innerWidth * 0.9 : 800,
+            nowMobile ? window.innerHeight * 0.6 : 600
+          );
+        }, 250);
+      });
+
+      function updateControls() {
+        const page = jQuery(flipbook).turn('page');
+        if (currentPageEl) {
+          currentPageEl.textContent = page.toString();
+        }
+        prevBtn.disabled = page === 1;
+        nextBtn.disabled = page === totalPages;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        jQuery(flipbook).turn('previous');
+        updateControls();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        jQuery(flipbook).turn('next');
+        updateControls();
+      });
+
+      jQuery(flipbook).bind('turned', function(event, page, view) {
+        updateControls();
+      });
+
+      // Initialize controls
+      updateControls();
+    }
+
+    initFlipbook();
+  });
+</script>
