@@ -1,0 +1,95 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import img1 from '~/assets/images/Illustrations/0DC48960-2DF4-4031-A655-F29008B56032.webp';
+import img2 from '~/assets/images/Illustrations/B50E3C6A-7132-4B47-B55E-8817E897ADC9.webp';
+import img3 from '~/assets/images/Illustrations/D3F95E33-27C1-4DCD-B550-5B8CE9C1163E.webp';
+import img4 from '~/assets/images/Illustrations/IMG_2135 3.webp';
+import img5 from '~/assets/images/Illustrations/IMG_2136.webp';
+import img6 from '~/assets/images/Illustrations/IMG_2395 5.webp';
+import img7 from '~/assets/images/Illustrations/IMG_3384.webp';
+import img8 from '~/assets/images/Illustrations/IMG_8292.webp';
+import img9 from '~/assets/images/Illustrations/IMG_8640 2.webp';
+import img10 from '~/assets/images/Illustrations/Screen Shot 2021-01-30 at 8.20.06 PM.webp';
+import img11 from '~/assets/images/Illustrations/Updated Edges.webp';
+
+const metadata = {
+  title: 'Illustrations - Claire Pardington',
+};
+
+const illustrations = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
+---
+
+<Layout metadata={metadata}>
+  <!-- Title and Description -->
+  <div class="container mx-auto px-4 py-16 max-w-4xl text-center">
+    <h1 class="text-3xl md:text-4xl uppercase tracking-wide mb-8" style="font-weight: 200;">Illustrations</h1>
+
+    <p class="text-base leading-relaxed mb-16">
+      Mixed media includes marker, pencil, watercolor, acrylic, charcoal, and pastel.
+    </p>
+  </div>
+
+  <!-- Illustrations Grid -->
+  <div class="container mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
+      {
+        illustrations.map((img, index) => (
+          <div class="illustration-item" data-lightbox={`lightbox-${index}`}>
+            <Image src={img} alt={`Illustration ${index + 1}`} class="w-full h-auto cursor-pointer object-cover" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Lightbox Modals -->
+  {
+    illustrations.map((img, index) => (
+      <div
+        id={`lightbox-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+      >
+        <button
+          class="absolute top-4 right-4 text-white text-4xl hover:opacity-70"
+          onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+        >
+          ×
+        </button>
+        <img
+          src={img.src}
+          alt={`Illustration ${index + 1}`}
+          style="max-height: 90vh; max-width: 90%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .illustration-item {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .illustration-item:hover {
+    opacity: 0.9;
+  }
+</style>
+
+<script>
+  // Add click handlers for lightbox
+  document.addEventListener('astro:page-load', () => {
+    const items = document.querySelectorAll('.illustration-item');
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        const lightboxId = item.getAttribute('data-lightbox');
+        const lightbox = document.getElementById(lightboxId);
+        if (lightbox) {
+          lightbox.classList.remove('hidden');
+        }
+      });
+    });
+  });
+</script>
