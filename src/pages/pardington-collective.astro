@@ -332,7 +332,7 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
     if (!slider) return;
 

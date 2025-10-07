@@ -222,7 +222,7 @@ const designImages = [d1a, d2a, d3a, d3b, d4a, d5a, d6a];
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
     if (!slider) return;
 
