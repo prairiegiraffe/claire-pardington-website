@@ -333,14 +333,15 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.image-gallery-scroll');
+    const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
+    if (!slider) return;
+
     let isDown = false;
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
     let hasMoved = false;
 
-    slider.addEventListener('mousedown', (e) => {
+    slider.addEventListener('mousedown', (e: MouseEvent) => {
       isDown = true;
       hasMoved = false;
       slider.style.cursor = 'grabbing';
@@ -353,21 +354,26 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
       slider.style.cursor = 'grab';
     });
 
-    slider.addEventListener('mouseup', (e) => {
+    slider.addEventListener('mouseup', (e: MouseEvent) => {
       isDown = false;
       slider.style.cursor = 'grab';
 
       // Only open lightbox if we didn't drag
-      if (!hasMoved && e.target.closest('.gallery-item')) {
-        const item = e.target.closest('.gallery-item');
-        const lightboxId = item.dataset.lightbox;
-        document.getElementById(lightboxId).classList.remove('hidden');
+      if (!hasMoved && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
       }
 
       hasMoved = false;
     });
 
-    slider.addEventListener('mousemove', (e) => {
+    slider.addEventListener('mousemove', (e: MouseEvent) => {
       if (!isDown) return;
       e.preventDefault();
       hasMoved = true;
@@ -377,23 +383,30 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
     });
 
     // Click handler for gallery items
-    document.querySelectorAll('.gallery-item').forEach((item, index) => {
-      item.addEventListener('click', (e) => {
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
         if (!hasMoved) {
-          const lightboxId = item.dataset.lightbox;
-          document.getElementById(lightboxId).classList.remove('hidden');
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
         }
       });
     });
 
     // Collaboration gallery
-    const sliderCollab = document.querySelector('.image-gallery-scroll-collab');
+    const sliderCollab = document.querySelector('.image-gallery-scroll-collab') as HTMLElement | null;
+    if (!sliderCollab) return;
+
     let isDownCollab = false;
     let hasMovedCollab = false;
-    let startXCollab;
-    let scrollLeftCollab;
+    let startXCollab: number = 0;
+    let scrollLeftCollab: number = 0;
 
-    sliderCollab.addEventListener('mousedown', (e) => {
+    sliderCollab.addEventListener('mousedown', (e: MouseEvent) => {
       isDownCollab = true;
       hasMovedCollab = false;
       sliderCollab.style.cursor = 'grabbing';
@@ -406,20 +419,25 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
       sliderCollab.style.cursor = 'grab';
     });
 
-    sliderCollab.addEventListener('mouseup', (e) => {
+    sliderCollab.addEventListener('mouseup', (e: MouseEvent) => {
       isDownCollab = false;
       sliderCollab.style.cursor = 'grab';
 
-      if (!hasMovedCollab && e.target.closest('.gallery-item-collab')) {
-        const item = e.target.closest('.gallery-item-collab');
-        const lightboxId = item.dataset.lightbox;
-        document.getElementById(lightboxId).classList.remove('hidden');
+      if (!hasMovedCollab && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item-collab') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
       }
 
       hasMovedCollab = false;
     });
 
-    sliderCollab.addEventListener('mousemove', (e) => {
+    sliderCollab.addEventListener('mousemove', (e: MouseEvent) => {
       if (!isDownCollab) return;
       e.preventDefault();
       hasMovedCollab = true;
@@ -428,11 +446,16 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
       sliderCollab.scrollLeft = scrollLeftCollab - walk;
     });
 
-    document.querySelectorAll('.gallery-item-collab').forEach((item, index) => {
-      item.addEventListener('click', (e) => {
+    document.querySelectorAll('.gallery-item-collab').forEach((item) => {
+      item.addEventListener('click', () => {
         if (!hasMovedCollab) {
-          const lightboxId = item.dataset.lightbox;
-          document.getElementById(lightboxId).classList.remove('hidden');
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
         }
       });
     });
@@ -440,21 +463,32 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
     // YouTube video thumbnails
     document.querySelectorAll('.youtube-thumbnail').forEach((thumbnail) => {
       thumbnail.addEventListener('click', () => {
-        const videoId = thumbnail.dataset.videoId;
-        const lightbox = document.getElementById('video-lightbox');
-        const iframe = document.getElementById('youtube-player');
+        const videoId = (thumbnail as HTMLElement).dataset.videoId;
+        if (!videoId) return;
 
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        lightbox.classList.remove('hidden');
+        const lightbox = document.getElementById('video-lightbox');
+        const iframe = document.getElementById('youtube-player') as HTMLIFrameElement | null;
+
+        if (iframe && lightbox) {
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          lightbox.classList.remove('hidden');
+        }
       });
     });
 
     // Close lightbox when clicking outside the video
-    document.getElementById('video-lightbox').addEventListener('click', (e) => {
-      if (e.target.id === 'video-lightbox') {
-        document.getElementById('video-lightbox').classList.add('hidden');
-        document.getElementById('youtube-player').src = '';
-      }
-    });
+    const videoLightbox = document.getElementById('video-lightbox');
+    if (videoLightbox) {
+      videoLightbox.addEventListener('click', (e: MouseEvent) => {
+        if ((e.target as HTMLElement).id === 'video-lightbox') {
+          const lightbox = document.getElementById('video-lightbox');
+          const iframe = document.getElementById('youtube-player') as HTMLIFrameElement | null;
+          if (lightbox && iframe) {
+            lightbox.classList.add('hidden');
+            iframe.src = '';
+          }
+        }
+      });
+    }
   });
 </script>

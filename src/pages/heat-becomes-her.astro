@@ -169,14 +169,15 @@ const designImages = [d1a, d2a, d3a, d3b, d4a, d5a, d6a];
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.image-gallery-scroll');
+    const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
+    if (!slider) return;
+
     let isDown = false;
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
     let hasMoved = false;
 
-    slider.addEventListener('mousedown', (e) => {
+    slider.addEventListener('mousedown', (e: MouseEvent) => {
       isDown = true;
       hasMoved = false;
       slider.style.cursor = 'grabbing';
@@ -189,21 +190,26 @@ const designImages = [d1a, d2a, d3a, d3b, d4a, d5a, d6a];
       slider.style.cursor = 'grab';
     });
 
-    slider.addEventListener('mouseup', (e) => {
+    slider.addEventListener('mouseup', (e: MouseEvent) => {
       isDown = false;
       slider.style.cursor = 'grab';
 
       // Only open lightbox if we didn't drag
-      if (!hasMoved && e.target.closest('.gallery-item')) {
-        const item = e.target.closest('.gallery-item');
-        const lightboxId = item.dataset.lightbox;
-        document.getElementById(lightboxId).classList.remove('hidden');
+      if (!hasMoved && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
       }
 
       hasMoved = false;
     });
 
-    slider.addEventListener('mousemove', (e) => {
+    slider.addEventListener('mousemove', (e: MouseEvent) => {
       if (!isDown) return;
       e.preventDefault();
       hasMoved = true;
@@ -213,23 +219,30 @@ const designImages = [d1a, d2a, d3a, d3b, d4a, d5a, d6a];
     });
 
     // Click handler for gallery items
-    document.querySelectorAll('.gallery-item').forEach((item, index) => {
-      item.addEventListener('click', (e) => {
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
         if (!hasMoved) {
-          const lightboxId = item.dataset.lightbox;
-          document.getElementById(lightboxId).classList.remove('hidden');
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
         }
       });
     });
 
     // Design gallery
-    const sliderDesign = document.querySelector('.image-gallery-scroll-design');
+    const sliderDesign = document.querySelector('.image-gallery-scroll-design') as HTMLElement | null;
+    if (!sliderDesign) return;
+
     let isDownDesign = false;
     let hasMovedDesign = false;
-    let startXDesign;
-    let scrollLeftDesign;
+    let startXDesign: number = 0;
+    let scrollLeftDesign: number = 0;
 
-    sliderDesign.addEventListener('mousedown', (e) => {
+    sliderDesign.addEventListener('mousedown', (e: MouseEvent) => {
       isDownDesign = true;
       hasMovedDesign = false;
       sliderDesign.style.cursor = 'grabbing';
@@ -242,20 +255,25 @@ const designImages = [d1a, d2a, d3a, d3b, d4a, d5a, d6a];
       sliderDesign.style.cursor = 'grab';
     });
 
-    sliderDesign.addEventListener('mouseup', (e) => {
+    sliderDesign.addEventListener('mouseup', (e: MouseEvent) => {
       isDownDesign = false;
       sliderDesign.style.cursor = 'grab';
 
-      if (!hasMovedDesign && e.target.closest('.gallery-item-design')) {
-        const item = e.target.closest('.gallery-item-design');
-        const lightboxId = item.dataset.lightbox;
-        document.getElementById(lightboxId).classList.remove('hidden');
+      if (!hasMovedDesign && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item-design') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
       }
 
       hasMovedDesign = false;
     });
 
-    sliderDesign.addEventListener('mousemove', (e) => {
+    sliderDesign.addEventListener('mousemove', (e: MouseEvent) => {
       if (!isDownDesign) return;
       e.preventDefault();
       hasMovedDesign = true;
@@ -264,11 +282,16 @@ const designImages = [d1a, d2a, d3a, d3b, d4a, d5a, d6a];
       sliderDesign.scrollLeft = scrollLeftDesign - walk;
     });
 
-    document.querySelectorAll('.gallery-item-design').forEach((item, index) => {
-      item.addEventListener('click', (e) => {
+    document.querySelectorAll('.gallery-item-design').forEach((item) => {
+      item.addEventListener('click', () => {
         if (!hasMovedDesign) {
-          const lightboxId = item.dataset.lightbox;
-          document.getElementById(lightboxId).classList.remove('hidden');
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
         }
       });
     });

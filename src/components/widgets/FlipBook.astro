@@ -7,7 +7,12 @@ interface Props {
 const { images, title } = Astro.props;
 
 // Group images into pairs for book spreads
-const spreads = [];
+interface Spread {
+  left: string;
+  right: string | null;
+}
+
+const spreads: Spread[] = [];
 for (let i = 0; i < images.length; i += 2) {
   spreads.push({
     left: images[i],
