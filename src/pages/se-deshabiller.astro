@@ -1,0 +1,330 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+
+import coverImage from '~/assets/images/SE DÉSHABILLER/SE DÉSHABILLER Cover.webp';
+import definitionImage from '~/assets/images/SE DÉSHABILLER/02-First-Section_DEFINITION.webp';
+import page12 from '~/assets/images/SE DÉSHABILLER/Page-1-and-2.webp';
+import page34 from '~/assets/images/SE DÉSHABILLER/Page-3-and-4.webp';
+import flatFinal01 from '~/assets/images/SE DÉSHABILLER/deshabiller-finals/01 Flat Final_Cover.webp';
+import flatFinal02 from '~/assets/images/SE DÉSHABILLER/deshabiller-finals/02 Flat Final_All swatches.webp';
+import flatFinal03 from '~/assets/images/SE DÉSHABILLER/deshabiller-finals/03 Flat Final_Shirts.webp';
+import flatFinal04 from '~/assets/images/SE DÉSHABILLER/deshabiller-finals/04 Flat Final_Jackets .webp';
+import flatFinal05 from '~/assets/images/SE DÉSHABILLER/deshabiller-finals/05 Flat Final_pants and dresses.webp';
+
+const metadata = {
+  title: 'SE DÉSHABILLER',
+};
+
+const flipbookImages = [page12.src, page34.src];
+const galleryImages = [flatFinal01.src, flatFinal02.src, flatFinal03.src, flatFinal04.src, flatFinal05.src];
+---
+
+<Layout metadata={metadata}>
+  <!-- Full Width Cover Image - Sticky -->
+  <div class="sticky top-0 w-full h-[500px] overflow-hidden">
+    <img src={coverImage.src} alt="SE DÉSHABILLER Cover" class="w-full h-full object-cover block" />
+  </div>
+
+  <!-- Content that scrolls over the cover image -->
+  <div class="relative bg-white z-10">
+
+  <!-- Back to Works Button -->
+  <div class="container mx-auto px-4 py-8">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Content Section: Image Left, Text Right -->
+  <div class="content-section flex items-center justify-center gap-10 px-5 py-16 max-w-6xl mx-auto flex-wrap md:flex-nowrap">
+    <div class="image-container max-w-[500px] w-full h-[500px] overflow-hidden flex items-center justify-center">
+      <img
+        src={definitionImage.src}
+        alt="SE DÉSHABILLER Definition"
+        class="w-full h-full object-cover object-center block"
+      />
+    </div>
+
+    <div class="text-container max-w-[500px] w-full">
+      <h3 class="font-extralight text-center mb-5 text-2xl">SE DÉSHABILLER</h3>
+      <p class="leading-relaxed" style="font-size: 17px;">
+        Se Déshabiller is a conceptual collection that explores the dichotomy of dressing and undressing—balancing the
+        softness of anticipation with the structure of confidence. It delves into the excitement of putting on an
+        outfit that empowers and exudes sensuality, while also embracing the thrill of taking it off, feeling equally
+        confident. Rooted in themes of elegance, intimacy, and metropolitan sophistication, this project showcases my
+        ability to craft a complete creative vision, from ideation and color theory to fabric selection, final
+        illustrations, and visual direction. While not fully realized, the designs represent a comprehensive approach to
+        creative direction and collection building.
+      </p>
+    </div>
+  </div>
+
+  <!-- Lightbox Section -->
+  <div class="lightbox-section w-full bg-black py-16 px-5 flex justify-center items-center gap-5 flex-wrap">
+    {
+      [page12, page34].map((image, index) => (
+        <img
+          src={image.src}
+          alt={`Page ${index + 1}`}
+          class="lightbox-thumbnail max-w-[45%] md:max-w-[45%] sm:max-w-[90%] h-auto cursor-pointer transition-opacity duration-300 hover:opacity-80"
+          data-lightbox-image={image.src}
+        />
+      ))
+    }
+  </div>
+
+  <!-- Flipbook Section -->
+  <FlipBookTurnJS images={flipbookImages} />
+
+  <!-- Download Portfolio Button -->
+  <div class="w-full flex justify-center py-8">
+    <a
+      href="#"
+      download
+      class="px-8 py-3 bg-black text-white uppercase tracking-wide text-sm hover:bg-gray-800 transition-colors"
+    >
+      Download Portfolio
+    </a>
+  </div>
+
+  <!-- Scrollable Gallery -->
+  <div class="w-full py-16 overflow-hidden">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design</h2>
+
+    <!-- Scrollable Image Container -->
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
+      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+        {
+          galleryImages.map((image, index) => (
+            <div
+              class="flex-shrink-0 gallery-item"
+              data-lightbox={`lightbox-${index}`}
+              style="height: 400px; cursor: grab;"
+            >
+              <img
+                src={image}
+                alt={`SE DÉSHABILLER Gallery ${index + 1}`}
+                style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View Portfolio]</p>
+  </div>
+
+  <!-- Lightbox Modals -->
+  {
+    galleryImages.map((image, index) => (
+      <div
+        id={`lightbox-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={image}
+          alt={`SE DÉSHABILLER Gallery ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img src="" alt="Lightbox" id="lightboxImage" class="lightbox-image" />
+  </div>
+  </div>
+</Layout>
+
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>
+
+<style>
+  /* Hide flipbook pages until turn.js initializes */
+  #flipbook .page {
+    display: none;
+  }
+
+  #flipbook.turn-initialized .page {
+    display: flex !important;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .lightbox-overlay.open {
+    display: flex;
+  }
+
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .content-section {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    // Lightbox functionality for page images
+    const lightboxThumbnails = document.querySelectorAll('.lightbox-thumbnail');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxImage = document.getElementById('lightboxImage') as HTMLImageElement;
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    lightboxThumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const imageSrc = target.dataset.lightboxImage || target.getAttribute('src');
+        if (imageSrc && lightboxImage && lightboxOverlay) {
+          lightboxImage.src = imageSrc;
+          lightboxOverlay.classList.add('open');
+        }
+      });
+    });
+
+    lightboxClose?.addEventListener('click', () => {
+      lightboxOverlay?.classList.remove('open');
+    });
+
+    lightboxOverlay?.addEventListener('click', (e) => {
+      if (e.target === lightboxOverlay) {
+        lightboxOverlay.classList.remove('open');
+      }
+    });
+
+    // Horizontal scrollable gallery
+    const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
+    if (!slider) return;
+
+    let isDown = false;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
+    let hasMoved = false;
+
+    slider.addEventListener('mousedown', (e: MouseEvent) => {
+      isDown = true;
+      hasMoved = false;
+      slider.style.cursor = 'grabbing';
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', (e: MouseEvent) => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+
+      // Only open lightbox if we didn't drag
+      if (!hasMoved && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      }
+
+      hasMoved = false;
+    });
+
+    slider.addEventListener('mousemove', (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      hasMoved = true;
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Click handler for gallery items
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        if (!hasMoved) {
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
