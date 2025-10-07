@@ -21,7 +21,9 @@
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier -w .",
     "import:component": "node scripts/import-components.js single",
-    "import:batch": "node scripts/import-components.js batch"
+    "import:batch": "node scripts/import-components.js batch",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --branch=preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
@@ -46,6 +48,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.6.9",
     "@astrojs/mdx": "^4.3.3",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/tailwind": "^5.1.5",
@@ -73,6 +76,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.39.0",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "wrangler": "^4.42.0"
   }
 }
