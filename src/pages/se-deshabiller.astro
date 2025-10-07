@@ -28,134 +28,135 @@ const galleryImages = [flatFinal01.src, flatFinal02.src, flatFinal03.src, flatFi
 
   <!-- Content that scrolls over the cover image -->
   <div class="relative bg-white z-10">
-
-  <!-- Back to Works Button -->
-  <div class="container mx-auto px-4 py-8">
-    <a
-      href="/works"
-      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
-    >
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+    <!-- Back to Works Button -->
+    <div class="container mx-auto px-4 py-8">
+      <a
+        href="/works"
+        class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
       >
-        <path d="M19 12H5M12 19l-7-7 7-7"></path>
-      </svg>
-      Back to Works
-    </a>
-  </div>
-
-  <!-- Content Section: Image Left, Text Right -->
-  <div class="content-section flex items-center justify-center gap-10 px-5 py-16 max-w-6xl mx-auto flex-wrap md:flex-nowrap">
-    <div class="image-container max-w-[500px] w-full h-[500px] overflow-hidden flex items-center justify-center">
-      <img
-        src={definitionImage.src}
-        alt="SE DÉSHABILLER Definition"
-        class="w-full h-full object-cover object-center block"
-      />
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+        Back to Works
+      </a>
     </div>
 
-    <div class="text-container max-w-[500px] w-full">
-      <h3 class="font-extralight text-center mb-5 text-2xl">SE DÉSHABILLER</h3>
-      <p class="leading-relaxed" style="font-size: 17px;">
-        Se Déshabiller is a conceptual collection that explores the dichotomy of dressing and undressing—balancing the
-        softness of anticipation with the structure of confidence. It delves into the excitement of putting on an
-        outfit that empowers and exudes sensuality, while also embracing the thrill of taking it off, feeling equally
-        confident. Rooted in themes of elegance, intimacy, and metropolitan sophistication, this project showcases my
-        ability to craft a complete creative vision, from ideation and color theory to fabric selection, final
-        illustrations, and visual direction. While not fully realized, the designs represent a comprehensive approach to
-        creative direction and collection building.
-      </p>
-    </div>
-  </div>
-
-  <!-- Lightbox Section -->
-  <div class="lightbox-section w-full bg-black py-16 px-5 flex justify-center items-center gap-5 flex-wrap">
-    {
-      [page12, page34].map((image, index) => (
+    <!-- Content Section: Image Left, Text Right -->
+    <div
+      class="content-section flex items-center justify-center gap-10 px-5 py-16 max-w-6xl mx-auto flex-wrap md:flex-nowrap"
+    >
+      <div class="image-container max-w-[500px] w-full h-[500px] overflow-hidden flex items-center justify-center">
         <img
-          src={image.src}
-          alt={`Page ${index + 1}`}
-          class="lightbox-thumbnail max-w-[45%] md:max-w-[45%] sm:max-w-[90%] h-auto cursor-pointer transition-opacity duration-300 hover:opacity-80"
-          data-lightbox-image={image.src}
+          src={definitionImage.src}
+          alt="SE DÉSHABILLER Definition"
+          class="w-full h-full object-cover object-center block"
         />
+      </div>
+
+      <div class="text-container max-w-[500px] w-full">
+        <h3 class="font-extralight text-center mb-5 text-2xl">SE DÉSHABILLER</h3>
+        <p class="leading-relaxed" style="font-size: 17px;">
+          Se Déshabiller is a conceptual collection that explores the dichotomy of dressing and undressing—balancing the
+          softness of anticipation with the structure of confidence. It delves into the excitement of putting on an
+          outfit that empowers and exudes sensuality, while also embracing the thrill of taking it off, feeling equally
+          confident. Rooted in themes of elegance, intimacy, and metropolitan sophistication, this project showcases my
+          ability to craft a complete creative vision, from ideation and color theory to fabric selection, final
+          illustrations, and visual direction. While not fully realized, the designs represent a comprehensive approach
+          to creative direction and collection building.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lightbox Section -->
+    <div class="lightbox-section w-full bg-black py-16 px-5 flex justify-center items-center gap-5 flex-wrap">
+      {
+        [page12, page34].map((image, index) => (
+          <img
+            src={image.src}
+            alt={`Page ${index + 1}`}
+            class="lightbox-thumbnail max-w-[45%] md:max-w-[45%] sm:max-w-[90%] h-auto cursor-pointer transition-opacity duration-300 hover:opacity-80"
+            data-lightbox-image={image.src}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Flipbook Section -->
+    <FlipBookTurnJS images={flipbookImages} />
+
+    <!-- Download Portfolio Button -->
+    <div class="w-full flex justify-center py-8">
+      <a
+        href="#"
+        download
+        class="px-8 py-3 bg-black text-white uppercase tracking-wide text-sm hover:bg-gray-800 transition-colors"
+      >
+        Download Portfolio
+      </a>
+    </div>
+
+    <!-- Scrollable Gallery -->
+    <div class="w-full py-16 overflow-hidden">
+      <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design</h2>
+
+      <!-- Scrollable Image Container -->
+      <div
+        class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
+        style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+      >
+        <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+          {
+            galleryImages.map((image, index) => (
+              <div
+                class="flex-shrink-0 gallery-item"
+                data-lightbox={`lightbox-${index}`}
+                style="height: 400px; cursor: grab;"
+              >
+                <img
+                  src={image}
+                  alt={`SE DÉSHABILLER Gallery ${index + 1}`}
+                  style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View Portfolio]</p>
+    </div>
+
+    <!-- Lightbox Modals -->
+    {
+      galleryImages.map((image, index) => (
+        <div
+          id={`lightbox-${index}`}
+          class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+        >
+          <img
+            src={image}
+            alt={`SE DÉSHABILLER Gallery ${index + 1}`}
+            style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+          />
+        </div>
       ))
     }
-  </div>
 
-  <!-- Flipbook Section -->
-  <FlipBookTurnJS images={flipbookImages} />
-
-  <!-- Download Portfolio Button -->
-  <div class="w-full flex justify-center py-8">
-    <a
-      href="#"
-      download
-      class="px-8 py-3 bg-black text-white uppercase tracking-wide text-sm hover:bg-gray-800 transition-colors"
-    >
-      Download Portfolio
-    </a>
-  </div>
-
-  <!-- Scrollable Gallery -->
-  <div class="w-full py-16 overflow-hidden">
-    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design</h2>
-
-    <!-- Scrollable Image Container -->
-    <div
-      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
-      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
-    >
-      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
-        {
-          galleryImages.map((image, index) => (
-            <div
-              class="flex-shrink-0 gallery-item"
-              data-lightbox={`lightbox-${index}`}
-              style="height: 400px; cursor: grab;"
-            >
-              <img
-                src={image}
-                alt={`SE DÉSHABILLER Gallery ${index + 1}`}
-                style="height: 400px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
-              />
-            </div>
-          ))
-        }
-      </div>
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <button class="lightbox-close" id="lightboxClose">×</button>
+      <img src="" alt="Lightbox" id="lightboxImage" class="lightbox-image" />
     </div>
-
-    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View Portfolio]</p>
-  </div>
-
-  <!-- Lightbox Modals -->
-  {
-    galleryImages.map((image, index) => (
-      <div
-        id={`lightbox-${index}`}
-        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
-      >
-        <img
-          src={image}
-          alt={`SE DÉSHABILLER Gallery ${index + 1}`}
-          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
-        />
-      </div>
-    ))
-  }
-
-  <!-- Lightbox Overlay -->
-  <div class="lightbox-overlay" id="lightboxOverlay">
-    <button class="lightbox-close" id="lightboxClose">×</button>
-    <img src="" alt="Lightbox" id="lightboxImage" class="lightbox-image" />
-  </div>
   </div>
 </Layout>
 

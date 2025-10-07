@@ -106,7 +106,7 @@ const DotButton = styled.button<{ $active: boolean }>`
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: ${(props: { $active: boolean }) => props.$active ? '#fff' : 'rgba(255, 255, 255, 0.5)'};
+  background: ${(props: { $active: boolean }) => (props.$active ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
   cursor: pointer;
   padding: 0;
   transition: background 0.3s ease;
@@ -169,7 +169,7 @@ const LightboxThumbnail = styled.img`
 `;
 
 const LightboxOverlay = styled.div<{ $isOpen: boolean }>`
-  display: ${(props: { $isOpen: boolean }) => props.$isOpen ? 'flex' : 'none'};
+  display: ${(props: { $isOpen: boolean }) => (props.$isOpen ? 'flex' : 'none')};
   position: fixed;
   top: 0;
   left: 0;
@@ -212,13 +212,7 @@ const LightboxClose = styled.button`
 
 const pageImages = [page12.src, page34.src];
 
-const galleryImages = [
-  flatFinal01.src,
-  flatFinal02.src,
-  flatFinal03.src,
-  flatFinal04.src,
-  flatFinal05.src,
-];
+const galleryImages = [flatFinal01.src, flatFinal02.src, flatFinal03.src, flatFinal04.src, flatFinal05.src];
 
 const SeDeshabiller: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -280,26 +274,20 @@ const SeDeshabiller: React.FC = () => {
         <TextContainer>
           <Headline>SE DÉSHABILLER</Headline>
           <BodyText>
-            Se Déshabiller is a conceptual collection that explores the dichotomy of dressing and
-            undressing—balancing the softness of anticipation with the structure of confidence. It
-            delves into the excitement of putting on an outfit that empowers and exudes sensuality,
-            while also embracing the thrill of taking it off, feeling equally confident. Rooted in
-            themes of elegance, intimacy, and metropolitan sophistication, this project showcases
-            my ability to craft a complete creative vision, from ideation and color theory to fabric
-            selection, final illustrations, and visual direction. While not fully realized, the designs
-            represent a comprehensive approach to creative direction and collection building.
+            Se Déshabiller is a conceptual collection that explores the dichotomy of dressing and undressing—balancing
+            the softness of anticipation with the structure of confidence. It delves into the excitement of putting on
+            an outfit that empowers and exudes sensuality, while also embracing the thrill of taking it off, feeling
+            equally confident. Rooted in themes of elegance, intimacy, and metropolitan sophistication, this project
+            showcases my ability to craft a complete creative vision, from ideation and color theory to fabric
+            selection, final illustrations, and visual direction. While not fully realized, the designs represent a
+            comprehensive approach to creative direction and collection building.
           </BodyText>
         </TextContainer>
       </ContentSection>
 
       <LightboxSection>
         {pageImages.map((image, index) => (
-          <LightboxThumbnail
-            key={index}
-            src={image}
-            alt={`Page ${index + 1}`}
-            onClick={() => openLightbox(image)}
-          />
+          <LightboxThumbnail key={index} src={image} alt={`Page ${index + 1}`} onClick={() => openLightbox(image)} />
         ))}
       </LightboxSection>
 
@@ -308,11 +296,7 @@ const SeDeshabiller: React.FC = () => {
         <LightboxImage src={lightboxImage} alt="Lightbox" onClick={(e: React.MouseEvent) => e.stopPropagation()} />
       </LightboxOverlay>
 
-      <GalleryContainer
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
+      <GalleryContainer onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
         <ArrowButton onClick={prevSlide}>‹</ArrowButton>
         <GalleryTrack ref={trackRef} $currentIndex={currentIndex}>
           {galleryImages.map((image, index) => (
