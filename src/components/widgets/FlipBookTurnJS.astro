@@ -162,7 +162,7 @@ const { images, title } = Astro.props;
         updateControls();
       });
 
-      jQuery(flipbook).bind('turned', function(event, page, view) {
+      jQuery(flipbook).bind('turned', function(_event, _page, _view) {
         updateControls();
       });
 
