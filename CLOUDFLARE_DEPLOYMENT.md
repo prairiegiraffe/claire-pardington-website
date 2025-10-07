@@ -7,14 +7,17 @@ This site is configured to deploy to Cloudflare Pages.
 ### First Time Setup
 
 1. **Install Wrangler CLI globally (optional)**
+
    ```bash
    npm install -g wrangler
    ```
 
 2. **Login to Cloudflare**
+
    ```bash
    npx wrangler login
    ```
+
    This will open your browser to authenticate with Cloudflare.
 
 3. **Create a Pages project (first time only)**
@@ -29,6 +32,7 @@ npm run deploy
 ```
 
 This will:
+
 - Build the site (`npm run build`)
 - Deploy to Cloudflare Pages using Wrangler
 
@@ -57,6 +61,7 @@ This creates a preview deployment on a separate URL for testing.
 ### Automatic Deployments
 
 Once connected, Cloudflare will automatically:
+
 - Deploy production on push to `main` branch
 - Create preview deployments for pull requests
 
@@ -65,6 +70,7 @@ Once connected, Cloudflare will automatically:
 ## Build Configuration
 
 The site uses:
+
 - **Adapter**: `@astrojs/cloudflare` for static site generation
 - **Output directory**: `dist`
 - **Build command**: `npm run build`
@@ -95,13 +101,16 @@ To use a custom domain:
 ## Troubleshooting
 
 ### Build fails
+
 - Check Node version (should be 18.17.1+ or 20.3.0+)
 - Run `npm run check` locally to catch errors before deploying
 
 ### Deployment issues
+
 - Ensure you're logged in: `npx wrangler whoami`
 - Check build logs in Cloudflare Dashboard
 
 ### Need help?
+
 - [Cloudflare Pages Docs](https://developers.cloudflare.com/pages/)
 - [Astro Cloudflare Adapter Docs](https://docs.astro.build/en/guides/deploy/cloudflare/)
