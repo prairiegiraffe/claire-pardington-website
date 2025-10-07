@@ -56,22 +56,22 @@ for (let i = 0; i < images.length; i += 2) {
   </div>
 
   <!-- Navigation Controls -->
-  <div class="navigation-controls flex justify-center items-center gap-8 mt-8">
+  <div class="navigation-controls flex justify-center items-center gap-2 md:gap-8 mt-8">
     <button
       id="prevBtn"
-      class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      class="nav-btn px-3 md:px-6 py-2 md:py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm md:text-base"
       aria-label="Previous page"
     >
-      ← Previous
+      ← Prev
     </button>
 
-    <div class="page-counter text-lg">
+    <div class="page-counter text-sm md:text-lg text-center">
       <span id="currentSpread">1</span> / <span id="totalSpreads">{spreads.length}</span>
     </div>
 
     <button
       id="nextBtn"
-      class="nav-btn px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      class="nav-btn px-3 md:px-6 py-2 md:py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm md:text-base"
       aria-label="Next page"
     >
       Next →
