@@ -7,8 +7,8 @@ interface Props {
 const { images, title } = Astro.props;
 ---
 
-<div class="flipbook-container max-w-7xl mx-auto px-4 py-16">
-  {title && <h1 class="text-4xl font-light text-center mb-12">{title}</h1>}
+<div class="flipbook-container max-w-7xl mx-auto px-4 pb-16">
+  {title && <h1 class="text-4xl text-center mb-12" style="font-weight: 200;">{title}</h1>}
 
   <div id="flipbook" class="flipbook">
     {
@@ -118,15 +118,22 @@ const { images, title } = Astro.props;
 </style>
 
 <script is:inline>
-  window.addEventListener('DOMContentLoaded', function () {
-    // Wait for jQuery to be available
+  document.addEventListener('astro:page-load', function () {
+    // Wait for jQuery and turn.js to be available
     function initFlipbook() {
-      if (typeof jQuery === 'undefined') {
+      if (typeof jQuery === 'undefined' || typeof jQuery.fn.turn === 'undefined') {
         setTimeout(initFlipbook, 100);
         return;
       }
 
       const flipbook = document.getElementById('flipbook');
+      if (!flipbook) return;
+
+      // Check if already initialized
+      if (flipbook.classList.contains('turn-initialized')) {
+        return;
+      }
+
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const currentPageEl = document.getElementById('currentPage');
@@ -139,7 +146,7 @@ const { images, title } = Astro.props;
         width: isMobile ? window.innerWidth * 0.9 : 800,
         height: isMobile ? window.innerHeight * 0.6 : 600,
         display: isMobile ? 'single' : 'double',
-        autoCenter: false,
+        autoCenter: true,
         gradients: true,
         acceleration: true,
         elevation: 50,
