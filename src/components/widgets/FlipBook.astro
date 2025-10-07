@@ -27,35 +27,33 @@ for (let i = 0; i < images.length; i += 2) {
   <div class="relative">
     <!-- Book Spreads -->
     <div class="book-spreads relative" style="perspective: 2000px;">
-      {spreads.map((spread, index) => (
-        <div
-          class="book-spread absolute inset-0 transition-all duration-700 ease-in-out"
-          data-spread={index}
-          style={index === 0 ? 'opacity: 1; visibility: visible; transform: rotateY(0deg);' : 'opacity: 0; visibility: hidden; transform: rotateY(-20deg);'}
-        >
-          <div class="grid md:grid-cols-2 gap-2 md:gap-4">
-            <!-- Left Page -->
-            <div class="page left-page">
-              <img
-                src={spread.left}
-                alt={`Page ${index * 2 + 1}`}
-                class="book-image shadow-lg"
-              />
-            </div>
-
-            <!-- Right Page -->
-            {spread.right && (
-              <div class="page right-page">
-                <img
-                  src={spread.right}
-                  alt={`Page ${index * 2 + 2}`}
-                  class="book-image shadow-lg"
-                />
+      {
+        spreads.map((spread, index) => (
+          <div
+            class="book-spread absolute inset-0 transition-all duration-700 ease-in-out"
+            data-spread={index}
+            style={
+              index === 0
+                ? 'opacity: 1; visibility: visible; transform: rotateY(0deg);'
+                : 'opacity: 0; visibility: hidden; transform: rotateY(-20deg);'
+            }
+          >
+            <div class="grid md:grid-cols-2 gap-2 md:gap-4">
+              {/* Left Page */}
+              <div class="page left-page">
+                <img src={spread.left} alt={`Page ${index * 2 + 1}`} class="book-image shadow-lg" />
               </div>
-            )}
+
+              {/* Right Page */}
+              {spread.right && (
+                <div class="page right-page">
+                  <img src={spread.right} alt={`Page ${index * 2 + 2}`} class="book-image shadow-lg" />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <!-- Navigation Controls -->

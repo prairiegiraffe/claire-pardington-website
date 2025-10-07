@@ -11,11 +11,13 @@ const { images, title } = Astro.props;
   {title && <h1 class="text-4xl font-light text-center mb-12">{title}</h1>}
 
   <div id="flipbook" class="flipbook">
-    {images.map((image, index) => (
-      <div class:list={["page", index === 0 || index === images.length - 1 ? "hard" : ""]}>
-        <img src={image} alt={`Page ${index + 1}`} class="page-image" />
-      </div>
-    ))}
+    {
+      images.map((image, index) => (
+        <div class:list={['page', index === 0 || index === images.length - 1 ? 'hard' : '']}>
+          <img src={image} alt={`Page ${index + 1}`} class="page-image" />
+        </div>
+      ))
+    }
   </div>
 
   <!-- Navigation Controls -->
@@ -73,15 +75,30 @@ const { images, title } = Astro.props;
   }
 
   .page.hard {
-    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(235,235,235,1) 100%);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(235, 235, 235, 1) 100%
+    );
   }
 
   .page.even {
-    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(235,235,235,1) 100%);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(235, 235, 235, 1) 100%
+    );
   }
 
   .page.odd {
-    background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(235,235,235,1) 100%);
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(235, 235, 235, 1) 100%
+    );
   }
 
   .page-image {
@@ -101,7 +118,7 @@ const { images, title } = Astro.props;
 </style>
 
 <script is:inline>
-  window.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('DOMContentLoaded', function () {
     // Wait for jQuery to be available
     function initFlipbook() {
       if (typeof jQuery === 'undefined') {
@@ -126,17 +143,18 @@ const { images, title } = Astro.props;
         gradients: true,
         acceleration: true,
         elevation: 50,
-        duration: 1000
+        duration: 1000,
       });
 
       // Handle window resize
       let resizeTimeout;
-      window.addEventListener('resize', function() {
+      window.addEventListener('resize', function () {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
+        resizeTimeout = setTimeout(function () {
           const nowMobile = window.innerWidth < 768;
           jQuery(flipbook).turn('display', nowMobile ? 'single' : 'double');
-          jQuery(flipbook).turn('size',
+          jQuery(flipbook).turn(
+            'size',
             nowMobile ? window.innerWidth * 0.9 : 800,
             nowMobile ? window.innerHeight * 0.6 : 600
           );
@@ -162,7 +180,7 @@ const { images, title } = Astro.props;
         updateControls();
       });
 
-      jQuery(flipbook).bind('turned', function(_event, _page, _view) {
+      jQuery(flipbook).bind('turned', function (_event, _page, _view) {
         updateControls();
       });
 

@@ -35,20 +35,22 @@ for (let i = 0; i < images.length; i += 2) {
 
       <!-- Right side (flipping pages) -->
       <div class="book-side right-side">
-        {spreads.map((spread, index) => (
-          <div class="page-wrapper" data-spread={index}>
-            <div class="page">
-              <div class="page-content front">
-                <img src={spread.right || spread.left} alt={`Page ${index * 2 + 2}`} class="page-image" />
-              </div>
-              <div class="page-content back">
-                {spreads[index + 1] && spreads[index + 1].left && (
-                  <img src={spreads[index + 1].left} alt={`Page ${(index + 1) * 2 + 1}`} class="page-image" />
-                )}
+        {
+          spreads.map((spread, index) => (
+            <div class="page-wrapper" data-spread={index}>
+              <div class="page">
+                <div class="page-content front">
+                  <img src={spread.right || spread.left} alt={`Page ${index * 2 + 2}`} class="page-image" />
+                </div>
+                <div class="page-content back">
+                  {spreads[index + 1] && spreads[index + 1].left && (
+                    <img src={spreads[index + 1].left} alt={`Page ${(index + 1) * 2 + 1}`} class="page-image" />
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </div>
@@ -131,7 +133,9 @@ for (let i = 0; i < images.length; i += 2) {
     top: 0;
     transform-origin: left center;
     transform-style: preserve-3d;
-    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0s linear 0s;
+    transition:
+      transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+      visibility 0s linear 0s;
   }
 
   .page {
