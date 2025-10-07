@@ -35,8 +35,8 @@ const illustrations = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
       {
         illustrations.map((img, index) => (
-          <div class="illustration-item" data-lightbox={`lightbox-${index}`}>
-            <Image src={img} alt={`Illustration ${index + 1}`} class="w-full h-auto cursor-pointer object-cover" />
+          <div class="illustration-item aspect-[3/4] overflow-hidden" data-lightbox={`lightbox-${index}`}>
+            <Image src={img} alt={`Illustration ${index + 1}`} class="w-full h-full cursor-pointer object-cover" />
           </div>
         ))
       }
