@@ -105,9 +105,11 @@ const illustrations = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img
     items.forEach((item) => {
       item.addEventListener('click', () => {
         const lightboxId = item.getAttribute('data-lightbox');
-        const lightbox = document.getElementById(lightboxId);
-        if (lightbox) {
-          lightbox.classList.remove('hidden');
+        if (lightboxId) {
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
         }
       });
     });
