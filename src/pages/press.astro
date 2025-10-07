@@ -99,21 +99,29 @@ const pressItems = [
     <div class="flex flex-col lg:flex-row gap-6 lg:justify-start items-start">
       {
         pressItems.slice(4, 6).map((item) => (
-          <div class="flex flex-col">
+          <div class="flex flex-col w-full lg:w-auto">
             {item.isMulti ? (
-              item.link ? (
-                <a href={item.link} class="flex gap-4 items-center justify-center h-64">
-                  {item.images.map((img) => (
-                    <img src={img} alt={item.alt} class="h-full w-auto object-contain" />
-                  ))}
+              <div class="flex flex-col">
+                <a
+                  href={item.link}
+                  class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4"
+                  style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+                >
+                  <div class="flex gap-4 h-64" style="width: max-content; padding-left: 1rem; padding-right: 1rem;">
+                    {item.images.map((img, index) => (
+                      <div class="flex-shrink-0" style="height: 100%; cursor: pointer;">
+                        <img
+                          src={img}
+                          alt={`${item.alt} ${index + 1}`}
+                          class="h-full w-auto object-contain"
+                          style="pointer-events: none; user-select: none;"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </a>
-              ) : (
-                <div class="flex gap-4 items-center justify-center h-64">
-                  {item.images.map((img) => (
-                    <img src={img} alt={item.alt} class="h-full w-auto object-contain" />
-                  ))}
-                </div>
-              )
+                <p class="text-center text-xs uppercase tracking-wide mt-2">[Swipe to View All]</p>
+              </div>
             ) : item.link ? (
               <a
                 href={item.link}
@@ -138,3 +146,13 @@ const pressItems = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
