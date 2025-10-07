@@ -79,7 +79,7 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
 
 <Layout metadata={metadata}>
   <!-- Back to Works Button -->
-  <div class="container mx-auto px-4 py-8">
+  <div class="py-8 pl-4 md:pl-10">
     <a
       href="/works"
       class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
@@ -236,27 +236,24 @@ const collaborationImages = [c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c
     </h2>
 
     <!-- YouTube Video Thumbnails -->
-    <div style="display: flex; justify-content: center; gap: 24px; align-items: flex-start;">
+    <div class="flex flex-col md:flex-row justify-center gap-6 items-center">
       <img
         src="https://img.youtube.com/vi/G02rbKOCVgc/hqdefault.jpg"
         alt="Fitting Video"
         data-video-id="G02rbKOCVgc"
-        class="youtube-thumbnail"
-        style="max-height: 500px; cursor: pointer;"
+        class="youtube-thumbnail max-h-[500px] cursor-pointer w-full md:w-auto"
       />
       <img
         src="https://img.youtube.com/vi/4KWYSs1zIWo/hqdefault.jpg"
         alt="Storytelling Video"
         data-video-id="4KWYSs1zIWo"
-        class="youtube-thumbnail"
-        style="max-height: 500px; cursor: pointer;"
+        class="youtube-thumbnail max-h-[500px] cursor-pointer w-full md:w-auto"
       />
       <img
         src="https://img.youtube.com/vi/c9Dg8dwK0f4/hqdefault.jpg"
         alt="Pattern Video"
         data-video-id="c9Dg8dwK0f4"
-        class="youtube-thumbnail"
-        style="max-height: 500px; cursor: pointer;"
+        class="youtube-thumbnail max-h-[500px] cursor-pointer w-full md:w-auto"
       />
     </div>
   </div>

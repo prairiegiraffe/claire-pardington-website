@@ -1,0 +1,186 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+// Import all images from VS Collected Works in custom order
+import img01 from '~/assets/images/VS Collected Works/4eef0bc3fe4e4cca23ec30d677da60df.webp';
+import img02 from '~/assets/images/VS Collected Works/34a9d9f8b4700034d25855229ce2149d.webp';
+import img03 from '~/assets/images/VS Collected Works/51Tl5ZaervL.webp';
+import img04 from '~/assets/images/VS Collected Works/61th0JvDu2L._AC_SY550_.webp';
+import img05 from '~/assets/images/VS Collected Works/126d4d732cd5fac8_thumb_temp_facebook_post_image_file156739581417565029.webp';
+import img06 from '~/assets/images/VS Collected Works/401730JTH_OM_F.webp';
+import img07 from '~/assets/images/VS Collected Works/520913-800w.webp';
+import img08 from '~/assets/images/VS Collected Works/520914-800w.webp';
+import img09 from '~/assets/images/VS Collected Works/520916-800w.webp';
+import img10 from '~/assets/images/VS Collected Works/520918-800w.webp';
+import img11 from '~/assets/images/VS Collected Works/82261620-6258-0132-17ba-0a7dfd902b7c.webp';
+import img12 from '~/assets/images/VS Collected Works/IMG_2061.webp';
+import img13 from '~/assets/images/VS Collected Works/m_5d1438ad19c15763d4cb1af3.webp';
+import img14 from '~/assets/images/VS Collected Works/Palvin-Secret-20121015-01.webp';
+import img15 from '~/assets/images/VS Collected Works/Screen Shot 2021-03-06 at 5.51.36 PM.webp';
+import img16 from '~/assets/images/VS Collected Works/Screen Shot 2021-03-06 at 5.58.44 PM.webp';
+import img17 from '~/assets/images/VS Collected Works/victorias_secret_designer_collection_1.webp';
+import img18 from '~/assets/images/VS Collected Works/victorias_secret_designer_collection_3 (1).webp';
+import img19 from '~/assets/images/VS Collected Works/Victorias-Secret-pale-blue-lace-teddy.webp';
+import img20 from '~/assets/images/VS Collected Works/Victorias-Secret-tulle-teddy.webp';
+import img21 from '~/assets/images/VS Collected Works/victorias-secret-vogue-33-14nov13-pa.webp';
+import img22 from '~/assets/images/VS Collected Works/victorias-secret-vogue-42-14nov13-pa.webp';
+import img23 from '~/assets/images/VS Collected Works/42211f10-6258-0132-42fd-0ebc4eccb42f.webp';
+import img24 from '~/assets/images/VS Collected Works/d0c66420-625e-0132-17c1-0a7dfd902b7c.webp';
+
+const metadata = {
+  title: "Victoria's Secret Designer Collection Collected Works - Claire Pardington",
+};
+
+const galleryImages = [
+  img01,
+  img02,
+  img03,
+  img04,
+  img05,
+  img06,
+  img07,
+  img08,
+  img09,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+  img23,
+  img24,
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="py-8 pl-4 md:pl-10">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Title and Text Section -->
+  <div class="container mx-auto px-4 pb-16">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h1 class="text-3xl md:text-4xl uppercase tracking-wide" style="font-weight: 200;">
+        VS AMOUR COLLECTION & DESIGNER COLLECTION COLLECTED WORKS
+      </h1>
+
+      <div class="text-base leading-relaxed">
+        <p>
+          As Senior Designer, I led the creative direction for runway-dominating designs that achieved rapid
+          sell-through rates and high-demand reorders. Working closely with a talented team, my designs garnered media
+          coverage in outlets like Vogue, W Magazine, and on television and film, solidifying the collection's
+          influence.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="container mx-auto px-4 pb-16">
+    <div class="image-grid">
+      {
+        galleryImages.map((img, index) => (
+          <div class="image-item" data-lightbox={`lightbox-${index}`}>
+            <img
+              src={img.src}
+              alt={`Victoria's Secret Collected Works ${index + 1}`}
+              class="w-full cursor-pointer"
+              style="height: 500px; object-fit: cover;"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Lightbox Modals -->
+  {
+    galleryImages.map((img, index) => (
+      <div
+        id={`lightbox-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Victoria's Secret Collected Works ${index + 1}`}
+          style="max-height: 90vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .image-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .image-item {
+    overflow: hidden;
+  }
+
+  .image-item img {
+    transition: transform 0.3s ease;
+  }
+
+  .image-item:hover img {
+    transform: scale(1.05);
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    // Grid lightbox
+    document.querySelectorAll('.image-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const lightboxId = (item as HTMLElement).dataset.lightbox;
+        if (lightboxId) {
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
+</script>
