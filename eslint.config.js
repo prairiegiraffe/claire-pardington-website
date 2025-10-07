@@ -54,6 +54,6 @@ export default [
     },
   },
   {
-    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro', 'public/turn.min.js'],
+    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro', '**/turn.min.js', 'public/**/*.min.js'],
   },
 ];
