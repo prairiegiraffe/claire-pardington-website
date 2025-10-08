@@ -57,7 +57,11 @@ const metadata = {
     </div>
 
     <!-- Contact Form -->
-    <form class="space-y-6" method="POST" action="https://formspree.io/f/xanyealo">
+    <form class="space-y-6" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="81957d0d-42c1-4ddf-93f7-280ec20b9274" />
+      <input type="hidden" name="subject" value="New Contact Form Submission from Claire Pardington Website" />
+      <input type="hidden" name="from_name" value="Claire Pardington Website" />
+
       <div>
         <label for="name" class="block text-sm font-medium mb-2">Name</label>
         <input

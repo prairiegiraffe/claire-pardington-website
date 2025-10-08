@@ -62,12 +62,16 @@ const { socialLinks = [] } = Astro.props;
 
       <!-- Right: Newsletter Signup -->
       <div class="md:col-span-4 flex justify-center md:justify-end">
-        <form class="w-full max-w-sm">
+        <form class="w-full max-w-sm" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="81957d0d-42c1-4ddf-93f7-280ec20b9274" />
+          <input type="hidden" name="subject" value="New Newsletter Signup - Claire Pardington" />
+          <input type="hidden" name="from_name" value="Claire Pardington Newsletter" />
           <label for="newsletter-email" class="block text-sm mb-2">Updates</label>
           <div class="flex gap-2">
             <input
               type="email"
               id="newsletter-email"
+              name="email"
               placeholder="Your email"
               class="flex-1 px-4 py-2 bg-white text-black border border-white focus:outline-none focus:ring-2 focus:ring-white"
               required
