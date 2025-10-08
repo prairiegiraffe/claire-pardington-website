@@ -30,6 +30,7 @@ const metadata = {
   <!-- Video Background Section -->
   <div class="sticky top-0 w-full max-h-[600px] h-[600px] overflow-hidden bg-black">
     <video
+      id="background-video"
       autoplay
       loop
       muted
@@ -221,3 +222,28 @@ const metadata = {
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const video = document.getElementById('background-video') as HTMLVideoElement;
+    if (video) {
+      // Ensure video plays on mobile devices
+      video.muted = true;
+      video.playsInline = true;
+
+      // Try to play the video
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If autoplay is blocked, try again after user interaction
+          document.addEventListener('touchstart', () => {
+            video.play().catch(() => {
+              // Silent fail if still blocked
+            });
+          }, { once: true });
+        });
+      }
+    }
+  });
+</script>
