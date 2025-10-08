@@ -237,11 +237,15 @@ const metadata = {
       if (playPromise !== undefined) {
         playPromise.catch(() => {
           // If autoplay is blocked, try again after user interaction
-          document.addEventListener('touchstart', () => {
-            video.play().catch(() => {
-              // Silent fail if still blocked
-            });
-          }, { once: true });
+          document.addEventListener(
+            'touchstart',
+            () => {
+              video.play().catch(() => {
+                // Silent fail if still blocked
+              });
+            },
+            { once: true }
+          );
         });
       }
     }
