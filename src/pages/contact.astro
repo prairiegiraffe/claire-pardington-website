@@ -1,79 +1,103 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact - Claire Pardington',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <div class="max-w-2xl mx-auto px-4 py-16 md:py-24">
+    <!-- Heading -->
+    <h1 class="text-3xl md:text-4xl font-light text-center mb-8">Contact</h1>
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+    <!-- Description -->
+    <p class="text-center text-base md:text-lg leading-relaxed mb-8">
+      I am available for commissions, collaborations, and other creative inquiries. I am based in NYC but work
+      globally. I look forward to hearing from you!
+    </p>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+    <!-- Email -->
+    <p class="text-center text-base md:text-lg mb-8">
+      <a href="mailto:clairepardington@gmail.com" class="hover:opacity-70 transition-opacity">
+        clairepardington@gmail.com
+      </a>
+    </p>
 
-  <!-- Features2 Widget ************** -->
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 mb-12">
+      <a
+        href="https://www.instagram.com/clairepardington/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-black hover:opacity-70 transition-opacity"
+        aria-label="Instagram"
+      >
+        <Icon name="tabler:brand-instagram" class="w-8 h-8" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/clairepardington/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-black hover:opacity-70 transition-opacity"
+        aria-label="LinkedIn"
+      >
+        <Icon name="tabler:brand-linkedin" class="w-8 h-8" />
+      </a>
+      <a
+        href="https://www.pinterest.com/cpardington/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-black hover:opacity-70 transition-opacity"
+        aria-label="Pinterest"
+      >
+        <Icon name="tabler:brand-pinterest" class="w-8 h-8" />
+      </a>
+    </div>
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+    <!-- Contact Form -->
+    <form class="space-y-6" method="POST" action="https://formspree.io/f/xanyealo">
+      <div>
+        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium mb-2">Email*</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium mb-2">Message*</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="6"
+          class="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+        ></textarea>
+      </div>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          class="px-8 py-3 bg-black text-white uppercase tracking-wide text-sm hover:bg-gray-800 transition-colors"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
 </Layout>
