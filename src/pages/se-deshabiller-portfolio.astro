@@ -1,0 +1,103 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+
+// Import concept images for flipbook
+import concept01 from '~/assets/images/SE DÉSHABILLER/concept/01 Portfolio cover.webp';
+import concept02 from '~/assets/images/SE DÉSHABILLER/concept/02 First Section_DEFINITION.webp';
+import concept03 from '~/assets/images/SE DÉSHABILLER/concept/03 First Section_POEM.webp';
+import concept04 from '~/assets/images/SE DÉSHABILLER/concept/04 First Section_COLOR STORY 1.webp';
+import concept05 from '~/assets/images/SE DÉSHABILLER/concept/05 First Section_COLOR STORY 2.webp';
+import concept06 from '~/assets/images/SE DÉSHABILLER/concept/06 First Section_FABRIC CHART 1.webp';
+import concept07 from '~/assets/images/SE DÉSHABILLER/concept/07 First Section_FABRIC CHART 2.webp';
+import concept08 from '~/assets/images/SE DÉSHABILLER/concept/08 Page 1.webp';
+import concept09 from '~/assets/images/SE DÉSHABILLER/concept/09 Page 2.webp';
+import concept10 from '~/assets/images/SE DÉSHABILLER/concept/10 Page 3.webp';
+import concept11 from '~/assets/images/SE DÉSHABILLER/concept/11 Page 4.webp';
+import concept12 from '~/assets/images/SE DÉSHABILLER/concept/12 Page 5.webp';
+import concept13 from '~/assets/images/SE DÉSHABILLER/concept/13 Page 6.webp';
+import concept14 from '~/assets/images/SE DÉSHABILLER/concept/14 Page 7.webp';
+import concept15 from '~/assets/images/SE DÉSHABILLER/concept/15 Page 8.webp';
+import concept16 from '~/assets/images/SE DÉSHABILLER/concept/16 Page 9.webp';
+import concept17 from '~/assets/images/SE DÉSHABILLER/concept/17 Page 10.webp';
+import concept18 from '~/assets/images/SE DÉSHABILLER/concept/18 Page 11.webp';
+import concept19 from '~/assets/images/SE DÉSHABILLER/concept/19 Page 12.webp';
+import concept20 from '~/assets/images/SE DÉSHABILLER/concept/20 Page 13.webp';
+import concept21 from '~/assets/images/SE DÉSHABILLER/concept/21 Page 14.webp';
+import concept22 from '~/assets/images/SE DÉSHABILLER/concept/22 Page 15.webp';
+import concept23 from '~/assets/images/SE DÉSHABILLER/concept/23 Page 16.webp';
+import concept24 from '~/assets/images/SE DÉSHABILLER/concept/24 Page 17.webp';
+import concept25 from '~/assets/images/SE DÉSHABILLER/concept/25 Page 18.webp';
+
+const metadata = {
+  title: 'SE DÉSHABILLER - Complete Portfolio',
+};
+
+const flipbookImages = [
+  concept01.src,
+  concept02.src,
+  concept03.src,
+  concept04.src,
+  concept05.src,
+  concept06.src,
+  concept07.src,
+  concept08.src,
+  concept09.src,
+  concept10.src,
+  concept11.src,
+  concept12.src,
+  concept13.src,
+  concept14.src,
+  concept15.src,
+  concept16.src,
+  concept17.src,
+  concept18.src,
+  concept19.src,
+  concept20.src,
+  concept21.src,
+  concept22.src,
+  concept23.src,
+  concept24.src,
+  concept25.src,
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="py-8 pl-4 md:pl-10">
+    <a
+      href="/se-deshabiller"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to SE DÉSHABILLER
+    </a>
+  </div>
+
+  <FlipBookTurnJS images={flipbookImages} title="SE DÉSHABILLER" />
+
+  <!-- Download Portfolio Button -->
+  <div class="w-full flex justify-center pt-2 pb-[100px]">
+    <a
+      href="/Claire-Pardington-Project-Portfolio-2024-reduced.pdf"
+      download
+      class="px-8 py-3 bg-black text-white uppercase tracking-wide text-sm hover:bg-gray-800 transition-colors"
+    >
+      Download Portfolio
+    </a>
+  </div>
+</Layout>
+
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>
