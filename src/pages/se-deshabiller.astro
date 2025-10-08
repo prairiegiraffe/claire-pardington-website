@@ -509,66 +509,68 @@ const journalImages = [
     // Horizontal scrollable gallery - Journal
     const journalSlider = document.querySelector('.journal-gallery-scroll') as HTMLElement | null;
 
-    let isDown = false;
-    let startX: number = 0;
-    let scrollLeft: number = 0;
-    let hasMoved = false;
+    if (slider) {
+      let isDown = false;
+      let startX: number = 0;
+      let scrollLeft: number = 0;
+      let hasMoved = false;
 
-    slider.addEventListener('mousedown', (e: MouseEvent) => {
-      isDown = true;
-      hasMoved = false;
-      slider.style.cursor = 'grabbing';
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
+      slider.addEventListener('mousedown', (e: MouseEvent) => {
+        isDown = true;
+        hasMoved = false;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
 
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
 
-    slider.addEventListener('mouseup', (e: MouseEvent) => {
-      isDown = false;
-      slider.style.cursor = 'grab';
+      slider.addEventListener('mouseup', (e: MouseEvent) => {
+        isDown = false;
+        slider.style.cursor = 'grab';
 
-      // Only open lightbox if we didn't drag
-      if (!hasMoved && e.target) {
-        const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
-        if (item && item.dataset.lightbox) {
-          const lightboxId = item.dataset.lightbox;
-          const lightbox = document.getElementById(lightboxId);
-          if (lightbox) {
-            lightbox.classList.remove('hidden');
-          }
-        }
-      }
-
-      hasMoved = false;
-    });
-
-    slider.addEventListener('mousemove', (e: MouseEvent) => {
-      if (!isDown) return;
-      e.preventDefault();
-      hasMoved = true;
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Click handler for gallery items
-    document.querySelectorAll('.gallery-item').forEach((item) => {
-      item.addEventListener('click', () => {
-        if (!hasMoved) {
-          const lightboxId = (item as HTMLElement).dataset.lightbox;
-          if (lightboxId) {
+        // Only open lightbox if we didn't drag
+        if (!hasMoved && e.target) {
+          const item = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement | null;
+          if (item && item.dataset.lightbox) {
+            const lightboxId = item.dataset.lightbox;
             const lightbox = document.getElementById(lightboxId);
             if (lightbox) {
               lightbox.classList.remove('hidden');
             }
           }
         }
+
+        hasMoved = false;
       });
-    });
+
+      slider.addEventListener('mousemove', (e: MouseEvent) => {
+        if (!isDown) return;
+        e.preventDefault();
+        hasMoved = true;
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Click handler for gallery items
+      document.querySelectorAll('.gallery-item').forEach((item) => {
+        item.addEventListener('click', () => {
+          if (!hasMoved) {
+            const lightboxId = (item as HTMLElement).dataset.lightbox;
+            if (lightboxId) {
+              const lightbox = document.getElementById(lightboxId);
+              if (lightbox) {
+                lightbox.classList.remove('hidden');
+              }
+            }
+          }
+        });
+      });
+    }
 
     // Journal gallery scroll functionality
     if (journalSlider) {
