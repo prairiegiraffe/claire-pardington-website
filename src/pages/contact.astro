@@ -1,6 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import headlineImage from '~/assets/images/contact-headline-2.webp';
 
 const metadata = {
   title: 'Contact - Claire Pardington',
@@ -10,7 +12,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <div class="max-w-2xl mx-auto px-4 py-16 md:py-24">
     <!-- Heading -->
-    <h1 class="text-3xl md:text-4xl font-light text-center mb-8">Contact</h1>
+    <div class="flex justify-center mb-8">
+      <Image src={headlineImage} alt="Contact" width={200} class="h-auto" />
+    </div>
 
     <!-- Description -->
     <p class="text-center text-base md:text-lg leading-relaxed mb-8">

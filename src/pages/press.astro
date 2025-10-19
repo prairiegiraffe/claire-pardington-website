@@ -6,10 +6,9 @@ import entrepreneurImage from '~/assets/images/Entrepreneur of the year.webp';
 import vogueImage from '~/assets/images/VOGUE.jpg';
 import vMagazineImage from '~/assets/images/V MAGAZINE.jpg';
 import vsCatalogImage from '~/assets/images/press-vs-catalog/VS CATALOGUE.jpg';
-import gq1 from '~/assets/images/760x76000.jpeg';
-import gq2 from '~/assets/images/760x76000 (1).jpeg';
-import gq3 from '~/assets/images/760x76000 (2).jpeg';
-import gq4 from '~/assets/images/760x76000 (6).jpeg';
+import gq1 from '~/assets/images/GQ Magazine/760x76000.jpeg';
+import gq2 from '~/assets/images/GQ Magazine/760x76000 (5).jpeg';
+import gq3 from '~/assets/images/GQ Magazine/760x76000 (2).jpeg';
 
 const metadata = {
   title: 'Press',
@@ -33,14 +32,14 @@ const pressItems = [
   {
     image: vogueImage.src,
     alt: 'Vogue November 2014 Issue',
-    header: 'VOGUE NOVEMBER 2014 ISSUE',
-    text: '',
+    header: 'VOGUE',
+    text: 'NOVEMBER 2014 ISSUE',
   },
   {
     image: vMagazineImage.src,
     alt: 'V Magazine Fall 2014',
-    header: 'V MAGAZINE FALL 2014',
-    text: '',
+    header: 'V MAGAZINE',
+    text: 'FALL 2014',
   },
   {
     image: vsCatalogImage.src,
@@ -48,14 +47,15 @@ const pressItems = [
     header: 'COVER OF VS CATALOGUE',
     text: 'SEPTEMBER 2013',
     link: '/vs-catalog',
+    clickText: 'Click to See More',
   },
   {
-    images: [gq1.src, gq2.src, gq3.src, gq4.src],
+    image: gq1.src,
     alt: 'GQ Magazine 2015',
-    header: 'GQ MAGAZINE 2015',
-    text: '',
-    isMulti: true,
+    header: 'GQ MAGAZINE',
+    text: '2015',
     link: '/gq-magazine',
+    clickText: 'Click to See More',
   },
 ];
 ---
@@ -64,13 +64,13 @@ const pressItems = [
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20">
     {/* Heading Image */}
     <div class="flex justify-center mb-12">
-      <img src={pressHeading.src} alt="Press & Achievements" class="w-64 md:w-72 lg:w-[300px]" />
+      <img src={pressHeading.src} alt="Press & Achievements" class="w-96 md:w-[27rem] lg:w-[450px]" />
     </div>
 
-    {/* First row - 4 items */}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    {/* Grid - 4 items across */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {
-        pressItems.slice(0, 4).map((item) => (
+        pressItems.map((item) => (
           <div class="flex flex-col">
             {item.link ? (
               <a
@@ -88,57 +88,8 @@ const pressItems = [
             )}
             <div class="mt-4 text-center">
               <h3 class="font-bold text-base mb-2">{item.header}</h3>
-              {item.text && <p class="prose dark:prose-invert">{item.text}</p>}
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-    {/* Second row - 2 items */}
-    <div class="flex flex-col lg:flex-row gap-6 lg:justify-start items-start">
-      {
-        pressItems.slice(4, 6).map((item) => (
-          <div class="flex flex-col w-full lg:w-auto">
-            {item.isMulti ? (
-              <div class="flex flex-col">
-                <a
-                  href={item.link}
-                  class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4"
-                  style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
-                >
-                  <div class="flex gap-4 h-64" style="width: max-content; padding-left: 1rem; padding-right: 1rem;">
-                    {item.images.map((img, index) => (
-                      <div class="flex-shrink-0" style="height: 100%; cursor: pointer;">
-                        <img
-                          src={img}
-                          alt={`${item.alt} ${index + 1}`}
-                          class="h-full w-auto object-contain"
-                          style="pointer-events: none; user-select: none;"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </a>
-                <p class="text-center text-xs uppercase tracking-wide mt-2">[Swipe to View All]</p>
-              </div>
-            ) : item.link ? (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center h-64"
-              >
-                <img src={item.image} alt={item.alt} class="h-64 w-auto object-cover" />
-              </a>
-            ) : (
-              <div class="flex items-center justify-center h-64">
-                <img src={item.image} alt={item.alt} class="h-64 w-auto object-cover" />
-              </div>
-            )}
-            <div class="mt-4 text-center">
-              <h3 class="font-bold text-base mb-2">{item.header}</h3>
-              {item.text && <p class="prose dark:prose-invert">{item.text}</p>}
+              {item.text && <p class="font-light text-sm">{item.text}</p>}
+              {item.clickText && <p class="text-xs uppercase tracking-wide mt-2">{item.clickText}</p>}
             </div>
           </div>
         ))

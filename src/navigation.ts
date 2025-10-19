@@ -1,5 +1,5 @@
 import { getPermalink } from './utils/permalinks';
-import logo from '~/assets/images/CP STACKED Home Page.webp';
+import logo from '~/assets/images/cp-logo-single.webp';
 
 export const headerData = {
   links: [

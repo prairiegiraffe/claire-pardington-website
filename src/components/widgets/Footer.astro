@@ -26,9 +26,9 @@ const { socialLinks = [] } = Astro.props;
 
 <footer class="relative bg-black text-white py-12 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <!-- Left: Company Info -->
-      <div class="md:col-span-3 space-y-1 text-center md:text-left">
+      <div class="space-y-1 text-center md:text-left">
         <p class="text-sm font-semibold">Claire Elizabeth Pardington LLC</p>
         <p class="text-xs">Creative Director. Designer.</p>
         <p class="text-xs">© 2025 All rights reserved.</p>
@@ -39,8 +39,8 @@ const { socialLinks = [] } = Astro.props;
         </p>
       </div>
 
-      <!-- Center: Social Links -->
-      <div class="md:col-span-5 flex justify-center">
+      <!-- Right: Social Links -->
+      <div class="flex justify-center md:justify-end">
         <ul class="flex gap-4">
           {
             socialLinks.map(({ ariaLabel, href, icon }) => (
@@ -58,29 +58,6 @@ const { socialLinks = [] } = Astro.props;
             ))
           }
         </ul>
-      </div>
-
-      <!-- Right: Newsletter Signup -->
-      <div class="md:col-span-4 flex justify-center md:justify-end">
-        <form class="w-full max-w-sm" method="POST" action="https://api.web3forms.com/submit">
-          <input type="hidden" name="access_key" value="81957d0d-42c1-4ddf-93f7-280ec20b9274" />
-          <input type="hidden" name="subject" value="New Newsletter Signup - Claire Pardington" />
-          <input type="hidden" name="from_name" value="Claire Pardington Newsletter" />
-          <label for="newsletter-email" class="block text-sm mb-2">Updates</label>
-          <div class="flex gap-2">
-            <input
-              type="email"
-              id="newsletter-email"
-              name="email"
-              placeholder="Your email"
-              class="flex-1 px-4 py-2 bg-white text-black border border-white focus:outline-none focus:ring-2 focus:ring-white"
-              required
-            />
-            <button type="submit" class="px-6 py-2 bg-white text-black hover:bg-gray-200 transition font-medium">
-              Sign Up
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   </div>

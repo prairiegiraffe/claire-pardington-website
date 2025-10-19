@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
+import headlineImage from '~/assets/images/illustration-headline.webp';
 import img1 from '~/assets/images/Illustrations/0DC48960-2DF4-4031-A655-F29008B56032.webp';
 import img2 from '~/assets/images/Illustrations/B50E3C6A-7132-4B47-B55E-8817E897ADC9.webp';
 import img3 from '~/assets/images/Illustrations/D3F95E33-27C1-4DCD-B550-5B8CE9C1163E.webp';
@@ -23,7 +24,9 @@ const illustrations = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img
 <Layout metadata={metadata}>
   <!-- Title and Description -->
   <div class="container mx-auto px-4 py-16 max-w-4xl text-center">
-    <h1 class="text-3xl md:text-4xl uppercase tracking-wide mb-8" style="font-weight: 200;">Illustrations</h1>
+    <div class="flex justify-center mb-8">
+      <Image src={headlineImage} alt="Illustrations" width={200} class="h-auto" />
+    </div>
 
     <p class="text-base leading-relaxed mb-8">
       Mixed media includes marker, pencil, watercolor, acrylic, charcoal, and pastel.
