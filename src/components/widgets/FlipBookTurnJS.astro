@@ -153,8 +153,10 @@ const { images, title } = Astro.props;
         acceleration: true,
         elevation: 50,
         duration: 1000,
-        page: 1,
       });
+
+      // Force initial view to show pages 1 and 2 together
+      jQuery(flipbook).turn('page', 2);
 
       // Mark as initialized
       flipbook.classList.add('turn-initialized');
