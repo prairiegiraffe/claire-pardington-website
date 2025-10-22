@@ -17,6 +17,8 @@ const { images, title } = Astro.props;
   }
 
   <div id="flipbook" class="flipbook">
+    <!-- Empty first page so pages 1-2 appear together -->
+    <div class="page" style="background: white;"></div>
     {
       images.map((image, index) => (
         <div class:list={['page', index === images.length - 1 ? 'hard' : '']}>
@@ -177,10 +179,12 @@ const { images, title } = Astro.props;
 
       function updateControls() {
         const page = jQuery(flipbook).turn('page');
+        // Adjust for the blank first page
+        const displayPage = page > 1 ? page - 1 : 1;
         if (currentPageEl) {
-          currentPageEl.textContent = page.toString();
+          currentPageEl.textContent = displayPage.toString();
         }
-        prevBtn.disabled = page === 1;
+        prevBtn.disabled = page === 2; // Disable at actual page 2 (display page 1)
         nextBtn.disabled = page === totalPages;
       }
 
