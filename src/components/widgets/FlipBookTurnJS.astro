@@ -18,11 +18,9 @@ const { images, title, height = 600 } = Astro.props;
   }
 
   <div id="flipbook" class="flipbook">
-    <!-- Empty first page so pages 1-2 appear together -->
-    <div class="page" style="background: white;"></div>
     {
       images.map((image, index) => (
-        <div class:list={['page', index === images.length - 1 ? 'hard' : '']}>
+        <div class:list={['page', index === images.length - 1 ? 'hard' : '']} data-page-index={index}>
           <img src={image} alt={`Page ${index + 1}`} class="page-image" />
         </div>
       ))
@@ -147,12 +145,20 @@ const { images, title, height = 600 } = Astro.props;
       // Initialize turn.js with responsive settings
       const isMobile = window.innerWidth < 768;
 
+      // Add blank first page only on desktop for double-page spread
+      if (!isMobile) {
+        const blankPage = document.createElement('div');
+        blankPage.className = 'page blank-page';
+        blankPage.style.background = 'white';
+        flipbook.insertBefore(blankPage, flipbook.firstChild);
+      }
+
       const customHeight = parseInt(flipbook.parentElement?.style.getPropertyValue('--flipbook-height') || '600');
 
       jQuery(flipbook).turn({
         width: isMobile ? window.innerWidth * 0.9 : 1000,
         height: isMobile ? window.innerHeight * 0.6 : customHeight,
-        display: 'double',
+        display: isMobile ? 'single' : 'double',
         autoCenter: true,
         gradients: true,
         acceleration: true,
@@ -160,8 +166,10 @@ const { images, title, height = 600 } = Astro.props;
         duration: 1000,
       });
 
-      // Force initial view to show pages 1 and 2 together
-      jQuery(flipbook).turn('page', 2);
+      // Force initial view to show pages 1 and 2 together on desktop only
+      if (!isMobile) {
+        jQuery(flipbook).turn('page', 2);
+      }
 
       // Mark as initialized
       flipbook.classList.add('turn-initialized');
@@ -172,6 +180,7 @@ const { images, title, height = 600 } = Astro.props;
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function () {
           const nowMobile = window.innerWidth < 768;
+          jQuery(flipbook).turn('display', nowMobile ? 'single' : 'double');
           jQuery(flipbook).turn(
             'size',
             nowMobile ? window.innerWidth * 0.9 : 1000,
@@ -182,12 +191,26 @@ const { images, title, height = 600 } = Astro.props;
 
       function updateControls() {
         const page = jQuery(flipbook).turn('page');
-        // Adjust for the blank first page
-        const displayPage = page > 1 ? page - 1 : 1;
+        const nowMobile = window.innerWidth < 768;
+
+        // Adjust for the blank first page on desktop only
+        let displayPage;
+        let isFirstPage;
+
+        if (nowMobile) {
+          // On mobile (single page mode), just show the actual page number
+          displayPage = page;
+          isFirstPage = page === 1;
+        } else {
+          // On desktop (double page mode), adjust for blank first page
+          displayPage = page > 1 ? page - 1 : 1;
+          isFirstPage = page === 2; // Page 2 is actually the first content page
+        }
+
         if (currentPageEl) {
           currentPageEl.textContent = displayPage.toString();
         }
-        prevBtn.disabled = page === 2; // Disable at actual page 2 (display page 1)
+        prevBtn.disabled = isFirstPage;
         nextBtn.disabled = page === totalPages;
       }
 
