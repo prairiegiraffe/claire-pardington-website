@@ -19,7 +19,7 @@ const { images, title } = Astro.props;
   <div id="flipbook" class="flipbook">
     {
       images.map((image, index) => (
-        <div class:list={['page', index === 0 || index === images.length - 1 ? 'hard' : '']}>
+        <div class:list={['page', index === images.length - 1 ? 'hard' : '']}>
           <img src={image} alt={`Page ${index + 1}`} class="page-image" />
         </div>
       ))
