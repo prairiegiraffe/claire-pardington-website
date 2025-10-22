@@ -147,13 +147,13 @@ const { images, title } = Astro.props;
       jQuery(flipbook).turn({
         width: isMobile ? window.innerWidth * 0.9 : 1000,
         height: isMobile ? window.innerHeight * 0.6 : 600,
-        display: isMobile ? 'single' : 'double',
+        display: 'double',
         autoCenter: true,
         gradients: true,
         acceleration: true,
         elevation: 50,
         duration: 1000,
-        page: 1, // Start on page 1 to show pages 1 and 2
+        page: 1,
       });
 
       // Mark as initialized
@@ -165,7 +165,6 @@ const { images, title } = Astro.props;
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function () {
           const nowMobile = window.innerWidth < 768;
-          jQuery(flipbook).turn('display', nowMobile ? 'single' : 'double');
           jQuery(flipbook).turn(
             'size',
             nowMobile ? window.innerWidth * 0.9 : 1000,
