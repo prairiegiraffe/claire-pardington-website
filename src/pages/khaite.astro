@@ -1,0 +1,271 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+import khaiteImage from '~/assets/images/khaite/Untitled.webp';
+
+// Design Journal images for flipbook
+import dj01a from '~/assets/images/khaite/design-journal/01 A.webp';
+import dj01b from '~/assets/images/khaite/design-journal/01B.webp';
+import dj02a from '~/assets/images/khaite/design-journal/02A.webp';
+import dj02b from '~/assets/images/khaite/design-journal/02B.webp';
+import dj03a from '~/assets/images/khaite/design-journal/03A.webp';
+import dj03b from '~/assets/images/khaite/design-journal/03B.webp';
+import dj04a from '~/assets/images/khaite/design-journal/04A.webp';
+import dj04b from '~/assets/images/khaite/design-journal/04B.webp';
+import dj05a from '~/assets/images/khaite/design-journal/05A.webp';
+import dj05b from '~/assets/images/khaite/design-journal/05B.webp';
+import dj06a from '~/assets/images/khaite/design-journal/06A.webp';
+import dj06b from '~/assets/images/khaite/design-journal/06B.webp';
+import dj07a from '~/assets/images/khaite/design-journal/07A.webp';
+import dj07b from '~/assets/images/khaite/design-journal/07B.webp';
+import dj08a from '~/assets/images/khaite/design-journal/08A.webp';
+import dj08b from '~/assets/images/khaite/design-journal/08B.webp';
+import dj09a from '~/assets/images/khaite/design-journal/09A.webp';
+import dj09b from '~/assets/images/khaite/design-journal/09B.webp';
+import dj10a from '~/assets/images/khaite/design-journal/10A.webp';
+import dj10b from '~/assets/images/khaite/design-journal/10B.webp';
+import dj11a from '~/assets/images/khaite/design-journal/11A.webp';
+import dj11b from '~/assets/images/khaite/design-journal/11B.webp';
+import dj12a from '~/assets/images/khaite/design-journal/12A.webp';
+import dj12b from '~/assets/images/khaite/design-journal/12B.webp';
+import dj13a from '~/assets/images/khaite/design-journal/13A.webp';
+import dj13b from '~/assets/images/khaite/design-journal/13B.webp';
+
+// Final Presentation images for scrollable gallery
+import fp01 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-01.webp';
+import fp02 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-02.webp';
+import fp03 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-03.webp';
+import fp04 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-04.webp';
+import fp05 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-05.webp';
+import fp06 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-06.webp';
+import fp07 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-07.webp';
+import fp08 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-08.webp';
+import fp09 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-09.webp';
+import fp10 from '~/assets/images/khaite/final-presentation/KHAITE AR FA2025-10.webp';
+
+const metadata = {
+  title: 'Khaite: Architectural Romance - Claire Pardington',
+};
+
+const designJournalImages = [
+  dj01a.src,
+  dj01b.src,
+  dj02a.src,
+  dj02b.src,
+  dj03a.src,
+  dj03b.src,
+  dj04a.src,
+  dj04b.src,
+  dj05a.src,
+  dj05b.src,
+  dj06a.src,
+  dj06b.src,
+  dj07a.src,
+  dj07b.src,
+  dj08a.src,
+  dj08b.src,
+  dj09a.src,
+  dj09b.src,
+  dj10a.src,
+  dj10b.src,
+  dj11a.src,
+  dj11b.src,
+  dj12a.src,
+  dj12b.src,
+  dj13a.src,
+  dj13b.src,
+];
+
+const designImages = [fp01, fp02, fp03, fp04, fp05, fp06, fp07, fp08, fp09, fp10];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="py-8 pl-4 md:pl-10">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <!-- Image Column -->
+      <div class="flex justify-center">
+        <div class="w-full max-w-[500px]">
+          <Image src={khaiteImage} alt="Khaite: Architectural Romance" class="w-full h-auto" />
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="space-y-6 max-w-[500px]">
+        <h1 class="text-3xl md:text-4xl uppercase tracking-wide text-center" style="font-weight: 200;">
+          KHAITE: ARCHITECTURAL ROMANCE
+        </h1>
+
+        <div class="space-y-4 text-base leading-relaxed">
+          <p>
+            Clean seams. Angular pleats. Hidden corsetry beneath sweeping coats. Architectural Romance constructs
+            strength through softness—exploring tailored silhouettes, engineered drapes, and a restrained color palette
+            rooted in stone, dusk, and steel. Every look balances tension: between exposure and concealment, softness
+            and edge, structure and skin. Designed to move like shadows at golden hour—quiet, certain, unforgettable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Journal Section -->
+  <div class="w-full py-16">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
+      Creative Direction
+    </h2>
+
+    <!-- Flipbook -->
+    <FlipBookTurnJS images={designJournalImages} />
+  </div>
+
+  <!-- Design Section -->
+  <div class="w-full py-16 overflow-hidden">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design</h2>
+
+    <!-- Scrollable Image Container -->
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll-design"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
+      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+        {
+          designImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item-design"
+              data-lightbox={`lightbox-design-${index}`}
+              style="height: 600px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`Design ${index + 1}`}
+                style="height: 600px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View]</p>
+  </div>
+
+  <!-- Lightbox Modals - Design -->
+  {
+    designImages.map((img, index) => (
+      <div
+        id={`lightbox-design-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-design-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Design ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    // Design gallery
+    const sliderDesign = document.querySelector('.image-gallery-scroll-design') as HTMLElement | null;
+    if (!sliderDesign) return;
+
+    let isDownDesign = false;
+    let hasMovedDesign = false;
+    let startXDesign: number = 0;
+    let scrollLeftDesign: number = 0;
+
+    sliderDesign.addEventListener('mousedown', (e: MouseEvent) => {
+      isDownDesign = true;
+      hasMovedDesign = false;
+      sliderDesign.style.cursor = 'grabbing';
+      startXDesign = e.pageX - sliderDesign.offsetLeft;
+      scrollLeftDesign = sliderDesign.scrollLeft;
+    });
+
+    sliderDesign.addEventListener('mouseleave', () => {
+      isDownDesign = false;
+      sliderDesign.style.cursor = 'grab';
+    });
+
+    sliderDesign.addEventListener('mouseup', (e: MouseEvent) => {
+      isDownDesign = false;
+      sliderDesign.style.cursor = 'grab';
+
+      if (!hasMovedDesign && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item-design') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      }
+
+      hasMovedDesign = false;
+    });
+
+    sliderDesign.addEventListener('mousemove', (e: MouseEvent) => {
+      if (!isDownDesign) return;
+      e.preventDefault();
+      hasMovedDesign = true;
+      const x = e.pageX - sliderDesign.offsetLeft;
+      const walk = (x - startXDesign) * 2;
+      sliderDesign.scrollLeft = scrollLeftDesign - walk;
+    });
+
+    document.querySelectorAll('.gallery-item-design').forEach((item) => {
+      item.addEventListener('click', () => {
+        if (!hasMovedDesign) {
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>

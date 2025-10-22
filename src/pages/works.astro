@@ -2,6 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import creativeAndDesign from '~/assets/images/Creative and Design.webp';
+import khaite from '~/assets/images/khaite/Untitled.webp';
+import aliceOlivia from '~/assets/images/the-middle-of-the-night/design-journal-2/01.webp';
 import heatWave from '~/assets/images/works-landing/02 HEAT WAVE.webp';
 import pardingtonCollective from '~/assets/images/works-landing/03 PARDINGTON COLLECTIVE.webp';
 import seDeshabillier from '~/assets/images/works-landing/04 SE DESHABILLIER.webp';
@@ -49,20 +51,26 @@ const metadata = {
     <div class="container mx-auto px-4 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="flex flex-col w-full">
+        <a href="/khaite" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
-            <div class="w-full h-full bg-black flex items-center justify-center">
-              <p class="text-white text-lg md:text-xl uppercase tracking-wide text-center px-4">
-                PORTFOLIO COMING SOON
-              </p>
-            </div>
+            <Image src={khaite} alt="Khaite: Architectural Romance" class="w-full h-full object-cover" />
           </div>
           <p class="text-xs uppercase tracking-wide">
             KHAITE: ARCHITECTURAL ROMANCE FALL 2025<br />CONCEPTUAL CREATIVE DIRECTION & DESIGN
           </p>
-        </div>
+        </a>
 
         <!-- Card 2 -->
+        <a href="/alice-olivia-middle-of-the-night" class="flex flex-col w-full hover:opacity-80 transition-opacity">
+          <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
+            <Image src={aliceOlivia} alt="Alice + Olivia: The Middle of the Night" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-xs uppercase tracking-wide">
+            ALICE + OLIVIA: THE MIDDLE OF THE NIGHT<br />CONCEPTUAL CREATIVE DIRECTION & DESIGN
+          </p>
+        </a>
+
+        <!-- Card 3 -->
         <a href="/heat-becomes-her" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image src={heatWave} alt="Heat Becomes Her" class="w-full h-full object-cover" />
@@ -70,7 +78,7 @@ const metadata = {
           <p class="text-xs uppercase tracking-wide">HEAT BECOMES HER<br />CONCEPTUAL CREATIVE DIRECTION & DESIGN</p>
         </a>
 
-        <!-- Card 3 -->
+        <!-- Card 4 -->
         <a href="/pardington-collective" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -85,7 +93,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 4 -->
+        <!-- Card 5 -->
         <a href="/se-deshabiller" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image src={seDeshabillier} alt="Se Deshabillier Fall 2024" class="w-full h-full object-cover" />
@@ -95,7 +103,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 5 -->
+        <!-- Card 6 -->
         <a href="/pardington-collective-spring-2024" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image src={pcSpring2024} alt="Pardington Collective Spring 2024" class="w-full h-full object-cover" />
@@ -105,7 +113,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 6 -->
+        <!-- Card 7 -->
         <a href="/interior-design" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image src={interiorDesign} alt="Interior Design New Home Build 2021" class="w-full h-full object-cover" />
@@ -115,7 +123,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 7 -->
+        <!-- Card 8 -->
         <a href="/welcome-to-wonderland" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image src={wonderland} alt="Welcome to Wonderland" class="w-full h-full object-cover" />
@@ -125,7 +133,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 8 -->
+        <!-- Card 9 -->
         <a href="/home-renovation-2018" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -139,7 +147,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 9 -->
+        <!-- Card 10 -->
         <a href="/vs-amour-collection" class="flex flex-col w-full hover:opacity-80 transition-opacity">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -154,7 +162,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 10 -->
+        <!-- Card 11 -->
         <a href="/vs-collected-works" class="flex flex-col w-full group">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -169,7 +177,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 11 -->
+        <!-- Card 12 -->
         <a href="/vs-very-sexy" class="flex flex-col w-full group">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -183,7 +191,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 12 -->
+        <!-- Card 13 -->
         <a href="/manipulated-body" class="flex flex-col w-full group">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -195,7 +203,7 @@ const metadata = {
           <p class="text-xs uppercase tracking-wide">MANIPULATED BODY<br />CONCEPTUAL CREATIVE DIRECTION & DESIGN</p>
         </a>
 
-        <!-- Card 13 -->
+        <!-- Card 14 -->
         <a href="/i-feel-it-in-my-bones" class="flex flex-col w-full group">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
@@ -209,7 +217,7 @@ const metadata = {
           </p>
         </a>
 
-        <!-- Card 14 -->
+        <!-- Card 15 -->
         <a href="/riding-the-chemically-imbalanced-rollercoaster" class="flex flex-col w-full group">
           <div class="border-[10px] border-black mb-3 h-[310px] md:h-[320px] w-auto overflow-hidden bg-black">
             <Image
