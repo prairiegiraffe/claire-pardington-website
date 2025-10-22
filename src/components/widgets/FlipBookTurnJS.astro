@@ -2,12 +2,13 @@
 interface Props {
   images: string[];
   title?: string;
+  height?: number;
 }
 
-const { images, title } = Astro.props;
+const { images, title, height = 600 } = Astro.props;
 ---
 
-<div class="flipbook-container max-w-7xl mx-auto px-4 pb-16">
+<div class="flipbook-container max-w-7xl mx-auto px-4 pb-16" style={`--flipbook-height: ${height}px`}>
   {
     title && (
       <h1 class="text-4xl text-center mb-12" style="font-weight: 200;">
@@ -62,7 +63,7 @@ const { images, title } = Astro.props;
 
   .flipbook {
     width: 1000px;
-    height: 600px;
+    height: var(--flipbook-height, 600px);
   }
 
   @media (max-width: 768px) {
@@ -146,9 +147,11 @@ const { images, title } = Astro.props;
       // Initialize turn.js with responsive settings
       const isMobile = window.innerWidth < 768;
 
+      const customHeight = parseInt(flipbook.parentElement?.style.getPropertyValue('--flipbook-height') || '600');
+
       jQuery(flipbook).turn({
         width: isMobile ? window.innerWidth * 0.9 : 1000,
-        height: isMobile ? window.innerHeight * 0.6 : 600,
+        height: isMobile ? window.innerHeight * 0.6 : customHeight,
         display: 'double',
         autoCenter: true,
         gradients: true,
@@ -172,7 +175,7 @@ const { images, title } = Astro.props;
           jQuery(flipbook).turn(
             'size',
             nowMobile ? window.innerWidth * 0.9 : 1000,
-            nowMobile ? window.innerHeight * 0.6 : 600
+            nowMobile ? window.innerHeight * 0.6 : customHeight
           );
         }, 250);
       });
