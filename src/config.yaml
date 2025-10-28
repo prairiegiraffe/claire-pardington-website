@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Claire Pardington
+  site: 'https://clairepardington.com'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Claire Pardington
+    template: '%s — Claire Pardington'
+  description: "Claire Pardington is a New York–based designer and creative director whose work bridges fashion and visual storytelling."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Claire Pardington
     images:
       - url: '~/assets/images/CP-Updated.webp'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@clairepardington'
+    site: '@clairepardington'
     cardType: summary_large_image
 
 i18n:
