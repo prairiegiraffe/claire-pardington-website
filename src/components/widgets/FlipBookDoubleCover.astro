@@ -7,10 +7,14 @@ interface Props {
 }
 
 const { images, title, height = 600, id = 'flipbook-double' } = Astro.props;
-const uniqueId = `${id}-${Math.random().toString(36).substr(2, 9)}`;
+const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
 ---
 
-<div class="flipbook-double-container max-w-7xl mx-auto px-4 pb-16" style={`--flipbook-height: ${height}px`} data-flipbook-type="double-cover">
+<div
+  class="flipbook-double-container max-w-7xl mx-auto px-4 pb-16"
+  style={`--flipbook-height: ${height}px`}
+  data-flipbook-type="double-cover"
+>
   {
     title && (
       <h1 class="text-4xl text-center mb-12" style="font-weight: 200;">
@@ -40,7 +44,10 @@ const uniqueId = `${id}-${Math.random().toString(36).substr(2, 9)}`;
     </button>
 
     <div class="page-counter text-sm md:text-lg text-center">
-      <span class="current-page-double" data-flipbook-target={uniqueId}>1</span> / <span class="total-pages-double" data-flipbook-target={uniqueId}>{Math.ceil(images.length / 2)}</span>
+      <span class="current-page-double" data-flipbook-target={uniqueId}>1</span> / <span
+        class="total-pages-double"
+        data-flipbook-target={uniqueId}>{Math.ceil(images.length / 2)}</span
+      >
     </div>
 
     <button
@@ -125,6 +132,9 @@ const uniqueId = `${id}-${Math.random().toString(36).substr(2, 9)}`;
 </style>
 
 <script>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  declare const jQuery: any;
+
   document.addEventListener('astro:page-load', function () {
     // Initialize all double-cover flipbooks on the page
     const flipbooks = document.querySelectorAll('[data-flipbook-type="double-cover"]');
@@ -148,11 +158,15 @@ const uniqueId = `${id}-${Math.random().toString(36).substr(2, 9)}`;
           return;
         }
 
-        const prevBtn = container.querySelector('.prev-btn[data-flipbook-target="' + uniqueId + '"]') as HTMLButtonElement;
-        const nextBtn = container.querySelector('.next-btn[data-flipbook-target="' + uniqueId + '"]') as HTMLButtonElement;
-        const currentPageEl = container.querySelector('.current-page-double[data-flipbook-target="' + uniqueId + '"]') as HTMLElement;
-        const totalPagesEl = container.querySelector('.total-pages-double[data-flipbook-target="' + uniqueId + '"]') as HTMLElement;
-        const totalPages = parseInt(totalPagesEl?.textContent || '0');
+        const prevBtn = container.querySelector(
+          '.prev-btn[data-flipbook-target="' + uniqueId + '"]'
+        ) as HTMLButtonElement;
+        const nextBtn = container.querySelector(
+          '.next-btn[data-flipbook-target="' + uniqueId + '"]'
+        ) as HTMLButtonElement;
+        const currentPageEl = container.querySelector(
+          '.current-page-double[data-flipbook-target="' + uniqueId + '"]'
+        ) as HTMLElement;
 
         if (!prevBtn || !nextBtn || !currentPageEl) return;
 
@@ -205,9 +219,9 @@ const uniqueId = `${id}-${Math.random().toString(36).substr(2, 9)}`;
           // For double cover book:
           // On desktop: pages are shown 2 at a time, so spread number = Math.ceil(page / 2)
           // On mobile: pages are shown 1 at a time, so spread number = page
-          let displaySpread;
-          let isFirstPage;
-          let isLastPage;
+          let displaySpread: number;
+          let isFirstPage: boolean;
+          let isLastPage: boolean;
 
           if (nowMobile) {
             // On mobile (single page mode)

@@ -11,7 +11,7 @@ metadata:
   title:
     default: Claire Pardington
     template: '%s — Claire Pardington'
-  description: "Claire Pardington is a New York–based designer and creative director whose work bridges fashion and visual storytelling."
+  description: 'Claire Pardington is a New York–based designer and creative director whose work bridges fashion and visual storytelling.'
   robots:
     index: true
     follow: true

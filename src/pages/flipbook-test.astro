@@ -43,17 +43,15 @@ const doubleCoverImages = [
           <strong>How it works:</strong>
         </p>
         <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
-          <li><strong>Desktop:</strong> Starts with cover page alone on the right (with blank page on left), then shows 2 pages side-by-side</li>
+          <li>
+            <strong>Desktop:</strong> Starts with cover page alone on the right (with blank page on left), then shows 2 pages
+            side-by-side
+          </li>
           <li><strong>Mobile:</strong> Shows 1 page at a time</li>
         </ul>
       </div>
 
-      <FlipBookSingleCover
-        images={singleCoverImages}
-        title="Single Cover Example"
-        height={500}
-        id="single-test-1"
-      />
+      <FlipBookSingleCover images={singleCoverImages} title="Single Cover Example" height={500} id="single-test-1" />
     </section>
 
     <!-- Divider -->
@@ -72,12 +70,7 @@ const doubleCoverImages = [
         </ul>
       </div>
 
-      <FlipBookDoubleCover
-        images={doubleCoverImages}
-        title="Double Cover Example"
-        height={500}
-        id="double-test-1"
-      />
+      <FlipBookDoubleCover images={doubleCoverImages} title="Double Cover Example" height={500} id="double-test-1" />
     </section>
 
     <!-- Divider -->
@@ -95,29 +88,17 @@ const doubleCoverImages = [
       <div class="space-y-16">
         <div>
           <h3 class="text-xl font-light mb-4 text-center">First Single Cover</h3>
-          <FlipBookSingleCover
-            images={singleCoverImages.slice(0, 4)}
-            height={400}
-            id="single-test-2"
-          />
+          <FlipBookSingleCover images={singleCoverImages.slice(0, 4)} height={400} id="single-test-2" />
         </div>
 
         <div>
           <h3 class="text-xl font-light mb-4 text-center">First Double Cover</h3>
-          <FlipBookDoubleCover
-            images={doubleCoverImages.slice(0, 6)}
-            height={400}
-            id="double-test-2"
-          />
+          <FlipBookDoubleCover images={doubleCoverImages.slice(0, 6)} height={400} id="double-test-2" />
         </div>
 
         <div>
           <h3 class="text-xl font-light mb-4 text-center">Second Single Cover</h3>
-          <FlipBookSingleCover
-            images={singleCoverImages}
-            height={400}
-            id="single-test-3"
-          />
+          <FlipBookSingleCover images={singleCoverImages} height={400} id="single-test-3" />
         </div>
       </div>
     </section>
@@ -129,7 +110,8 @@ const doubleCoverImages = [
       <div class="space-y-6">
         <div>
           <h3 class="text-xl font-semibold mb-2">Single Cover Flipbook</h3>
-          <pre class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto text-sm"><code>---
+          <pre
+            class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto text-sm"><code>---
 import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
 
 const images = [
@@ -141,16 +123,17 @@ const images = [
 ---
 
 &lt;FlipBookSingleCover
-  images={images}
+  images=&#123;images&#125;
   title="My Flipbook Title"
-  height={600}
+  height=&#123;600&#125;
   id="unique-id-1"
 /&gt;</code></pre>
         </div>
 
         <div>
           <h3 class="text-xl font-semibold mb-2">Double Cover Flipbook</h3>
-          <pre class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto text-sm"><code>---
+          <pre
+            class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto text-sm"><code>---
 import FlipBookDoubleCover from '~/components/widgets/FlipBookDoubleCover.astro';
 
 const images = [
@@ -163,9 +146,9 @@ const images = [
 ---
 
 &lt;FlipBookDoubleCover
-  images={images}
+  images=&#123;images&#125;
   title="My Flipbook Title"
-  height={600}
+  height=&#123;600&#125;
   id="unique-id-2"
 /&gt;</code></pre>
         </div>
@@ -176,7 +159,9 @@ const images = [
             <li><code class="bg-gray-200 px-1">images</code> - Array of image URLs (required)</li>
             <li><code class="bg-gray-200 px-1">title</code> - Optional title displayed above the flipbook</li>
             <li><code class="bg-gray-200 px-1">height</code> - Height in pixels (default: 600)</li>
-            <li><code class="bg-gray-200 px-1">id</code> - Unique ID to prevent conflicts when using multiple flipbooks (recommended)</li>
+            <li>
+              <code class="bg-gray-200 px-1">id</code> - Unique ID to prevent conflicts when using multiple flipbooks (recommended)
+            </li>
           </ul>
         </div>
 
@@ -184,7 +169,10 @@ const images = [
           <h3 class="text-xl font-semibold mb-2">Important Notes</h3>
           <ul class="list-disc list-inside space-y-1 text-gray-700">
             <li>Both components require jQuery and turn.js to be loaded on the page</li>
-            <li>Always provide a unique <code class="bg-gray-200 px-1">id</code> prop when using multiple flipbooks on the same page</li>
+            <li>
+              Always provide a unique <code class="bg-gray-200 px-1">id</code> prop when using multiple flipbooks on the
+              same page
+            </li>
             <li>Components are fully independent and won't interfere with each other</li>
             <li>Automatically responsive - 2 pages on desktop, 1 page on mobile</li>
           </ul>
