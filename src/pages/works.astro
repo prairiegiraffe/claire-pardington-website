@@ -244,35 +244,46 @@ const metadata = {
     const video = document.getElementById('background-video') as HTMLVideoElement;
     console.log('Video element found:', !!video);
     if (video) {
+      console.log('Video src:', video.currentSrc || video.src);
+      console.log('Video readyState:', video.readyState);
+      console.log('Video paused:', video.paused);
+      console.log('Video muted:', video.muted);
+
       // Ensure video properties are set
       video.muted = true;
       video.playsInline = true;
       video.setAttribute('playsinline', '');
       video.setAttribute('webkit-playsinline', '');
 
+      console.log('After setting properties - muted:', video.muted, 'playsInline:', video.playsInline);
+
       // Force load the video
+      console.log('Calling video.load()');
       video.load();
 
       // Try to play immediately
       const attemptPlay = () => {
+        console.log('attemptPlay called, readyState:', video.readyState);
         const playPromise = video.play();
 
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log('Video playing successfully');
+              console.log('✅ Video playing successfully');
             })
             .catch((error) => {
-              console.log('Autoplay blocked, will retry on interaction:', error);
+              console.error('❌ Autoplay blocked:', error);
+              console.log('Will retry on interaction');
               // If autoplay is blocked, try again after user interaction
               const playOnInteraction = () => {
+                console.log('User interaction detected, attempting to play...');
                 video
                   .play()
                   .then(() => {
-                    console.log('Video playing after user interaction');
+                    console.log('✅ Video playing after user interaction');
                   })
                   .catch((err) => {
-                    console.error('Failed to play video:', err);
+                    console.error('❌ Failed to play video after interaction:', err);
                   });
               };
 
@@ -284,11 +295,17 @@ const metadata = {
       };
 
       // Try to play when video metadata is loaded
-      video.addEventListener('loadedmetadata', attemptPlay, { once: true });
+      video.addEventListener('loadedmetadata', () => {
+        console.log('loadedmetadata event fired');
+        attemptPlay();
+      }, { once: true });
 
       // Also try immediately in case it's already loaded
       if (video.readyState >= 2) {
+        console.log('Video already loaded, playing immediately');
         attemptPlay();
+      } else {
+        console.log('Video not ready yet, waiting for loadedmetadata');
       }
     }
   });
