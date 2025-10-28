@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
 
 import img01 from '~/assets/images/Wonderland/01.webp';
 import img02 from '~/assets/images/Wonderland/02.webp';
@@ -64,8 +64,5 @@ const journalImages = [
     </a>
   </div>
 
-  <FlipBookTurnJS images={journalImages} title="WELCOME TO WONDERLAND" />
+  <FlipBookSingleCover images={journalImages} title="WELCOME TO WONDERLAND" id="wonderland-flipbook" />
 </Layout>
-
-<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script is:inline src="/turn.min.js"></script>
