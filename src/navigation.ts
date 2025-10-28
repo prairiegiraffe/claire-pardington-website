@@ -16,10 +16,6 @@ export const headerData = {
       href: getPermalink('/illustrations'),
     },
     {
-      text: 'PRESS',
-      href: getPermalink('/press'),
-    },
-    {
       text: 'CONTACT',
       href: getPermalink('/contact'),
     },
