@@ -295,10 +295,14 @@ const metadata = {
       };
 
       // Try to play when video metadata is loaded
-      video.addEventListener('loadedmetadata', () => {
-        console.log('loadedmetadata event fired');
-        attemptPlay();
-      }, { once: true });
+      video.addEventListener(
+        'loadedmetadata',
+        () => {
+          console.log('loadedmetadata event fired');
+          attemptPlay();
+        },
+        { once: true }
+      );
 
       // Also try immediately in case it's already loaded
       if (video.readyState >= 2) {
