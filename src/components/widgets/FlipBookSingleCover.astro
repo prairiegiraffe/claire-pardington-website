@@ -1,0 +1,254 @@
+---
+interface Props {
+  images: string[];
+  title?: string;
+  height?: number;
+  id?: string; // Unique ID to prevent conflicts
+}
+
+const { images, title, height = 600, id = 'flipbook-single' } = Astro.props;
+const uniqueId = `${id}-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="flipbook-single-container max-w-7xl mx-auto px-4 pb-16" style={`--flipbook-height: ${height}px`} data-flipbook-type="single-cover">
+  {
+    title && (
+      <h1 class="text-4xl text-center mb-12" style="font-weight: 200;">
+        {title}
+      </h1>
+    )
+  }
+
+  <div id={uniqueId} class="flipbook-single" data-flipbook-id={uniqueId}>
+    {
+      images.map((image, index) => (
+        <div class:list={['page-single', index === images.length - 1 ? 'hard' : '']} data-page-index={index}>
+          <img src={image} alt={`Page ${index + 1}`} class="page-image-single" />
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="navigation-controls flex justify-center items-center gap-2 md:gap-8 mt-8">
+    <button
+      class="nav-btn-single prev-btn px-3 md:px-6 py-2 md:py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm md:text-base"
+      data-flipbook-target={uniqueId}
+      aria-label="Previous page"
+    >
+      ← Prev
+    </button>
+
+    <div class="page-counter text-sm md:text-lg text-center">
+      <span class="current-page-single" data-flipbook-target={uniqueId}>1</span> / <span class="total-pages-single" data-flipbook-target={uniqueId}>{images.length}</span>
+    </div>
+
+    <button
+      class="nav-btn-single next-btn px-3 md:px-6 py-2 md:py-3 bg-black text-white hover:bg-gray-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm md:text-base"
+      data-flipbook-target={uniqueId}
+      aria-label="Next page"
+    >
+      Next →
+    </button>
+  </div>
+</div>
+
+<style>
+  .flipbook-single-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flipbook-single {
+    width: 1000px;
+    height: var(--flipbook-height, 600px);
+  }
+
+  @media (max-width: 768px) {
+    .flipbook-single {
+      width: 90vw !important;
+      height: 60vh !important;
+    }
+  }
+
+  .page-single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-single.hard {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(235, 235, 235, 1) 100%
+    );
+  }
+
+  .page-single.even {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(235, 235, 235, 1) 100%
+    );
+  }
+
+  .page-single.odd {
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(235, 235, 235, 1) 100%
+    );
+  }
+
+  .page-image-single {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Hide flipbook pages until turn.js initializes */
+  .flipbook-single .page-single {
+    display: none;
+  }
+
+  .flipbook-single.turn-initialized .page-single {
+    display: flex !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', function () {
+    // Initialize all single-cover flipbooks on the page
+    const flipbooks = document.querySelectorAll('[data-flipbook-type="single-cover"]');
+
+    flipbooks.forEach((container) => {
+      const flipbookElement = container.querySelector('.flipbook-single') as HTMLElement;
+      if (!flipbookElement) return;
+
+      const uniqueId = flipbookElement.dataset.flipbookId;
+      if (!uniqueId) return;
+
+      // Wait for jQuery and turn.js to be available
+      function initFlipbook() {
+        if (typeof jQuery === 'undefined' || typeof jQuery.fn.turn === 'undefined') {
+          setTimeout(initFlipbook, 100);
+          return;
+        }
+
+        // Check if already initialized
+        if (flipbookElement.classList.contains('turn-initialized')) {
+          return;
+        }
+
+        const prevBtn = container.querySelector('.prev-btn[data-flipbook-target="' + uniqueId + '"]') as HTMLButtonElement;
+        const nextBtn = container.querySelector('.next-btn[data-flipbook-target="' + uniqueId + '"]') as HTMLButtonElement;
+        const currentPageEl = container.querySelector('.current-page-single[data-flipbook-target="' + uniqueId + '"]') as HTMLElement;
+        const totalPagesEl = container.querySelector('.total-pages-single[data-flipbook-target="' + uniqueId + '"]') as HTMLElement;
+        const totalPages = parseInt(totalPagesEl?.textContent || '0');
+
+        if (!prevBtn || !nextBtn || !currentPageEl) return;
+
+        // Initialize turn.js with responsive settings
+        const isMobile = window.innerWidth < 768;
+
+        // Add blank first page only on desktop for double-page spread
+        // This makes the first page (cover) appear alone on the right
+        if (!isMobile) {
+          const blankPage = document.createElement('div');
+          blankPage.className = 'page-single blank-page';
+          blankPage.style.background = 'white';
+          flipbookElement.insertBefore(blankPage, flipbookElement.firstChild);
+        }
+
+        const customHeight = parseInt((container as HTMLElement).style.getPropertyValue('--flipbook-height') || '600');
+
+        jQuery(flipbookElement).turn({
+          width: isMobile ? window.innerWidth * 0.9 : 1000,
+          height: isMobile ? window.innerHeight * 0.6 : customHeight,
+          display: isMobile ? 'single' : 'double',
+          autoCenter: true,
+          gradients: true,
+          acceleration: true,
+          elevation: 50,
+          duration: 1000,
+        });
+
+        // Force initial view to show pages 1 and 2 together on desktop only
+        // This shows blank page on left, cover on right
+        if (!isMobile) {
+          jQuery(flipbookElement).turn('page', 2);
+        }
+
+        // Mark as initialized
+        flipbookElement.classList.add('turn-initialized');
+
+        // Handle window resize
+        let resizeTimeout: number;
+        window.addEventListener('resize', function () {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(function () {
+            const nowMobile = window.innerWidth < 768;
+            jQuery(flipbookElement).turn('display', nowMobile ? 'single' : 'double');
+            jQuery(flipbookElement).turn(
+              'size',
+              nowMobile ? window.innerWidth * 0.9 : 1000,
+              nowMobile ? window.innerHeight * 0.6 : customHeight
+            );
+          }, 250) as unknown as number;
+        });
+
+        function updateControls() {
+          const page = jQuery(flipbookElement).turn('page');
+          const nowMobile = window.innerWidth < 768;
+
+          // Adjust for the blank first page on desktop only
+          let displayPage;
+          let isFirstPage;
+
+          if (nowMobile) {
+            // On mobile (single page mode), just show the actual page number
+            displayPage = page;
+            isFirstPage = page === 1;
+          } else {
+            // On desktop (double page mode), adjust for blank first page
+            displayPage = page > 1 ? page - 1 : 1;
+            isFirstPage = page === 2; // Page 2 is actually the first content page (cover)
+          }
+
+          if (currentPageEl) {
+            currentPageEl.textContent = displayPage.toString();
+          }
+          prevBtn.disabled = isFirstPage;
+          nextBtn.disabled = page === totalPages + (nowMobile ? 0 : 1);
+        }
+
+        prevBtn.addEventListener('click', () => {
+          jQuery(flipbookElement).turn('previous');
+          updateControls();
+        });
+
+        nextBtn.addEventListener('click', () => {
+          jQuery(flipbookElement).turn('next');
+          updateControls();
+        });
+
+        jQuery(flipbookElement).bind('turned', function () {
+          updateControls();
+        });
+
+        // Initialize controls
+        updateControls();
+      }
+
+      initFlipbook();
+    });
+  });
+</script>

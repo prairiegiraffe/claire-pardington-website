@@ -1,0 +1,205 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
+import FlipBookDoubleCover from '~/components/widgets/FlipBookDoubleCover.astro';
+
+const metadata = {
+  title: 'Flipbook Test Page',
+};
+
+// Test images for single cover flipbook (cover + pages)
+const singleCoverImages = [
+  'https://via.placeholder.com/400x600/FF6B6B/ffffff?text=Cover',
+  'https://via.placeholder.com/400x600/4ECDC4/ffffff?text=Page+2',
+  'https://via.placeholder.com/400x600/45B7D1/ffffff?text=Page+3',
+  'https://via.placeholder.com/400x600/96CEB4/ffffff?text=Page+4',
+  'https://via.placeholder.com/400x600/FFEAA7/ffffff?text=Page+5',
+  'https://via.placeholder.com/400x600/DFE6E9/ffffff?text=Page+6',
+];
+
+// Test images for double cover flipbook (all double spreads)
+const doubleCoverImages = [
+  'https://via.placeholder.com/400x600/A29BFE/ffffff?text=Cover+Left',
+  'https://via.placeholder.com/400x600/6C5CE7/ffffff?text=Cover+Right',
+  'https://via.placeholder.com/400x600/FD79A8/ffffff?text=Page+3',
+  'https://via.placeholder.com/400x600/E17055/ffffff?text=Page+4',
+  'https://via.placeholder.com/400x600/00B894/ffffff?text=Page+5',
+  'https://via.placeholder.com/400x600/00CEC9/ffffff?text=Page+6',
+  'https://via.placeholder.com/400x600/FDCB6E/ffffff?text=Page+7',
+  'https://via.placeholder.com/400x600/E84393/ffffff?text=Page+8',
+];
+---
+
+<Layout metadata={metadata}>
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <h1 class="text-5xl font-light text-center mb-4">Flipbook Component Test</h1>
+    <p class="text-center text-gray-600 mb-16">Testing both single-cover and double-cover flipbooks on the same page</p>
+
+    <!-- Section 1: Single Cover Flipbook -->
+    <section class="mb-32">
+      <div class="mb-8">
+        <h2 class="text-3xl font-light mb-4">Single Cover Flipbook</h2>
+        <p class="text-gray-700 mb-2">
+          <strong>How it works:</strong>
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <li><strong>Desktop:</strong> Starts with cover page alone on the right (with blank page on left), then shows 2 pages side-by-side</li>
+          <li><strong>Mobile:</strong> Shows 1 page at a time</li>
+        </ul>
+      </div>
+
+      <FlipBookSingleCover
+        images={singleCoverImages}
+        title="Single Cover Example"
+        height={500}
+        id="single-test-1"
+      />
+    </section>
+
+    <!-- Divider -->
+    <div class="border-t-2 border-gray-200 my-16"></div>
+
+    <!-- Section 2: Double Cover Flipbook -->
+    <section class="mb-32">
+      <div class="mb-8">
+        <h2 class="text-3xl font-light mb-4">Double Cover Flipbook</h2>
+        <p class="text-gray-700 mb-2">
+          <strong>How it works:</strong>
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <li><strong>Desktop:</strong> Starts with 2-page cover spread, then continues with 2 pages side-by-side</li>
+          <li><strong>Mobile:</strong> Shows 1 page at a time</li>
+        </ul>
+      </div>
+
+      <FlipBookDoubleCover
+        images={doubleCoverImages}
+        title="Double Cover Example"
+        height={500}
+        id="double-test-1"
+      />
+    </section>
+
+    <!-- Divider -->
+    <div class="border-t-2 border-gray-200 my-16"></div>
+
+    <!-- Section 3: Both on Same Page (Interference Test) -->
+    <section class="mb-16">
+      <div class="mb-8">
+        <h2 class="text-3xl font-light mb-4">Multiple Flipbooks Test</h2>
+        <p class="text-gray-700 mb-4">
+          Testing that multiple flipbooks can coexist on the same page without interfering with each other.
+        </p>
+      </div>
+
+      <div class="space-y-16">
+        <div>
+          <h3 class="text-xl font-light mb-4 text-center">First Single Cover</h3>
+          <FlipBookSingleCover
+            images={singleCoverImages.slice(0, 4)}
+            height={400}
+            id="single-test-2"
+          />
+        </div>
+
+        <div>
+          <h3 class="text-xl font-light mb-4 text-center">First Double Cover</h3>
+          <FlipBookDoubleCover
+            images={doubleCoverImages.slice(0, 6)}
+            height={400}
+            id="double-test-2"
+          />
+        </div>
+
+        <div>
+          <h3 class="text-xl font-light mb-4 text-center">Second Single Cover</h3>
+          <FlipBookSingleCover
+            images={singleCoverImages}
+            height={400}
+            id="single-test-3"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Instructions -->
+    <section class="bg-gray-50 p-8 rounded-lg mt-16">
+      <h2 class="text-2xl font-light mb-4">Usage Instructions</h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Single Cover Flipbook</h3>
+          <pre class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto text-sm"><code>---
+import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
+
+const images = [
+  '/path/to/cover.jpg',
+  '/path/to/page2.jpg',
+  '/path/to/page3.jpg',
+  // ... more pages
+];
+---
+
+&lt;FlipBookSingleCover
+  images={images}
+  title="My Flipbook Title"
+  height={600}
+  id="unique-id-1"
+/&gt;</code></pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Double Cover Flipbook</h3>
+          <pre class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto text-sm"><code>---
+import FlipBookDoubleCover from '~/components/widgets/FlipBookDoubleCover.astro';
+
+const images = [
+  '/path/to/cover-left.jpg',
+  '/path/to/cover-right.jpg',
+  '/path/to/page3.jpg',
+  '/path/to/page4.jpg',
+  // ... more pages (even number recommended)
+];
+---
+
+&lt;FlipBookDoubleCover
+  images={images}
+  title="My Flipbook Title"
+  height={600}
+  id="unique-id-2"
+/&gt;</code></pre>
+        </div>
+
+        <div class="border-t pt-4">
+          <h3 class="text-xl font-semibold mb-2">Props</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700">
+            <li><code class="bg-gray-200 px-1">images</code> - Array of image URLs (required)</li>
+            <li><code class="bg-gray-200 px-1">title</code> - Optional title displayed above the flipbook</li>
+            <li><code class="bg-gray-200 px-1">height</code> - Height in pixels (default: 600)</li>
+            <li><code class="bg-gray-200 px-1">id</code> - Unique ID to prevent conflicts when using multiple flipbooks (recommended)</li>
+          </ul>
+        </div>
+
+        <div class="border-t pt-4">
+          <h3 class="text-xl font-semibold mb-2">Important Notes</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700">
+            <li>Both components require jQuery and turn.js to be loaded on the page</li>
+            <li>Always provide a unique <code class="bg-gray-200 px-1">id</code> prop when using multiple flipbooks on the same page</li>
+            <li>Components are fully independent and won't interfere with each other</li>
+            <li>Automatically responsive - 2 pages on desktop, 1 page on mobile</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<!-- Load jQuery and turn.js -->
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>
+
+<style>
+  code {
+    font-family: 'Courier New', monospace;
+  }
+</style>
