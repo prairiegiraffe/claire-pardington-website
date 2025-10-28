@@ -173,10 +173,23 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
         // Initialize turn.js with responsive settings
         const isMobile = window.innerWidth < 768;
 
-        // For double cover:
-        // Desktop - always show 2 pages at a time (double-page spread)
-        // Mobile - show 1 page at a time
-        // No blank page needed since we start with a 2-page cover
+        // For double cover on desktop:
+        // Turn.js in double mode shows: odd pages on RIGHT, even pages on LEFT
+        // View at page 1 = ONLY page 1 (right side, left is blank)
+        // View at page 2 = page 2 (left) + page 3 (right)
+        //
+        // To show images[0] and images[1] together as a double cover:
+        // We want them as LEFT + RIGHT
+        // So images[0] needs to be on LEFT (even page) and images[1] on RIGHT (odd page)
+        // This means: blank, images[0], images[1], images[2]...
+        // When we view page 2, we see: images[0] (left) + images[1] (right) ✓
+
+        if (!isMobile) {
+          const blankPage = document.createElement('div');
+          blankPage.className = 'page-double blank-page';
+          blankPage.style.background = 'white';
+          flipbookElement.insertBefore(blankPage, flipbookElement.firstChild);
+        }
 
         const customHeight = parseInt((container as HTMLElement).style.getPropertyValue('--flipbook-height') || '600');
 
@@ -191,8 +204,11 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
           duration: 1000,
         });
 
-        // Start at page 1 - this will show pages 1 and 2 together on desktop (the double cover)
-        jQuery(flipbookElement).turn('page', 1);
+        // Start at page 2 on desktop - this shows blank (left) + page 1 (right) together
+        // Then pages 2-3, 4-5, etc.
+        if (!isMobile) {
+          jQuery(flipbookElement).turn('page', 2);
+        }
 
         // Mark as initialized
         flipbookElement.classList.add('turn-initialized');
@@ -217,22 +233,21 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
           const nowMobile = window.innerWidth < 768;
 
           // For double cover book:
-          // On desktop: pages are shown 2 at a time, so spread number = Math.ceil(page / 2)
-          // On mobile: pages are shown 1 at a time, so spread number = page
           let displaySpread: number;
           let isFirstPage: boolean;
           let isLastPage: boolean;
 
           if (nowMobile) {
-            // On mobile (single page mode)
+            // On mobile (single page mode) - just show page number
             displaySpread = page;
             isFirstPage = page === 1;
             const totalMobilePages = flipbookElement.querySelectorAll('.page-double').length;
             isLastPage = page === totalMobilePages;
           } else {
-            // On desktop (double page mode)
-            displaySpread = Math.ceil(page / 2);
-            isFirstPage = page === 1;
+            // On desktop (double page mode) with blank first page
+            // Page 2 is the first view (shows images 0+1), so display as "spread 1"
+            displaySpread = page > 1 ? Math.ceil((page - 1) / 2) : 1;
+            isFirstPage = page === 2; // Page 2 is actually first content view
             const totalDesktopPages = flipbookElement.querySelectorAll('.page-double').length;
             isLastPage = page >= totalDesktopPages;
           }

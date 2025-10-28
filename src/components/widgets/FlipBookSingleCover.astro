@@ -177,14 +177,10 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
         // Initialize turn.js with responsive settings
         const isMobile = window.innerWidth < 768;
 
-        // Add blank first page only on desktop for double-page spread
-        // This makes the first page (cover) appear alone on the right
-        if (!isMobile) {
-          const blankPage = document.createElement('div');
-          blankPage.className = 'page-single blank-page';
-          blankPage.style.background = 'white';
-          flipbookElement.insertBefore(blankPage, flipbookElement.firstChild);
-        }
+        // For single cover on desktop:
+        // Turn.js shows odd pages on the right in double mode
+        // So page 1 will naturally show alone on the right (like a book cover)
+        // No blank page needed!
 
         const customHeight = parseInt((container as HTMLElement).style.getPropertyValue('--flipbook-height') || '600');
 
@@ -199,11 +195,7 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
           duration: 1000,
         });
 
-        // Force initial view to show pages 1 and 2 together on desktop only
-        // This shows blank page on left, cover on right
-        if (!isMobile) {
-          jQuery(flipbookElement).turn('page', 2);
-        }
+        // Start at page 1 - in double mode, this shows ONLY page 1 on the right (single cover)
 
         // Mark as initialized
         flipbookElement.classList.add('turn-initialized');
@@ -225,27 +217,16 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
 
         function updateControls() {
           const page = jQuery(flipbookElement).turn('page');
-          const nowMobile = window.innerWidth < 768;
 
-          // Adjust for the blank first page on desktop only
-          let displayPage: number;
-          let isFirstPage: boolean;
-
-          if (nowMobile) {
-            // On mobile (single page mode), just show the actual page number
-            displayPage = page;
-            isFirstPage = page === 1;
-          } else {
-            // On desktop (double page mode), adjust for blank first page
-            displayPage = page > 1 ? page - 1 : 1;
-            isFirstPage = page === 2; // Page 2 is actually the first content page (cover)
-          }
+          // Display the current page number
+          const displayPage: number = page;
+          const isFirstPage: boolean = page === 1;
 
           if (currentPageEl) {
             currentPageEl.textContent = displayPage.toString();
           }
           prevBtn.disabled = isFirstPage;
-          nextBtn.disabled = page === totalPagesCount + (nowMobile ? 0 : 1);
+          nextBtn.disabled = page === totalPagesCount;
         }
 
         prevBtn.addEventListener('click', () => {
