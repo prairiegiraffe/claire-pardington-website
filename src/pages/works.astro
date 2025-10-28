@@ -38,6 +38,7 @@ const metadata = {
       muted
       playsinline
       webkit-playsinline
+      preload="auto"
       class="w-full h-full object-cover"
       style="max-height: 600px;"
     >
@@ -237,8 +238,11 @@ const metadata = {
 </Layout>
 
 <script>
+  console.log('Works page video script loaded - v2025-01-28');
   document.addEventListener('astro:page-load', () => {
+    console.log('astro:page-load event fired');
     const video = document.getElementById('background-video') as HTMLVideoElement;
+    console.log('Video element found:', !!video);
     if (video) {
       // Ensure video properties are set
       video.muted = true;
