@@ -240,26 +240,51 @@ const metadata = {
   document.addEventListener('astro:page-load', () => {
     const video = document.getElementById('background-video') as HTMLVideoElement;
     if (video) {
-      // Ensure video plays on mobile devices
+      // Ensure video properties are set
       video.muted = true;
       video.playsInline = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
 
-      // Try to play the video
-      const playPromise = video.play();
+      // Force load the video
+      video.load();
 
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // If autoplay is blocked, try again after user interaction
-          document.addEventListener(
-            'touchstart',
-            () => {
-              video.play().catch(() => {
-                // Silent fail if still blocked
-              });
-            },
-            { once: true }
-          );
-        });
+      // Try to play immediately
+      const attemptPlay = () => {
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('Video playing successfully');
+            })
+            .catch((error) => {
+              console.log('Autoplay blocked, will retry on interaction:', error);
+              // If autoplay is blocked, try again after user interaction
+              const playOnInteraction = () => {
+                video
+                  .play()
+                  .then(() => {
+                    console.log('Video playing after user interaction');
+                  })
+                  .catch((err) => {
+                    console.error('Failed to play video:', err);
+                  });
+              };
+
+              document.addEventListener('click', playOnInteraction, { once: true });
+              document.addEventListener('touchstart', playOnInteraction, { once: true });
+              document.addEventListener('scroll', playOnInteraction, { once: true });
+            });
+        }
+      };
+
+      // Try to play when video metadata is loaded
+      video.addEventListener('loadedmetadata', attemptPlay, { once: true });
+
+      // Also try immediately in case it's already loaded
+      if (video.readyState >= 2) {
+        attemptPlay();
       }
     }
   });
