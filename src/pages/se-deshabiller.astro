@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
 
 import coverImage from '~/assets/images/SE DÉSHABILLER/SE DÉSHABILLER Cover.webp';
 import definitionImage from '~/assets/images/SE DÉSHABILLER/02-First-Section_DEFINITION.webp';
@@ -271,7 +271,7 @@ const journalImages = [
 
       <!-- Flipbook Section -->
       <div class="pt-16">
-        <FlipBookTurnJS images={flipbookImages} height={620} />
+        <FlipBookSingleCover images={flipbookImages} height={620} id="se-deshabiller-flipbook" />
       </div>
 
       <!-- Scrollable Gallery -->
@@ -389,19 +389,7 @@ const journalImages = [
   </div>
 </Layout>
 
-<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script is:inline src="/turn.min.js"></script>
-
 <style>
-  /* Hide flipbook pages until turn.js initializes */
-  #flipbook .page {
-    display: none;
-  }
-
-  #flipbook.turn-initialized .page {
-    display: flex !important;
-  }
-
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
