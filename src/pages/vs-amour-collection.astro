@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
 
 // Catalogue images for flipbook
 import cat01 from '~/assets/images/VS Deigner Amour/Catalogue/01.webp';
@@ -230,7 +230,7 @@ const gridImages = [
   </div>
 
   <!-- Flipbook Section -->
-  <FlipBookTurnJS images={catalogueImages} />
+  <FlipBookSingleCover images={catalogueImages} />
 
   <!-- Creative Direction Section -->
   <div class="w-full py-16 overflow-hidden">
