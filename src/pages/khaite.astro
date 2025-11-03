@@ -81,8 +81,8 @@ const designImages = [fp01, fp02, fp03, fp04, fp05, fp06, fp07, fp08, fp09, fp10
 ---
 
 <Layout metadata={metadata}>
-  <!-- Back to Works Button -->
-  <div class="py-8 pl-4 md:pl-10">
+  <!-- Back to Works Button and Disclaimer -->
+  <div class="py-8 pl-4 md:pl-10 pr-4 md:pr-10 flex justify-between items-start">
     <a
       href="/works"
       class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
@@ -101,6 +101,9 @@ const designImages = [fp01, fp02, fp03, fp04, fp05, fp06, fp07, fp08, fp09, fp10
       </svg>
       Back to Works
     </a>
+    <p class="text-xs uppercase tracking-wide text-right max-w-[300px]" style="font-weight: 200;">
+      This portfolio was created as an independent design study inspired by the brand's aesthetic and is not affiliated with or commissioned by Khaite
+    </p>
   </div>
 
   <!-- Content Section -->
