@@ -1,7 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import resumePage1 from '~/assets/images/resume/Resume_ Pardington_Page_1.jpg';
-import resumePage2 from '~/assets/images/resume/Resume_ Pardington_Page_2.jpg';
 
 const metadata = {
   title: 'Resume',
@@ -9,31 +7,24 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="mx-auto max-w-[1600px]">
-    <div class="grid md:grid-cols-2 gap-8 items-start">
-      <!-- Left Column: Resume Page 1 -->
-      <div>
-        <img
-          src={resumePage1.src}
-          alt="Resume Page 1"
-          class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
-          data-lightbox="true"
-        />
-      </div>
-
-      <!-- Right Column: Resume Page 2 -->
-      <div>
-        <img
-          src={resumePage2.src}
-          alt="Resume Page 2"
-          class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
-          data-lightbox="true"
-        />
-      </div>
+  <section class="mx-auto max-w-[1600px] px-4">
+    <!-- PDF Embed Container -->
+    <div class="pdf-container w-full" style="min-height: 1000px;">
+      <object
+        data="/Resume_ Pardington.pdf"
+        type="application/pdf"
+        class="w-full"
+        style="height: 1400px;"
+      >
+        <p class="text-center py-8">
+          Unable to display PDF.
+          <a href="/Resume_ Pardington.pdf" class="underline" download>Download the resume instead</a>
+        </p>
+      </object>
     </div>
 
     <!-- Download Button -->
-    <div class="flex justify-center mt-12 mb-20">
+    <div class="flex justify-center mt-8 mb-20">
       <a
         href="/Resume_ Pardington.pdf"
         download
@@ -43,39 +34,10 @@ const metadata = {
       </a>
     </div>
   </section>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain" />
-    <button id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">&times;</button>
-  </div>
-
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function () {
-      const images = document.querySelectorAll('img[data-lightbox]');
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      const closeBtn = document.getElementById('close-lightbox');
-
-      images.forEach(function (img) {
-        img.addEventListener('click', function () {
-          lightbox.classList.remove('hidden');
-          lightboxImg.src = this.src;
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      closeBtn.addEventListener('click', function () {
-        lightbox.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      });
-
-      lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox) {
-          lightbox.classList.add('hidden');
-          document.body.style.overflow = 'auto';
-        }
-      });
-    });
-  </script>
 </Layout>
+
+<style>
+  .pdf-container object {
+    border: 1px solid #e5e7eb;
+  }
+</style>
