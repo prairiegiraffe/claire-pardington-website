@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
 import resumePage1 from '~/assets/images/resume/Resume_ Pardington_Page_1.jpg';
 import resumePage2 from '~/assets/images/resume/Resume_ Pardington_Page_2.jpg';
 
@@ -14,24 +13,20 @@ const metadata = {
     <div class="grid md:grid-cols-2 gap-8 items-start">
       <!-- Left Column: Resume Page 1 -->
       <div>
-        <Image
-          src={resumePage1}
+        <img
+          src={resumePage1.src}
           alt="Resume Page 1"
-          quality={100}
           class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
-          style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
           data-lightbox="true"
         />
       </div>
 
       <!-- Right Column: Resume Page 2 -->
       <div>
-        <Image
-          src={resumePage2}
+        <img
+          src={resumePage2.src}
           alt="Resume Page 2"
-          quality={100}
           class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
-          style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
           data-lightbox="true"
         />
       </div>
@@ -50,10 +45,8 @@ const metadata = {
   </section>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 p-4">
-    <div class="flex items-center justify-center w-full h-full">
-      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;" />
-    </div>
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain" />
     <button id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">&times;</button>
   </div>
 
