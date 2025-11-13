@@ -1,0 +1,256 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
+
+// TODO: Add main cover image here
+// import coverImage from '~/assets/images/alice-olivia-v2/cover.webp';
+
+// TODO: Add Design Journal images for flipbook here
+// Example format:
+// import dj01a from '~/assets/images/alice-olivia-v2/design-journal/01A.webp';
+// import dj01b from '~/assets/images/alice-olivia-v2/design-journal/01B.webp';
+// ... continue for all journal pages
+
+// TODO: Add Final Presentation images for scrollable gallery here
+// Example format:
+// import fp01 from '~/assets/images/alice-olivia-v2/final-presentation/01.webp';
+// import fp02 from '~/assets/images/alice-olivia-v2/final-presentation/02.webp';
+// ... continue for all presentation images
+
+const metadata = {
+  title: 'Alice + Olivia: The Middle of the Night - Claire Pardington',
+};
+
+// TODO: Replace with actual design journal image sources once imported
+const designJournalImages = [
+  // dj01a.src,
+  // dj01b.src,
+  // ... add all journal page sources here
+];
+
+// TODO: Replace with actual design images once imported
+const designImages = [
+  // fp01,
+  // fp02,
+  // ... add all presentation images here
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button and Disclaimer -->
+  <div class="py-8 pl-4 md:pl-10 pr-4 md:pr-10">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+      <a
+        href="/works"
+        class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+        Back to Works
+      </a>
+      <p class="text-xs uppercase tracking-wide md:text-right max-w-[300px]" style="font-weight: 200;">
+        This portfolio was created as an independent design study inspired by the brand's aesthetic and is not
+        affiliated with or commissioned by Alice + Olivia
+      </p>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <!-- Image Column -->
+      <div class="flex justify-center">
+        <div class="w-full max-w-[500px]">
+          <!-- TODO: Replace with actual cover image -->
+          <div class="w-full aspect-square bg-gray-200 flex items-center justify-center">
+            <p class="text-gray-500 uppercase tracking-wide">Cover Image</p>
+          </div>
+          <!-- Uncomment when image is added:
+          <Image src={coverImage} alt="Alice + Olivia: The Middle of the Night" class="w-full h-auto" />
+          -->
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="space-y-6 max-w-[500px]">
+        <h1 class="text-3xl md:text-4xl uppercase tracking-wide text-center" style="font-weight: 200;">
+          ALICE + OLIVIA: THE MIDDLE OF THE NIGHT
+        </h1>
+
+        <div class="space-y-4 text-base leading-relaxed">
+          <!-- TODO: Replace with actual description text -->
+          <p>
+            [Add your project description here. This should capture the essence of your design concept, inspiration,
+            color palette, key themes, and overall vision for the collection.]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Journal Section -->
+  <div class="w-full py-16">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
+      Creative Direction
+    </h2>
+
+    <!-- Flipbook -->
+    <!-- TODO: Uncomment when design journal images are added -->
+    <!-- <FlipBookTurnJS images={designJournalImages} /> -->
+
+    <!-- Placeholder until images are added -->
+    <div class="w-full max-w-[800px] mx-auto aspect-[4/3] bg-gray-200 flex items-center justify-center">
+      <p class="text-gray-500 uppercase tracking-wide">Design Journal Flipbook</p>
+    </div>
+  </div>
+
+  <!-- Design Section -->
+  <div class="w-full py-16 overflow-hidden">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design</h2>
+
+    <!-- Scrollable Image Container -->
+    <!-- TODO: Uncomment when design images are added -->
+    <!--
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll-design"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
+      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+        {
+          designImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item-design"
+              data-lightbox={`lightbox-design-${index}`}
+              style="height: 600px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`Design ${index + 1}`}
+                style="height: 600px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    -->
+
+    <!-- Placeholder until images are added -->
+    <div class="w-full h-[600px] bg-gray-200 flex items-center justify-center">
+      <p class="text-gray-500 uppercase tracking-wide">Scrollable Design Gallery</p>
+    </div>
+
+    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View]</p>
+  </div>
+
+  <!-- Lightbox Modals - Design -->
+  <!-- TODO: Uncomment when design images are added -->
+  <!--
+  {
+    designImages.map((img, index) => (
+      <div
+        id={`lightbox-design-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-design-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`Design ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+  -->
+</Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    // Design gallery
+    const sliderDesign = document.querySelector('.image-gallery-scroll-design') as HTMLElement | null;
+    if (!sliderDesign) return;
+
+    let isDownDesign = false;
+    let hasMovedDesign = false;
+    let startXDesign: number = 0;
+    let scrollLeftDesign: number = 0;
+
+    sliderDesign.addEventListener('mousedown', (e: MouseEvent) => {
+      isDownDesign = true;
+      hasMovedDesign = false;
+      sliderDesign.style.cursor = 'grabbing';
+      startXDesign = e.pageX - sliderDesign.offsetLeft;
+      scrollLeftDesign = sliderDesign.scrollLeft;
+    });
+
+    sliderDesign.addEventListener('mouseleave', () => {
+      isDownDesign = false;
+      sliderDesign.style.cursor = 'grab';
+    });
+
+    sliderDesign.addEventListener('mouseup', (e: MouseEvent) => {
+      isDownDesign = false;
+      sliderDesign.style.cursor = 'grab';
+
+      if (!hasMovedDesign && e.target) {
+        const item = (e.target as HTMLElement).closest('.gallery-item-design') as HTMLElement | null;
+        if (item && item.dataset.lightbox) {
+          const lightboxId = item.dataset.lightbox;
+          const lightbox = document.getElementById(lightboxId);
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+          }
+        }
+      }
+
+      hasMovedDesign = false;
+    });
+
+    sliderDesign.addEventListener('mousemove', (e: MouseEvent) => {
+      if (!isDownDesign) return;
+      e.preventDefault();
+      hasMovedDesign = true;
+      const x = e.pageX - sliderDesign.offsetLeft;
+      const walk = (x - startXDesign) * 2;
+      sliderDesign.scrollLeft = scrollLeftDesign - walk;
+    });
+
+    document.querySelectorAll('.gallery-item-design').forEach((item) => {
+      item.addEventListener('click', () => {
+        if (!hasMovedDesign) {
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>
