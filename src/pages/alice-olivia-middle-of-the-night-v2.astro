@@ -1,9 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
 import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
 
-// TODO: Add main cover image here
-// import coverImage from '~/assets/images/alice-olivia-v2/cover.webp';
+// Main cover image
+import coverImage from '~/assets/images/the-middle-of-the-night/2b599b1a9aa8632be7646ed09d47c390.jpeg';
 
 // Design Journal images for flipbook
 import dj01 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-01.webp';
@@ -96,13 +97,7 @@ const designImages = [fp01, fp02, fp03, fp04];
       <!-- Image Column -->
       <div class="flex justify-center">
         <div class="w-full max-w-[500px]">
-          <!-- TODO: Replace with actual cover image -->
-          <div class="w-full aspect-square bg-gray-200 flex items-center justify-center">
-            <p class="text-gray-500 uppercase tracking-wide">Cover Image</p>
-          </div>
-          <!-- Uncomment when image is added:
           <Image src={coverImage} alt="Alice + Olivia: The Middle of the Night" class="w-full h-auto" />
-          -->
         </div>
       </div>
 
@@ -113,10 +108,18 @@ const designImages = [fp01, fp02, fp03, fp04];
         </h1>
 
         <div class="space-y-4 text-base leading-relaxed">
-          <!-- TODO: Replace with actual description text -->
           <p>
-            [Add your project description here. This should capture the essence of your design concept, inspiration,
-            color palette, key themes, and overall vision for the collection.]
+            The Middle of the Night explores the stillness between consciousness and dream. It's the moment the world
+            goes quiet and the mind begins to wander—half in silk, half in shadow.
+          </p>
+          <p>
+            A midnight garden at the edge of reality—where luminous fabrics and dark florals dissolve into each other,
+            capturing the feeling of being awake in a dream—aware, yet unbound. Structure flirts with transparency;
+            fantasy meets form.
+          </p>
+          <p>
+            It's not about sleep or waking—it's the space between, where desire, reflection, and imagination all exist
+            at once.
           </p>
         </div>
       </div>
