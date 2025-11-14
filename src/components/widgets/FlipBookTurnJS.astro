@@ -9,7 +9,10 @@ interface Props {
 const { images, title, height = 600, width = 1000 } = Astro.props;
 ---
 
-<div class="flipbook-container max-w-7xl mx-auto px-4 pb-16" style={`--flipbook-height: ${height}px; --flipbook-width: ${width}px`}>
+<div
+  class="flipbook-container max-w-7xl mx-auto px-4 pb-16"
+  style={`--flipbook-height: ${height}px; --flipbook-width: ${width}px`}
+>
   {
     title && (
       <h1 class="text-4xl text-center mb-12" style="font-weight: 200;">
