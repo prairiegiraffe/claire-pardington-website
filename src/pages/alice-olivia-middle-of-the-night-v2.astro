@@ -6,34 +6,64 @@ import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
 // TODO: Add main cover image here
 // import coverImage from '~/assets/images/alice-olivia-v2/cover.webp';
 
-// TODO: Add Design Journal images for flipbook here
-// Example format:
-// import dj01a from '~/assets/images/alice-olivia-v2/design-journal/01A.webp';
-// import dj01b from '~/assets/images/alice-olivia-v2/design-journal/01B.webp';
-// ... continue for all journal pages
+// Design Journal images for flipbook
+import dj01 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-01.webp';
+import dj02 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-02.webp';
+import dj03 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-03.webp';
+import dj04 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-04.webp';
+import dj05 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-05.webp';
+import dj06 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-06.webp';
+import dj07 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-07.webp';
+import dj08 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-08.webp';
+import dj09 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-09.webp';
+import dj10 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-10.webp';
+import dj11 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-11.webp';
+import dj12 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-12.webp';
+import dj13 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-13.webp';
+import dj14 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-14.webp';
+import dj15 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-15.webp';
+import dj16 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-16.webp';
+import dj17 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-17.webp';
+import dj18 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-18.webp';
 
-// TODO: Add Final Presentation images for scrollable gallery here
-// Example format:
-// import fp01 from '~/assets/images/alice-olivia-v2/final-presentation/01.webp';
-// import fp02 from '~/assets/images/alice-olivia-v2/final-presentation/02.webp';
-// ... continue for all presentation images
+// Final Presentation images for scrollable gallery
+import fp01 from '~/assets/images/the-middle-of-the-night/slider/FINAL-19.webp';
+import fp02 from '~/assets/images/the-middle-of-the-night/slider/FINAL-20.webp';
+import fp03 from '~/assets/images/the-middle-of-the-night/slider/FINAL-21.webp';
+import fp04 from '~/assets/images/the-middle-of-the-night/slider/FINAL-22.webp';
 
 const metadata = {
   title: 'Alice + Olivia: The Middle of the Night - Claire Pardington',
 };
 
-// TODO: Replace with actual design journal image sources once imported
+// Design journal image sources for flipbook
 const designJournalImages = [
-  // dj01a.src,
-  // dj01b.src,
-  // ... add all journal page sources here
+  dj01.src,
+  dj02.src,
+  dj03.src,
+  dj04.src,
+  dj05.src,
+  dj06.src,
+  dj07.src,
+  dj08.src,
+  dj09.src,
+  dj10.src,
+  dj11.src,
+  dj12.src,
+  dj13.src,
+  dj14.src,
+  dj15.src,
+  dj16.src,
+  dj17.src,
+  dj18.src,
 ];
 
-// TODO: Replace with actual design images once imported
+// Design images for scrollable gallery
 const designImages = [
-  // fp01,
-  // fp02,
-  // ... add all presentation images here
+  fp01,
+  fp02,
+  fp03,
+  fp04,
 ];
 ---
 
@@ -106,13 +136,7 @@ const designImages = [
     </h2>
 
     <!-- Flipbook -->
-    <!-- TODO: Uncomment when design journal images are added -->
-    <!-- <FlipBookTurnJS images={designJournalImages} /> -->
-
-    <!-- Placeholder until images are added -->
-    <div class="w-full max-w-[800px] mx-auto aspect-[4/3] bg-gray-200 flex items-center justify-center">
-      <p class="text-gray-500 uppercase tracking-wide">Design Journal Flipbook</p>
-    </div>
+    <FlipBookTurnJS images={designJournalImages} />
   </div>
 
   <!-- Design Section -->
@@ -120,8 +144,6 @@ const designImages = [
     <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">Design</h2>
 
     <!-- Scrollable Image Container -->
-    <!-- TODO: Uncomment when design images are added -->
-    <!--
     <div
       class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll-design"
       style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
@@ -144,19 +166,11 @@ const designImages = [
         }
       </div>
     </div>
-    -->
-
-    <!-- Placeholder until images are added -->
-    <div class="w-full h-[600px] bg-gray-200 flex items-center justify-center">
-      <p class="text-gray-500 uppercase tracking-wide">Scrollable Design Gallery</p>
-    </div>
 
     <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View]</p>
   </div>
 
   <!-- Lightbox Modals - Design -->
-  <!-- TODO: Uncomment when design images are added -->
-  <!--
   {
     designImages.map((img, index) => (
       <div
@@ -172,7 +186,6 @@ const designImages = [
       </div>
     ))
   }
-  -->
 </Layout>
 
 <style>
