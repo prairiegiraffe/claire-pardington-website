@@ -102,30 +102,31 @@ const journalImages = [
   img30.src,
 ];
 
-// Creative Direction images for flipbook
-const designJournalImages = [
-  dj01.src,
-  dj02.src,
-  dj03.src,
-  dj04.src,
-  dj05.src,
-  dj06.src,
-  dj07.src,
-  dj08.src,
-  dj09.src,
-  dj10.src,
-  dj11.src,
-  dj12.src,
-  dj13.src,
-  dj14.src,
-  dj15.src,
-  dj16.src,
-  dj17.src,
-  dj18.src,
+// Design images for scrollable gallery (all FINAL images)
+const designImages = [
+  dj01,
+  dj02,
+  dj03,
+  dj04,
+  dj05,
+  dj06,
+  dj07,
+  dj08,
+  dj09,
+  dj10,
+  dj11,
+  dj12,
+  dj13,
+  dj14,
+  dj15,
+  dj16,
+  dj17,
+  dj18,
+  fp01,
+  fp02,
+  fp03,
+  fp04,
 ];
-
-// Design images for scrollable gallery
-const designImages = [fp01, fp02, fp03, fp04];
 ---
 
 <Layout metadata={metadata}>
@@ -192,22 +193,12 @@ const designImages = [fp01, fp02, fp03, fp04];
     </div>
   </div>
 
-  <!-- Original Design Journal Flipbook -->
+  <!-- Design Journal Flipbook -->
   <div class="w-full py-16">
     <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
       Design Journal
     </h2>
     <FlipBookTurnJS images={journalImages} />
-  </div>
-
-  <!-- Creative Direction Section -->
-  <div class="w-full py-16">
-    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
-      Creative Direction
-    </h2>
-
-    <!-- Flipbook -->
-    <FlipBookTurnJS images={designJournalImages} height={700} width={1100} />
   </div>
 
   <!-- Design Section -->
