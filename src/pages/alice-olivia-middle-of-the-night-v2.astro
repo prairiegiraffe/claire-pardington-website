@@ -6,7 +6,39 @@ import FlipBookTurnJS from '~/components/widgets/FlipBookTurnJS.astro';
 // Main cover image
 import coverImage from '~/assets/images/the-middle-of-the-night/2b599b1a9aa8632be7646ed09d47c390.jpeg';
 
-// Design Journal images for flipbook
+// Original Design Journal images for main flipbook
+import img01 from '~/assets/images/the-middle-of-the-night/design-journal-2/01.webp';
+import img02 from '~/assets/images/the-middle-of-the-night/design-journal-2/02.webp';
+import img03 from '~/assets/images/the-middle-of-the-night/design-journal-2/03.webp';
+import img04 from '~/assets/images/the-middle-of-the-night/design-journal-2/04A.webp';
+import img05 from '~/assets/images/the-middle-of-the-night/design-journal-2/05.webp';
+import img06 from '~/assets/images/the-middle-of-the-night/design-journal-2/06.webp';
+import img07 from '~/assets/images/the-middle-of-the-night/design-journal-2/07.webp';
+import img08 from '~/assets/images/the-middle-of-the-night/design-journal-2/08.webp';
+import img09 from '~/assets/images/the-middle-of-the-night/design-journal-2/09.webp';
+import img10 from '~/assets/images/the-middle-of-the-night/design-journal-2/10.webp';
+import img11 from '~/assets/images/the-middle-of-the-night/design-journal-2/11.webp';
+import img12 from '~/assets/images/the-middle-of-the-night/design-journal-2/12.webp';
+import img13 from '~/assets/images/the-middle-of-the-night/design-journal-2/13.webp';
+import img14 from '~/assets/images/the-middle-of-the-night/design-journal-2/14.webp';
+import img15 from '~/assets/images/the-middle-of-the-night/design-journal-2/15.webp';
+import img16 from '~/assets/images/the-middle-of-the-night/design-journal-2/16.webp';
+import img17 from '~/assets/images/the-middle-of-the-night/design-journal-2/17.webp';
+import img18 from '~/assets/images/the-middle-of-the-night/design-journal-2/18.webp';
+import img19 from '~/assets/images/the-middle-of-the-night/design-journal-2/19.webp';
+import img20 from '~/assets/images/the-middle-of-the-night/design-journal-2/20.webp';
+import img21 from '~/assets/images/the-middle-of-the-night/design-journal-2/21.webp';
+import img22 from '~/assets/images/the-middle-of-the-night/design-journal-2/22.webp';
+import img23 from '~/assets/images/the-middle-of-the-night/design-journal-2/23.webp';
+import img24 from '~/assets/images/the-middle-of-the-night/design-journal-2/24A.webp';
+import img25 from '~/assets/images/the-middle-of-the-night/design-journal-2/25.webp';
+import img26 from '~/assets/images/the-middle-of-the-night/design-journal-2/26.webp';
+import img27 from '~/assets/images/the-middle-of-the-night/design-journal-2/27.webp';
+import img28 from '~/assets/images/the-middle-of-the-night/design-journal-2/28.webp';
+import img29 from '~/assets/images/the-middle-of-the-night/design-journal-2/29.webp';
+import img30 from '~/assets/images/the-middle-of-the-night/design-journal-2/30.webp';
+
+// Creative Direction images for flipbook
 import dj01 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-01.webp';
 import dj02 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-02.webp';
 import dj03 from '~/assets/images/the-middle-of-the-night/design-journal-2/flipbook/FINAL-03.webp';
@@ -36,7 +68,41 @@ const metadata = {
   title: 'Alice + Olivia: The Middle of the Night - Claire Pardington',
 };
 
-// Design journal image sources for flipbook
+// Original journal images (the main flipbook)
+const journalImages = [
+  img01.src,
+  img02.src,
+  img03.src,
+  img04.src,
+  img05.src,
+  img06.src,
+  img07.src,
+  img08.src,
+  img09.src,
+  img10.src,
+  img11.src,
+  img12.src,
+  img13.src,
+  img14.src,
+  img15.src,
+  img16.src,
+  img17.src,
+  img18.src,
+  img19.src,
+  img20.src,
+  img21.src,
+  img22.src,
+  img23.src,
+  img24.src,
+  img25.src,
+  img26.src,
+  img27.src,
+  img28.src,
+  img29.src,
+  img30.src,
+];
+
+// Creative Direction images for flipbook
 const designJournalImages = [
   dj01.src,
   dj02.src,
@@ -126,7 +192,15 @@ const designImages = [fp01, fp02, fp03, fp04];
     </div>
   </div>
 
-  <!-- Design Journal Section -->
+  <!-- Original Design Journal Flipbook -->
+  <div class="w-full py-16">
+    <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
+      Design Journal
+    </h2>
+    <FlipBookTurnJS images={journalImages} />
+  </div>
+
+  <!-- Creative Direction Section -->
   <div class="w-full py-16">
     <h2 class="text-2xl md:text-3xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">
       Creative Direction
