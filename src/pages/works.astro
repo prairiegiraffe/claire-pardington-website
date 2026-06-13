@@ -2,6 +2,9 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import creativeAndDesign from '~/assets/images/Creative and Design.webp';
+import ckKnitwear from '~/assets/images/ck-knitwear/01.jpg';
+import ckCloseToBody from '~/assets/images/ck-close-to-body/01.jpg';
+import clo3d from '~/assets/images/clo3d/01.jpg';
 import khaite from '~/assets/images/khaite/COVER IMAGE-1.jpg';
 import aliceOlivia from '~/assets/images/the-middle-of-the-night/COVER FOR WEBSITE-1.jpg';
 import heatWave from '~/assets/images/works-landing/new-images/Heat Becomes Her.webp';
@@ -51,6 +54,48 @@ const metadata = {
   <div class="relative bg-white z-10">
     <div class="container mx-auto px-4 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card: Calvin Klein Mainline Knitwear -->
+        <a href="/ck-knitwear" class="flex flex-col w-full">
+          <div class="mb-3 aspect-[3/2] w-full overflow-hidden">
+            <Image
+              src={ckKnitwear}
+              alt="Calvin Klein: Mainline Knitwear Fall 2027"
+              class="w-full h-full object-cover object-left"
+            />
+          </div>
+          <p class="text-xs uppercase tracking-wide">
+            CALVIN KLEIN: MAINLINE KNITWEAR FALL 2027<br />CONCEPT DEVELOPMENT &amp; PRODUCT STRATEGY
+          </p>
+        </a>
+
+        <!-- Card: Calvin Klein Close to Body -->
+        <a href="/ck-close-to-body" class="flex flex-col w-full">
+          <div class="mb-3 aspect-[3/2] w-full overflow-hidden">
+            <Image
+              src={ckCloseToBody}
+              alt="Calvin Klein: Close to Body Collection Spring 2028"
+              class="w-full h-full object-cover object-left"
+            />
+          </div>
+          <p class="text-xs uppercase tracking-wide">
+            CALVIN KLEIN: CLOSE TO BODY COLLECTION SPRING 2028<br />CONCEPT DEVELOPMENT &amp; PRODUCT STRATEGY
+          </p>
+        </a>
+
+        <!-- Card: CLO3D Virtual Fashion -->
+        <a href="/clo3d" class="flex flex-col w-full">
+          <div class="mb-3 aspect-[3/2] w-full overflow-hidden">
+            <Image
+              src={clo3d}
+              alt="CLO3D Virtual Fashion: Class 1/4 Portfolio"
+              class="w-full h-full object-cover object-left"
+            />
+          </div>
+          <p class="text-xs uppercase tracking-wide">
+            CLO3D VIRTUAL FASHION: CLASS 1/4 PORTFOLIO<br />DESIGN &amp; TECHNICAL DESIGN
+          </p>
+        </a>
+
         <!-- Card 1 -->
         <a href="/khaite" class="flex flex-col w-full">
           <div class="mb-3 aspect-[3/2] w-full overflow-hidden">

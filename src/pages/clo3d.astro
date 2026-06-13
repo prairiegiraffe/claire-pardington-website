@@ -1,0 +1,212 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import clo01 from '~/assets/images/clo3d/01.jpg';
+import clo02 from '~/assets/images/clo3d/02.jpg';
+import clo03 from '~/assets/images/clo3d/03.jpg';
+import clo04 from '~/assets/images/clo3d/04.jpg';
+import clo05 from '~/assets/images/clo3d/05.jpg';
+import clo06 from '~/assets/images/clo3d/06.jpg';
+import clo07 from '~/assets/images/clo3d/07.jpg';
+import clo08 from '~/assets/images/clo3d/08.jpg';
+import clo09 from '~/assets/images/clo3d/09.jpg';
+import clo10 from '~/assets/images/clo3d/10.jpg';
+import clo11 from '~/assets/images/clo3d/11.jpg';
+import clo12 from '~/assets/images/clo3d/12.jpg';
+import clo13 from '~/assets/images/clo3d/13.jpg';
+import clo14 from '~/assets/images/clo3d/14.jpg';
+import clo15 from '~/assets/images/clo3d/15.jpg';
+import clo16 from '~/assets/images/clo3d/16.jpg';
+import clo17 from '~/assets/images/clo3d/17.jpg';
+import clo18 from '~/assets/images/clo3d/18.jpg';
+import clo19 from '~/assets/images/clo3d/19.jpg';
+import clo20 from '~/assets/images/clo3d/20.jpg';
+import clo21 from '~/assets/images/clo3d/21.jpg';
+import clo22 from '~/assets/images/clo3d/22.jpg';
+import clo23 from '~/assets/images/clo3d/23.jpg';
+import clo24 from '~/assets/images/clo3d/24.jpg';
+import clo25 from '~/assets/images/clo3d/25.jpg';
+import clo26 from '~/assets/images/clo3d/26.jpg';
+
+const metadata = {
+  title: 'CLO3D - Claire Pardington',
+};
+
+const galleryImages = [
+  clo01,
+  clo02,
+  clo03,
+  clo04,
+  clo05,
+  clo06,
+  clo07,
+  clo08,
+  clo09,
+  clo10,
+  clo11,
+  clo12,
+  clo13,
+  clo14,
+  clo15,
+  clo16,
+  clo17,
+  clo18,
+  clo19,
+  clo20,
+  clo21,
+  clo22,
+  clo23,
+  clo24,
+  clo25,
+  clo26,
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="py-8 pl-4 md:pl-10">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Title & Intro -->
+  <div class="container mx-auto px-4 pt-4 pb-12">
+    <h1 class="text-3xl md:text-5xl uppercase tracking-wide text-center mb-8" style="font-weight: 200;">CLO3D</h1>
+    <div class="max-w-[900px] mx-auto text-base leading-relaxed">
+      <p>
+        CLO3D is an emerging digital design platform that is transforming how fashion products are developed, enabling
+        teams to visualize, fit, and refine garments before physical samples are produced. By improving communication,
+        reducing sample iterations, accelerating timelines, and minimizing waste, it has the potential to become as
+        essential to pattern development as Illustrator is to technical sketching. This portfolio showcases my work from
+        the first of four courses in the CLO3D Certificate program at Parsons School of Design, where I learned the
+        foundations of garment construction, pattern manipulation, fit correction, closures, surface treatments, and
+        digital presentation. As a new user of the software, this work represents the beginning of my CLO3D journey and
+        the development of an increasingly important industry skill.
+      </p>
+    </div>
+  </div>
+
+  <!-- Scrollable Gallery -->
+  <div class="w-full py-12 overflow-hidden">
+    <div
+      class="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 image-gallery-scroll"
+      style="touch-action: pan-x; cursor: grab; -webkit-overflow-scrolling: touch;"
+    >
+      <div class="flex gap-4" style="width: max-content; padding-left: 1.25rem; padding-right: 1.25rem;">
+        {
+          galleryImages.map((img, index) => (
+            <div
+              class="flex-shrink-0 gallery-item"
+              data-lightbox={`lightbox-${index}`}
+              style="height: 600px; cursor: grab;"
+            >
+              <img
+                src={img.src}
+                alt={`CLO3D ${index + 1}`}
+                style="height: 600px; width: auto; object-fit: cover; pointer-events: none; user-select: none;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="text-center text-sm uppercase tracking-wide mt-6">[Swipe to View]</p>
+  </div>
+
+  <!-- Lightbox Modals -->
+  {
+    galleryImages.map((img, index) => (
+      <div
+        id={`lightbox-${index}`}
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+        onclick={`document.getElementById('lightbox-${index}').classList.add('hidden')`}
+      >
+        <img
+          src={img.src}
+          alt={`CLO3D ${index + 1}`}
+          style="max-height: 80vh; max-width: 100%; width: auto; height: auto; object-fit: contain;"
+        />
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const slider = document.querySelector('.image-gallery-scroll') as HTMLElement | null;
+    if (!slider) return;
+
+    let isDown = false;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
+    let hasMoved = false;
+
+    slider.addEventListener('mousedown', (e: MouseEvent) => {
+      isDown = true;
+      hasMoved = false;
+      slider.style.cursor = 'grabbing';
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+      hasMoved = false;
+    });
+
+    slider.addEventListener('mousemove', (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      hasMoved = true;
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        if (!hasMoved) {
+          const lightboxId = (item as HTMLElement).dataset.lightbox;
+          if (lightboxId) {
+            const lightbox = document.getElementById(lightboxId);
+            if (lightbox) {
+              lightbox.classList.remove('hidden');
+            }
+          }
+        }
+      });
+    });
+  });
+</script>

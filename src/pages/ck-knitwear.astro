@@ -1,0 +1,91 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FlipBookSingleCover from '~/components/widgets/FlipBookSingleCover.astro';
+import img01 from '~/assets/images/ck-knitwear/01.jpg';
+import img02 from '~/assets/images/ck-knitwear/02.jpg';
+import img03 from '~/assets/images/ck-knitwear/03.jpg';
+import img04 from '~/assets/images/ck-knitwear/04.jpg';
+import img05 from '~/assets/images/ck-knitwear/05.jpg';
+import img06 from '~/assets/images/ck-knitwear/06.jpg';
+import img07 from '~/assets/images/ck-knitwear/07.jpg';
+import img08 from '~/assets/images/ck-knitwear/08.jpg';
+import img09 from '~/assets/images/ck-knitwear/09.jpg';
+import img10 from '~/assets/images/ck-knitwear/10.jpg';
+import img11 from '~/assets/images/ck-knitwear/11.jpg';
+import img12 from '~/assets/images/ck-knitwear/12.jpg';
+
+const metadata = {
+  title: 'Calvin Klein: Mainline Knitwear Fall 2027 - Claire Pardington',
+};
+
+const flipbookImages = [img01, img02, img03, img04, img05, img06, img07, img08, img09, img10, img11, img12].map(
+  (img) => img.src
+);
+---
+
+<Layout metadata={metadata}>
+  <!-- Back to Works Button -->
+  <div class="py-8 pl-4 md:pl-10">
+    <a
+      href="/works"
+      class="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity uppercase tracking-wide text-sm"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+      </svg>
+      Back to Works
+    </a>
+  </div>
+
+  <!-- Title & Intro -->
+  <div class="container mx-auto px-4 pt-4 pb-8">
+    <h1 class="text-3xl md:text-5xl uppercase tracking-wide text-center mb-2" style="font-weight: 200;">Calvin Klein</h1>
+    <h2 class="text-xl md:text-2xl tracking-wide text-center mb-8" style="font-weight: 200;">
+      Mainline Knitwear Fall 2027
+    </h2>
+    <div class="max-w-[900px] mx-auto text-base leading-relaxed">
+      <p>
+        Developed for the Calvin Klein interview process, this Fall 2027 knitwear concept explores a unified vision
+        across the Calvin Klein Jeans and Sportswear categories. The project establishes distinct customer identities,
+        color direction, fabric strategies, and tiered assortment architecture to create a cohesive yet differentiated
+        product offering. Grounded in modern minimalism and commercial product development, the collection balances
+        timeless essentials with directional fashion and elevated statement pieces.
+      </p>
+    </div>
+  </div>
+
+  <!-- Flipbook -->
+  <div class="ck-flipbook-wide">
+    <FlipBookSingleCover images={flipbookImages} height={500} id="ck-knitwear" />
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="w-full py-12">
+    <p class="text-xs tracking-wide text-center max-w-[600px] mx-auto px-4" style="font-weight: 200;">
+      This project was completed as part of the Calvin Klein interview process and is presented for portfolio purposes
+      only. It is not affiliated with, endorsed by, or commissioned by Calvin Klein.
+    </p>
+  </div>
+</Layout>
+
+<!-- Page-scoped flipbook sizing: landscape images, no cropping. Only affects this page. -->
+<style is:global>
+  /* Show the full landscape image instead of cropping the sides */
+  .ck-flipbook-wide .page-image-single {
+    object-fit: contain !important;
+    background: white;
+  }
+</style>
+
+<!-- Load jQuery and turn.js for the flipbook -->
+<script is:inline src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script is:inline src="/turn.min.js"></script>
