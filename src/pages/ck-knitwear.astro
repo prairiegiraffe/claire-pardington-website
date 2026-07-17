@@ -56,18 +56,18 @@ const flipbookImages = [img01, img02, img03, img04, img05, img06, img07, img08, 
     </h2>
     <div class="max-w-[900px] mx-auto text-base leading-relaxed">
       <p>
-        Developed for the Calvin Klein interview process, this Fall 2027 knitwear concept explores a unified vision
-        across the Calvin Klein Jeans and Sportswear categories. The project establishes distinct customer identities,
-        color direction, fabric strategies, and tiered assortment architecture to create a cohesive yet differentiated
-        product offering. Grounded in modern minimalism and commercial product development, the collection balances
-        timeless essentials with directional fashion and elevated statement pieces.
+        This Fall 2027 knitwear concept explores a unified vision across the Calvin Klein Jeans and Sportswear
+        categories. The project establishes distinct customer identities, color direction, fabric strategies, and tiered
+        assortment architecture to create a cohesive yet differentiated product offering. Grounded in modern minimalism
+        and commercial product development, the collection balances timeless essentials with directional fashion and
+        elevated statement pieces.
       </p>
     </div>
   </div>
 
   <!-- Flipbook -->
   <div class="ck-flipbook-wide">
-    <FlipBookSingleCover images={flipbookImages} height={500} id="ck-knitwear" />
+    <FlipBookSingleCover images={flipbookImages} height={560} width={1400} id="ck-knitwear" />
   </div>
 
   <!-- Disclaimer -->
@@ -85,6 +85,10 @@ const flipbookImages = [img01, img02, img03, img04, img05, img06, img07, img08, 
   .ck-flipbook-wide .page-image-single {
     object-fit: contain !important;
     background: white;
+  }
+  /* Let the enlarged book use the full page width instead of the 7xl cap */
+  .ck-flipbook-wide .flipbook-single-container {
+    max-width: 100%;
   }
 </style>
 

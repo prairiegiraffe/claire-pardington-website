@@ -51,17 +51,17 @@ const flipbookImages = [img01, img02, img03, img04, img05, img06, img07, img08, 
     </h2>
     <div class="max-w-[900px] mx-auto text-base leading-relaxed">
       <p>
-        Developed for the Calvin Klein interview process, this Spring 2028 lounge and sleepwear concept explores the
-        evolution of comfort through three strategic pillars: Icon, Function, and Sensuality. Inspired by shifts toward
-        body-aware design, fabric innovation, and simplified living, the collection reimagines Calvin Klein's signature
-        minimalism through next-generation materials, engineered comfort, and modern sensuality.
+        This Spring 2028 lounge and sleepwear concept explores the evolution of comfort through three strategic pillars:
+        Icon, Function, and Sensuality. Inspired by shifts toward body-aware design, fabric innovation, and simplified
+        living, the collection reimagines Calvin Klein's signature minimalism through next-generation materials,
+        engineered comfort, and modern sensuality.
       </p>
     </div>
   </div>
 
   <!-- Flipbook -->
   <div class="ck-flipbook-wide">
-    <FlipBookSingleCover images={flipbookImages} height={500} id="ck-close-to-body" />
+    <FlipBookSingleCover images={flipbookImages} height={560} width={1400} id="ck-close-to-body" />
   </div>
 
   <!-- Disclaimer -->
@@ -79,6 +79,10 @@ const flipbookImages = [img01, img02, img03, img04, img05, img06, img07, img08, 
   .ck-flipbook-wide .page-image-single {
     object-fit: contain !important;
     background: white;
+  }
+  /* Let the enlarged book use the full page width instead of the 7xl cap */
+  .ck-flipbook-wide .flipbook-single-container {
+    max-width: 100%;
   }
 </style>
 

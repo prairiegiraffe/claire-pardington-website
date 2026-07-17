@@ -3,16 +3,17 @@ interface Props {
   images: string[];
   title?: string;
   height?: number;
+  width?: number; // Desktop book width in px (default 1000)
   id?: string; // Unique ID to prevent conflicts
 }
 
-const { images, title, height = 600, id = 'flipbook-single' } = Astro.props;
+const { images, title, height = 600, width = 1000, id = 'flipbook-single' } = Astro.props;
 const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
 ---
 
 <div
   class="flipbook-single-container max-w-7xl mx-auto px-4 pb-16"
-  style={`--flipbook-height: ${height}px`}
+  style={`--flipbook-height: ${height}px; --flipbook-width: ${width}px`}
   data-flipbook-type="single-cover"
 >
   {
@@ -69,7 +70,7 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
   }
 
   .flipbook-single {
-    width: 1000px;
+    width: var(--flipbook-width, 1000px);
     height: var(--flipbook-height, 600px);
   }
 
@@ -183,9 +184,10 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
         // No blank page needed!
 
         const customHeight = parseInt((container as HTMLElement).style.getPropertyValue('--flipbook-height') || '600');
+        const customWidth = parseInt((container as HTMLElement).style.getPropertyValue('--flipbook-width') || '1000');
 
         jQuery(flipbookElement).turn({
-          width: isMobile ? window.innerWidth * 0.9 : 1000,
+          width: isMobile ? window.innerWidth * 0.9 : customWidth,
           height: isMobile ? window.innerHeight * 0.6 : customHeight,
           display: isMobile ? 'single' : 'double',
           autoCenter: true,
@@ -209,7 +211,7 @@ const uniqueId = `${id}-${Math.random().toString(36).substring(2, 11)}`;
             jQuery(flipbookElement).turn('display', nowMobile ? 'single' : 'double');
             jQuery(flipbookElement).turn(
               'size',
-              nowMobile ? window.innerWidth * 0.9 : 1000,
+              nowMobile ? window.innerWidth * 0.9 : customWidth,
               nowMobile ? window.innerHeight * 0.6 : customHeight
             );
           }, 250) as unknown as number;
